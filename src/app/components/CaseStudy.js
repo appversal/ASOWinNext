@@ -218,7 +218,7 @@ const caseStudyData = {
       { value: "Top #2", label: "Rank" },
       { value: "+12,000", label: "Daily Downloads" },
     ],
-    description: "Boosting Keyword Rankings and Downloads for Easy Phone",
+    description: "Boosting Keyword Rankings and Downloads for Easy Phone<br/><br/>• Achieved top rankings for competitive keywords<br/><br/>• Drove consistent growth in organic installs<br/><br/>• Enhanced visibility across multiple app categories",
     image: "/casestudy.png",
   },
   "01": {
@@ -228,7 +228,7 @@ const caseStudyData = {
       { value: "#1", label: "Rankings" },
       { value: "Keywords", label: " Success" },
     ],
-    description: "• Ranked highest for category keyword<br/><br/>• 10x increase in total rate",
+    description: "• Ranked highest for category keyword<br/><br/>• 10x increase in total rate<br/><br/>• Significant boost in organic visibility",
     image: "/casestudy2.png",
   },
   "02": {
@@ -238,7 +238,7 @@ const caseStudyData = {
       { value: "50+", label: "keywords" },
       { value: "Visibility", label: "Success Rate" },
     ],
-    description: "• Managed month on month ASO for Indiabulls Securities<br/><br/>• Ranked for more than 25+ unranked keywords",
+    description: "• Managed month on month ASO for Indiabulls Securities<br/><br/>• Ranked for more than 25+ unranked keywords<br/><br/>• Improved app visibility and category ranking",
     image: "/casestudy3.png",
   },
 };
@@ -279,8 +279,8 @@ const CaseStudy = () => {
                 setActiveCase(study);
               }}
               className={`whitespace-nowrap text-sm sm:text-[16px] font-medium pb-4 ${activeCase === study
-                  ? "border-b-2 border-[#014458] text-[#014458]"
-                  : "text-[#014458] hover:text-[#014458]/80"
+                ? "border-b-2 border-[#014458] text-[#014458]"
+                : "text-[#014458] hover:text-[#014458]/80"
                 }`}
             >
               CASE STUDY {study}
@@ -319,20 +319,20 @@ const CaseStudy = () => {
               <p className="text-sm sm:text-[16px] mt-3 sm:mt-5 text-black/80">
                 {activeData.subtitle}
               </p>
-              <Link 
-  href={`/casestudy${parseInt(activeCase, 10)}`}
-  className="inline-block bg-[#FF6B00] text-white px-6 sm:px-8 py-2.5 sm:py-3 mt-4 sm:mt-5 rounded-full text-sm font-medium hover:bg-[#FF6B00]/90 transition-colors"
->
-  READ THE CASE STUDY
-</Link>
+              <Link
+                href={`/casestudy${parseInt(activeCase, 10)}`}
+                className="inline-block bg-[#FF6B00] text-white px-6 sm:px-8 py-2.5 sm:py-3 mt-4 sm:mt-5 rounded-full text-sm font-medium hover:bg-[#FF6B00]/90 transition-colors"
+              >
+                READ THE CASE STUDY
+              </Link>
             </div>
           </div>
 
           <div className="mb-8 lg:mb-16">
-            <div className="grid grid-cols-2 gap-4 sm:gap-8 mb-8 sm:mb-12">
+            <div className="grid grid-cols-2 gap-x-2 mb-8 sm:mb-12 w-[50%]">
               {activeData.stats.map((stat, index) => (
                 <div key={index}>
-                  <h3 className="text-3xl sm:text-[43px] leading-none font-medium font-serif mb-2">
+                  <h3 className="text-2xl sm:text-[43px] leading-none font-medium font-serif mb-2">
                     {stat.value}
                   </h3>
                   <p className="text-xs sm:text-[14px] text-black/60">
@@ -341,6 +341,7 @@ const CaseStudy = () => {
                 </div>
               ))}
             </div>
+
 
             <p
               className="text-sm sm:text-[16px] text-black/80"
@@ -353,17 +354,21 @@ const CaseStudy = () => {
               className="p-2 rounded-full bg-[#004258] text-white hover:bg-[#004258]/90 transition-colors disabled:opacity-50"
               onClick={handlePrev}
               disabled={activeCase === "01"}
+              aria-label="Previous case"
             >
-              <ChevronLeft className="w-5 h-5 sm:w-6 sm:h-6" />
+              <ChevronLeft className="w-5 h-5 sm:w-6 sm:h-6" aria-hidden="true" />
             </button>
+
             <button
               className="p-2 rounded-full bg-[#004258] text-white hover:bg-[#004258]/90 transition-colors disabled:opacity-50"
               onClick={handleNext}
               disabled={activeCase === "03"}
+              aria-label="Next case"
             >
-              <ChevronRight className="w-5 h-5 sm:w-6 sm:h-6" />
+              <ChevronRight className="w-5 h-5 sm:w-6 sm:h-6" aria-hidden="true" />
             </button>
           </div>
+
         </div>
 
         {/* Right Section - App Screenshots with Skeleton Loading */}
