@@ -1,6 +1,5 @@
 "use client"; // Ensure interactivity in Next.js app
 
-import { useState } from "react";
 import OptimizedImage from "./OptimizedImage";
 import Navbar from "./Navbar";
 import Image from "next/image";
@@ -8,52 +7,6 @@ import Link from "next/link";
 
 
 const HeroSection = () => {
-  const [email, setEmail] = useState("");
-  const [loading, setLoading] = useState(false);
-  const [status, setStatus] = useState({ type: "", message: "" });
-
-  // Function to check if an email is a work email
-  const isWorkEmail = (email) => {
-    const freeEmailDomains = [
-      "gmail.com",
-      "yahoo.com",
-      "hotmail.com",
-      "outlook.com",
-      "aol.com",
-      "protonmail.com",
-    ];
-    const domain = email.split("@")[1];
-    return domain && !freeEmailDomains.includes(domain);
-  };
-
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    setLoading(true);
-    setStatus({ type: "", message: "" });
-
-    if (!isWorkEmail(email)) {
-      setStatus({ type: "error", message: "Please use a valid work email address." });
-      setLoading(false);
-      return;
-    }
-
-    try {
-      const response = await fetch("https://form.appstorys.com/api/add-response/", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ email }),
-      });
-
-      if (response.status !== 201) throw new Error("Failed to submit the form");
-
-      setStatus({ type: "success", message: "Thank you! We'll be in touch soon." });
-      setEmail(""); // Clear input field
-    } catch (error) {
-      setStatus({ type: "error", message: "Submission failed. Please try again." });
-    } finally {
-      setLoading(false);
-    }
-  };
 
   return (
     <div className="max-h-[90vh] bg-gradient-to-b from-[#FFEDE3] to-[#FFFFFF]">

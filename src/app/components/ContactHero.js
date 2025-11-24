@@ -1,143 +1,13 @@
 'use client';
 
-import React, { useState } from "react";
+import React from "react";
 import { Facebook, Twitter, Linkedin, Instagram } from "lucide-react";
 import Image from "next/image";
 import Navbar from "./Navbar";
+import { useForm, ValidationError } from '@formspree/react';
 
 const ContactHero = () => {
-  const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    mobile: null,
-    message: "",
-    form: "New Form",
-    app: null,
-    company: null
-  });
-
-  const isWorkEmail = (email) => {
-    const freeEmailDomains = [
-      "gmail.com",
-      "yahoo.com",
-      "hotmail.com",
-      "outlook.com",
-      "aol.com",
-      "protonmail.com",
-    ];
-    const domain = email.split("@")[1];
-    return domain && !freeEmailDomains.includes(domain);
-  };
-
-  const [loading, setLoading] = useState(false);
-  const [status, setStatus] = useState({ type: "", message: "" });
-
-  const [additionalFields, setAdditionalFields] = useState({
-    phone: "",
-    countryCode: "+1",
-    website: ""
-  });
-
-  const countryCodes = [
-    { code: "+1", country: "USA/Canada" },
-    { code: "+44", country: "UK" },
-    { code: "+91", country: "India" },
-    { code: "+61", country: "Australia" },
-    { code: "+86", country: "China" },
-    { code: "+49", country: "Germany" },
-    { code: "+33", country: "France" },
-    { code: "+81", country: "Japan" },
-    { code: "+82", country: "South Korea" },
-    { code: "+7", country: "Russia" },
-    { code: "+353", country: "Ireland" },
-    { code: "+39", country: "Italy" },
-    { code: "+34", country: "Spain" },
-    { code: "+31", country: "Netherlands" },
-  ];
-
-  const handleInputChange = (e) => {
-    const { name, value } = e.target;
-    if (name in formData) {
-      setFormData(prev => ({
-        ...prev,
-        [name]: value
-      }));
-    } else {
-      setAdditionalFields(prev => ({
-        ...prev,
-        [name]: value
-      }));
-    }
-  };
-
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    setLoading(true);
-    setStatus({ type: "", message: "" });
-
-    // Validate email before submitting
-    if (!isWorkEmail(formData.email)) {
-      setStatus({
-        type: "error",
-        message: "Please use a valid work email address.",
-      });
-      setLoading(false);
-      return;
-    }
-
-    const submitData = {
-      name: formData.name,
-      email: formData.email,
-      mobile: additionalFields.phone ? `${additionalFields.countryCode}${additionalFields.phone}` : null,
-      message: formData.message,
-      form: "New Form",
-      app: additionalFields.website || null,
-      company: null
-    };
-
-    try {
-      const response = await fetch('https://form.appstorys.com/api/add-response/', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(submitData)
-      });
-
-      if (response.status !== 201) {
-        throw new Error('Failed to submit form');
-      }
-
-      setStatus({
-        type: "success",
-        message: "Thank you for contacting us! We'll get back to you soon."
-      });
-
-      setFormData({
-        name: "",
-        email: "",
-        mobile: null,
-        message: "",
-        form: "New Form",
-        app: null,
-        company: null
-      });
-
-      setAdditionalFields({
-        phone: "",
-        countryCode: "+1",
-        website: ""
-      });
-
-    } catch (error) {
-      setStatus({
-        type: "error",
-        message: "There was an error submitting the form. Please try again."
-      });
-    } finally {
-      setLoading(false);
-    }
-  };
+  const [state, handleSubmit] = useForm("xqaokzep");
 
   return (
     <>
@@ -306,9 +176,9 @@ const ContactHero = () => {
             {/* Right Column - Form */}
             <div className="mt-10">
               <form onSubmit={handleSubmit} className="space-y-6">
-                {status.message && (
-                  <div className={`p-4 rounded ${status.type === "success" ? "bg-green-100 text-green-700" : "bg-red-100 text-red-700"}`}>
-                    {status.message}
+                {state.succeeded && (
+                  <div className="p-4 rounded bg-green-100 text-green-700">
+                    Thank you for contacting us! We'll get back to you soon.
                   </div>
                 )}
 
@@ -320,11 +190,14 @@ const ContactHero = () => {
                     type="text"
                     id="name"
                     name="name"
-                    value={formData.name}
-                    onChange={handleInputChange}
                     placeholder="Enter your full name"
                     className="w-full px-4 py-3 border border-gray-200 rounded focus:ring-1 focus:ring-gray-300 focus:border-gray-300"
                     required
+                  />
+                  <ValidationError
+                    prefix="Name"
+                    field="name"
+                    errors={state.errors}
                   />
                 </div>
 
@@ -336,11 +209,14 @@ const ContactHero = () => {
                     type="email"
                     id="email"
                     name="email"
-                    value={formData.email}
-                    onChange={handleInputChange}
                     placeholder="Enter your email address"
                     className="w-full px-4 py-3 border border-gray-200 rounded focus:ring-1 focus:ring-gray-300 focus:border-gray-300"
                     required
+                  />
+                  <ValidationError
+                    prefix="Email"
+                    field="email"
+                    errors={state.errors}
                   />
                 </div>
 
@@ -351,20 +227,23 @@ const ContactHero = () => {
                   <textarea
                     id="message"
                     name="message"
-                    value={formData.message}
-                    onChange={handleInputChange}
                     rows="3"
                     placeholder="Please provide any additional details about your request"
                     className="w-full min-h-[150px] px-4 py-3 border border-gray-200 rounded focus:ring-1 focus:ring-gray-300 focus:border-gray-300 resize-none"
                   ></textarea>
+                  <ValidationError
+                    prefix="Message"
+                    field="message"
+                    errors={state.errors}
+                  />
                 </div>
 
                 <button
                   type="submit"
-                  disabled={loading}
-                  className={`px-8 py-3 bg-[#FF8712] text-white font-medium rounded-full hover:bg-[#e85f25] transition-colors ${loading ? 'opacity-50 cursor-not-allowed' : ''}`}
+                  disabled={state.submitting}
+                  className={`px-8 py-3 bg-[#FF8712] text-white font-medium rounded-full hover:bg-[#e85f25] transition-colors ${state.submitting ? 'opacity-50 cursor-not-allowed' : ''}`}
                 >
-                  {loading ? 'SUBMITTING...' : 'SUBMIT FORM'}
+                  {state.submitting ? 'SUBMITTING...' : 'SUBMIT FORM'}
                 </button>
               </form>
             </div>

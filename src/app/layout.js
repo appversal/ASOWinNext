@@ -2,6 +2,7 @@ import "./globals.css";
 import Script from "next/script";
 import ServiceWorker from "./components/ServiceWorker";
 import PerformanceMonitor from "./components/PerformanceMonitor";
+import FontLoader from "./components/FontLoader";
 
 export const metadata = {
   metadataBase: new URL('https://www.asowin.com'),
@@ -48,12 +49,7 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <head>
         {/* Preload critical fonts */}
-        <link
-          rel="preload"
-          href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&display=swap"
-          as="style"
-          onLoad="this.onload=null;this.rel='stylesheet'"
-        />
+        <FontLoader />
         <noscript>
           <link
             href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&display=swap"

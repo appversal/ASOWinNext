@@ -1,77 +1,9 @@
 'use client';
-import { useState } from "react";
 import Image from "next/image";
+import { useForm, ValidationError } from '@formspree/react';
 
 const BlogContact = () => {
-  const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    companyName: "",
-    appUrl: "",
-    message: "",
-    form: "blog form",
-  });
-
-  // Function to check if the email is a work email
-  const isWorkEmail = (email) => {
-    const freeEmailDomains = [
-      "gmail.com",
-      "yahoo.com",
-      "hotmail.com",
-      "outlook.com",
-      "aol.com",
-      "protonmail.com",
-    ];
-    const domain = email.split("@")[1];
-    return domain && !freeEmailDomains.includes(domain);
-  };
-
-  const [loading, setLoading] = useState(false);
-  const [status, setStatus] = useState({ type: "", message: "" });
-
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    setLoading(true);
-    setStatus({ type: "", message: "" });
-  
-    // Validate email before submitting
-    if (!isWorkEmail(formData.email)) {
-      setStatus({
-        type: "error",
-        message: "Please use a valid work email address.",
-      });
-      setLoading(false);
-      return;
-    }
-  
-    try {
-      const response = await fetch("https://form.appstorys.com/api/add-response/", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(formData),
-      });
-  
-      if (response.status !== 201) {
-        throw new Error("Failed to submit the form");
-      }
-  
-      setStatus({
-        type: "success",
-        message: "Thank you! We'll be in touch soon.",
-      });
-  
-      setFormData({ name: "", email: "", companyName: "", appUrl: "", message: "" }); // Clear form
-    } catch (error) {
-      setStatus({
-        type: "error",
-        message: "Submission failed. Please try again.",
-      });
-    } finally {
-      setLoading(false);
-    }
-  };
+  const [state, handleSubmit] = useForm("xqaokzep");
 
   return (
     <div
@@ -88,60 +20,65 @@ const BlogContact = () => {
         <h1 className="text-4xl md:text-5xl lg:text-[77px] font-serif mb-12">Contact Us</h1>
 
         <form onSubmit={handleSubmit} className="space-y-6 max-w-lg">
+          {state.succeeded && (
+            <div className="text-sm text-green-700 bg-green-100 p-2 rounded">
+              Thank you! We'll be in touch soon.
+            </div>
+          )}
+
           <div>
             <input
               type="text"
+              name="name"
               placeholder="Your Name"
               className="w-full p-4 bg-white rounded-sm shadow-sm focus:outline-none"
-              value={formData.name}
-              onChange={(e) => setFormData({ ...formData, name: e.target.value })}
               required
+            />
+            <ValidationError
+              prefix="Name"
+              field="name"
+              errors={state.errors}
             />
           </div>
 
           <div>
             <input
               type="email"
+              name="email"
               placeholder="Your Email"
               className="w-full p-4 bg-white rounded-sm shadow-sm focus:outline-none"
-              value={formData.email}
-              onChange={(e) => setFormData({ ...formData, email: e.target.value })}
               required
+            />
+            <ValidationError
+              prefix="Email"
+              field="email"
+              errors={state.errors}
             />
           </div>
 
           <div>
             <textarea
+              name="message"
               placeholder="Message"
               className="w-full p-4 bg-white rounded-sm shadow-sm focus:outline-none"
-              value={formData.message}
-              onChange={(e) => setFormData({ ...formData, message: e.target.value })}
               rows="4"
               required
+            />
+            <ValidationError
+              prefix="Message"
+              field="message"
+              errors={state.errors}
             />
           </div>
 
           <button
             type="submit"
-            disabled={loading}
+            disabled={state.submitting}
             className="bg-black text-white rounded-[18px] w-[131px] h-[37px] px-8 py-1 text-sm uppercase tracking-wider"
           >
-            {loading ? "Sending..." : "Send"}
+            {state.submitting ? "Sending..." : "Send"}
           </button>
         </form>
-
-        {/* Status Messages */}
-        {status.message && (
-          <div
-            className={`text-sm mt-4 ${
-              status.type === "success"
-                ? "text-green-700 bg-green-100 p-2 rounded"
-                : "text-red-700 bg-red-100 p-2 rounded"
-            }`}
-          >
-            {status.message}
-          </div>
-        )}
       </div>
     </div>
   );
