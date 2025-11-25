@@ -5,6 +5,7 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
+    "postbuild": "node scripts/cleanup-next-cache.js",
     "start": "next start",
     "lint": "next lint",
     "analyze": "ANALYZE=true npm run build",
