@@ -143,9 +143,7 @@ const ContactHero = () => {
                         />
                       </svg>
                       <p className="text-base text-black">
-                        <span className="font-bold">Noida:</span> Office #37,
-                        Tapasya Corp Heights, Sector 126, Noida, Uttar Pradesh -
-                        201301
+                        <span className="font-bold">Noida:</span> 1401, Tower 4, Assotech Business Cresterra, Sector 135, Noida, Uttar Pradesh - 201304
                       </p>
                     </div>
                   </div>
@@ -178,7 +176,7 @@ const ContactHero = () => {
               <form onSubmit={handleSubmit} className="space-y-6">
                 {state.succeeded && (
                   <div className="p-4 rounded bg-green-100 text-green-700">
-                    Thank you for contacting us! We'll get back to you soon.
+                    Thank you for contacting us! We&apos;ll get back to you soon.
                   </div>
                 )}
 

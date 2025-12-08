@@ -11,7 +11,7 @@ const Navbar = () => {
     <header className="sticky top-4 z-50 mx-4 md:mx-8 lg:mx-10 2xl:mx-20 font">
       <nav className="relative bg-white shadow-lg rounded-2xl container mx-auto flex items-center justify-between py-4 px-4 md:px-6 lg:px-8 2xl:px-12">
         {/* Logo */}
-        <div className="flex items-center">
+        <Link href="/" className="flex items-center">
           <span className="text-2xl font-bold">
             <Image
               height={38}
@@ -22,7 +22,7 @@ const Navbar = () => {
             />
 
           </span>
-        </div>
+        </Link>
 
         {/* Desktop Menu Container */}
         <div className="hidden md:flex flex-1 items-center justify-between md:pl-8 lg:pl-12 2xl:pl-16">
@@ -40,12 +40,12 @@ const Navbar = () => {
             >
               SERVICES
             </Link>
-            <a
-              href="https://asowin.com/ASOWinBook.pdf"
+            <Link
+              href="/book"
               className="text-[#111111] hover:text-black text-sm lg:text-[14px] 2xl:text-[14px]"
             >
               OUR BOOK
-            </a>
+            </Link>
             <a
               href="https://asowin.com/blog/"
               className="text-[#111111] hover:text-black text-sm lg:text-[14px] 2xl:text-[14px]"
@@ -69,7 +69,7 @@ const Navbar = () => {
           {/* CTA Button */}
           <Link href="/contact">
             <button className="bg-[#306777] text-white px-4 md:px-6 py-2.5 rounded-[3px] text-sm lg:text-[14px] 2xl:text-[14px] font-medium hover:bg-teal-700 transition-colors md:ml-6 lg:ml-8 2xl:ml-12 whitespace-nowrap w-auto md:w-[160px] lg:w-[197px] h-[41px]">
-              LET'S GET STARTED
+              LET&apos;S GET STARTED
             </button>
           </Link>
         </div>
@@ -116,14 +116,14 @@ const Navbar = () => {
               >
                 SERVICES
               </Link>
-              <a
-                href="https://asowin.com/ASOWinBook.pdf"
+              <Link
+                href="/book"
                 className="px-6 py-2 text-[#111111] hover:text-black"
               >
                 OUR BOOK
-              </a>
+              </Link>
               <a
-                href="https://asowin.com/blog/"
+                href="http://asowin.com/blog/"
                 className="px-6 py-2 text-[#111111] hover:text-black"
               >
                 BLOG
@@ -143,7 +143,7 @@ const Navbar = () => {
               <div className="px-6 pt-4">
                 <Link href="/contact">
                   <button className="bg-[#306777] text-white px-4 md:px-6 py-2.5 rounded-[3px] text-sm lg:text-[14px] 2xl:text-[14px] font-medium hover:bg-teal-700 transition-colors md:ml-6 lg:ml-8 2xl:ml-12 whitespace-nowrap w-auto md:w-[160px] lg:w-[197px] h-[41px]">
-                    LET'S GET STARTED
+                    LET&apos;S GET STARTED
                   </button>
                 </Link>
               </div>
