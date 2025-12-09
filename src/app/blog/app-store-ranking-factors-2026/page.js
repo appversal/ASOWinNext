@@ -3,7 +3,6 @@ import BlogHero from "../../components/BlogHero";
 import BlogContent from "../../components/BlogContent";
 import BlogCTA from "../../components/BlogCTA";
 import ReadMoreBlogs from "../../components/ReadMoreBlogs";
-import BlogBottomCTA from "../../components/BlogBottomCTA";
 import Footer from "../../components/Footer";
 import GoogleAnalytics from "../../components/GoogleAnalytics";
 
@@ -151,13 +150,6 @@ export default function AppStoreRankingFactors2026() {
       />
 
       <ReadMoreBlogs currentSlug="app-store-ranking-factors-2026" />
-
-      <BlogBottomCTA
-        title="Ready to get started?"
-        description=""
-        buttonText="Request Demo"
-        buttonLink="/contact"
-      />
 
       <Footer />
     </div>

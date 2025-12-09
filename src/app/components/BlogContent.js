@@ -186,19 +186,6 @@ const BlogContent = ({ content, embeddedImage, embeddedImageAlt }) => {
                   </button>
                 </div>
               </div>
-
-              {/* CTA Card */}
-              <div className="bg-[#306777] p-6 rounded-lg text-white">
-                <h3 className="text-lg font-bold mb-3">
-                  Help users discover and adopt your app faster
-                </h3>
-                <a
-                  href="/contact"
-                  className="inline-block bg-white text-[#306777] px-6 py-2 rounded-lg font-semibold hover:bg-gray-100 transition-colors mt-4"
-                >
-                  Request Demo
-                </a>
-              </div>
             </div>
           </div>
         </div>

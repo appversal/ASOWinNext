@@ -3,7 +3,6 @@ import BlogHero from "../../components/BlogHero";
 import BlogContent from "../../components/BlogContent";
 import BlogCTA from "../../components/BlogCTA";
 import ReadMoreBlogs from "../../components/ReadMoreBlogs";
-import BlogBottomCTA from "../../components/BlogBottomCTA";
 import Footer from "../../components/Footer";
 import GoogleAnalytics from "../../components/GoogleAnalytics";
 
@@ -60,13 +59,6 @@ export default function ChatGPTAppEcosystem() {
       />
 
       <ReadMoreBlogs currentSlug="chatgpt-app-ecosystem" />
-
-      <BlogBottomCTA
-        title="Ready to get started?"
-        description=""
-        buttonText="Request Demo"
-        buttonLink="/contact"
-      />
 
       <Footer />
     </div>

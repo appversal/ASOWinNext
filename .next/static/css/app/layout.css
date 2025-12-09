@@ -2861,16 +2861,16 @@ img {
     height: 100vh;
   }
 
+  .md\:min-h-\[400px\] {
+    min-height: 400px;
+  }
+
   .md\:min-h-\[505px\] {
     min-height: 505px;
   }
 
   .md\:min-h-\[600px\] {
     min-height: 600px;
-  }
-
-  .md\:min-h-\[400px\] {
-    min-height: 400px;
   }
 
   .md\:w-1\/2 {
@@ -3277,16 +3277,16 @@ img {
     max-height: 679px;
   }
 
+  .lg\:min-h-\[500px\] {
+    min-height: 500px;
+  }
+
   .lg\:min-h-\[600px\] {
     min-height: 600px;
   }
 
   .lg\:min-h-\[700px\] {
     min-height: 700px;
-  }
-
-  .lg\:min-h-\[500px\] {
-    min-height: 500px;
   }
 
   .lg\:w-1\/2 {

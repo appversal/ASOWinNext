@@ -3,7 +3,6 @@ import BlogHero from "../../components/BlogHero";
 import BlogContent from "../../components/BlogContent";
 import BlogCTA from "../../components/BlogCTA";
 import ReadMoreBlogs from "../../components/ReadMoreBlogs";
-import BlogBottomCTA from "../../components/BlogBottomCTA";
 import Footer from "../../components/Footer";
 import GoogleAnalytics from "../../components/GoogleAnalytics";
 
@@ -77,7 +76,7 @@ export default function GooglePlayRankingStrategies2026() {
         description="Google Play remains the world's largest app marketplace with over three million apps spanning 32 categories. At ASOWin, we know that data-driven App Store Optimization (ASO) is pivotal to climbing the ranks."
 
         readTime="10 min read"
-        heroImage="/WhatsApp Image 2025-12-09 at 13.40.51.jpeg"
+        heroImage="/GooglePlayStore.jpeg"
       />
 
       <BlogContent
@@ -91,13 +90,6 @@ export default function GooglePlayRankingStrategies2026() {
       />
 
       <ReadMoreBlogs currentSlug="google-play-ranking-strategies-2026" />
-
-      <BlogBottomCTA
-        title="Ready to get started?"
-        description=""
-        buttonText="Request Demo"
-        buttonLink="/contact"
-      />
 
       <Footer />
     </div>

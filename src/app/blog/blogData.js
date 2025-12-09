@@ -34,7 +34,7 @@ export const blogPosts = [
     description: 'Google Play remains the world\'s largest app marketplace with over three million apps spanning 32 categories. At ASOWin, we know that data-driven App Store Optimization (ASO) is pivotal to climbing the ranks.',
     date: 'November 7, 2025',
     readTime: '10 min read',
-    heroImage: '/whatsapp Image 2025-12-09 at 13.40.51.jpeg',
+    heroImage: '/GooglePlayStore.jpeg',
     embeddedImage: '/WhatsApp Image 2025-12-09 at 13.40.51.jpeg',
     embeddedImageAlt: 'Google Play Store Ranking Strategy - Marketing Channels, Visual Appeal, App Updates, User Reviews, Keyword Optimization'
   }
