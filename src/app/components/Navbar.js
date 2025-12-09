@@ -46,12 +46,12 @@ const Navbar = () => {
             >
               OUR BOOK
             </Link>
-            <a
-              href="https://asowin.com/blog/"
+            <Link
+              href="/blog"
               className="text-[#111111] hover:text-black text-sm lg:text-[14px] 2xl:text-[14px]"
             >
               BLOG
-            </a>
+            </Link>
             <Link
               href="/about"
               className="text-[#111111] hover:text-black text-sm lg:text-[14px] 2xl:text-[14px]"
@@ -122,12 +122,12 @@ const Navbar = () => {
               >
                 OUR BOOK
               </Link>
-              <a
-                href="http://asowin.com/blog/"
+              <Link
+                href="/blog"
                 className="px-6 py-2 text-[#111111] hover:text-black"
               >
                 BLOG
-              </a>
+              </Link>
               <Link
                 href="/about"
                 className="px-6 py-2 text-[#111111] hover:text-black"

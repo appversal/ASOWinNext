@@ -7,8 +7,7 @@ import { Loader2 } from "lucide-react";
 
 const Footer = () => {
   const [isLoading, setIsLoading] = useState({
-    book: false,
-    blog: false
+    book: false
   });
 
   const handleExternalLink = async (type, url) => {
@@ -65,14 +64,12 @@ const Footer = () => {
                 OUR BOOK
                 {isLoading.book && <Loader2 className="w-4 h-4 animate-spin" />}
               </button>
-              <button
-                onClick={() => handleExternalLink('blog', 'https://asowin.com/blog')}
-                className="text-white hover:text-[#FFB842] text-sm font-semibold whitespace-nowrap flex items-center gap-2 bg-transparent border-none cursor-pointer"
-                disabled={isLoading.blog}
+              <Link
+                href="/blog"
+                className="text-white hover:text-[#FFB842] text-sm font-semibold whitespace-nowrap"
               >
                 BLOG
-                {isLoading.blog && <Loader2 className="w-4 h-4 animate-spin" />}
-              </button>
+              </Link>
               <Link
                 href="/about"
                 className="text-white hover:text-[#FFB842] text-sm font-semibold whitespace-nowrap"

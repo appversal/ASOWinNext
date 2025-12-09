@@ -11,30 +11,65 @@
       "static/chunks/main-app.js",
       "static/chunks/app/page.js"
     ],
-    "/book/layout": [
+    "/about/layout": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
-      "static/chunks/app/book/layout.js"
+      "static/chunks/app/about/layout.js"
     ],
-    "/book/page": [
+    "/about/page": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
-      "static/chunks/app/book/page.js"
+      "static/chunks/app/about/page.js"
     ],
-    "/services/layout": [
+    "/blog/layout": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
-      "static/chunks/app/services/layout.js"
+      "static/chunks/app/blog/layout.js"
     ],
-    "/services/page": [
+    "/blog/page": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
-      "static/chunks/app/services/page.js"
+      "static/chunks/app/blog/page.js"
     ],
-    "/_not-found/page": [
+    "/blog/chatgpt-app-ecosystem/layout": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
-      "static/chunks/app/_not-found/page.js"
+      "static/chunks/app/blog/chatgpt-app-ecosystem/layout.js"
+    ],
+    "/blog/chatgpt-app-ecosystem/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/blog/chatgpt-app-ecosystem/page.js"
+    ],
+    "/blog/app-store-ranking-factors-2026/layout": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/blog/app-store-ranking-factors-2026/layout.js"
+    ],
+    "/blog/app-store-ranking-factors-2026/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/blog/app-store-ranking-factors-2026/page.js"
+    ],
+    "/blog/google-play-ranking-strategies-2026/layout": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/blog/google-play-ranking-strategies-2026/layout.js"
+    ],
+    "/blog/google-play-ranking-strategies-2026/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/blog/google-play-ranking-strategies-2026/page.js"
+    ],
+    "/contact/layout": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/contact/layout.js"
+    ],
+    "/contact/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/contact/page.js"
     ]
   }
 }
