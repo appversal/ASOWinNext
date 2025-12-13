@@ -80,7 +80,7 @@ const BlogContent = ({ content, embeddedImage, embeddedImageAlt }) => {
   };
 
   return (
-    <div className="w-full px-4 sm:px-6 lg:px-20 py-12 bg-white">
+    <div className="w-full px-4 sm:px-6 lg:px-20 pt-4 pb-12 bg-white">
       <div className="max-w-7xl mx-auto">
         <div className="flex flex-col lg:flex-row gap-8 lg:gap-12">
           {/* Main Content Column */}

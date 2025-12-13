@@ -24,7 +24,7 @@ export default function ChatGPTAppEcosystem() {
     
     <p>Metadata is at the heart of discoverability and contextual triggering within ChatGPT. Clear app names, detailed descriptions, and precise input definitions inform the platform when and how to suggest an app. ASOWin applies rigorous testing of metadata against diverse user prompts including both direct commands and goal oriented requests to continuously optimize app surfacing. This iterative refinement will become increasingly important as ChatGPT introduces an official app directory to enhance app discovery, resembling a new kind of ChatGPT App Store. ASOWin is poised to assist developers with fine tuning their app listings for optimal visibility, engagement, and user conversion.</p>
 
-    <div style="margin: 3rem 0; text-align: center;">
+    <div style="margin: 1.5rem 0; text-align: center;">
       <img src="/chatgptinside.jpeg" alt="Metadata's Role in ChatGPT App Discovery - How ASOWin optimizes app surfacing and helps developers" style="max-width: 100%; height: auto; border-radius: 0.5rem;" />
     </div>
 

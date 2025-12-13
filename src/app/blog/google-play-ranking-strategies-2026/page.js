@@ -52,7 +52,7 @@ export default function GooglePlayRankingStrategies2026() {
       <li><strong>Download Volume & Retention:</strong> We focus on sustainable user growth and retention metrics, reflecting true market relevance and long-term value.</li>
     </ul>
 
-    <div style="margin: 3rem 0; text-align: center;">
+    <div style="margin: 1.5rem 0; text-align: center;">
       <img src="/playstoreiamge.jpeg" alt="Google Play Store Ranking Strategy - How to optimize Google Play ranking factors" style="max-width: 100%; height: auto; border-radius: 0.5rem;" />
     </div>
 

@@ -1,8 +1,9 @@
 {
-  "/_not-found/page": "app/_not-found/page.js",
-  "/favicon.ico/route": "app/favicon.ico/route.js",
   "/page": "app/page.js",
   "/blog/page": "app/blog/page.js",
-  "/blog/google-play-ranking-strategies-2026/page": "app/blog/google-play-ranking-strategies-2026/page.js",
-  "/blog/app-store-ranking-factors-2026/page": "app/blog/app-store-ranking-factors-2026/page.js"
+  "/about/page": "app/about/page.js",
+  "/blog/app-store-ranking-factors-2026/page": "app/blog/app-store-ranking-factors-2026/page.js",
+  "/blog/app-icon-design-tips-and-practices/page": "app/blog/app-icon-design-tips-and-practices/page.js",
+  "/blog/ab-testing-for-aso/page": "app/blog/ab-testing-for-aso/page.js",
+  "/blog/app-market-research-complete-guide/page": "app/blog/app-market-research-complete-guide/page.js"
 }
