@@ -21,15 +21,15 @@
       "static/chunks/main-app.js",
       "static/chunks/app/blog/page.js"
     ],
-    "/blog/google-play-ranking-strategies-2026/layout": [
+    "/about/layout": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
-      "static/chunks/app/blog/google-play-ranking-strategies-2026/layout.js"
+      "static/chunks/app/about/layout.js"
     ],
-    "/blog/google-play-ranking-strategies-2026/page": [
+    "/about/page": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
-      "static/chunks/app/blog/google-play-ranking-strategies-2026/page.js"
+      "static/chunks/app/about/page.js"
     ],
     "/blog/app-store-ranking-factors-2026/layout": [
       "static/chunks/webpack.js",
@@ -41,10 +41,35 @@
       "static/chunks/main-app.js",
       "static/chunks/app/blog/app-store-ranking-factors-2026/page.js"
     ],
-    "/_not-found/page": [
+    "/blog/app-icon-design-tips-and-practices/layout": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
-      "static/chunks/app/_not-found/page.js"
+      "static/chunks/app/blog/app-icon-design-tips-and-practices/layout.js"
+    ],
+    "/blog/app-icon-design-tips-and-practices/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/blog/app-icon-design-tips-and-practices/page.js"
+    ],
+    "/blog/ab-testing-for-aso/layout": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/blog/ab-testing-for-aso/layout.js"
+    ],
+    "/blog/ab-testing-for-aso/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/blog/ab-testing-for-aso/page.js"
+    ],
+    "/blog/app-market-research-complete-guide/layout": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/blog/app-market-research-complete-guide/layout.js"
+    ],
+    "/blog/app-market-research-complete-guide/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/blog/app-market-research-complete-guide/page.js"
     ]
   }
 }

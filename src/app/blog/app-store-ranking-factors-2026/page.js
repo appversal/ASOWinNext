@@ -22,7 +22,7 @@ export default function AppStoreRankingFactors2026() {
     
     <p>Proving top-rank worthiness requires strong performance across multiple metrics. Tools like those from ASOWin provide keyword intelligence on traffic potential and competition difficulty, enabling precise metadata allocation for maximum impact.</p>
     
-    <div style="margin: 3rem 0; text-align: center;">
+    <div style="margin: 1.5rem 0; text-align: center;">
       <img src="/applestore.jpeg" alt="How to improve app ranking in the Apple App Store - Leverage NLP, Enhance App Performance, Optimize Metadata" style="max-width: 100%; height: auto; border-radius: 0.5rem;" />
     </div>
 

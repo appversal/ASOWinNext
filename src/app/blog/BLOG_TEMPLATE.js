@@ -32,7 +32,7 @@ export default function YourBlogPost() {
     <p>Your second paragraph content here...</p>
     
     <!-- Optional: Add images directly in HTML -->
-    <div style="margin: 3rem 0; text-align: center;">
+    <div style="margin: 1.5rem 0; text-align: center;">
       <img src="/your-image.png" alt="Image description" style="max-width: 100%; height: auto; border-radius: 0.5rem;" />
     </div>
 

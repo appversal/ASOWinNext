@@ -8,7 +8,7 @@ const BlogHero = ({ category, date, title, description, author, authorAvatar, re
       <Navbar />
 
       {/* Hero Section */}
-      <div className="w-full px-4 sm:px-6 lg:px-20 pt-8 pb-12 md:pt-12 md:pb-16">
+      <div className="w-full px-4 sm:px-6 lg:px-20 pt-8 pb-8 md:pt-12 md:pb-12">
         <div className="max-w-7xl mx-auto">
           <div className="flex flex-col lg:flex-row gap-8 lg:gap-12 items-start">
             {/* Left Column - Text Content */}
@@ -31,7 +31,7 @@ const BlogHero = ({ category, date, title, description, author, authorAvatar, re
               </h1>
 
               {description && (
-                <p className="text-lg md:text-xl text-gray-600 mb-8 leading-relaxed">
+                <p className="text-lg md:text-xl text-gray-600 mb-4 leading-relaxed">
                   {description}
                 </p>
               )}
