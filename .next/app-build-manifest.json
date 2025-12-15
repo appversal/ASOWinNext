@@ -11,16 +11,6 @@
       "static/chunks/main-app.js",
       "static/chunks/app/page.js"
     ],
-    "/blog/layout": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/chunks/app/blog/layout.js"
-    ],
-    "/blog/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/chunks/app/blog/page.js"
-    ],
     "/about/layout": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
@@ -31,25 +21,25 @@
       "static/chunks/main-app.js",
       "static/chunks/app/about/page.js"
     ],
-    "/blog/app-store-ranking-factors-2026/layout": [
+    "/blog/layout": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
-      "static/chunks/app/blog/app-store-ranking-factors-2026/layout.js"
+      "static/chunks/app/blog/layout.js"
     ],
-    "/blog/app-store-ranking-factors-2026/page": [
+    "/blog/page": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
-      "static/chunks/app/blog/app-store-ranking-factors-2026/page.js"
+      "static/chunks/app/blog/page.js"
     ],
-    "/blog/app-icon-design-tips-and-practices/layout": [
+    "/book/layout": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
-      "static/chunks/app/blog/app-icon-design-tips-and-practices/layout.js"
+      "static/chunks/app/book/layout.js"
     ],
-    "/blog/app-icon-design-tips-and-practices/page": [
+    "/book/page": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
-      "static/chunks/app/blog/app-icon-design-tips-and-practices/page.js"
+      "static/chunks/app/book/page.js"
     ],
     "/blog/ab-testing-for-aso/layout": [
       "static/chunks/webpack.js",
@@ -60,16 +50,6 @@
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
       "static/chunks/app/blog/ab-testing-for-aso/page.js"
-    ],
-    "/blog/app-market-research-complete-guide/layout": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/chunks/app/blog/app-market-research-complete-guide/layout.js"
-    ],
-    "/blog/app-market-research-complete-guide/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/chunks/app/blog/app-market-research-complete-guide/page.js"
     ]
   }
 }
