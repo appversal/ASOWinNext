@@ -11,16 +11,6 @@
       "static/chunks/main-app.js",
       "static/chunks/app/page.js"
     ],
-    "/about/layout": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/chunks/app/about/layout.js"
-    ],
-    "/about/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/chunks/app/about/page.js"
-    ],
     "/blog/layout": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
@@ -31,25 +21,20 @@
       "static/chunks/main-app.js",
       "static/chunks/app/blog/page.js"
     ],
-    "/book/layout": [
+    "/blog/free-trial-strategies/page": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
-      "static/chunks/app/book/layout.js"
+      "static/chunks/app/blog/free-trial-strategies/page.js"
     ],
-    "/book/page": [
+    "/blog/google-play-ai-revolution/page": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
-      "static/chunks/app/book/page.js"
+      "static/chunks/app/blog/google-play-ai-revolution/page.js"
     ],
-    "/blog/ab-testing-for-aso/layout": [
+    "/_not-found/page": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
-      "static/chunks/app/blog/ab-testing-for-aso/layout.js"
-    ],
-    "/blog/ab-testing-for-aso/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/chunks/app/blog/ab-testing-for-aso/page.js"
+      "static/chunks/app/_not-found/page.js"
     ]
   }
 }

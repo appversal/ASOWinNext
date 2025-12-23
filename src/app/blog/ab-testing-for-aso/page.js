@@ -64,6 +64,67 @@ export default function ABTestingForASO() {
 
     <p>This gives you greater confidence and more actionable insights compared to native testing alone.</p>
 
+    <h2 id="heading-ab-test-table">What You Can A/B Test</h2>
+
+    <div style="overflow-x: auto; margin-bottom: 1.5rem;">
+      <table style="width: 100%; border-collapse: collapse; min-width: 600px;">
+        <thead>
+          <tr style="background-color: #f3f4f6;">
+            <th style="padding: 0.75rem; text-align: left; border: 1px solid #e5e7eb; color: #111827; font-weight: 600;">Element</th>
+            <th style="padding: 0.75rem; text-align: left; border: 1px solid #e5e7eb; color: #111827; font-weight: 600;">App Store (PPO)</th>
+            <th style="padding: 0.75rem; text-align: left; border: 1px solid #e5e7eb; color: #111827; font-weight: 600;">Google Play (SLE)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td style="padding: 0.75rem; border: 1px solid #e5e7eb; color: #374151;">App Icon</td>
+            <td style="padding: 0.75rem; border: 1px solid #e5e7eb; color: #374151;">Yes</td>
+            <td style="padding: 0.75rem; border: 1px solid #e5e7eb; color: #374151;">Yes</td>
+          </tr>
+          <tr style="background-color: #f9fafb;">
+            <td style="padding: 0.75rem; border: 1px solid #e5e7eb; color: #374151;">Screenshots</td>
+            <td style="padding: 0.75rem; border: 1px solid #e5e7eb; color: #374151;">Yes</td>
+            <td style="padding: 0.75rem; border: 1px solid #e5e7eb; color: #374151;">Yes</td>
+          </tr>
+          <tr>
+            <td style="padding: 0.75rem; border: 1px solid #e5e7eb; color: #374151;">App Preview / Video</td>
+            <td style="padding: 0.75rem; border: 1px solid #e5e7eb; color: #374151;">Yes</td>
+            <td style="padding: 0.75rem; border: 1px solid #e5e7eb; color: #374151;">Yes</td>
+          </tr>
+          <tr style="background-color: #f9fafb;">
+            <td style="padding: 0.75rem; border: 1px solid #e5e7eb; color: #374151;">App Name</td>
+            <td style="padding: 0.75rem; border: 1px solid #e5e7eb; color: #374151;">No</td>
+            <td style="padding: 0.75rem; border: 1px solid #e5e7eb; color: #374151;">No</td>
+          </tr>
+          <tr>
+            <td style="padding: 0.75rem; border: 1px solid #e5e7eb; color: #374151;">Subtitle</td>
+            <td style="padding: 0.75rem; border: 1px solid #e5e7eb; color: #374151;">No</td>
+            <td style="padding: 0.75rem; border: 1px solid #e5e7eb; color: #374151;">N/A</td>
+          </tr>
+          <tr style="background-color: #f9fafb;">
+            <td style="padding: 0.75rem; border: 1px solid #e5e7eb; color: #374151;">Short Description</td>
+            <td style="padding: 0.75rem; border: 1px solid #e5e7eb; color: #374151;">N/A</td>
+            <td style="padding: 0.75rem; border: 1px solid #e5e7eb; color: #374151;">Yes</td>
+          </tr>
+          <tr>
+            <td style="padding: 0.75rem; border: 1px solid #e5e7eb; color: #374151;">Full Description</td>
+            <td style="padding: 0.75rem; border: 1px solid #e5e7eb; color: #374151;">No</td>
+            <td style="padding: 0.75rem; border: 1px solid #e5e7eb; color: #374151;">Yes</td>
+          </tr>
+          <tr style="background-color: #f9fafb;">
+            <td style="padding: 0.75rem; border: 1px solid #e5e7eb; color: #374151;">Feature Graphic</td>
+            <td style="padding: 0.75rem; border: 1px solid #e5e7eb; color: #374151;">N/A</td>
+            <td style="padding: 0.75rem; border: 1px solid #e5e7eb; color: #374151;">Yes</td>
+          </tr>
+          <tr>
+            <td style="padding: 0.75rem; border: 1px solid #e5e7eb; color: #374151;">Localization</td>
+            <td style="padding: 0.75rem; border: 1px solid #e5e7eb; color: #374151;">Yes</td>
+            <td style="padding: 0.75rem; border: 1px solid #e5e7eb; color: #374151;">Yes</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
     <h2 id="heading-6">When to Run A/B Tests</h2>
 
     <h3 id="heading-7">Pre-Launch</h3>
