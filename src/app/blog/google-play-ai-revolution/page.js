@@ -14,10 +14,6 @@ export default function GooglePlayAIRevolution() {
 
     <p>From an ASOWin lens, this aligns spot-on with evolving ASO strategies: moving from static keyword tweaks to dynamic, behavior-led optimizations that emphasize retention over installs. Developers get tools to spot user patterns early, scale custom engagement, and create sticky experiences across phones, tablets, foldables, and more. Let's break down the highlights.</p>
 
-    <div style="margin: 1.5rem 0; text-align: center;">
-      <img src="/google_play_focus_areas.png" alt="Focus Areas in Google Play's New Phase - 30% Artificial Intelligence, 30% Hyper-Personalization, 40% Seamless Multi-Device Support" style="width: 400px; height: auto; border-radius: 0.5rem;" />
-    </div>
-
     <h2 id="heading-1">Gemini Supercharges the Play Console</h2>
     
     <p>The Play Console takes center stage with Gemini AI integration, evolving from a basic data dashboard into a smart advisor. Forget sifting through endless charts—it now auto-generates summaries explaining metric spikes, sudden drops, or weird anomalies, so you know why things are happening.</p>
