@@ -67,6 +67,26 @@ export const blogPosts = [
     heroImage: '/AppIcons.jpeg',
     embeddedImage: '/AppIcons.jpeg',
     embeddedImageAlt: 'App Icon Design Tips and Practices - Improve Click-Through Rates, ASO Best Practices, Icon Design Principles'
+  },
+  {
+    slug: 'free-trial-strategies',
+    title: 'Aligning Free Trial Strategies with Usage Patterns: An ASOWin Perspective',
+    description: 'One of the most debated questions in subscription-led products is how long a free trial should last. Trial duration directly affects whether users experience value, form habits, and ultimately decide to pay.',
+    date: 'December 23, 2025',
+    readTime: '10 min read',
+    heroImage: '/free_trial_strategies.png',
+    embeddedImage: '/free_trial_strategies.png',
+    embeddedImageAlt: 'Free Trial Strategies - Natural Usage Habits, Trial Optimization, Subscription Conversion'
+  },
+  {
+    slug: 'google-play-ai-revolution',
+    title: 'Google Play\'s AI Revolution: PlayTime 2025 Key Announcements',
+    description: 'Google Play is stepping into a transformative new phase, powered by artificial intelligence, hyper-personalized experiences, and seamless multi-device support. Discover how PlayTime 2025 is reshaping the app ecosystem.',
+    date: 'December 23, 2025',
+    readTime: '8 min read',
+    heroImage: '/google_play_ai_revolution.png',
+    embeddedImage: '/google_play_ai_revolution.png',
+    embeddedImageAlt: 'Google Play AI Revolution - PlayTime 2025, Gemini AI, Personalized Discovery'
   }
   // Add more blog posts here as you create them
   // {

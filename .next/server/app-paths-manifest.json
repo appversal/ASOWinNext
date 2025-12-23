@@ -1,6 +1,7 @@
 {
-  "/about/page": "app/about/page.js",
+  "/_not-found/page": "app/_not-found/page.js",
+  "/favicon.ico/route": "app/favicon.ico/route.js",
+  "/blog/google-play-ai-revolution/page": "app/blog/google-play-ai-revolution/page.js",
   "/blog/page": "app/blog/page.js",
-  "/book/page": "app/book/page.js",
-  "/blog/ab-testing-for-aso/page": "app/blog/ab-testing-for-aso/page.js"
+  "/blog/free-trial-strategies/page": "app/blog/free-trial-strategies/page.js"
 }
