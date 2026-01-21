@@ -18,6 +18,8 @@ const GoogleAnalytics = () => {
             function gtag(){dataLayer.push(arguments);}
             gtag('js', new Date());
             gtag('config', 'G-X8CT7N67DN');
+            gtag('config', 'AW-17791392097');
+            gtag('config', 'AW-938608563');
           `,
         }}
       />

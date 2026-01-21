@@ -89,7 +89,7 @@ const Footer = () => {
           <div className="absolute bottom-4 sm:bottom-6 md:bottom-8 left-0 right-0 px-4 sm:px-6 md:px-8 lg:px-16">
             <div className="flex flex-col sm:flex-row justify-between items-center space-y-4 sm:space-y-0">
               <p className="text-white/80 text-xs order-3 sm:order-1 text-center sm:text-left">
-                © 2025 ASOWin Inc. All Rights Reserved.
+                © 2026 ASOWin Inc. All Rights Reserved.
               </p>
 
               <div className="flex flex-wrap justify-center sm:justify-start gap-3 sm:gap-4 md:gap-6 order-1 sm:order-2">
@@ -115,6 +115,14 @@ const Footer = () => {
                 <a
                   href="mailto:support@asowin.com"
                   className="text-white/80 hover:text-white text-xs flex items-center gap-2 whitespace-nowrap text-center sm:text-left"
+                  onClick={() => {
+                    if (typeof window !== 'undefined' && window.gtag) {
+                      window.gtag('event', 'click_email', {
+                        'event_category': 'Engagement',
+                        'event_label': 'Footer Support Email'
+                      });
+                    }
+                  }}
                 >
                   <span className="text-[#FFB842]">✉</span>
                   support@asowin.com
@@ -125,6 +133,14 @@ const Footer = () => {
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-white/80 hover:text-white text-xs flex items-center gap-2 whitespace-nowrap text-center sm:text-left"
+                  onClick={() => {
+                    if (typeof window !== 'undefined' && window.gtag) {
+                      window.gtag('event', 'click_social', {
+                        'event_category': 'Engagement',
+                        'event_label': 'LinkedIn Footer'
+                      });
+                    }
+                  }}
                 >
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
