@@ -1,6 +1,6 @@
 'use client';
 
-import React from "react";
+import React, { useEffect } from "react";
 import { Facebook, Twitter, Linkedin, Instagram } from "lucide-react";
 import Image from "next/image";
 import Navbar from "./Navbar";
@@ -8,6 +8,23 @@ import { useForm, ValidationError } from '@formspree/react';
 
 const ContactHero = () => {
   const [state, handleSubmit] = useForm("xqaokzep");
+
+  useEffect(() => {
+    if (state.succeeded) {
+      if (typeof window !== 'undefined' && window.gtag) {
+        window.gtag('event', 'conversion', {
+          'send_to': 'AW-17791392097/38a7COX2084bEOGyzKNC',
+          'value': 1.0,
+          'currency': 'INR'
+        });
+        window.gtag('event', 'conversion', {
+          'send_to': 'AW-938608563/t3qxCNPz8pYbELOPyL8D',
+          'value': 1.0,
+          'currency': 'INR'
+        });
+      }
+    }
+  }, [state.succeeded]);
 
   return (
     <>
@@ -158,6 +175,14 @@ const ContactHero = () => {
                     <a
                       href="mailto:support@asowin.com"
                       className="text-base text-black underline"
+                      onClick={() => {
+                        if (typeof window !== 'undefined' && window.gtag) {
+                          window.gtag('event', 'click_email', {
+                            'event_category': 'Engagement',
+                            'event_label': 'Contact Page Email'
+                          });
+                        }
+                      }}
                     >
                       support@asowin.com
                     </a>

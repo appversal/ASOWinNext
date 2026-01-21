@@ -68,7 +68,17 @@ const Navbar = () => {
 
           {/* CTA Button */}
           <Link href="/contact">
-            <button className="bg-[#306777] text-white px-4 md:px-6 py-2.5 rounded-[3px] text-sm lg:text-[14px] 2xl:text-[14px] font-medium hover:bg-teal-700 transition-colors md:ml-6 lg:ml-8 2xl:ml-12 whitespace-nowrap w-auto md:w-[160px] lg:w-[197px] h-[41px]">
+            <button
+              className="bg-[#306777] text-white px-4 md:px-6 py-2.5 rounded-[3px] text-sm lg:text-[14px] 2xl:text-[14px] font-medium hover:bg-teal-700 transition-colors md:ml-6 lg:ml-8 2xl:ml-12 whitespace-nowrap w-auto md:w-[160px] lg:w-[197px] h-[41px]"
+              onClick={() => {
+                if (typeof window !== 'undefined' && window.gtag) {
+                  window.gtag('event', 'click_get_started', {
+                    'event_category': 'CTA',
+                    'event_label': 'Navbar'
+                  });
+                }
+              }}
+            >
               LET&apos;S GET STARTED
             </button>
           </Link>

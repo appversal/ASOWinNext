@@ -1,9 +1,27 @@
 'use client';
+import { useEffect } from 'react';
 import Image from "next/image";
 import { useForm, ValidationError } from '@formspree/react';
 
 const BlogContact = () => {
   const [state, handleSubmit] = useForm("xqaokzep");
+
+  useEffect(() => {
+    if (state.succeeded) {
+      if (typeof window !== 'undefined' && window.gtag) {
+        window.gtag('event', 'conversion', {
+          'send_to': 'AW-17791392097/38a7COX2084bEOGyzKNC',
+          'value': 1.0,
+          'currency': 'INR'
+        });
+        window.gtag('event', 'conversion', {
+          'send_to': 'AW-938608563/t3qxCNPz8pYbELOPyL8D',
+          'value': 1.0,
+          'currency': 'INR'
+        });
+      }
+    }
+  }, [state.succeeded]);
 
   return (
     <div

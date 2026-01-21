@@ -3,6 +3,7 @@ import Script from "next/script";
 import ServiceWorker from "./components/ServiceWorker";
 import PerformanceMonitor from "./components/PerformanceMonitor";
 import FontLoader from "./components/FontLoader";
+import GoogleAnalytics from "./components/GoogleAnalytics";
 
 export const metadata = {
   metadataBase: new URL('https://www.asowin.com'),
@@ -90,6 +91,7 @@ export default function RootLayout({ children }) {
         </noscript>
 
         {children}
+        <GoogleAnalytics />
         <ServiceWorker />
         <PerformanceMonitor />
       </body>

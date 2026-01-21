@@ -1,8 +1,26 @@
 'use client';
+import { useEffect } from 'react';
 import { useForm, ValidationError } from '@formspree/react';
 
 const BlogCTA = ({ title, subtitle, buttonText, buttonLink }) => {
   const [state, handleSubmit] = useForm("xqaokzep");
+
+  useEffect(() => {
+    if (state.succeeded) {
+      if (typeof window !== 'undefined' && window.gtag) {
+        window.gtag('event', 'conversion', {
+          'send_to': 'AW-17791392097/38a7COX2084bEOGyzKNC',
+          'value': 1.0,
+          'currency': 'INR'
+        });
+        window.gtag('event', 'conversion', {
+          'send_to': 'AW-938608563/t3qxCNPz8pYbELOPyL8D',
+          'value': 1.0,
+          'currency': 'INR'
+        });
+      }
+    }
+  }, [state.succeeded]);
 
   return (
     <div className="w-full bg-[#306777] py-16 md:py-20 px-4 sm:px-6 lg:px-20">
