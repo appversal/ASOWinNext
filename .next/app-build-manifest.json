@@ -11,15 +11,15 @@
       "static/chunks/main-app.js",
       "static/chunks/app/page.js"
     ],
-    "/blog/layout": [
+    "/aso-agency-usa/layout": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
-      "static/chunks/app/blog/layout.js"
+      "static/chunks/app/aso-agency-usa/layout.js"
     ],
-    "/blog/page": [
+    "/aso-agency-usa/page": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
-      "static/chunks/app/blog/page.js"
+      "static/chunks/app/aso-agency-usa/page.js"
     ],
     "/services/layout": [
       "static/chunks/webpack.js",
@@ -31,15 +31,15 @@
       "static/chunks/main-app.js",
       "static/chunks/app/services/page.js"
     ],
-    "/contact/layout": [
+    "/book/layout": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
-      "static/chunks/app/contact/layout.js"
+      "static/chunks/app/book/layout.js"
     ],
-    "/contact/page": [
+    "/book/page": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
-      "static/chunks/app/contact/page.js"
+      "static/chunks/app/book/page.js"
     ]
   }
 }

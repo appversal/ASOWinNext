@@ -5,9 +5,9 @@ import Intercom from '@intercom/messenger-js-sdk';
 
 export default function IntercomProvider() {
   useEffect(() => {
-    // Initialize Intercom with environment variable
+    // Initialize Intercom with the specific app_id
     Intercom({
-      app_id: process.env.NEXT_PUBLIC_INTERCOM_APP_ID || 'zkny2o1x',
+      app_id: 'henvjjmg',
     });
 
     // Cleanup
