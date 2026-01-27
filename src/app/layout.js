@@ -4,6 +4,7 @@ import ServiceWorker from "./components/ServiceWorker";
 import PerformanceMonitor from "./components/PerformanceMonitor";
 import FontLoader from "./components/FontLoader";
 import GoogleAnalytics from "./components/GoogleAnalytics";
+import IntercomProvider from "./components/IntercomProvider";
 
 export const metadata = {
   metadataBase: new URL('https://www.asowin.com'),
@@ -47,7 +48,7 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
       <head>
         {/* Preload critical fonts */}
         <FontLoader />
@@ -94,6 +95,7 @@ export default function RootLayout({ children }) {
         <GoogleAnalytics />
         <ServiceWorker />
         <PerformanceMonitor />
+        <IntercomProvider />
       </body>
     </html>
   );

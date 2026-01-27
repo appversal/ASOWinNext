@@ -2,6 +2,102 @@
 @tailwind components;
 @tailwind utilities;
 
+/* LIGHT MODE - Dark theme like asowin.com - FOR ASO AGENCY PAGE */
+.aso-agency-page {
+  --button-outline: rgba(255, 255, 255, .10);
+  --badge-outline: rgba(255, 255, 255, .05);
+
+  --opaque-button-border-intensity: 9;
+
+  --elevate-1: rgba(255, 255, 255, .04);
+  --elevate-2: rgba(255, 255, 255, .09);
+
+  --background: 220 20% 8%;
+  --foreground: 0 0% 98%;
+
+  --border: 220 15% 18%;
+
+  --card: 220 18% 12%;
+  --card-foreground: 0 0% 98%;
+  --card-border: 220 15% 20%;
+
+  --sidebar: 220 20% 10%;
+  --sidebar-foreground: 0 0% 98%;
+  --sidebar-border: 220 15% 18%;
+  --sidebar-primary: 142 76% 45%;
+  --sidebar-primary-foreground: 0 0% 100%;
+  --sidebar-accent: 142 30% 18%;
+  --sidebar-accent-foreground: 0 0% 98%;
+  --sidebar-ring: 142 76% 45%;
+
+  --popover: 220 18% 12%;
+  --popover-foreground: 0 0% 98%;
+  --popover-border: 220 15% 20%;
+
+  --primary: 142 76% 45%;
+  --primary-foreground: 0 0% 5%;
+
+  --secondary: 220 15% 18%;
+  --secondary-foreground: 0 0% 98%;
+
+  --muted: 220 15% 18%;
+  --muted-foreground: 220 10% 55%;
+
+  --accent: 142 76% 45%;
+  --accent-foreground: 0 0% 5%;
+
+  --destructive: 0 84% 60%;
+  --destructive-foreground: 0 0% 100%;
+
+  --input: 220 15% 25%;
+  --ring: 142 76% 45%;
+  --chart-1: 142 76% 45%;
+  --chart-2: 199 89% 48%;
+  --chart-3: 43 96% 56%;
+  --chart-4: 280 65% 60%;
+  --chart-5: 340 75% 55%;
+
+  --font-sans: 'Inter', sans-serif;
+  --font-serif: Georgia, serif;
+  --font-mono: Menlo, monospace;
+  --radius: .5rem;
+  --shadow-2xs: 0 1px 2px 0 rgba(0, 0, 0, 0.15);
+  --shadow-xs: 0 1px 2px 0 rgba(0, 0, 0, 0.2);
+  --shadow-sm: 0 1px 3px 0 rgba(0, 0, 0, 0.25), 0 1px 2px -1px rgba(0, 0, 0, 0.2);
+  --shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.3), 0 1px 2px -1px rgba(0, 0, 0, 0.2);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.3), 0 2px 4px -2px rgba(0, 0, 0, 0.25);
+  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.35), 0 4px 6px -4px rgba(0, 0, 0, 0.3);
+  --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.4), 0 8px 10px -6px rgba(0, 0, 0, 0.35);
+  --shadow-2xl: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+  --tracking-normal: 0em;
+  --spacing: 0.25rem;
+
+  --sidebar-primary-border: hsl(var(--sidebar-primary));
+  --sidebar-primary-border: hsl(from hsl(var(--sidebar-primary)) h s calc(l + var(--opaque-button-border-intensity)) / alpha);
+
+  --sidebar-accent-border: hsl(var(--sidebar-accent));
+  --sidebar-accent-border: hsl(from hsl(var(--sidebar-accent)) h s calc(l + var(--opaque-button-border-intensity)) / alpha);
+
+  --primary-border: hsl(var(--primary));
+  --primary-border: hsl(from hsl(var(--primary)) h s calc(l + var(--opaque-button-border-intensity)) / alpha);
+
+  --secondary-border: hsl(var(--secondary));
+  --secondary-border: hsl(from hsl(var(--secondary)) h s calc(l + var(--opaque-button-border-intensity)) / alpha);
+
+  --muted-border: hsl(var(--muted));
+  --muted-border: hsl(from hsl(var(--muted)) h s calc(l + var(--opaque-button-border-intensity)) / alpha);
+
+  --accent-border: hsl(var(--accent));
+  --accent-border: hsl(from hsl(var(--accent)) h s calc(l + var(--opaque-button-border-intensity)) / alpha);
+
+  --destructive-border: hsl(var(--destructive));
+  --destructive-border: hsl(from hsl(var(--destructive)) h s calc(l + var(--opaque-button-border-intensity)) / alpha);
+
+  /* Apply the dark background and text colors */
+  background-color: hsl(var(--background));
+  color: hsl(var(--foreground));
+}
+
 /* Font optimization - loaded via preload in layout.js */
 body {
   color: var(--foreground);
@@ -174,4 +270,116 @@ img {
 .blog-content ul li strong {
   color: #111827;
   font-weight: 600;
+}
+
+/* ASO Agency Page Specific Utilities */
+@layer utilities {
+  .aso-agency-page input[type="search"]::-webkit-search-cancel-button {
+    @apply hidden;
+  }
+
+  .aso-agency-page [contenteditable][data-placeholder]:empty::before {
+    content: attr(data-placeholder);
+    color: hsl(var(--muted-foreground));
+    pointer-events: none;
+  }
+
+  .aso-agency-page .no-default-hover-elevate {}
+
+  .aso-agency-page .no-default-active-elevate {}
+
+  .aso-agency-page .toggle-elevate::before,
+  .aso-agency-page .toggle-elevate-2::before {
+    content: "";
+    pointer-events: none;
+    position: absolute;
+    inset: 0px;
+    border-radius: inherit;
+    z-index: -1;
+  }
+
+  .aso-agency-page .toggle-elevate.toggle-elevated::before {
+    background-color: var(--elevate-2);
+  }
+
+  .aso-agency-page .border.toggle-elevate::before {
+    inset: -1px;
+  }
+
+  .aso-agency-page .hover-elevate:not(.no-default-hover-elevate),
+  .aso-agency-page .active-elevate:not(.no-default-active-elevate),
+  .aso-agency-page .hover-elevate-2:not(.no-default-hover-elevate),
+  .aso-agency-page .active-elevate-2:not(.no-default-active-elevate) {
+    position: relative;
+    z-index: 0;
+  }
+
+  .aso-agency-page .hover-elevate:not(.no-default-hover-elevate)::after,
+  .aso-agency-page .active-elevate:not(.no-default-active-elevate)::after,
+  .aso-agency-page .hover-elevate-2:not(.no-default-hover-elevate)::after,
+  .aso-agency-page .active-elevate-2:not(.no-default-active-elevate)::after {
+    content: "";
+    pointer-events: none;
+    position: absolute;
+    inset: 0px;
+    border-radius: inherit;
+    z-index: 999;
+  }
+
+  .aso-agency-page .hover-elevate:hover:not(.no-default-hover-elevate)::after,
+  .aso-agency-page .active-elevate:active:not(.no-default-active-elevate)::after {
+    background-color: var(--elevate-1);
+  }
+
+  .aso-agency-page .hover-elevate-2:hover:not(.no-default-hover-elevate)::after,
+  .aso-agency-page .active-elevate-2:active:not(.no-default-active-elevate)::after {
+    background-color: var(--elevate-2);
+  }
+
+  .aso-agency-page .border.hover-elevate:not(.no-hover-interaction-elevate)::after,
+  .aso-agency-page .border.active-elevate:not(.no-active-interaction-elevate)::after,
+  .aso-agency-page .border.hover-elevate-2:not(.no-hover-interaction-elevate)::after,
+  .aso-agency-page .border.active-elevate-2:not(.no-active-interaction-elevate)::after,
+  .aso-agency-page .border.hover-elevate:not(.no-hover-interaction-elevate)::after {
+    inset: -1px;
+  }
+
+  .aso-agency-page .gradient-text {
+    background: linear-gradient(135deg, hsl(142 76% 45%) 0%, hsl(142 76% 60%) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  @keyframes float {
+
+    0%,
+    100% {
+      transform: translateY(0px);
+    }
+
+    50% {
+      transform: translateY(-10px);
+    }
+  }
+
+  .aso-agency-page .animate-float {
+    animation: float 3s ease-in-out infinite;
+  }
+
+  @keyframes pulse-glow {
+
+    0%,
+    100% {
+      box-shadow: 0 0 20px rgba(34, 197, 94, 0.3);
+    }
+
+    50% {
+      box-shadow: 0 0 40px rgba(34, 197, 94, 0.5);
+    }
+  }
+
+  .aso-agency-page .animate-pulse-glow {
+    animation: pulse-glow 2s ease-in-out infinite;
+  }
 }
