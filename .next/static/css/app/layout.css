@@ -3648,16 +3648,13 @@ img {
   --tw-bg-opacity: 1;
   background-color: hsl(var(--accent) / var(--tw-bg-opacity, 1));
 }
-.focus\:bg-primary:focus {
-  --tw-bg-opacity: 1;
-  background-color: hsl(var(--primary) / var(--tw-bg-opacity, 1));
-}
-.focus\:bg-primary\/20:focus {
-  background-color: hsl(var(--primary) / 0.2);
-}
 .focus\:bg-gray-100:focus {
   --tw-bg-opacity: 1;
   background-color: rgb(243 244 246 / var(--tw-bg-opacity, 1));
+}
+.focus\:bg-primary:focus {
+  --tw-bg-opacity: 1;
+  background-color: hsl(var(--primary) / var(--tw-bg-opacity, 1));
 }
 .focus\:text-accent-foreground:focus {
   --tw-text-opacity: 1;
@@ -3666,10 +3663,6 @@ img {
 .focus\:text-primary-foreground:focus {
   --tw-text-opacity: 1;
   color: hsl(var(--primary-foreground) / var(--tw-text-opacity, 1));
-}
-.focus\:text-white:focus {
-  --tw-text-opacity: 1;
-  color: rgb(255 255 255 / var(--tw-text-opacity, 1));
 }
 .focus\:opacity-100:focus {
   opacity: 1;
