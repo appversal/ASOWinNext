@@ -108,7 +108,7 @@ function ContactForm({ variant = "full" }) {
 
     if (variant === "hero") {
         return (
-            <form onSubmit={handleSubmit} className="w-full max-w-lg mx-auto">
+            <form onSubmit={handleSubmit} className="w-full max-w-lg">
                 <div className="flex flex-col gap-4">
                     <div className="grid grid-cols-2 gap-3">
                         <Input
@@ -404,7 +404,7 @@ export default function AsoAgencyPage() {
 
                     <div className="grid lg:grid-cols-2 gap-12 items-center">
                         {/* Left Column - Content */}
-                        <div className="text-center lg:text-left">
+                        <div className="text-left">
                             <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-card border border-border mb-6">
                                 <div className="flex items-center gap-2">
                                     <SiGoogleplay className="w-4 h-4 text-primary" />
@@ -419,7 +419,7 @@ export default function AsoAgencyPage() {
                                 <span className="text-foreground"> Agency</span>
                             </h1>
 
-                            <p className="text-xl sm:text-2xl text-muted-foreground mb-8 max-w-xl mx-auto lg:mx-0" data-testid="text-subheadline">
+                            <p className="text-xl sm:text-2xl text-muted-foreground mb-8 max-w-xl" data-testid="text-subheadline">
                                 Rank Higher on Play Store & App Store in 90 Days. Guaranteed.
                             </p>
 
