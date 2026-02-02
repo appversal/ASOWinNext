@@ -2,5 +2,6 @@
   "/favicon.ico/route": "app/favicon.ico/route.js",
   "/page": "app/page.js",
   "/aso-agency-usa/page": "app/aso-agency-usa/page.js",
+  "/aso-agency-india/page": "app/aso-agency-india/page.js",
   "/aso-agency-indonesia/page": "app/aso-agency-indonesia/page.js"
 }
