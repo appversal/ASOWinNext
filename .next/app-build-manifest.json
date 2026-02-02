@@ -11,16 +11,6 @@
       "static/chunks/main-app.js",
       "static/chunks/app/page.js"
     ],
-    "/aso-agency-usa/layout": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/chunks/app/aso-agency-usa/layout.js"
-    ],
-    "/aso-agency-usa/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/chunks/app/aso-agency-usa/page.js"
-    ],
     "/aso-agency-india/layout": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
@@ -31,15 +21,10 @@
       "static/chunks/main-app.js",
       "static/chunks/app/aso-agency-india/page.js"
     ],
-    "/aso-agency-indonesia/layout": [
+    "/_not-found/page": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
-      "static/chunks/app/aso-agency-indonesia/layout.js"
-    ],
-    "/aso-agency-indonesia/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/chunks/app/aso-agency-indonesia/page.js"
+      "static/chunks/app/_not-found/page.js"
     ]
   }
 }

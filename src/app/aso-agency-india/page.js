@@ -35,7 +35,12 @@ import {
     CreditCard,
     Wallet,
     Tv,
-    Banknote
+    Banknote,
+    Store,
+    ShoppingBasket,
+    Globe,
+    Gamepad2,
+    MapPin
 } from "lucide-react";
 import Lottie from "lottie-react";
 import { useState } from "react";
@@ -325,16 +330,21 @@ export default function AsoAgencyPage() {
     ];
 
     const clientLogos = [
+        { name: "Adani OneApp", logo: "/logo-brands/adani.svg" },
+        { name: "Khatabook", logo: "/logo-brands/khatabook.svg" },
+        { name: "Pepperfry", logo: "/logo-brands/pepperfry.svg" },
+        { name: "Neo Astro", logo: "/logo-brands/neo-astro.svg" },
+        { name: "Anq", logo: "/logo-brands/anq.svg" },
+        { name: "CheQ", logo: "/logo-brands/cheq.svg" },
+        { name: "Balaji Astro Guide", logo: "/logo-brands/balaji-astor.svg" },
+        { name: "Landmark Group", logo: "/logo-brands/landmarkgroup.svg" },
+        { name: "Snabbit", logo: "/logo-brands/snabbit.svg" },
+        { name: "Times Internet", logo: "/logo-brands/times-internel.svg" },
+        { name: "Zupee", logo: "/logo-brands/zuppe.svg" },
         { name: "Bajaj Finserv", icon: Building2 },
-        { name: "Khatabook", icon: BookOpen },
-        { name: "Pepperfry", icon: ShoppingBag },
-        { name: "Neo Astro", icon: Sparkles },
-        { name: "Anq", icon: CreditCard },
-        { name: "CheQ", icon: Wallet },
-        { name: "Balaji Astro Guide", icon: Tv },
+        { name: "RING (by Kissht)", icon: Banknote },
+        { name: "Magicpin", icon: MapPin },
     ];
-
-    const moreClients = [];
 
     const testimonials = [
         {
@@ -377,13 +387,13 @@ export default function AsoAgencyPage() {
             </div>
 
             {/* Hero Section */}
-            <section className="relative pt-8 pb-20 sm:pt-12 sm:pb-28">
+            <section className="relative pt-8 pb-2 sm:pt-12 sm:pb-6">
                 <div className="absolute top-20 left-10 w-64 h-64 bg-primary/10 rounded-full blur-3xl" />
                 <div className="absolute bottom-20 right-10 w-96 h-96 bg-primary/5 rounded-full blur-3xl" />
 
                 <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                     {/* Top Bar */}
-                    <div className="flex items-center justify-between mb-16">
+                    <div className="flex items-center justify-between mb-2">
                         <Link href="/" className="flex items-center gap-3 hover:opacity-80 transition-opacity">
                             <Image
                                 src="/ASOWin.png"
@@ -443,33 +453,66 @@ export default function AsoAgencyPage() {
                 </div>
             </section>
 
-            {/* Client Logos - First Row */}
-            <section className="py-12 border-y border-border bg-card/50">
-                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                    <p className="text-center text-sm text-muted-foreground mb-8 uppercase tracking-widest font-medium">
-                        Trusted by Leading Brands Worldwide
+            {/* Infinite Scroll Client Logos */}
+            <section className="py-4 border-y border-border bg-card/50 overflow-hidden relative">
+                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+                    <p className="text-center text-sm text-white/80 mb-8 uppercase tracking-widest font-medium">
+                        Trusted by Leading Brands India
                     </p>
-                    <div className="flex flex-wrap items-center justify-center gap-8 md:gap-12">
-                        {clientLogos.map((client, index) => (
-                            <div
-                                key={index}
-                                className="flex items-center gap-2 text-muted-foreground/60 hover:text-foreground transition-colors"
-                                data-testid={`client-logo-${index}`}
-                            >
-                                <client.icon className="w-6 h-6" />
-                                <span className="text-lg font-semibold">{client.name}</span>
+
+                    <div className="relative w-full overflow-hidden mask-gradient">
+                        <div className="flex w-[200%] animate-scroll hover:pause-animation items-center">
+                            {/* First Copy */}
+                            <div className="flex items-center justify-around w-1/2 min-w-max gap-8 px-4">
+                                {clientLogos.map((client, index) => (
+                                    <div
+                                        key={`l1-${index}`}
+                                        className="flex items-center gap-4 px-6 py-4 bg-white/10 border border-white/20 rounded-2xl min-w-[240px] cursor-pointer hover:border-primary/50 hover:bg-card/50 transition-all group"
+                                        title={client.name}
+                                    >
+                                        <div className="relative w-14 h-14 bg-white rounded-xl flex items-center justify-center p-2 shadow-sm shrink-0">
+                                            {client.logo ? (
+                                                <Image
+                                                    src={client.logo}
+                                                    alt={client.name}
+                                                    width={56}
+                                                    height={56}
+                                                    className="object-contain w-full h-full"
+                                                />
+                                            ) : (
+                                                <client.icon className="w-8 h-8 text-black" />
+                                            )}
+                                        </div>
+                                        <span className="text-lg font-bold text-foreground/90 group-hover:text-primary transition-colors whitespace-nowrap">{client.name}</span>
+                                    </div>
+                                ))}
                             </div>
-                        ))}
-                    </div>
-                    <div className="flex flex-wrap items-center justify-center gap-6 mt-8">
-                        {moreClients.map((client, index) => (
-                            <span
-                                key={index}
-                                className="text-sm font-medium text-muted-foreground/50 hover:text-muted-foreground transition-colors"
-                            >
-                                {client}
-                            </span>
-                        ))}
+                            {/* Second Copy for seamless loop */}
+                            <div className="flex items-center justify-around w-1/2 min-w-max gap-8 px-4">
+                                {clientLogos.map((client, index) => (
+                                    <div
+                                        key={`l2-${index}`}
+                                        className="flex items-center gap-4 px-6 py-4 bg-white/10 border border-white/20 rounded-2xl min-w-[240px] cursor-pointer hover:border-primary/50 hover:bg-card/50 transition-all group"
+                                        title={client.name}
+                                    >
+                                        <div className="relative w-14 h-14 bg-white rounded-xl flex items-center justify-center p-2 shadow-sm shrink-0">
+                                            {client.logo ? (
+                                                <Image
+                                                    src={client.logo}
+                                                    alt={client.name}
+                                                    width={56}
+                                                    height={56}
+                                                    className="object-contain w-full h-full"
+                                                />
+                                            ) : (
+                                                <client.icon className="w-8 h-8 text-black" />
+                                            )}
+                                        </div>
+                                        <span className="text-lg font-bold text-foreground/90 group-hover:text-primary transition-colors whitespace-nowrap">{client.name}</span>
+                                    </div>
+                                ))}
+                            </div>
+                        </div>
                     </div>
                 </div>
             </section>
@@ -564,10 +607,10 @@ export default function AsoAgencyPage() {
                         ))}
                     </div>
                 </div>
-            </section>
+            </section >
 
             {/* Why Choose Us */}
-            <section className="py-20">
+            < section className="py-20" >
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                     <div className="grid lg:grid-cols-2 gap-12 items-center">
                         <div>
@@ -599,10 +642,10 @@ export default function AsoAgencyPage() {
                         </div>
                     </div>
                 </div>
-            </section>
+            </section >
 
             {/* Process Section */}
-            <section className="py-20 bg-card/30">
+            < section className="py-20 bg-card/30" >
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                     <div className="text-center mb-16">
                         <Badge variant="secondary" className="mb-4">Our Process</Badge>
@@ -634,10 +677,10 @@ export default function AsoAgencyPage() {
                         ))}
                     </div>
                 </div>
-            </section>
+            </section >
 
             {/* Full Contact Form Section */}
-            <section className="py-20" id="contact">
+            < section className="py-20" id="contact" >
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                     <div className="grid lg:grid-cols-2 gap-12">
                         {/* Left - Info */}
@@ -649,19 +692,19 @@ export default function AsoAgencyPage() {
 
                             {/* Client Logos Grid */}
                             <div className="grid grid-cols-4 gap-4 mt-12">
-                                {clientLogos.slice(0, 4).map((client, index) => (
-                                    <div key={index} className="flex items-center justify-center p-4 rounded-lg bg-card/50 border border-border">
-                                        <client.icon className="w-6 h-6 text-muted-foreground/60" />
-                                    </div>
-                                ))}
-                                {clientLogos.slice(4).map((client, index) => (
-                                    <div key={index} className="flex items-center justify-center p-4 rounded-lg bg-card/50 border border-border">
-                                        <client.icon className="w-6 h-6 text-muted-foreground/60" />
-                                    </div>
-                                ))}
-                                {moreClients.slice(0, 1).map((client, index) => (
-                                    <div key={index} className="flex items-center justify-center p-4 rounded-lg bg-card/50 border border-border col-span-2">
-                                        <span className="text-xs font-medium text-muted-foreground">{client}</span>
+                                {clientLogos.slice(0, 8).map((client, index) => (
+                                    <div key={index} className="flex items-center justify-center p-4 rounded-lg bg-card/50 border border-border" title={client.name}>
+                                        {client.logo ? (
+                                            <Image
+                                                src={client.logo}
+                                                alt={client.name}
+                                                width={60}
+                                                height={60}
+                                                className="object-contain w-auto h-8 opacity-60 grayscale"
+                                            />
+                                        ) : (
+                                            <client.icon className="w-6 h-6 text-muted-foreground/60" />
+                                        )}
                                     </div>
                                 ))}
                             </div>
@@ -673,10 +716,10 @@ export default function AsoAgencyPage() {
                         </Card>
                     </div>
                 </div>
-            </section>
+            </section >
 
             {/* Final CTA Section */}
-            <section className="py-20 bg-primary relative overflow-hidden">
+            < section className="py-20 bg-primary relative overflow-hidden" >
                 <div className="absolute inset-0 opacity-10">
                     <div className="absolute inset-0" style={{
                         backgroundImage: `radial-gradient(circle at 2px 2px, white 1px, transparent 0)`,
@@ -731,10 +774,10 @@ export default function AsoAgencyPage() {
                         </div>
                     </div>
                 </div>
-            </section>
+            </section >
 
             {/* Footer */}
-            <footer className="py-12 border-t border-border">
+            < footer className="py-12 border-t border-border" >
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                     <div className="flex flex-col md:flex-row items-center justify-between gap-6">
                         <div className="flex items-center gap-3">
@@ -759,7 +802,7 @@ export default function AsoAgencyPage() {
                         </div>
                     </div>
                 </div>
-            </footer>
-        </div>
+            </footer >
+        </div >
     );
 }
