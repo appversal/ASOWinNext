@@ -397,7 +397,7 @@ export default function AsoAgencyPage() {
                         </Link>
                         <Badge className="bg-primary/20 text-primary border-primary/30 px-4 py-1">
                             <Award className="w-3 h-3 mr-1" />
-                            Dipercaya oleh Aplikasi Top AS
+                            Dipercaya oleh Aplikasi Top Indonesia
                         </Badge>
                     </div>
 
