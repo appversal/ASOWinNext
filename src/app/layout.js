@@ -96,6 +96,12 @@ export default function RootLayout({ children }) {
         <ServiceWorker />
         <PerformanceMonitor />
         <IntercomProvider />
+
+        {/* Tidio Live Chat */}
+        <Script
+          src="//code.tidio.co/tpwli8xgiscw8xqzsn6xum0xy8pn2dnh.js"
+          strategy="afterInteractive"
+        />
       </body>
     </html>
   );
