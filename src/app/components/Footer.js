@@ -56,14 +56,12 @@ const Footer = () => {
               >
                 SERVICES
               </Link>
-              <button
-                onClick={() => handleExternalLink('book', 'https://asowin.com/ASOWinBook.pdf')}
-                className="text-white hover:text-[#FFB842] text-sm font-semibold whitespace-nowrap flex items-center gap-2 bg-transparent border-none cursor-pointer"
-                disabled={isLoading.book}
+              <Link
+                href="/book"
+                className="text-white hover:text-[#FFB842] text-sm font-semibold whitespace-nowrap"
               >
                 OUR BOOK
-                {isLoading.book && <Loader2 className="w-4 h-4 animate-spin" />}
-              </button>
+              </Link>
               <Link
                 href="/blog"
                 className="text-white hover:text-[#FFB842] text-sm font-semibold whitespace-nowrap"
@@ -93,22 +91,18 @@ const Footer = () => {
               </p>
 
               <div className="flex flex-wrap justify-center sm:justify-start gap-3 sm:gap-4 md:gap-6 order-1 sm:order-2">
-                <a
-                  href="https://asowin.com/privacy.html"
+                <Link
+                  href="/privacy-policy"
                   className="text-white/80 hover:text-white text-xs whitespace-nowrap"
-                  target="_blank"
-                  rel="noopener noreferrer"
                 >
                   Privacy Policy
-                </a>
-                <a
-                  href="https://asowin.com/terms.html"
+                </Link>
+                <Link
+                  href="/terms-of-service"
                   className="text-white/80 hover:text-white text-xs whitespace-nowrap"
-                  target="_blank"
-                  rel="noopener noreferrer"
                 >
                   Terms Of Service
-                </a>
+                </Link>
               </div>
 
               <div className="flex flex-col sm:flex-row items-center gap-4 order-2 sm:order-3">

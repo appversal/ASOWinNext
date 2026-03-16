@@ -41,6 +41,12 @@ const Navbar = () => {
               SERVICES
             </Link>
             <Link
+              href="/#case-studies"
+              className="text-[#111111] hover:text-black text-sm lg:text-[14px] 2xl:text-[14px]"
+            >
+              CASE STUDIES
+            </Link>
+            <Link
               href="/book"
               className="text-[#111111] hover:text-black text-sm lg:text-[14px] 2xl:text-[14px]"
             >
@@ -112,47 +118,60 @@ const Navbar = () => {
 
         {/* Mobile Menu */}
         {isMobileMenuOpen && (
-          <div className="absolute top-full left-0 right-0 mt-2 bg-white shadow-lg rounded-xl md:hidden">
-            <div className="flex flex-col py-4">
+          <div className="absolute top-full left-0 right-0 mt-3 bg-white shadow-2xl rounded-2xl md:hidden border border-gray-100 z-50 overflow-hidden">
+            <div className="flex flex-col py-5 px-5 space-y-1">
               <Link
                 href="/"
-                className="px-6 py-2 text-[#111111] hover:text-black"
+                className="px-4 py-3 text-[#111122] font-semibold text-[15px] hover:bg-gray-50 rounded-xl transition-colors"
+                onClick={() => setIsMobileMenuOpen(false)}
               >
                 HOME
               </Link>
               <Link
                 href="/services"
-                className="px-6 py-2 text-[#111111] hover:text-black"
+                className="px-4 py-3 text-[#111122] font-semibold text-[15px] hover:bg-gray-50 rounded-xl transition-colors"
+                onClick={() => setIsMobileMenuOpen(false)}
               >
                 SERVICES
               </Link>
               <Link
+                href="/#case-studies"
+                className="px-4 py-3 text-[#111122] font-semibold text-[15px] hover:bg-gray-50 rounded-xl transition-colors"
+                onClick={() => setIsMobileMenuOpen(false)}
+              >
+                CASE STUDIES
+              </Link>
+              <Link
                 href="/book"
-                className="px-6 py-2 text-[#111111] hover:text-black"
+                className="px-4 py-3 text-[#111122] font-semibold text-[15px] hover:bg-gray-50 rounded-xl transition-colors"
+                onClick={() => setIsMobileMenuOpen(false)}
               >
                 OUR BOOK
               </Link>
               <Link
                 href="/blog"
-                className="px-6 py-2 text-[#111111] hover:text-black"
+                className="px-4 py-3 text-[#111122] font-semibold text-[15px] hover:bg-gray-50 rounded-xl transition-colors"
+                onClick={() => setIsMobileMenuOpen(false)}
               >
                 BLOG
               </Link>
               <Link
                 href="/about"
-                className="px-6 py-2 text-[#111111] hover:text-black"
+                className="px-4 py-3 text-[#111122] font-semibold text-[15px] hover:bg-gray-50 rounded-xl transition-colors"
+                onClick={() => setIsMobileMenuOpen(false)}
               >
                 ABOUT
               </Link>
               <Link
                 href="/contact"
-                className="px-6 py-2 text-[#111111] hover:text-black"
+                className="px-4 py-3 text-[#111122] font-semibold text-[15px] hover:bg-gray-50 rounded-xl transition-colors"
+                onClick={() => setIsMobileMenuOpen(false)}
               >
                 CONTACT
               </Link>
-              <div className="px-6 pt-4">
-                <Link href="/contact">
-                  <button className="bg-[#306777] text-white px-4 md:px-6 py-2.5 rounded-[3px] text-sm lg:text-[14px] 2xl:text-[14px] font-medium hover:bg-teal-700 transition-colors md:ml-6 lg:ml-8 2xl:ml-12 whitespace-nowrap w-auto md:w-[160px] lg:w-[197px] h-[41px]">
+              <div className="px-4 pt-4 pb-2 border-t border-gray-100 mt-2">
+                <Link href="/contact" onClick={() => setIsMobileMenuOpen(false)}>
+                  <button className="w-full bg-[#306777] text-white py-3 rounded-xl font-bold text-sm hover:bg-teal-700 transition-all shadow-md">
                     LET&apos;S GET STARTED
                   </button>
                 </Link>

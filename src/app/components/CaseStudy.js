@@ -267,7 +267,7 @@ const CaseStudy = () => {
   const activeData = caseStudyData[activeCase];
 
   return (
-    <div className="w-full max-w-screen-2xl mx-auto mb-5">
+    <div id="case-studies" className="w-full max-w-screen-2xl mx-auto mb-5">
       {/* Case Study Navigation */}
       <div className="pl-4 sm:pl-[80px] mt-10">
         <nav className="flex space-x-6 sm:space-x-12 overflow-x-auto scrollbar-hide">

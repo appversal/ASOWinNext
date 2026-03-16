@@ -9,10 +9,10 @@ import Link from "next/link";
 const HeroSection = () => {
 
   return (
-    <div className="max-h-[90vh] bg-gradient-to-b from-[#FFEDE3] to-[#FFFFFF]">
+    <div className="min-h-screen bg-gradient-to-b from-[#FFEDE3] to-[#FFFFFF] flex flex-col">
       <Navbar />
 
-      <section className="relative flex flex-col justify-center items-center text-center min-h-[calc(100vh-32px)] -mt-16 px-4 md:px-8 lg:px-12">
+      <section className="relative flex flex-col justify-center items-center text-center flex-grow -mt-16 px-4 md:px-8 lg:px-12 overflow-hidden">
         {/* Background Pattern */}
         <div className="absolute inset-0 z-0 opacity-50">
           <Image
@@ -26,8 +26,8 @@ const HeroSection = () => {
           />
         </div>
 
-        <div className="relative z-10 max-w-4xl mt-32 mx-auto font-serif">
-          <h1 className="text-4xl md:text-6xl lg:text-[135px] font-bold text-[#111111] mb-6 leading-tight">
+        <div className="relative z-10 max-w-4xl mt-24 md:mt-32 mx-auto font-serif">
+          <h1 className="text-4xl md:text-6xl lg:text-[110px] xl:text-[135px] font-bold text-[#111111] mb-6 leading-tight">
             App Store
             <br />
             Optimization
