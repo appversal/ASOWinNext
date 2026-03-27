@@ -40,7 +40,7 @@ import {
     SiGoogleplay,
     SiAppstore
 } from "react-icons/si";
-import Lottie from "lottie-react";
+import LazyLottie from "@/components/LazyLottie";
 import { useState } from "react";
 import mainSceneAnimation from "../../../public/Main Scene.json";
 
@@ -64,8 +64,9 @@ function ContactForm({ variant = "full" }) {
         setSubmitStatus(null);
 
         try {
-            // Prepare form data with proper field names for Formspree
+            // Prepare form data with proper field names for Web3Forms
             const submissionData = {
+                access_key: "a05ea8f5-1d65-4506-bde6-e519d7f5ea71",
                 "First Name": formData.firstName || "",
                 "Last Name": formData.lastName || "",
                 "Email": formData.email,
@@ -77,15 +78,18 @@ function ContactForm({ variant = "full" }) {
                 "Submission Date": new Date().toISOString(),
             };
 
-            const response = await fetch("https://formspree.io/f/xgokpzgq", {
+            const response = await fetch("https://api.web3forms.com/submit", {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",
+                    Accept: "application/json"
                 },
                 body: JSON.stringify(submissionData),
             });
 
-            if (response.ok) {
+            const result = await response.json();
+
+            if (result.success) {
                 setSubmitStatus("success");
                 setFormData({
                     firstName: "",
@@ -434,9 +438,8 @@ export default function AsoAgencyPage() {
                         {/* Right Column - Animation */}
                         <div className="hidden lg:flex items-center justify-center">
                             <div className="relative w-full max-w-lg">
-                                <Lottie
+                                <LazyLottie
                                     animationData={mainSceneAnimation}
-                                    loop={true}
                                     className="w-full h-auto"
                                 />
                             </div>
@@ -594,7 +597,7 @@ export default function AsoAgencyPage() {
 
                         <div className="hidden lg:flex items-center justify-center">
                             <div className="w-full max-w-md">
-                                <Lottie animationData={mainSceneAnimation} loop={true} className="w-full" />
+                                <LazyLottie animationData={mainSceneAnimation} className="w-full" />
                             </div>
                         </div>
                     </div>
