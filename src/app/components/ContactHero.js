@@ -62,7 +62,7 @@ const ContactHero = () => {
         <div className="absolute -top-12 -left-8 w-48 h-48 bg-gradient-to-br from-[#FFE8CC] to-[#FFDCB0] rounded-full opacity-60 -z-10" />
         {/* Top Left - Small */}
         <div className="absolute top-20 left-32 w-12 h-12 bg-gradient-to-br from-[#FFE8CC] to-[#FFDCB0] rounded-full opacity-40 -z-10" />
-        
+
         {/* Top Right - Large */}
         <div className="absolute top-8 -right-12 w-40 h-40 bg-gradient-to-br from-[#FFE8CC] to-[#FFDCB0] rounded-full opacity-60 -z-10" />
         {/* Top Right - Small */}
@@ -80,12 +80,12 @@ const ContactHero = () => {
             {/* Left Column content */}
             <div className="flex-1 space-y-7 z-10">
               <h2 className="text-3xl md:text-[36px] font-bold text-[#111122] leading-tight tracking-tight">
-                Ready to Start Your Project?
+                Powering Apps That Become Category Leaders
               </h2>
 
               <p className="text-[#4A5568] text-base leading-relaxed">
-                Let&apos;s make your vision a reality.<br />
-                Contact us today and let&apos;s discuss how we can help you innovate and grow.
+
+                We engineer growth across ASO, reputation, and performance
               </p>
 
               <div className="space-y-4 pt-4">
@@ -103,7 +103,7 @@ const ContactHero = () => {
                     <path strokeLinecap="round" strokeLinejoin="round" d="M17.657 16.657L13.414 20.9a2 2 0 01-2.828 0l-4.243-4.243a8 8 0 1111.314 0z" />
                     <path strokeLinecap="round" strokeLinejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
                   </svg>
-                  <span>Delaware | California | Mumbai | Noida</span>
+                  <span>California &lt;&gt; Delaware &lt;&gt; Jakarta &lt;&gt; Singapore &lt;&gt; Mumbai &lt;&gt; Noida</span>
                 </div>
               </div>
             </div>
@@ -111,7 +111,7 @@ const ContactHero = () => {
             {/* Right Column - White Form Card */}
             <div className="w-full md:w-[420px] bg-white rounded-3xl p-6 md:p-8 shadow-md z-10">
               <div className="mb-6">
-                <h3 className="text-xl font-bold text-[#111122]">Become a Partner</h3>
+                <h3 className="text-xl font-bold text-[#111122]">Get in Touch</h3>
                 <p className="text-xs text-[#718096] mt-1">Break the ice! Let us help you out</p>
               </div>
 
@@ -132,7 +132,7 @@ const ContactHero = () => {
                     type="email"
                     id="email"
                     name="email"
-                    placeholder="Your Email"
+                    placeholder="Your Work Email"
                     className="w-full px-4 py-3 bg-[#F7FAFC] border border-transparent rounded-xl focus:bg-white focus:border-gray-200 text-sm transition-all"
                     required
                   />
@@ -143,7 +143,7 @@ const ContactHero = () => {
                     id="message"
                     name="message"
                     rows="4"
-                    placeholder="Describe your interest"
+                    placeholder="How can we help?"
                     className="w-full px-4 py-3 bg-[#F7FAFC] border border-transparent rounded-xl focus:bg-white focus:border-gray-200 text-sm resize-none transition-all"
                     required
                   ></textarea>
