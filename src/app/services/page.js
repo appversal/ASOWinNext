@@ -1,5 +1,5 @@
 import ServicesHero from "../components/ServicesHero";
-import ServiceDetails from "../components/ServiceDetails";
+
 import ASOSection from "../components/ASOSection";
 import ASOSection2 from "../components/ASOSection2";
 import ASOSection3 from "../components/ASOSection3";
@@ -83,7 +83,6 @@ const ServicesPage = () => {
 
       {/* Page Components */}
       <ServicesHero />
-      <ServiceDetails />
       <ASOSection />
       <ASOSection2 />
       <ASOSection3 />

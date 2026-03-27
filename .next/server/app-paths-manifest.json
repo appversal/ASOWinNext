@@ -1,8 +1,7 @@
 {
+  "/favicon.ico/route": "app/favicon.ico/route.js",
   "/page": "app/page.js",
   "/thank-you/page": "app/thank-you/page.js",
   "/contact/page": "app/contact/page.js",
-  "/casestudy1/page": "app/casestudy1/page.js",
-  "/services/page": "app/services/page.js",
-  "/aso-agency-usa/page": "app/aso-agency-usa/page.js"
+  "/services/page": "app/services/page.js"
 }
