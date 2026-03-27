@@ -5,7 +5,6 @@
 // import WhyChooseSection from "../components/WhyChooseSection";
 // import GetStarted from "../components/GetStarted";
 // import Footer from "../components/Footer";
-// import GoogleAnalytics from "../components/GoogleAnalytics";
 
 // const About = () => {
 //     return (
@@ -45,13 +44,17 @@ import AboutSection from "../components/AboutSection";
 import WhyChooseSection from "../components/WhyChooseSection";
 import GetStarted from "../components/GetStarted";
 import Footer from "../components/Footer";
-import GoogleAnalytics from "../components/GoogleAnalytics";
+
+export const metadata = {
+  title: "App Growth Company | About | App Reputation Management Solution",
+  description:
+    "Discover ASOWin a leading App Growth Company in USA. Our App Reputation Management Solution helps brands build trust and dominate the app stores.",
+};
 
 const About = () => {
   return (
     <div className="min-h-screen">
       {/* Google Analytics */}
-      <GoogleAnalytics />
 
       {/* Page Components */}
       <AboutHero />
