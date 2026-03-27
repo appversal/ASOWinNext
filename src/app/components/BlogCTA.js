@@ -1,52 +1,26 @@
 'use client';
-import { useEffect, useState } from 'react';
+import { useEffect } from 'react';
+import { useForm, ValidationError } from '@formspree/react';
 
 const BlogCTA = ({ title, subtitle, buttonText, buttonLink }) => {
-  const [isSubmitting, setIsSubmitting] = useState(false);
-  const [isSucceeded, setIsSucceeded] = useState(false);
+  const [state, handleSubmit] = useForm("xqaokzep");
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    setIsSubmitting(true);
-
-    const formData = new FormData(e.target);
-    formData.append("access_key", "a05ea8f5-1d65-4506-bde6-e519d7f5ea71");
-
-    const object = Object.fromEntries(formData);
-    const json = JSON.stringify(object);
-
-    try {
-      const response = await fetch("https://api.web3forms.com/submit", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-          Accept: "application/json"
-        },
-        body: json
-      });
-      const result = await response.json();
-      if (result.success) {
-        setIsSucceeded(true);
-        if (typeof window !== 'undefined' && window.gtag) {
-          window.gtag('event', 'conversion', {
-            'send_to': 'AW-17791392097/38a7COX2084bEOGyzKNC',
-            'value': 1.0,
-            'currency': 'INR'
-          });
-          window.gtag('event', 'conversion', {
-            'send_to': 'AW-938608563/t3qxCNPz8pYbELOPyL8D',
-            'value': 1.0,
-            'currency': 'INR'
-          });
-        }
-        e.target.reset();
+  useEffect(() => {
+    if (state.succeeded) {
+      if (typeof window !== 'undefined' && window.gtag) {
+        window.gtag('event', 'conversion', {
+          'send_to': 'AW-17791392097/38a7COX2084bEOGyzKNC',
+          'value': 1.0,
+          'currency': 'INR'
+        });
+        window.gtag('event', 'conversion', {
+          'send_to': 'AW-938608563/t3qxCNPz8pYbELOPyL8D',
+          'value': 1.0,
+          'currency': 'INR'
+        });
       }
-    } catch (error) {
-      console.log(error);
-    } finally {
-      setIsSubmitting(false);
     }
-  };
+  }, [state.succeeded]);
 
   return (
     <div className="w-full bg-[#306777] py-16 md:py-20 px-4 sm:px-6 lg:px-20">
@@ -57,7 +31,7 @@ const BlogCTA = ({ title, subtitle, buttonText, buttonLink }) => {
         <p className="text-lg md:text-xl text-white/90 mb-8">
           {subtitle || ""}
         </p>
-        {isSucceeded && (
+        {state.succeeded && (
           <div className="mb-6 p-4 rounded-lg bg-green-100 text-green-700 max-w-md mx-auto">
             Thank you! We&apos;ll be in touch soon.
           </div>
@@ -71,13 +45,18 @@ const BlogCTA = ({ title, subtitle, buttonText, buttonLink }) => {
               className="w-full px-6 py-3 rounded-lg text-gray-900 focus:outline-none focus:ring-2 focus:ring-white"
               required
             />
+            <ValidationError
+              prefix="Email"
+              field="email"
+              errors={state.errors}
+            />
           </div>
           <button
             type="submit"
-            disabled={isSubmitting}
+            disabled={state.submitting}
             className="bg-white text-[#306777] px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors whitespace-nowrap disabled:opacity-50 disabled:cursor-not-allowed"
           >
-            {isSubmitting ? 'Submitting...' : (buttonText || "Request Demo")}
+            {state.submitting ? 'Submitting...' : (buttonText || "Request Demo")}
           </button>
         </form>
       </div>

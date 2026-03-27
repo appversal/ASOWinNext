@@ -1,3 +1,5 @@
+"use client"; // Ensure interactivity in Next.js app
+
 import OptimizedImage from "./OptimizedImage";
 import Navbar from "./Navbar";
 import Image from "next/image";
@@ -17,17 +19,19 @@ const HeroSection = () => {
             src="/pattern.png"
             alt=""
             fill
+            priority
+            fetchPriority="high"
             sizes="100vw"
             className="object-cover object-center"
           />
         </div>
 
         <div className="relative z-10 max-w-4xl mt-24 md:mt-32 mx-auto font-serif">
-          <h2 className="text-4xl md:text-6xl lg:text-[110px] xl:text-[135px] font-bold text-[#111111] mb-6 leading-tight">
+          <h1 className="text-4xl md:text-6xl lg:text-[110px] xl:text-[135px] font-bold text-[#111111] mb-6 leading-tight">
             App Store
             <br />
             Optimization
-          </h2>
+          </h1>
           <br />
 
           <div className="text-center mb-12">

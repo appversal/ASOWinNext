@@ -25,8 +25,8 @@ const AboutHero = () => {
               className="text-[2.75rem] sm:text-5xl lg:text-[97px] leading-[1.1] font-bold text-[#1a1a1a] mb-12"
               style={{ textShadow: "2px 2px 5px rgba(0, 0, 0, 0.5)" }}
             >
-              App Growth Company
-              <br className="hidden lg:block" /> with ASOWin
+              Unlock New Levels Of App
+              <br className="hidden lg:block" /> Growth With ASOWin
             </h1>
 
             {/* Description Section */}

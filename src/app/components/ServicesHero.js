@@ -1,4 +1,3 @@
-"use client";
 import React from 'react';
 import { useRouter } from 'next/navigation'; // Correct import for Next.js 13+
 import Navbar from './Navbar';
@@ -33,8 +32,8 @@ const ServicesHero = () => {
             {/* Content */}
             <div className="text-center lg:text-left px-4">
               <h1 className="text-6xl sm:text-7xl md:text-7xl lg:text-7xl xl:text-[100px] 2xl:text-[127px] font-bold leading-tight mb-4 md:mb-6">
-                <span className="block">App Store</span>
-                <span className="block">Optimization Service</span>
+                <span className="block">Services</span>
+                <span className="block">We Offer</span>
               </h1>
               
               <p className="text-gray-700 text-base sm:text-lg md:text-xl max-w-[30rem] mx-auto lg:mx-0 mb-6 md:mb-8">
