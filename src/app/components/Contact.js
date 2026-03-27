@@ -1,27 +1,53 @@
 "use client";
 
-import React, { useEffect } from "react";
-import { useForm, ValidationError } from '@formspree/react';
+import React, { useEffect, useState } from "react";
 
 export default function Contact() {
-  const [state, handleSubmit] = useForm("xqaokzep");
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [isSucceeded, setIsSucceeded] = useState(false);
 
-  useEffect(() => {
-    if (state.succeeded) {
-      if (typeof window !== 'undefined' && window.gtag) {
-        window.gtag('event', 'conversion', {
-          'send_to': 'AW-17791392097/38a7COX2084bEOGyzKNC',
-          'value': 1.0,
-          'currency': 'INR'
-        });
-        window.gtag('event', 'conversion', {
-          'send_to': 'AW-938608563/t3qxCNPz8pYbELOPyL8D',
-          'value': 1.0,
-          'currency': 'INR'
-        });
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+
+    const formData = new FormData(e.target);
+    formData.append("access_key", "a05ea8f5-1d65-4506-bde6-e519d7f5ea71");
+
+    const object = Object.fromEntries(formData);
+    const json = JSON.stringify(object);
+
+    try {
+      const response = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json"
+        },
+        body: json
+      });
+      const result = await response.json();
+      if (result.success) {
+        setIsSucceeded(true);
+        if (typeof window !== 'undefined' && window.gtag) {
+          window.gtag('event', 'conversion', {
+            'send_to': 'AW-17791392097/38a7COX2084bEOGyzKNC',
+            'value': 1.0,
+            'currency': 'INR'
+          });
+          window.gtag('event', 'conversion', {
+            'send_to': 'AW-938608563/t3qxCNPz8pYbELOPyL8D',
+            'value': 1.0,
+            'currency': 'INR'
+          });
+        }
+        e.target.reset();
       }
+    } catch (error) {
+      console.log(error);
+    } finally {
+      setIsSubmitting(false);
     }
-  }, [state.succeeded]);
+  };
 
   return (
     <section className="w-full bg-[#FFFDF7] py-16 px-4 md:px-8 relative overflow-hidden">
@@ -79,7 +105,7 @@ export default function Contact() {
             </div>
 
             <form onSubmit={handleSubmit} className="space-y-4">
-              {state.succeeded && (
+              {isSucceeded && (
                 <div className="p-3 rounded bg-green-50 text-green-700 text-sm mb-4 border border-green-100">
                   Thank you! We&apos;ll get back to you soon.
                 </div>
@@ -93,7 +119,6 @@ export default function Contact() {
                   className="w-full px-4 py-3 bg-[#F7FAFC] border border-transparent rounded-xl focus:bg-white focus:border-gray-200 text-sm transition-all"
                   required
                 />
-                <ValidationError prefix="Name" field="name" errors={state.errors} />
               </div>
 
               <div>
@@ -104,7 +129,6 @@ export default function Contact() {
                   className="w-full px-4 py-3 bg-[#F7FAFC] border border-transparent rounded-xl focus:bg-white focus:border-gray-200 text-sm transition-all"
                   required
                 />
-                <ValidationError prefix="Email" field="email" errors={state.errors} />
               </div>
 
               <div>
@@ -115,15 +139,14 @@ export default function Contact() {
                   className="w-full px-4 py-3 bg-[#F7FAFC] border border-transparent rounded-xl focus:bg-white focus:border-gray-200 text-sm resize-none transition-all"
                   required
                 ></textarea>
-                <ValidationError prefix="Message" field="message" errors={state.errors} />
               </div>
 
               <button
                 type="submit"
-                disabled={state.submitting}
+                disabled={isSubmitting}
                 className="w-full py-3 bg-[#111122] text-white font-bold rounded-full text-sm hover:bg-black transition-all mt-2 flex items-center justify-center disabled:opacity-50"
               >
-                {state.submitting ? "Sending..." : "Submit"}
+                {isSubmitting ? "Sending..." : "Submit"}
               </button>
             </form>
           </div>
