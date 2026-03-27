@@ -43,7 +43,6 @@ import CaseStudy2Hero from "../components/CaseStudy2Hero";
 import CaseStudyAbout2 from "../components/CaseStudyAbout2";
 import CaseStudy2Stats from "../components/CaseStudy2Stats";
 import CaseStudyResult2 from "../components/CaseStudyResult2";
-import GoogleAnalytics from "../components/GoogleAnalytics";
 
 export default function CaseStudy2() {
   return (
@@ -76,7 +75,6 @@ export default function CaseStudy2() {
         />
         <meta name="twitter:image" content="/og-case-study-2.jpg" />
         <link rel="icon" href="/favicon.ico" />
-        <GoogleAnalytics />
       </Head>
 
       {/* Page Content */}

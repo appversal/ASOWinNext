@@ -1,4 +1,4 @@
-// File: /Users/prathamgupta/Documents/ASOWIN/ASOWinNext/src/app/about/layout.js
+// File: /Users/prathamgupta/Desktop/ASOWinNext/src/app/about/layout.js
 import * as entry from '../../../../src/app/about/layout.js'
 import type { ResolvingMetadata, ResolvingViewport } from 'next/dist/lib/metadata/types/metadata-interface.js'
 

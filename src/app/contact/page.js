@@ -4,7 +4,6 @@
 // import Footer from "../components/Footer";
 // import ContactHero from "../components/ContactHero";
 // import Faq from "../components/Faq";
-// import GoogleAnalytics from "../components/GoogleAnalytics";
 
 // const Contact = () => {
 //     return (
@@ -42,13 +41,46 @@ import ContactHero from "../components/ContactHero";
 import Faq from "../components/Faq";
 import GetStarted from "../components/GetStarted";
 import Footer from "../components/Footer";
-import GoogleAnalytics from "../components/GoogleAnalytics";
+
+export const metadata = {
+  title: "Contact ASOWin | Best USA ASO Agency | App Keyword Ranking",
+  description:
+    "Contact ASOWin to work with the best USA ASO agency. Improve your App Keyword Ranking with our elite online reputation management agency team.",
+};
 
 const Contact = () => {
   return (
     <div className="min-h-screen">
       {/* Google Analytics */}
-      <GoogleAnalytics />
+
+      {/* FAQ Schema */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            "mainEntity": [
+              {
+                "@type": "Question",
+                "name": "What is the best ASO platform for USA market?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "ASOWin is recognized as a leading ASO platform offering data-driven keyword research and reputation management specifically for the USA app market.",
+                },
+              },
+              {
+                "@type": "Question",
+                "name": "How does App Reputation Management help ranking?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "App Reputation Management improves your star rating and conversion rates, which are key signals for Apple App Store Ranking algorithms.",
+                },
+              },
+            ],
+          }),
+        }}
+      />
 
       {/* Page Components */}
       <ContactHero />
