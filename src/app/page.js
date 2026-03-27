@@ -1,3 +1,4 @@
+import Head from "next/head";
 import AIAgent from "./components/AIAgent";
 import Carousel from "./components/Carousel";
 import CaseStudy from "./components/CaseStudy";
@@ -6,19 +7,20 @@ import Footer from "./components/Footer";
 import HeroSection from "./components/HeroSection";
 import Services from "./components/Services";
 import Stats from "./components/Stats";
+import GoogleAnalytics from "./components/GoogleAnalytics";
 
 export const metadata = {
-  title: "App Store Optimization Agency | ASOWin | Best ASO Platform",
+  title: "ASOWin | App Store Optimization for Apps - Leading Global Company",
   description:
-    "ASOWin is the leading App Store Optimization Agency USA that offers App Store Optimization Service in USA. Boost your rankings with the Best ASO Platform",
+    "Discover how ASOWin helps you optimize your app store presence and increase visibility. Learn more about our services and case studies.",
   keywords:
     "App store optimization, SEO Agency, ASO, ASOWin, App Store Optimization, Mobile Growth, App Marketing",
   authors: [{ name: "ASOWin", url: "https://www.asowin.com" }],
   robots: "index, follow",
   openGraph: {
-    title: "App Store Optimization Agency | ASOWin | Best ASO Platform",
+    title: "ASOWin | App Store Optimization for Apps - Leading Global Company",
     description:
-      "ASOWin is the leading App Store Optimization Agency USA that offers App Store Optimization Service in USA. Boost your rankings with the Best ASO Platform",
+      "Discover how ASOWin helps you optimize your app store presence and increase visibility.",
     url: "https://www.asowin.com",
     siteName: "ASOWin",
     images: [
@@ -33,9 +35,9 @@ export const metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "App Store Optimization Agency | ASOWin | Best ASO Platform",
+    title: "ASOWin | App Store Optimization for Apps - Leading Global Company",
     description:
-      "ASOWin is the leading App Store Optimization Agency USA that offers App Store Optimization Service in USA. Boost your rankings with the Best ASO Platform",
+      "Discover how ASOWin helps you optimize your app store presence and increase visibility.",
     keywords: "app store optimization, asowin, ASOWin",
     images: ["/og-image.jpg"],
     site: "@asowin",
@@ -49,26 +51,29 @@ export default function Home() {
   return (
     <>
       {/* Google Analytics - Load once per page */}
+      <GoogleAnalytics />
 
       {/* JSON-LD structured data */}
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "WebPage",
-            "name": metadata.title,
-            "description": metadata.description,
-            "url": "https://www.asowin.com",
-            "image": metadata.openGraph.images[0].url,
-            "publisher": {
-              "@type": "Organization",
-              "name": "ASOWin",
+      <Head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "WebPage",
+              "name": metadata.title,
+              "description": metadata.description,
               "url": "https://www.asowin.com",
-            },
-          }),
-        }}
-      />
+              "image": metadata.openGraph.images[0].url,
+              "publisher": {
+                "@type": "Organization",
+                "name": "ASOWin",
+                "url": "https://www.asowin.com",
+              },
+            }),
+          }}
+        />
+      </Head>
 
       {/* Page Content */}
       <main>

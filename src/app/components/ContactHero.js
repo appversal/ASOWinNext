@@ -1,57 +1,30 @@
 'use client';
 
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import { Facebook, Twitter, Linkedin, Instagram } from "lucide-react";
 import Image from "next/image";
 import Navbar from "./Navbar";
-import { useRouter } from "next/navigation";
+import { useForm, ValidationError } from '@formspree/react';
 
 const ContactHero = () => {
-  const [isSubmitting, setIsSubmitting] = useState(false);
-  const router = useRouter();
+  const [state, handleSubmit] = useForm("xqaokzep");
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    setIsSubmitting(true);
-
-    const formData = new FormData(e.target);
-    formData.append("access_key", "a05ea8f5-1d65-4506-bde6-e519d7f5ea71");
-
-    const object = Object.fromEntries(formData);
-    const json = JSON.stringify(object);
-
-    try {
-      const response = await fetch("https://api.web3forms.com/submit", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-          Accept: "application/json"
-        },
-        body: json
-      });
-      const result = await response.json();
-      if (result.success) {
-        if (typeof window !== 'undefined' && window.gtag) {
-          window.gtag('event', 'conversion', {
-            'send_to': 'AW-17791392097/38a7COX2084bEOGyzKNC',
-            'value': 1.0,
-            'currency': 'INR'
-          });
-          window.gtag('event', 'conversion', {
-            'send_to': 'AW-938608563/t3qxCNPz8pYbELOPyL8D',
-            'value': 1.0,
-            'currency': 'INR'
-          });
-        }
-        // Redirect to thank you page
-        router.push('/thank-you');
+  useEffect(() => {
+    if (state.succeeded) {
+      if (typeof window !== 'undefined' && window.gtag) {
+        window.gtag('event', 'conversion', {
+          'send_to': 'AW-17791392097/38a7COX2084bEOGyzKNC',
+          'value': 1.0,
+          'currency': 'INR'
+        });
+        window.gtag('event', 'conversion', {
+          'send_to': 'AW-938608563/t3qxCNPz8pYbELOPyL8D',
+          'value': 1.0,
+          'currency': 'INR'
+        });
       }
-    } catch (error) {
-      console.log(error);
-    } finally {
-      setIsSubmitting(false);
     }
-  };
+  }, [state.succeeded]);
 
   return (
     <>
@@ -116,6 +89,12 @@ const ContactHero = () => {
               </div>
 
               <form onSubmit={handleSubmit} className="space-y-4">
+                {state.succeeded && (
+                  <div className="p-3 rounded bg-green-50 text-green-700 text-sm mb-4">
+                    Thank you! We&apos;ll get back to you soon.
+                  </div>
+                )}
+
                 <div>
                   <input
                     type="text"
@@ -151,10 +130,10 @@ const ContactHero = () => {
 
                 <button
                   type="submit"
-                  disabled={isSubmitting}
+                  disabled={state.submitting}
                   className="w-full py-3 bg-[#111122] text-white font-bold rounded-full text-sm hover:bg-black transition-all mt-2 flex items-center justify-center disabled:opacity-50"
                 >
-                  {isSubmitting ? "Sending..." : "Submit"}
+                  Submit
                 </button>
               </form>
             </div>

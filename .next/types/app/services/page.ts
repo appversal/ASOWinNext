@@ -1,4 +1,4 @@
-// File: /Users/prathamgupta/Desktop/ASOWinNext/src/app/services/page.js
+// File: /Users/prathamgupta/Documents/ASOWIN/ASOWinNext/src/app/services/page.js
 import * as entry from '../../../../src/app/services/page.js'
 import type { ResolvingMetadata, ResolvingViewport } from 'next/dist/lib/metadata/types/metadata-interface.js'
 

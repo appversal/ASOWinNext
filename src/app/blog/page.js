@@ -1,18 +1,15 @@
+'use client';
 import Image from "next/image";
 import Link from "next/link";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
+import GoogleAnalytics from "../components/GoogleAnalytics";
 import { blogPosts } from "./blogData";
-
-export const metadata = {
-  title: "Apple App Store Ranking | Blog | App Store Ranking | ORM Agency",
-  description:
-    "Read Our Blogs to boost your Apple App Store Ranking. We cover App Store Ranking trends and professional ORM Agency advice for mobile success.",
-};
 
 export default function BlogListing() {
   return (
     <div className="min-h-screen bg-white">
+      <GoogleAnalytics />
 
       <Navbar />
 

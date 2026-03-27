@@ -1,17 +1,15 @@
+'use client';
+
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
+import GoogleAnalytics from "../components/GoogleAnalytics";
 import Image from "next/image";
-
-export const metadata = {
-  title: "App Store Optimization Strategies | App Reputation Management",
-  description:
-    "Unlock proven App Store Optimization Strategies in our new book. ASOWin reveals the secrets to App Reputation Management for sustainable organic growth.",
-};
 
 const BookPage = () => {
     return (
         <div className="min-h-screen flex flex-col bg-white">
             {/* Google Analytics */}
+            <GoogleAnalytics />
 
             {/* Hero Section with Navbar */}
             <div className="w-full bg-gradient-to-b from-[#EEF6FF] to-[#FFFFFF]">
@@ -22,7 +20,7 @@ const BookPage = () => {
                     <div className="max-w-7xl mx-auto">
                         <div className="text-center mb-8 md:mb-12">
                             <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-[#1a1a1a] mb-4 md:mb-6 leading-tight">
-                                App Store Optimization Strategies
+                                ASOWin Book
                             </h1>
                             <p className="text-lg sm:text-xl md:text-2xl text-[#6B7280] max-w-3xl mx-auto leading-relaxed">
                                 Your comprehensive guide to App Store Optimization
