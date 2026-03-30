@@ -70,6 +70,96 @@ export default function Home() {
         }}
       />
 
+      {/* Service Schema */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "Service",
+            "serviceType": "App Store Optimization Service",
+            "provider": {
+              "@type": "Organization",
+              "name": "ASOWin",
+            },
+            "areaServed": "USA",
+            "hasOfferCatalog": {
+              "@type": "OfferCatalog",
+              "name": "App Growth Services",
+              "itemListElement": [
+                {
+                  "@type": "Offer",
+                  "itemOffered": {
+                    "@type": "Service",
+                    "name": "App Keyword Ranking",
+                  },
+                },
+                {
+                  "@type": "Offer",
+                  "itemOffered": {
+                    "@type": "Service",
+                    "name": "App Reputation Management Solution",
+                  },
+                },
+              ],
+            },
+          }),
+        }}
+      />
+
+      {/* Software Application Schema */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "SoftwareApplication",
+            "name": "ASOWin Keyword Research Tool",
+            "operatingSystem": "Web",
+            "applicationCategory": "BusinessApplication",
+            "aggregateRating": {
+              "@type": "AggregateRating",
+              "ratingValue": "4.9",
+              "reviewCount": "120",
+            },
+            "offers": {
+              "@type": "Offer",
+              "price": "0",
+              "priceCurrency": "USD",
+            },
+          }),
+        }}
+      />
+
+      {/* FAQ Schema */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            "mainEntity": [
+              {
+                "@type": "Question",
+                "name": "What is the best ASO platform for USA market?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "ASOWin is recognized as a leading ASO platform offering data-driven keyword research and reputation management specifically for the USA app market.",
+                },
+              },
+              {
+                "@type": "Question",
+                "name": "How does App Reputation Management help ranking?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "App Reputation Management improves your star rating and conversion rates, which are key signals for Apple App Store Ranking algorithms.",
+                },
+              },
+            ],
+          }),
+        }}
+      />
+
       {/* Page Content */}
       <main>
         <HeroSection />
