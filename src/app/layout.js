@@ -21,7 +21,7 @@ export const metadata = {
   authors: [{ name: "ASOWin", url: "https://www.asowin.com" }],
   robots: "index, follow",
   verification: {
-    google: "jFrU4l9VGcxAohmVU58CDZ8foUe4kut1jfkboO6jH64",
+    google: "6JpntrcHgqzyZVv6ive8Iqvg3-Z3eTBCsP-fQZdR1Cg",
     other: {
       "msvalidate.01": "5A98719081CF0CE62636F6DFD1B3D94A",
     },
