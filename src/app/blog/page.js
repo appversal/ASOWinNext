@@ -13,6 +13,44 @@ export const metadata = {
 export default function BlogListing() {
   return (
     <div className="min-h-screen bg-white">
+      {/* Blog Collection Schema */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "CollectionPage",
+            "headline": "AsoWin Blog: App Store Optimization & Mobile Marketing Insights",
+            "description": "Expert tips, case studies, and the latest trends in App Store Optimization (ASO) and mobile app growth from the Asowin team.",
+            "url": "https://asowin.com/blog/",
+            "publisher": {
+              "@type": "Organization",
+              "name": "Asowin",
+              "logo": {
+                "@type": "ImageObject",
+                "url": "https://asowin.com/ASOWin.png"
+              }
+            },
+            "mainEntity": {
+              "@type": "ItemList",
+              "itemListElement": [
+                {
+                  "@type": "ListItem",
+                  "position": 1,
+                  "url": "https://asowin.com/blog/link-to-latest-post-1",
+                  "name": "Title of your most recent post"
+                },
+                {
+                  "@type": "ListItem",
+                  "position": 2,
+                  "url": "https://asowin.com/blog/link-to-latest-post-2",
+                  "name": "Title of your second most recent post"
+                }
+              ]
+            }
+          }),
+        }}
+      />
 
       <Navbar />
 

@@ -19,10 +19,10 @@ const ASOSection = () => {
           {/* Left content container */}
           <div className="max-w-full lg:max-w-5xl">
             {/* Title */}
-            <h1 className="text-white text-[40px] sm:text-[60px] md:text-[75px] lg:text-[97px] font-medium leading-tight mb-12 sm:mb-16 lg:mb-24">
+            <h2 className="text-white text-[40px] sm:text-[60px] md:text-[75px] lg:text-[97px] font-medium leading-tight mb-12 sm:mb-16 lg:mb-24">
               1. App Store<br />
               Optimization (ASO)
-            </h1>
+            </h2>
 
             {/* Content with vertical line */}
             <div className="relative lg:ml-44">
