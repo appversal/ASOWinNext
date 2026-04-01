@@ -37,13 +37,13 @@ export default function BlogListing() {
                 {
                   "@type": "ListItem",
                   "position": 1,
-                  "url": "https://asowin.com/blog/link-to-latest-post-1",
+                  "url": "https://www.asowin.com/blog/chatgpt-app-ecosystem/",
                   "name": "Title of your most recent post"
                 },
                 {
                   "@type": "ListItem",
                   "position": 2,
-                  "url": "https://asowin.com/blog/link-to-latest-post-2",
+                  "url": "https://www.asowin.com/blog/google-play-ranking-strategies-2026/",
                   "name": "Title of your second most recent post"
                 }
               ]
