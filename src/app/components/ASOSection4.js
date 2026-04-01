@@ -21,10 +21,10 @@ const ASOSection4 = () => {
           {/* Left content container */}
           <div className="max-w-full lg:max-w-7xl">
             {/* Title */}
-            <h1 className="text-white text-[40px] sm:text-[60px] md:text-[75px] lg:text-[90px] font-medium leading-tight mb-12 sm:mb-16 lg:mb-24">
+            <h2 className="text-white text-[40px] sm:text-[60px] md:text-[75px] lg:text-[90px] font-medium leading-tight mb-12 sm:mb-16 lg:mb-24">
               6. Paid User Acquisition <br />
               & Search Ads
-            </h1>
+            </h2>
 
             {/* Content with vertical line */}
             <div className="relative lg:ml-44 ">

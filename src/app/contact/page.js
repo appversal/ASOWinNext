@@ -51,33 +51,31 @@ export const metadata = {
 const Contact = () => {
   return (
     <div className="min-h-screen">
-      {/* Google Analytics */}
-
-      {/* FAQ Schema */}
+      {/* Contact Page Schema */}
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
           __html: JSON.stringify({
             "@context": "https://schema.org",
-            "@type": "FAQPage",
-            "mainEntity": [
-              {
-                "@type": "Question",
-                "name": "What is the best ASO platform for USA market?",
-                "acceptedAnswer": {
-                  "@type": "Answer",
-                  "text": "ASOWin is recognized as a leading ASO platform offering data-driven keyword research and reputation management specifically for the USA app market.",
-                },
-              },
-              {
-                "@type": "Question",
-                "name": "How does App Reputation Management help ranking?",
-                "acceptedAnswer": {
-                  "@type": "Answer",
-                  "text": "App Reputation Management improves your star rating and conversion rates, which are key signals for Apple App Store Ranking algorithms.",
-                },
-              },
-            ],
+            "@type": "ContactPage",
+            "mainEntity": {
+              "@type": "ContactPage",
+              "name": "ASOWin",
+              "url": "https://asowin.com/contact/",
+              "logo": "https://asowin.com/ASOWin.png",
+              "email": "support@asowin.com",
+              "serviceType": "App Store Optimization Service",
+              "contactPoint": [
+                {
+                  "@type": "ContactPoint",
+                  "email": "support@asowin.com",
+                  "contactType": "customer support",
+                  "availableLanguage": ["English"]
+                }
+              ]
+            },
+            "url": "https://asowin.com/contact/",
+            "description": "Contact ASOWin for expert App Store Optimization services, app audits, and mobile growth consulting."
           }),
         }}
       />
