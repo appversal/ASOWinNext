@@ -38,13 +38,13 @@ export default function BlogListing() {
                   "@type": "ListItem",
                   "position": 1,
                   "url": "https://www.asowin.com/blog/chatgpt-app-ecosystem/",
-                  "name": "Title of your most recent post"
+                  "name": "Inside the New ChatGPT App Ecosystem: Metadata, Discovery, and Workflow Integration"
                 },
                 {
                   "@type": "ListItem",
                   "position": 2,
                   "url": "https://www.asowin.com/blog/google-play-ranking-strategies-2026/",
-                  "name": "Title of your second most recent post"
+                  "name": "Best Strategies to Boost Google Play Store Ranking in 2026: ASOWin's Expert ASO Guide"
                 }
               ]
             }
