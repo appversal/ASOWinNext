@@ -129,7 +129,7 @@ export default function AppStoreRankingFactors2026() {
       <GoogleAnalytics />
 
       <BlogHero
-
+        author="Sandeep Reddy"
         date="November 1, 2025"
         title="Apple App Store Ranking Factors for 2026: Complete Guide to Organic Search"
         description="Ranking high in Apple App Store search results remains one of the toughest challenges in mobile app marketing. Success demands a strategic ASO approach built on deep knowledge of the App Store's search algorithm."

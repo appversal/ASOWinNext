@@ -7,7 +7,7 @@ import Footer from "../../components/Footer";
 import GoogleAnalytics from "../../components/GoogleAnalytics";
 
 export default function FreeTrialStrategies() {
-    const blogContent = `
+  const blogContent = `
     <h2 id="heading-0">Introduction</h2>
     
     <p>One of the most debated questions in subscription-led products is how long a free trial should last. Trial duration directly affects whether users experience value, form habits, and ultimately decide to pay. In this article, we examine why trial length matters, review common industry patterns, and outline how trial strategies can be refined by analyzing real user behavior instead of relying on fixed conventions.</p>
@@ -113,31 +113,32 @@ export default function FreeTrialStrategies() {
     <p>The goal is not simply to extend access, but to create a trial that is long enough for value to emerge and focused enough to remain sustainable.</p>
   `;
 
-    return (
-        <div className="min-h-screen bg-white">
-            <GoogleAnalytics />
+  return (
+    <div className="min-h-screen bg-white">
+      <GoogleAnalytics />
 
-            <BlogHero
-                date="December 23, 2025"
-                title="Aligning Free Trial Strategies with Usage Patterns: An ASOWin Perspective"
-                description="One of the most debated questions in subscription-led products is how long a free trial should last. Trial duration directly affects whether users experience value, form habits, and ultimately decide to pay."
-                readTime="10 min read"
-                heroImage="/free_trial_strategies.png"
-            />
+      <BlogHero
+        author="Khwahish Kapoor"
+        date="December 23, 2025"
+        title="Aligning Free Trial Strategies with Usage Patterns: An ASOWin Perspective"
+        description="One of the most debated questions in subscription-led products is how long a free trial should last. Trial duration directly affects whether users experience value, form habits, and ultimately decide to pay."
+        readTime="10 min read"
+        heroImage="/free_trial_strategies.png"
+      />
 
-            <BlogContent
-                content={blogContent}
-            />
+      <BlogContent
+        content={blogContent}
+      />
 
-            <BlogCTA
-                title="Improve your App's visibility with ASOWin"
-                buttonText="Request Demo"
-                buttonLink="/contact"
-            />
+      <BlogCTA
+        title="Improve your App's visibility with ASOWin"
+        buttonText="Request Demo"
+        buttonLink="/contact"
+      />
 
-            <ReadMoreBlogs currentSlug="free-trial-strategies" />
+      <ReadMoreBlogs currentSlug="free-trial-strategies" />
 
-            <Footer />
-        </div>
-    );
+      <Footer />
+    </div>
+  );
 }

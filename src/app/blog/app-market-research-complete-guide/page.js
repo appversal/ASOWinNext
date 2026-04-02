@@ -130,6 +130,7 @@ export default function AppMarketResearchCompleteGuide() {
       <GoogleAnalytics />
 
       <BlogHero
+        author="Rahul Verma"
         date="November 10, 2025"
         title="App Market Research: The Complete Guide for Building Apps That Win"
         description="With more than 5 million apps competing across the App Store and Google Play, launching an app without proper market research is no longer risky; it is almost guaranteed failure. App market research separates apps that grow steadily from those that disappear silently."
