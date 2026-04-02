@@ -38,7 +38,7 @@ export default function ChatGPTAppEcosystem() {
       <GoogleAnalytics />
 
       <BlogHero
-
+        author="Khwahish Kapoor"
         date="October 20, 2025"
         title="Inside the New ChatGPT App Ecosystem: Metadata, Discovery, and Workflow Integration"
         description="OpenAI is evolving ChatGPT from a simple conversational assistant into a powerful platform where third party apps seamlessly integrate directly within the chat interface."

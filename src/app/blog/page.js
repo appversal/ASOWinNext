@@ -2,7 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
-import { blogPosts } from "./blogData";
+import { blogPosts, slugifyAuthor } from "./blogData";
 
 export const metadata = {
   title: "Apple App Store Ranking | Blog | App Store Ranking | ORM Agency",
@@ -78,12 +78,11 @@ export default function BlogListing() {
           ) : (
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
               {blogPosts.map((blog) => (
-                <Link
+                <div
                   key={blog.slug}
-                  href={`/blog/${blog.slug}`}
-                  className="bg-white rounded-lg shadow-md hover:shadow-xl transition-shadow overflow-hidden group"
+                  className="bg-white rounded-lg shadow-md hover:shadow-xl transition-shadow overflow-hidden group flex flex-col"
                 >
-                  <div className="relative w-full h-56 md:h-64 lg:h-72 overflow-hidden bg-white flex items-center justify-center">
+                  <Link href={`/blog/${blog.slug}`} className="relative w-full h-56 md:h-64 lg:h-72 overflow-hidden bg-white flex items-center justify-center">
                     <Image
                       src={blog.heroImage}
                       alt={blog.title}
@@ -92,8 +91,8 @@ export default function BlogListing() {
                       className="object-contain object-center w-full h-full group-hover:scale-105 transition-transform duration-300"
                       style={{ objectFit: 'contain', objectPosition: 'center' }}
                     />
-                  </div>
-                  <div className="p-6">
+                  </Link>
+                  <div className="p-6 flex flex-col flex-grow">
                     <div className="flex items-center gap-3 mb-3">
                       {blog.category && (
                         <span className="text-xs text-gray-500 uppercase tracking-wide">
@@ -105,25 +104,42 @@ export default function BlogListing() {
                           {blog.date}
                         </span>
                       )}
+                      {blog.author && (
+                        <div className="flex items-center text-xs text-gray-500 font-medium">
+                          <span className="mr-1">• By</span>
+                          {blog.author === "Khwahish Kapoor" ? (
+                            <Link
+                              href={`/author/${slugifyAuthor(blog.author)}`}
+                              className="hover:text-[#306777] transition-colors"
+                            >
+                              {blog.author}
+                            </Link>
+                          ) : (
+                            <span>{blog.author}</span>
+                          )}
+                        </div>
+                      )}
                     </div>
-                    <h3 className="text-xl font-bold text-gray-900 mb-3 line-clamp-2 group-hover:text-[#306777] transition-colors">
-                      {blog.title}
-                    </h3>
+                    <Link href={`/blog/${blog.slug}`}>
+                      <h3 className="text-xl font-bold text-gray-900 mb-3 line-clamp-2 group-hover:text-[#306777] transition-colors">
+                        {blog.title}
+                      </h3>
+                    </Link>
                     <p className="text-gray-600 mb-4 line-clamp-3">
                       {blog.description}
                     </p>
-                    <div className="flex items-center justify-between">
+                    <div className="mt-auto flex items-center justify-between">
                       {blog.readTime && (
                         <span className="text-sm text-gray-500">
                           {blog.readTime}
                         </span>
                       )}
-                      <span className="text-[#306777] font-semibold group-hover:underline">
+                      <Link href={`/blog/${blog.slug}`} className="text-[#306777] font-semibold hover:underline">
                         Read More →
-                      </span>
+                      </Link>
                     </div>
                   </div>
-                </Link>
+                </div>
               ))}
             </div>
           )}

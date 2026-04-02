@@ -70,7 +70,7 @@ export default function GooglePlayRankingStrategies2026() {
       <GoogleAnalytics />
 
       <BlogHero
-
+        author="Priya Sharma"
         date="November 7, 2025"
         title="Best Strategies to Boost Google Play Store Ranking in 2026: ASOWin's Expert ASO Guide"
         description="Google Play remains the world's largest app marketplace with over three million apps spanning 32 categories. At ASOWin, we know that data-driven App Store Optimization (ASO) is pivotal to climbing the ranks."

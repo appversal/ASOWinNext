@@ -92,6 +92,7 @@ export default function AppIconDesignTipsAndPractices() {
       <GoogleAnalytics />
 
       <BlogHero
+        author="Priya Sharma"
         date="November 19, 2025"
         title="App Icon Design Tips and Practices"
         description="Your app icon is often the first interaction users have with your app. A well-designed icon can significantly improve click-through rates and installs, while a weak icon can limit discoverability regardless of how strong the app itself is."

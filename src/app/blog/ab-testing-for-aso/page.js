@@ -255,6 +255,7 @@ export default function ABTestingForASO() {
       <GoogleAnalytics />
 
       <BlogHero
+        author="Khwahish Kapoor"
         date="November 14, 2025"
         title="A/B Testing for ASO: How ASOWin Maximizes Your App's Conversion Rate"
         description="At ASOWin.com, we help app teams unlock higher conversion rates through precise, data-driven A/B testing. A/B testing for App Store Optimization (ASO) compares multiple versions of your app store listing to determine which creative variation delivers the highest install rate."

@@ -89,6 +89,7 @@ export default function GooglePlayAIRevolution() {
       <GoogleAnalytics />
 
       <BlogHero
+        author="Sandeep Reddy"
         date="December 23, 2025"
         title="Google Play's AI Revolution: PlayTime 2025 Key Announcements"
         description="Google Play is stepping into a transformative new phase, powered by artificial intelligence, hyper-personalized experiences, and seamless multi-device support. Discover how PlayTime 2025 is reshaping the app ecosystem."

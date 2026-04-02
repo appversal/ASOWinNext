@@ -1,8 +1,13 @@
 'use client';
 import Image from "next/image";
 import Navbar from "./Navbar";
+import Link from "next/link";
+import { slugifyAuthor } from "../blog/blogData";
 
 const BlogHero = ({ category, date, title, description, author, authorAvatar, readTime, heroImage }) => {
+  const isKhwahishKapoor = author === "Khwahish Kapoor";
+  const authorSlug = isKhwahishKapoor ? slugifyAuthor(author) : null;
+
   return (
     <div className="w-full bg-white">
       <Navbar />
@@ -37,22 +42,31 @@ const BlogHero = ({ category, date, title, description, author, authorAvatar, re
               )}
 
               <div className="flex items-center gap-4">
-                {authorAvatar && (
-                  <div className="w-10 h-10 rounded-full overflow-hidden bg-gray-200">
+                <div className="relative w-12 h-12 rounded-full overflow-hidden border-2 border-white shadow-sm flex-shrink-0">
+                  {authorAvatar ? (
                     <Image
                       src={authorAvatar}
                       alt={author || "Author"}
-                      width={40}
-                      height={40}
-                      className="w-full h-full object-cover"
+                      fill
+                      className="object-cover object-top"
                     />
-                  </div>
-                )}
+                  ) : (
+                    <div className="w-full h-full flex items-center justify-center bg-[#306777] text-white font-bold text-lg">
+                      {author ? author.charAt(0) : "A"}
+                    </div>
+                  )}
+                </div>
                 <div>
                   {author && (
-                    <p className="text-sm font-semibold text-gray-900">
-                      {author}
-                    </p>
+                    authorSlug ? (
+                      <Link href={`/author/${authorSlug}`} className="text-base font-bold text-gray-900 hover:text-[#306777] transition-colors">
+                        {author}
+                      </Link>
+                    ) : (
+                      <p className="text-base font-bold text-gray-900">
+                        {author}
+                      </p>
+                    )
                   )}
                   {readTime && (
                     <p className="text-sm text-gray-500">
