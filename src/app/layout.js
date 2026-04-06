@@ -103,6 +103,9 @@ export default function RootLayout({ children }) {
         <link rel="preconnect" href="https://www.googletagmanager.com" />
         <link rel="preconnect" href="https://www.google-analytics.com" />
 
+        {/* Alternate link for hreflang - USA */}
+        <link rel="alternate" href="https://www.asowin.com/" hreflang="en-us" />
+
         {/* Preload ONLY small critical assets */}
         <link rel="preload" as="image" href="/ASOWin.png" />
 
