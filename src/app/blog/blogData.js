@@ -5,6 +5,26 @@
 
 export const blogPosts = [
   {
+    slug: 'why-fortune-500-needs-aso-agency',
+    title: 'Why Every Fortune 500 Needs a Specialized App Store Optimization Agency in 2026',
+    description: 'Discover why Fortune 500 companies need specialized App Store Optimization services. Learn how top ASO agencies drive mobile app success and deliver measurable ROI.',
+    date: 'April 15, 2026',
+    readTime: '10 min read',
+    heroImage: '/fortune500_blog_cover.webp',
+    embeddedImage: '/fortune500_blog_cover.webp',
+    embeddedImageAlt: 'Why Fortune 500 Companies Need Specialized App Store Optimization Agencies'
+  },
+  {
+    slug: 'full-cycle-aso-service-keyword-research-conversion',
+    title: 'Full-Cycle App Store Optimization Service: From Keyword Research to Conversion',
+    description: 'Learn how comprehensive App Store Optimization Services drive results from keyword research to conversion. Master ASO strategies that improve app keyword ranking and visibility.',
+    date: 'April 13, 2026',
+    readTime: '8 min read',
+    heroImage: '/full_cycle_optimisation_cover.png',
+    embeddedImage: '/full_cycle_optimisation_cover.png',
+    embeddedImageAlt: 'Full-Cycle App Store Optimization Service - From Keyword Research to Conversion'
+  },
+  {
     slug: 'chatgpt-app-ecosystem',
     title: 'Inside the New ChatGPT App Ecosystem: Metadata, Discovery, and Workflow Integration',
     description: 'OpenAI is evolving ChatGPT from a simple conversational assistant into a powerful platform where third party apps seamlessly integrate directly within the chat interface.',
