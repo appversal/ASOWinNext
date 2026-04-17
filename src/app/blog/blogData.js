@@ -5,6 +5,26 @@
 
 export const blogPosts = [
   {
+    slug: 'how-to-hire-app-store-optimization-expert',
+    title: 'How to Hire an App Store Optimization Expert: 10 Questions You Must Ask',
+    description: 'Learn how to hire the right App Store Optimization Expert. Discover 10 critical questions to ask before hiring and red flags to avoid. Guide for finding best ASO agencies and experts.',
+    date: 'April 17, 2026',
+    readTime: '14 min read',
+    heroImage: '/hire_aso_expert_cover.jpg',
+    embeddedImage: '/hire_aso_expert_cover.jpg',
+    embeddedImageAlt: 'How to Hire an App Store Optimization Expert - 10 Critical Questions'
+  },
+  {
+    slug: 'app-reputation-management-platform',
+    title: 'The Impact of an App Reputation Management Platform on Organic Download Growth',
+    description: 'Discover how an App Reputation Management Platform drives organic download growth. Learn how top ASO agencies integrate reputation management into comprehensive App Store Optimization strategies.',
+    date: 'April 17, 2026',
+    readTime: '12 min read',
+    heroImage: '/app_reputation_growth_cover.jpg',
+    embeddedImage: '/app_reputation_growth_cover.jpg',
+    embeddedImageAlt: 'App Reputation Management Platform - Reviews, Ratings, Organic Growth Strategy'
+  },
+  {
     slug: 'why-fortune-500-needs-aso-agency',
     title: 'Why Every Fortune 500 Needs a Specialized App Store Optimization Agency in 2026',
     description: 'Discover why Fortune 500 companies need specialized App Store Optimization services. Learn how top ASO agencies drive mobile app success and deliver measurable ROI.',
