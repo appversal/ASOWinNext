@@ -171,57 +171,58 @@ export default function AppReputationManagementPlatform() {
         dangerouslySetInnerHTML={{
           __html: JSON.stringify({
             "@context": "https://schema.org",
-            "@type": "BlogPosting",
-            "mainEntityOfPage": {
-              "@type": "WebPage",
-              "@id": "https://www.asowin.com/blog/app-reputation-management-platform/"
-            },
-            "headline": "The Impact of an App Reputation Management Platform on Organic Download Growth",
-            "description": "Discover how an App Reputation Management Platform drives organic download growth. Learn how top ASO agencies integrate reputation management into comprehensive App Store Optimization strategies.",
-            "image": "https://www.asowin.com/app_reputation_growth_cover.jpg",
-            "author": {
-              "@type": "Person",
-              "name": "Khwahish Kapoor",
-              "url": "https://www.asowin.com/"
-            },
-            "publisher": {
-              "@type": "Organization",
-              "name": "ASOWin",
-              "logo": {
-                "@type": "ImageObject",
-                "url": "https://www.asowin.com/ASOWin.png"
-              }
-            },
-            "datePublished": "2026-04-17",
-            "dateModified": "2026-04-17"
-          })
-        }}
-      />
-
-      <Script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "BreadcrumbList",
-            "itemListElement": [
+            "@graph": [
               {
-                "@type": "ListItem",
-                "position": 1,
-                "name": "Home",
-                "item": "https://www.asowin.com/"
+                "@type": "BlogPosting",
+                "@id": "https://asowin.com/blog/app-reputation-management-platform/#blogposting",
+                "mainEntityOfPage": "https://asowin.com/blog/app-reputation-management-platform/",
+                "headline": "App Reputation Management Platform: The Ultimate Guide",
+                "description": "Discover how an app reputation management platform can boost your ASO, improve user trust, and increase app downloads through strategic review management.",
+                "image": "https://asowin.com/app_reputation_growth_cover.jpg",
+                "author": {
+                  "@type": "Person",
+                  "name": "Khwahish Kapoor",
+                  "url": "https://asowin.com/author/khwahish-kapoor/"
+                },
+                "publisher": {
+                  "@type": "Organization",
+                  "name": "ASOWin",
+                  "logo": {
+                    "@type": "ImageObject",
+                    "url": "https://asowin.com/ASOWin.png"
+                  }
+                },
+                "datePublished": "2023-04-10",
+                "dateModified": "2024-01-15"
               },
               {
-                "@type": "ListItem",
-                "position": 2,
-                "name": "Blog",
-                "item": "https://www.asowin.com/blog/"
-              },
-              {
-                "@type": "ListItem",
-                "position": 3,
-                "name": "App Reputation Management Platform",
-                "item": "https://www.asowin.com/blog/app-reputation-management-platform/"
+                "@type": "FAQPage",
+                "mainEntity": [
+                  {
+                    "@type": "Question",
+                    "name": "What is an app reputation management platform?",
+                    "acceptedAnswer": {
+                      "@type": "Answer",
+                      "text": "It is a tool or service designed to monitor, analyze, and respond to user reviews and ratings across the App Store and Google Play Store to improve brand perception and ASO rankings."
+                    }
+                  },
+                  {
+                    "@type": "Question",
+                    "name": "How do reviews affect App Store Optimization (ASO)?",
+                    "acceptedAnswer": {
+                      "@type": "Answer",
+                      "text": "App store algorithms prioritize apps with higher ratings and frequent positive engagement. Reviews also contain keywords that can improve your app's search discoverability."
+                    }
+                  },
+                  {
+                    "@type": "Question",
+                    "name": "Can responding to negative reviews improve my app's rating?",
+                    "acceptedAnswer": {
+                      "@type": "Answer",
+                      "text": "Yes. By addressing user concerns professionally and resolving bugs, developers can often convince users to update their initial 1-star rating to a 4 or 5-star rating."
+                    }
+                  }
+                ]
               }
             ]
           })
