@@ -187,57 +187,58 @@ export default function HowToHireASOExpert() {
         dangerouslySetInnerHTML={{
           __html: JSON.stringify({
             "@context": "https://schema.org",
-            "@type": "BlogPosting",
-            "mainEntityOfPage": {
-              "@type": "WebPage",
-              "@id": "https://www.asowin.com/blog/how-to-hire-app-store-optimization-expert/"
-            },
-            "headline": "How to Hire an App Store Optimization Expert: 10 Questions You Must Ask",
-            "description": "Learn how to hire the right App Store Optimization Expert. Discover 10 critical questions to ask before hiring and red flags to avoid. Guide for finding best ASO agencies and experts.",
-            "image": "https://www.asowin.com/hire_aso_expert_cover.jpg",
-            "author": {
-              "@type": "Person",
-              "name": "Khwahish Kapoor",
-              "url": "https://www.asowin.com/"
-            },
-            "publisher": {
-              "@type": "Organization",
-              "name": "ASOWin",
-              "logo": {
-                "@type": "ImageObject",
-                "url": "https://www.asowin.com/ASOWin.png"
-              }
-            },
-            "datePublished": "2026-04-17",
-            "dateModified": "2026-04-17"
-          })
-        }}
-      />
-
-      <Script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "BreadcrumbList",
-            "itemListElement": [
+            "@graph": [
               {
-                "@type": "ListItem",
-                "position": 1,
-                "name": "Home",
-                "item": "https://www.asowin.com/"
+                "@type": "BlogPosting",
+                "@id": "https://asowin.com/blog/how-to-hire-app-store-optimization-expert/#blogposting",
+                "mainEntityOfPage": {
+                  "@type": "WebPage",
+                  "@id": "https://asowin.com/blog/how-to-hire-app-store-optimization-expert/"
+                },
+                "headline": "How to Hire an App Store Optimization (ASO) Expert",
+                "description": "Learn how to find, evaluate, and hire the right ASO specialist to boost your app's organic visibility and conversion rates.",
+                "image": "https://asowin.com/hire_aso_expert_cover.jpg",
+                "author": {
+                  "@type": "Person",
+                  "name": "Khwahish Kapoor",
+                  "url": "https://asowin.com/author/khwahish-kapoor/",
+                  "jobTitle": "ASO Strategist",
+                  "affiliation": {
+                    "@type": "Organization",
+                    "name": "ASOWin"
+                  }
+                },
+                "publisher": {
+                  "@type": "Organization",
+                  "name": "ASOWin",
+                  "logo": {
+                    "@type": "ImageObject",
+                    "url": "https://asowin.com/ASOWin.png"
+                  }
+                },
+                "datePublished": "2023-07-20",
+                "dateModified": "2024-01-15"
               },
               {
-                "@type": "ListItem",
-                "position": 2,
-                "name": "Blog",
-                "item": "https://www.asowin.com/blog/"
-              },
-              {
-                "@type": "ListItem",
-                "position": 3,
-                "name": "How to Hire an App Store Optimization Expert",
-                "item": "https://www.asowin.com/blog/how-to-hire-app-store-optimization-expert/"
+                "@type": "FAQPage",
+                "mainEntity": [
+                  {
+                    "@type": "Question",
+                    "name": "What is the difference between an ASO Expert and an ASO Agency?",
+                    "acceptedAnswer": {
+                      "@type": "Answer",
+                      "text": "An ASO Expert (freelancer or consultant) typically specializes in one or more aspects of ASO and works independently. They offer flexibility, often lower cost, and specialized focus. An ASO Agency employs multiple specialists (keyword researchers, designers, developers, analysts), provides comprehensive full-cycle services, follows established processes, and has higher costs. Choose a freelancer for specific tasks; choose an agency for comprehensive strategy and portfolio management."
+                    }
+                  },
+                  {
+                    "@type": "Question",
+                    "name": "How much should I budget for hiring an ASO Expert?",
+                    "acceptedAnswer": {
+                      "@type": "Answer",
+                      "text": "Pricing varies dramatically: Freelancers typically range $50-200/hour or $2,000-10,000 for projects. Specialized consultants $150-300+/hour. Agencies have project-based fees ($5,000-25,000+) or monthly retainers ($3,000-20,000+). Your budget depends on hiring model (freelancer vs. agency), project scope (comprehensive vs. specific task), market competitiveness, and app complexity. Higher investment usually correlates with better results and more experienced professionals."
+                    }
+                  }
+                ]
               }
             ]
           })
