@@ -163,8 +163,8 @@ export default function Home() {
       {/* Page Content */}
       <main>
         <HeroSection />
-        <Services />
         <Carousel />
+        <Services />
         <AIAgent />
         <Stats />
         <CaseStudy />
