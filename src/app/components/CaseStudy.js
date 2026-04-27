@@ -283,7 +283,7 @@ const CaseStudy = () => {
                 : "text-[#014458] hover:text-[#014458]/80"
                 }`}
             >
-              CASE STUDY {study}
+              SUCCESS STORY {study}
             </button>
           ))}
         </nav>
@@ -320,10 +320,10 @@ const CaseStudy = () => {
                 {activeData.subtitle}
               </p>
               <Link
-                href={`/casestudy${parseInt(activeCase, 10)}`}
+                href={activeCase === "01" ? "/success-stories/pepperfry" : activeCase === "02" ? "/success-stories/indiabulls-securities" : "/success-stories/lsm-apps"}
                 className="inline-block bg-[#FF6B00] text-white px-6 sm:px-8 py-2.5 sm:py-3 mt-4 sm:mt-5 rounded-full text-sm font-medium hover:bg-[#FF6B00]/90 transition-colors"
               >
-                READ THE CASE STUDY
+                READ THE SUCCESS STORY
               </Link>
             </div>
           </div>

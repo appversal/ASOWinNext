@@ -41,10 +41,10 @@ const Navbar = () => {
               SERVICES
             </Link>
             <Link
-              href="/#case-studies"
+              href="/success-stories"
               className="text-[#111111] hover:text-black text-sm lg:text-[14px] 2xl:text-[14px]"
             >
-              CASE STUDIES
+              SUCCESS STORIES
             </Link>
             <Link
               href="/book"
@@ -135,11 +135,11 @@ const Navbar = () => {
                 SERVICES
               </Link>
               <Link
-                href="/#case-studies"
+                href="/success-stories"
                 className="px-4 py-3 text-[#111122] font-semibold text-[15px] hover:bg-gray-50 rounded-xl transition-colors"
                 onClick={() => setIsMobileMenuOpen(false)}
               >
-                CASE STUDIES
+                SUCCESS STORIES
               </Link>
               <Link
                 href="/book"
