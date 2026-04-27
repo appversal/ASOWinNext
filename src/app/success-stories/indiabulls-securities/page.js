@@ -36,13 +36,13 @@
 // }
 
 import Head from "next/head";
-import GetStarted from "../components/GetStarted";
-import BlogContact from "../components/CaseStudyContact";
-import Footer from "../components/Footer";
-import CaseStudy2Hero from "../components/CaseStudy2Hero";
-import CaseStudyAbout2 from "../components/CaseStudyAbout2";
-import CaseStudy2Stats from "../components/CaseStudy2Stats";
-import CaseStudyResult2 from "../components/CaseStudyResult2";
+import GetStarted from "../../components/GetStarted";
+import BlogContact from "../../components/CaseStudyContact";
+import Footer from "../../components/Footer";
+import CaseStudy2Hero from "../../components/CaseStudy2Hero";
+import CaseStudyAbout2 from "../../components/CaseStudyAbout2";
+import CaseStudy2Stats from "../../components/CaseStudy2Stats";
+import CaseStudyResult2 from "../../components/CaseStudyResult2";
 
 export default function CaseStudy2() {
   return (

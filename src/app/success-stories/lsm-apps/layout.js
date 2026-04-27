@@ -1,31 +1,31 @@
 export const metadata = {
-    title: "Case Study 3 - ASOWin",
+    title: "LSM Apps Success Story - ASOWin",
     description:
       "Discover how our tailored ASO strategies and data-driven solutions helped enhance visibility, increase downloads, and drive growth for India's leading LSM app.",
     keywords:
       "ASO strategy, ASOWin strategy, ASOWin LSM, EasyPhone ASO strategy, EasyPhone app store optimization, ASO services LSM",
     openGraph: {
-      title: "Case Study 3 - ASOWin",
+      title: "LSM Apps Success Story - ASOWin",
       description:
         "Discover how our tailored ASO strategies and data-driven solutions helped enhance visibility, increase downloads, and drive growth for India's leading LSM app.",
-      url: "https://www.asowin.com/case-study-3",
+      url: "https://www.asowin.com/success-stories/lsm-apps",
       siteName: "ASOWin",
       images: [
         {
-          url: "/og-case-study-3.jpg",
+          url: "/og-lsm-apps.jpg",
           width: 1200,
           height: 630,
-          alt: "LSM ASO Case Study",
+          alt: "LSM Apps ASO Success Story",
         },
       ],
       type: "article",
     },
     twitter: {
       card: "summary_large_image",
-      title: "Case Study 3 - ASOWin",
+      title: "LSM Apps Success Story - ASOWin",
       description:
         "Discover how our tailored ASO strategies and data-driven solutions helped enhance visibility, increase downloads, and drive growth for India's leading LSM app.",
-      images: ["/og-case-study-3.jpg"],
+      images: ["/og-lsm-apps.jpg"],
       site: "@asowin",
     },
     icons: {
@@ -33,7 +33,7 @@ export const metadata = {
     },
   };
   
-  export default function CaseStudy3Layout({ children }) {
+  export default function LSMAppsLayout({ children }) {
     return <>{children}</>;
   }
   

@@ -36,13 +36,13 @@
 
 
 import Head from "next/head";
-import GetStarted from "../components/GetStarted";
-import BlogContact from "../components/CaseStudyContact";
-import Footer from "../components/Footer";
-import CaseStudy3Hero from "../components/CaseStudy3Hero";
-import CaseStudyAbout3 from "../components/CaseStudyAbout3";
-import CaseStudy3Stats from "../components/CaseStudy3Stats";
-import CaseStudyResult3 from "../components/CaseStudyResult3";
+import GetStarted from "../../components/GetStarted";
+import BlogContact from "../../components/CaseStudyContact";
+import Footer from "../../components/Footer";
+import CaseStudy3Hero from "../../components/CaseStudy3Hero";
+import CaseStudyAbout3 from "../../components/CaseStudyAbout3";
+import CaseStudy3Stats from "../../components/CaseStudy3Stats";
+import CaseStudyResult3 from "../../components/CaseStudyResult3";
 
 export default function CaseStudy3() {
   return (

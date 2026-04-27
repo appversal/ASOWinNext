@@ -26,7 +26,7 @@ const Carousel = () => {
     if (!container) return;
 
     let animationFrameId;
-    const scrollSpeed = 1; // pixels per frame
+    const scrollSpeed = 0.5; // pixels per frame
 
     const scroll = () => {
       scrollPositionRef.current += scrollSpeed;

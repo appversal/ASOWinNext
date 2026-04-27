@@ -1,31 +1,31 @@
 export const metadata = {
-    title: "Case Study 2 - ASOWin",
+    title: "Indiabulls Securities Success Story - ASOWin",
     description:
       "Discover how ASOWin helped optimize the Indiabulls app with expert ASO strategies. Boosting visibility, enhancing user experience, and driving growth through targeted solutions for this financial services platform.",
     keywords:
       "Indiabulls ASO, ASO Strategy Indiabulls, ASOWin Indiabulls, Finance App ASO, Trading ASO, ASOWin Strategy",
     openGraph: {
-      title: "Case Study 2 - ASOWin",
+      title: "Indiabulls Securities Success Story - ASOWin",
       description:
         "Discover how ASOWin helped optimize the Indiabulls app with expert ASO strategies. Boosting visibility, enhancing user experience, and driving growth through targeted solutions for this financial services platform.",
-      url: "https://www.asowin.com/case-study-2",
+      url: "https://www.asowin.com/success-stories/indiabulls-securities",
       siteName: "ASOWin",
       images: [
         {
-          url: "/og-case-study-2.jpg",
+          url: "/og-indiabulls.jpg",
           width: 1200,
           height: 630,
-          alt: "Indiabulls ASO Case Study",
+          alt: "Indiabulls ASO Success Story",
         },
       ],
       type: "article",
     },
     twitter: {
       card: "summary_large_image",
-      title: "Case Study 2 - ASOWin",
+      title: "Indiabulls Securities Success Story - ASOWin",
       description:
         "Discover how ASOWin helped optimize the Indiabulls app with expert ASO strategies. Boosting visibility, enhancing user experience, and driving growth through targeted solutions for this financial services platform.",
-      images: ["/og-case-study-2.jpg"],
+      images: ["/og-indiabulls.jpg"],
       site: "@asowin",
     },
     icons: {
@@ -33,7 +33,7 @@ export const metadata = {
     },
   };
   
-  export default function CaseStudy2Layout({ children }) {
+  export default function IndiabullsSecuritiesLayout({ children }) {
     return <>{children}</>;
   }
   
