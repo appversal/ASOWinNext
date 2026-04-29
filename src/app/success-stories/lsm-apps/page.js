@@ -36,6 +36,8 @@
 
 
 import Head from "next/head";
+import Breadcrumb from "../../components/Breadcrumb";
+import BackButton from "../../components/BackButton";
 import GetStarted from "../../components/GetStarted";
 import BlogContact from "../../components/CaseStudyContact";
 import Footer from "../../components/Footer";
@@ -43,6 +45,7 @@ import CaseStudy3Hero from "../../components/CaseStudy3Hero";
 import CaseStudyAbout3 from "../../components/CaseStudyAbout3";
 import CaseStudy3Stats from "../../components/CaseStudy3Stats";
 import CaseStudyResult3 from "../../components/CaseStudyResult3";
+import RelatedCaseStudies from "../../components/RelatedCaseStudies";
 
 export default function CaseStudy3() {
   return (
@@ -79,9 +82,14 @@ export default function CaseStudy3() {
 
       {/* Page Content */}
       <CaseStudy3Hero />
+      <Breadcrumb />
+      <div className="container mx-auto px-4 sm:px-6 md:px-8 lg:px-16 py-6">
+        <BackButton />
+      </div>
       <CaseStudyAbout3 />
       <CaseStudy3Stats />
       <CaseStudyResult3 />
+      <RelatedCaseStudies currentCaseStudy={3} />
       <GetStarted />
       <BlogContact />
       <br />

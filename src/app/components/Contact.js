@@ -86,12 +86,12 @@ export default function Contact() {
                 <a href="mailto:support@asowin.com" className="hover:underline">support@asowin.com</a>
               </div>
 
-              <div className="flex items-center gap-2 text-[#4A5568]">
-                <svg xmlns="http://www.w3.org/2000/svg" className="w-5 h-5 text-[#111122]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+              <div className="flex items-start gap-2 text-[#4A5568]">
+                <svg xmlns="http://www.w3.org/2000/svg" className="w-5 h-5 text-[#111122] mt-0.5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
                   <path strokeLinecap="round" strokeLinejoin="round" d="M17.657 16.657L13.414 20.9a2 2 0 01-2.828 0l-4.243-4.243a8 8 0 1111.314 0z" />
                   <path strokeLinecap="round" strokeLinejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
                 </svg>
-                <span>California&lt;&gt;Delaware &lt;&gt; Jakarta &lt;&gt; Singapore &lt;&gt; Mumbai &lt;&gt; Noida</span>
+                <span>California &lt;&gt; Delaware &lt;&gt; Jakarta &lt;&gt; Singapore &lt;&gt; Mumbai &lt;&gt; Noida</span>
               </div>
             </div>
           </div>

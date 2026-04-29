@@ -36,6 +36,8 @@
 // }
 
 import Head from "next/head";
+import Breadcrumb from "../../components/Breadcrumb";
+import BackButton from "../../components/BackButton";
 import GetStarted from "../../components/GetStarted";
 import BlogContact from "../../components/CaseStudyContact";
 import Footer from "../../components/Footer";
@@ -43,6 +45,7 @@ import CaseStudy2Hero from "../../components/CaseStudy2Hero";
 import CaseStudyAbout2 from "../../components/CaseStudyAbout2";
 import CaseStudy2Stats from "../../components/CaseStudy2Stats";
 import CaseStudyResult2 from "../../components/CaseStudyResult2";
+import RelatedCaseStudies from "../../components/RelatedCaseStudies";
 
 export default function CaseStudy2() {
   return (
@@ -79,9 +82,14 @@ export default function CaseStudy2() {
 
       {/* Page Content */}
       <CaseStudy2Hero />
+      <Breadcrumb />
+      <div className="container mx-auto px-4 sm:px-6 md:px-8 lg:px-16 py-6">
+        <BackButton />
+      </div>
       <CaseStudyAbout2 />
       <CaseStudy2Stats />
       <CaseStudyResult2 />
+      <RelatedCaseStudies currentCaseStudy={2} />
       <GetStarted />
       <BlogContact />
       <br />

@@ -51,10 +51,22 @@ const Footer = () => {
             {/* Navigation */}
             <nav className="flex flex-wrap gap-4 sm:gap-6 md:gap-8 lg:gap-12 mt-6 sm:mt-16 md:mt-28 text-center md:text-left">
               <Link
+                href="/"
+                className="text-white hover:text-[#FFB842] text-sm font-semibold whitespace-nowrap"
+              >
+                HOME
+              </Link>
+              <Link
                 href="/services"
                 className="text-white hover:text-[#FFB842] text-sm font-semibold whitespace-nowrap"
               >
                 SERVICES
+              </Link>
+              <Link
+                href="/success-stories"
+                className="text-white hover:text-[#FFB842] text-sm font-semibold whitespace-nowrap"
+              >
+                SUCCESS STORIES
               </Link>
               <Link
                 href="/book"

@@ -2,6 +2,10 @@ import Link from "next/link";
 import Image from "next/image";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
+import playojoCover from "../assets/success-stories/playojo/cover.png";
+import vikerIcon from "../assets/success-stories/vikergames/viker_icon.png";
+import bajajIcon from "../assets/success-stories/bajajfinserv/bajaj_icon.png";
+import playojoLogo from "../assets/success-stories/playojo/playojo_logo.png";
 
 const caseStudiesData = [
   {
@@ -42,6 +46,45 @@ const caseStudiesData = [
     highlight: "Achieved top rankings with consistent growth in organic installs",
     image: "/casestudy.png",
     link: "/success-stories/lsm-apps",
+  },
+  {
+    id: 4,
+    logo: vikerIcon.src,
+    title: "Viker Games",
+    description: "Mobile Gaming",
+    stats: [
+      { value: "#1", label: "Free Games" },
+      { value: "500K+", label: "Daily Installs" },
+    ],
+    highlight: "Achieved #1 ranking in Top Free Games in Australia with 500,000+ installs in one day",
+    image: "/placeholder.jpg",
+    link: "/success-stories/viker-games",
+  },
+  {
+    id: 5,
+    logo: bajajIcon.src,
+    title: "Bajaj Finserv",
+    description: "Fintech / CSAT",
+    stats: [
+      { value: "90+", label: "App Screens" },
+      { value: "Improved", label: "Visibility" },
+    ],
+    highlight: "Custom CSAT integration across 90+ screens with improved app ratings",
+    image: "/placeholder.jpg",
+    link: "/success-stories/bajaj-finserv",
+  },
+  {
+    id: 6,
+    logo: playojoLogo.src,
+    title: "PlayOJO Games",
+    description: "Online Gaming / iGaming",
+    stats: [
+      { value: "500+", label: "FTDs/Month" },
+      { value: "Improved", label: "Performance" },
+    ],
+    highlight: "Scaled first-time deposits with targeted user acquisition campaigns",
+    image: playojoCover.src,
+    link: "/success-stories/playojo-games",
   },
 ];
 
@@ -90,7 +133,7 @@ export default function SuccessStories() {
                   <div className="p-6 flex flex-col flex-grow">
                     {/* Logo and Title */}
                     <div className="flex items-center gap-3 mb-4">
-                      <div className="w-12 h-12 bg-emerald-500 rounded-lg flex items-center justify-center flex-shrink-0 overflow-hidden">
+                      <div className={`w-12 h-12 rounded-lg flex items-center justify-center flex-shrink-0 overflow-hidden ${[4, 5, 6].includes(story.id) ? '' : 'bg-emerald-500'}`}>
                         <Image
                           src={story.logo}
                           alt={`${story.title} logo`}
