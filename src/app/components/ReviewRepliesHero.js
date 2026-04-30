@@ -17,7 +17,7 @@ const ReviewRepliesHero = () => {
             {/* Content */}
             <div className="text-center lg:text-left">
               <h1 className="text-3xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-[64px] 2xl:text-[80px] font-bold leading-tight mb-4 md:mb-6 text-[#111111]">
-                <span className="block">Be the Brand</span>
+                <span className="block">Be The Brand</span>
                 <span className="block">That Always Responds</span>
               </h1>
 
