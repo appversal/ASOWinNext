@@ -58,7 +58,7 @@ const Navbar = () => {
                     href="/automated-review-replies"
                     className="block px-4 py-2.5 text-sm font-medium text-gray-700 hover:bg-gray-50 hover:text-black transition-colors"
                   >
-                    AI Reply-To-Reviews
+                    AI Reply-to-Reviews
                   </Link>
                 </div>
               </div>
