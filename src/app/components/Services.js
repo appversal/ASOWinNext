@@ -124,7 +124,7 @@ const Services = () => {
               return (
                 <div
                   key={index}
-                  className="bg-[#FF8712] text-white p-8 rounded-lg shadow-lg"
+                  className="bg-[#fdb124] text-white p-8 rounded-lg shadow-lg"
                 >
                   <div className="space-y-14">
                     <p className="text-lg font-medium">
