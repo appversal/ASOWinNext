@@ -32,7 +32,7 @@ const GetStarted = () => {
               Contact us and we’d love to get started.
             </p>
             <button
-              className="bg-[#FF8712] w-[172px] h-[37px] text-white px-8 py-1 rounded-full hover:bg-[#e66e00] transition-colors"
+              className="bg-[#fdb124] w-[172px] h-[37px] text-white px-8 py-1 rounded-full hover:bg-[#e09910] transition-colors"
               onClick={() => {
                 router.push("/contact");
                 window.scrollTo(0, 0);

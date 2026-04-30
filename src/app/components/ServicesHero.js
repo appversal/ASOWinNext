@@ -42,7 +42,7 @@ const ServicesHero = () => {
               </p>
               
               <button 
-                className="bg-[#FF8712] w-full sm:w-auto min-w-[200px] px-6 py-3 text-white text-base md:text-lg rounded-full hover:bg-[#e66e00] transition-colors"
+                className="bg-[#fdb124] w-full sm:w-auto min-w-[200px] px-6 py-3 text-white text-base md:text-lg rounded-full hover:bg-[#e09910] transition-colors"
                 onClick={() => router.push('/contact')} 
               >
                 LET'S TALK
