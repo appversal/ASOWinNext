@@ -2,9 +2,9 @@ User-agent: *
 Allow: /
 
 # Performance optimizations
-User-agent: *
 Disallow: /_next/
 Disallow: /api/
+Disallow: /thank-you/
 
 # Sitemap
 Sitemap: https://www.asowin.com/sitemap.xml
