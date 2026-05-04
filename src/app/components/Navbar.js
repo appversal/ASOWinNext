@@ -46,17 +46,35 @@ const Navbar = () => {
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7" />
                 </svg>
               </div>
-              <div className="absolute top-[100%] left-0 w-48 pt-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
+              <div className="absolute top-[100%] left-0 w-72 pt-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
                 <div className="bg-white shadow-xl rounded-xl border border-gray-100 py-2">
                   <Link
                     href="/services"
-                    className="block px-4 py-2.5 text-sm font-medium text-gray-700 hover:bg-gray-50 hover:text-black transition-colors"
+                    className="block px-6 py-2.5 text-sm font-medium text-gray-700 hover:bg-gray-50 hover:text-black transition-colors"
                   >
                     All Services
                   </Link>
                   <Link
+                    href="/services/app-store-optimization"
+                    className="block px-6 py-2.5 text-sm font-medium text-gray-700 hover:bg-gray-50 hover:text-black transition-colors"
+                  >
+                    App Store Optimization (ASO)
+                  </Link>
+                  <Link
+                    href="/services/app-reputation-management"
+                    className="block px-6 py-2.5 text-sm font-medium text-gray-700 hover:bg-gray-50 hover:text-black transition-colors"
+                  >
+                    App Reputation Management
+                  </Link>
+                  <Link
+                    href="/services/creative-ab-testing"
+                    className="block px-6 py-2.5 text-sm font-medium text-gray-700 hover:bg-gray-50 hover:text-black transition-colors"
+                  >
+                    Creative A/B Testing & Design
+                  </Link>
+                  <Link
                     href="/automated-review-replies"
-                    className="block px-4 py-2.5 text-sm font-medium text-gray-700 hover:bg-gray-50 hover:text-black transition-colors"
+                    className="block px-6 py-2.5 text-sm font-medium text-gray-700 hover:bg-gray-50 hover:text-black transition-colors"
                   >
                     AI Reply-to-Reviews
                   </Link>
@@ -177,6 +195,27 @@ const Navbar = () => {
                       onClick={() => setIsMobileMenuOpen(false)}
                     >
                       All Services
+                    </Link>
+                    <Link
+                      href="/services/app-store-optimization"
+                      className="px-4 py-2 text-gray-600 font-medium text-[14px] hover:text-[#111122] hover:bg-gray-50 rounded-lg transition-colors"
+                      onClick={() => setIsMobileMenuOpen(false)}
+                    >
+                      App Store Optimization
+                    </Link>
+                    <Link
+                      href="/services/app-reputation-management"
+                      className="px-4 py-2 text-gray-600 font-medium text-[14px] hover:text-[#111122] hover:bg-gray-50 rounded-lg transition-colors"
+                      onClick={() => setIsMobileMenuOpen(false)}
+                    >
+                      App Reputation Management
+                    </Link>
+                    <Link
+                      href="/services/creative-ab-testing"
+                      className="px-4 py-2 text-gray-600 font-medium text-[14px] hover:text-[#111122] hover:bg-gray-50 rounded-lg transition-colors"
+                      onClick={() => setIsMobileMenuOpen(false)}
+                    >
+                      Creative A/B Testing
                     </Link>
                     <Link
                       href="/automated-review-replies"
