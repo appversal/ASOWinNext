@@ -29,23 +29,26 @@ const ReviewRepliesHero = () => {
                 No manual agents. No ongoing costs. Just intelligent, always-on reputation management.
               </p>
 
-              <button
-                className="bg-[#fdb124] w-full sm:w-auto min-w-[200px] px-6 py-3 text-white text-base md:text-lg rounded-full hover:bg-[#e09910] transition-colors font-medium"
-                onClick={() => router.push('/contact')}
-              >
-                Get Started
-              </button>
+              <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 items-center justify-center lg:justify-start">
+                <button
+                  className="bg-[#fdb124] w-full sm:w-auto min-w-[200px] px-6 py-3 text-white text-base md:text-lg rounded-full hover:bg-[#e09910] transition-colors font-medium"
+                  onClick={() => router.push('/contact')}
+                >
+                  Get Started
+                </button>
+                <button
+                  className="bg-white border-2 border-[#fdb124] w-full sm:w-auto min-w-[200px] px-6 py-3 text-[#014458] text-base md:text-lg rounded-full hover:bg-[#fdb124] hover:text-white transition-colors font-medium"
+                  onClick={() => router.push('/automated-review-replies/dashboard')}
+                >
+                  Go to Dashboard
+                </button>
+              </div>
             </div>
           </div>
 
           {/* Right side - Illustration */}
           <div className="w-full lg:w-1/2 flex lg:justify-end mt-12 lg:mt-0">
             <div className="w-full max-w-[550px] mx-auto lg:ml-auto lg:mr-0 relative h-[420px] sm:h-[600px] lg:h-[650px] flex items-center justify-center">
-              {/* Abstract Background Blobs */}
-              <div className="absolute top-1/4 left-1/4 w-40 h-40 sm:w-64 sm:h-64 bg-[#fdb124]/10 rounded-full mix-blend-multiply filter blur-2xl sm:blur-3xl opacity-70 animate-pulse"></div>
-              <div className="absolute top-1/3 right-1/4 w-48 h-48 sm:w-72 sm:h-72 bg-[#FFB366]/20 rounded-full mix-blend-multiply filter blur-2xl sm:blur-3xl opacity-70 animate-pulse" style={{ animationDelay: '2s' }}></div>
-              <div className="absolute bottom-1/4 left-1/4 w-48 h-48 sm:w-80 sm:h-80 bg-[#FFD9B3]/20 rounded-full mix-blend-multiply filter blur-2xl sm:blur-3xl opacity-70 animate-pulse" style={{ animationDelay: '4s' }}></div>
-
               <div className="relative w-full max-w-[340px] sm:max-w-full mx-auto h-full transform scale-[0.9] sm:scale-100 origin-center">
                 {/* Card 1 - Background Left */}
                 <div className="absolute top-[8%] left-[0%] w-[90%] sm:w-[320px] bg-white rounded-2xl p-4 sm:p-5 shadow-[0_20px_50px_rgb(0,0,0,0.06)] border border-gray-200 transform -rotate-2 hover:rotate-0 hover:-translate-y-2 transition-all duration-300 z-10">
