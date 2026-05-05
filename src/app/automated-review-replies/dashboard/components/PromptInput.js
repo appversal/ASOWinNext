@@ -1,7 +1,7 @@
 'use client';
 
 import { useState } from 'react';
-import { Send, Loader } from 'lucide-react';
+import { Save, Loader } from 'lucide-react';
 
 export function PromptInput({ onGenerate }) {
   const [prompt, setPrompt] = useState('');
@@ -29,14 +29,14 @@ export function PromptInput({ onGenerate }) {
 
   return (
     <div className="bg-white rounded-lg shadow-md p-6 mb-8">
-      <h2 className="text-xl font-bold text-gray-900 mb-4">Generate Smart Reply</h2>
+      <h2 className="text-xl font-bold text-gray-900 mb-4">Set your Reply Prompt</h2>
       <p className="text-sm text-gray-600 mb-4">
         Provide context or specific instructions for AI to generate a personalized reply to a review.
       </p>
       <form onSubmit={handleSubmit} className="space-y-4">
         <div>
           <label className="block text-sm font-medium text-gray-700 mb-2">
-            Review Context or Instructions
+            Prompt Instructions
           </label>
           <textarea
             value={prompt}
@@ -55,12 +55,12 @@ export function PromptInput({ onGenerate }) {
             {isLoading ? (
               <>
                 <Loader className="animate-spin" size={18} />
-                <span>Generating...</span>
+                <span>Saving...</span>
               </>
             ) : (
               <>
-                <Send size={18} />
-                <span>Generate Reply</span>
+                <Save size={18} />
+                <span>Save as System Prompt</span>
               </>
             )}
           </button>

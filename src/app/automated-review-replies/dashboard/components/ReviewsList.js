@@ -155,7 +155,7 @@ export function ReviewsList() {
       </div>
 
       {/* Stats */}
-      <div className="grid grid-cols-3 gap-4 mb-6 pb-6 border-b border-gray-200">
+      {/* <div className="grid grid-cols-3 gap-4 mb-6 pb-6 border-b border-gray-200">
         <div className="text-center">
           <div className="text-2xl font-bold text-gray-900">
             {mockReviews.filter((r) => r.status === 'replied').length}
@@ -174,7 +174,7 @@ export function ReviewsList() {
           </div>
           <div className="text-xs text-gray-600">Tickets</div>
         </div>
-      </div>
+      </div> */}
 
       {/* Reviews List */}
       <div className="space-y-4">

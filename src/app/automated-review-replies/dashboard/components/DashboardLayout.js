@@ -21,16 +21,16 @@ export function DashboardLayout({ children }) {
       icon: LayoutDashboard,
       href: '/automated-review-replies/dashboard',
     },
-    {
-      label: 'Reviews',
-      icon: MessageSquare,
-      href: '/automated-review-replies/dashboard/reviews',
-    },
-    {
-      label: 'Insights',
-      icon: BarChart3,
-      href: '/automated-review-replies/dashboard/insights',
-    },
+    // {
+    //   label: 'Reviews',
+    //   icon: MessageSquare,
+    //   href: '/automated-review-replies/dashboard/reviews',
+    // },
+    // {
+    //   label: 'Insights',
+    //   icon: BarChart3,
+    //   href: '/automated-review-replies/dashboard/insights',
+    // },
     {
       label: 'Settings',
       icon: Settings,
