@@ -18,10 +18,10 @@ const AppReputationRatingsTransform = () => {
   );
 
   return (
-    <section className="py-16 lg:py-24 bg-white px-6 sm:px-12 lg:px-20">
+    <section className="py-0 lg:py-0 bg-white px-6 sm:px-12 lg:px-20">
       <div className="max-w-[1440px] mx-auto">
         {/* Header */}
-        <div className="text-center mb-16">
+        <div className="text-center mb-4">
           <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-4">
             How We Transform <span className="text-[#014458]">Your Brand</span>
           </h2>
@@ -31,7 +31,7 @@ const AppReputationRatingsTransform = () => {
         </div>
 
         {/* Transformation Card */}
-        <div className="relative max-w-6xl mx-auto mb-16">
+        <div className="relative max-w-6xl mx-auto mb-4">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center bg-gradient-to-r from-red-50 via-gray-50 to-green-50 rounded-3xl border-2 border-gray-200 p-8 md:p-16 shadow-xl">
             {/* Before State */}
             <div className="text-center md:text-left md:border-r-2 md:border-gray-300 md:pr-12">

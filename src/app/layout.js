@@ -3,6 +3,7 @@ import "./globals.css";
 import Script from "next/script";
 import GoogleAnalytics from "./components/GoogleAnalytics";
 import IntercomProvider from "./components/IntercomProvider";
+import { AuthProvider } from "@/lib/auth-context";
 
 const manrope = Manrope({
   subsets: ["latin"],
@@ -129,9 +130,11 @@ export default function RootLayout({ children }) {
           />
         </noscript>
 
-        {children}
-        <GoogleAnalytics />
-        <IntercomProvider />
+        <AuthProvider>
+          {children}
+          <GoogleAnalytics />
+          <IntercomProvider />
+        </AuthProvider>
 
         {/* Tidio Live Chat */}
         <Script

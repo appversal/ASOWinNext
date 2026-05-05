@@ -6,6 +6,7 @@ import AppReputationWhatIsSection from '../../components/AppReputationWhatIsSect
 import AppReputationServicesDetailSection from '../../components/AppReputationServicesDetailSection';
 import AppReputationWorkflowSection from '../../components/AppReputationWorkflowSection';
 import AppReputationASOConnection from '../../components/AppReputationASOConnection';
+import GetStarted from '../../components/GetStarted';
 import Footer from '../../components/Footer';
 import GoogleAnalytics from '../../components/GoogleAnalytics';
 
@@ -31,6 +32,9 @@ const AppReputationServicePage = () => {
 
       {/* ASO Connection */}
       <AppReputationASOConnection />
+
+      {/* Get Started */}
+      <GetStarted />
 
       {/* Footer */}
       <Footer />

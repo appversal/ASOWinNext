@@ -83,10 +83,10 @@ const AppReputationServicesDetailSection = () => {
   ];
 
   return (
-    <section className="w-full py-12 md:py-18 px-6 sm:px-12 lg:px-20 bg-white">
+    <section className="w-full py-4 md:py-6 px-6 sm:px-12 lg:px-20 bg-white">
       <div className="max-w-[1440px] mx-auto">
         {/* Section Header */}
-        <div className="text-center mb-12 md:mb-16">
+        <div className="text-center mb-8 md:mb-10">
           <h2 className="text-3xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-4">
             Our App Reputation Management Services
           </h2>
