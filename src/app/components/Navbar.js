@@ -36,29 +36,61 @@ const Navbar = () => {
             </Link>
             <div className="relative group">
               <div className="flex items-center gap-1 cursor-pointer py-2">
-                <Link
-                  href="/services"
+                <span
                   className="text-[#111111] font-medium hover:text-black text-sm lg:text-[14px] 2xl:text-[14px]"
                 >
                   Services
-                </Link>
+                </span>
                 <svg className="w-4 h-4 text-gray-500 group-hover:text-black transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7" />
                 </svg>
               </div>
-              <div className="absolute top-[100%] left-0 w-48 pt-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
+              <div className="absolute top-[100%] left-0 w-72 pt-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
                 <div className="bg-white shadow-xl rounded-xl border border-gray-100 py-2">
                   <Link
-                    href="/services"
-                    className="block px-4 py-2.5 text-sm font-medium text-gray-700 hover:bg-gray-50 hover:text-black transition-colors"
+                    href="/services/app-store-optimization"
+                    className="block px-6 py-2.5 text-sm font-medium text-gray-700 hover:bg-gray-50 hover:text-black transition-colors"
                   >
-                    All Services
+                    App Store Optimization (ASO)
+                  </Link>
+                  <Link
+                    href="/services/app-reputation-management"
+                    className="block px-6 py-2.5 text-sm font-medium text-gray-700 hover:bg-gray-50 hover:text-black transition-colors"
+                  >
+                    App Reputation Management
+                  </Link>
+                  <Link
+                    href="/services/keyword-installs"
+                    className="block px-6 py-2.5 text-sm font-medium text-gray-700 hover:bg-gray-50 hover:text-black transition-colors"
+                  >
+                    Keyword Installs
+                  </Link>
+                  <Link
+                    href="/services/automated-aso-ai"
+                    className="block px-6 py-2.5 text-sm font-medium text-gray-700 hover:bg-gray-50 hover:text-black transition-colors"
+                  >
+                    Automated ASO with AI
+                  </Link>
+                  <Link
+                    href="/services/paid-user-acquisition"
+                    className="block px-6 py-2.5 text-sm font-medium text-gray-700 hover:bg-gray-50 hover:text-black transition-colors"
+                  >
+                    Paid User Acquisition & Search Ads
+                  </Link>
+                  <Link
+                    href="/services/creative-ab-testing"
+                    className="block px-6 py-2.5 text-sm font-medium text-gray-700 hover:bg-gray-50 hover:text-black transition-colors"
+                  >
+                    Creative A/B Testing & Design
                   </Link>
                   <Link
                     href="/automated-review-replies"
-                    className="block px-4 py-2.5 text-sm font-medium text-gray-700 hover:bg-gray-50 hover:text-black transition-colors"
+                    className="block px-6 py-2.5 text-sm font-medium text-gray-700 hover:bg-gray-50 hover:text-black transition-colors flex items-center gap-2"
                   >
-                    AI Reply-to-Reviews
+                    <span>AI Reply-to-Reviews</span>
+                    <span className="inline-flex items-center px-2 py-0.5 rounded-full text-xs font-bold bg-gradient-to-r from-[#fdb124] to-[#e09910] text-white">
+                      NEW
+                    </span>
                   </Link>
                 </div>
               </div>
@@ -152,13 +184,11 @@ const Navbar = () => {
               </Link>
               <div className="flex flex-col">
                 <div className="flex items-center justify-between px-4 py-3 hover:bg-gray-50 rounded-xl transition-colors">
-                  <Link
-                    href="/services"
+                  <span
                     className="text-[#111122] font-semibold text-[15px]"
-                    onClick={() => setIsMobileMenuOpen(false)}
                   >
                     Services
-                  </Link>
+                  </span>
                   <button
                     onClick={() => setIsServicesMobileOpen(!isServicesMobileOpen)}
                     className="p-1 rounded-md hover:bg-gray-200 text-gray-600 focus:outline-none"
@@ -172,18 +202,56 @@ const Navbar = () => {
                 {isServicesMobileOpen && (
                   <div className="flex flex-col pl-6 pr-2 py-1 space-y-1">
                     <Link
-                      href="/services"
+                      href="/services/app-store-optimization"
                       className="px-4 py-2 text-gray-600 font-medium text-[14px] hover:text-[#111122] hover:bg-gray-50 rounded-lg transition-colors"
                       onClick={() => setIsMobileMenuOpen(false)}
                     >
-                      All Services
+                      App Store Optimization
+                    </Link>
+                    <Link
+                      href="/services/app-reputation-management"
+                      className="px-4 py-2 text-gray-600 font-medium text-[14px] hover:text-[#111122] hover:bg-gray-50 rounded-lg transition-colors"
+                      onClick={() => setIsMobileMenuOpen(false)}
+                    >
+                      App Reputation Management
+                    </Link>
+                    <Link
+                      href="/services/keyword-installs"
+                      className="px-4 py-2 text-gray-600 font-medium text-[14px] hover:text-[#111122] hover:bg-gray-50 rounded-lg transition-colors"
+                      onClick={() => setIsMobileMenuOpen(false)}
+                    >
+                      Keyword Installs
+                    </Link>
+                    <Link
+                      href="/services/automated-aso-ai"
+                      className="px-4 py-2 text-gray-600 font-medium text-[14px] hover:text-[#111122] hover:bg-gray-50 rounded-lg transition-colors"
+                      onClick={() => setIsMobileMenuOpen(false)}
+                    >
+                      Automated ASO with AI
+                    </Link>
+                    <Link
+                      href="/services/paid-user-acquisition"
+                      className="px-4 py-2 text-gray-600 font-medium text-[14px] hover:text-[#111122] hover:bg-gray-50 rounded-lg transition-colors"
+                      onClick={() => setIsMobileMenuOpen(false)}
+                    >
+                      Paid User Acquisition
+                    </Link>
+                    <Link
+                      href="/services/creative-ab-testing"
+                      className="px-4 py-2 text-gray-600 font-medium text-[14px] hover:text-[#111122] hover:bg-gray-50 rounded-lg transition-colors"
+                      onClick={() => setIsMobileMenuOpen(false)}
+                    >
+                      Creative A/B Testing
                     </Link>
                     <Link
                       href="/automated-review-replies"
-                      className="px-4 py-2 text-gray-600 font-medium text-[14px] hover:text-[#111122] hover:bg-gray-50 rounded-lg transition-colors"
+                      className="px-4 py-2 text-gray-600 font-medium text-[14px] hover:text-[#111122] hover:bg-gray-50 rounded-lg transition-colors flex items-center gap-2"
                       onClick={() => setIsMobileMenuOpen(false)}
                     >
-                      Review Replies
+                      <span>Review Replies</span>
+                      <span className="inline-flex items-center px-2 py-0.5 rounded-full text-xs font-bold bg-gradient-to-r from-[#fdb124] to-[#e09910] text-white">
+                        NEW
+                      </span>
                     </Link>
                   </div>
                 )}

@@ -64,7 +64,7 @@ const HeroSection = () => {
               href="/contact"
               className="w-auto md:w-[200px] bg-[#fdb124] text-white px-8 xs:px-4 py-3 xs:py-4 rounded-full font-medium hover:bg-orange-600 transition-colors whitespace-nowrap text-xs xs:text-sm md:text-base"
             >
-              LET'S TALK
+              Let's Talk
             </Link>
           </div>
         </div>
