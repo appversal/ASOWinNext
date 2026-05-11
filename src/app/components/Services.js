@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 
 const services = [
   {
@@ -7,6 +8,7 @@ const services = [
     title: "Full-Service ASO", 
     description:
       "Boost your app's discoverability and downloads with our comprehensive ASO services. From optimizing metadata to refining your app store listing, we help you rank higher and attract the right audience.",
+    href: "/services/app-store-optimization",
   },
   {
     icon: "/img3.png",  
@@ -21,6 +23,7 @@ const services = [
     title: "Keyword Research & Rankings",
     description:
       "We identify the most relevant and high-performing keywords for your app, enabling it to appear in top searches. Our data-driven approach ensures your app stays ahead of the competition.",
+    href: "/services/keyword-installs",
   },
   {
     icon: "/img6.png",
@@ -28,6 +31,7 @@ const services = [
     title: "Design Services & A/B Testing",
     description:
       "Make a lasting first impression with stunning app screenshots, videos, and icons. We conduct rigorous A/B testing to identify visuals that convert and resonate most with your audience.",
+    href: "/services/creative-ab-testing",
   },
   {
     icon: "/img4.png",
@@ -35,6 +39,7 @@ const services = [
     title: "App Reputation Management",
     description:
       "Maintain a positive app image with our reputation management services. We handle user reviews and ratings, respond to feedback, and ensure your app's public perception aligns with your brand's values.",
+    href: "/services/app-reputation-management",
   },
   {
     icon: "/img5.png",
@@ -42,6 +47,7 @@ const services = [
     title: "Paid User Acquisition (UA) and Apple Search Ads",
     description:
       "Supercharge your growth with targeted user acquisition campaigns. We leverage Apple Search Ads and other paid channels to maximize ROI and drive high-quality users to your app.",
+    href: "/services/paid-user-acquisition",
   },
 ];
 
@@ -139,26 +145,28 @@ const Services = () => {
             }
 
             return (
-              <div key={index} className="bg-white p-8 rounded-lg">
-                <div className="space-y-4">
-                  <Image
-                    src={service.icon}
-                    alt="icon"
-                    width={30}
-                    height={30}
-                    className="w-[30px] h-[30px] object-contain"
-                  />
-                  <div>
-                    <p className="text-orange-500 text-[11px] font-medium tracking-wider">
-                      {service.category}
-                    </p>
-                    <h3 className="text-[24px] font-normal mt-2 text-gray-900">
-                      {service.title}
-                    </h3>
+              <Link href={service.href} key={index} className="group">
+                <div className="bg-white p-8 rounded-lg h-full transition-all duration-300 hover:shadow-lg hover:-translate-y-1 cursor-pointer">
+                  <div className="space-y-4">
+                    <Image
+                      src={service.icon}
+                      alt="icon"
+                      width={30}
+                      height={30}
+                      className="w-[30px] h-[30px] object-contain"
+                    />
+                    <div>
+                      <p className="text-orange-500 text-[11px] font-medium tracking-wider">
+                        {service.category}
+                      </p>
+                      <h3 className="text-[24px] font-normal mt-2 text-gray-900 group-hover:text-orange-500 transition-colors">
+                        {service.title}
+                      </h3>
+                    </div>
+                    <p className="text-[#535353] text-[14px]">{service.description}</p>
                   </div>
-                  <p className="text-[#535353] text-[14px]">{service.description}</p>
                 </div>
-              </div>
+              </Link>
             );
           })}
         </div>
