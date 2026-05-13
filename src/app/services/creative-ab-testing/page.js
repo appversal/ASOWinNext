@@ -9,6 +9,8 @@ import CreativeABTestingDeliverablesSection from '../../components/CreativeABTes
 import CreativeABTestingImpactSection from '../../components/CreativeABTestingImpactSection';
 import Footer from '../../components/Footer';
 import GoogleAnalytics from '../../components/GoogleAnalytics';
+import GetStarted from '../../components/GetStarted';
+import RelatedServices from '../../components/RelatedServices';
 
 const CreativeABTestingServicePage = () => {
   return (
