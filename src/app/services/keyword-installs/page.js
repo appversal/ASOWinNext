@@ -10,6 +10,7 @@ import KeywordInstallsFinalCTA from '../../components/KeywordInstallsFinalCTA';
 import GetStarted from '../../components/GetStarted';
 import Footer from '../../components/Footer';
 import GoogleAnalytics from '../../components/GoogleAnalytics';
+import RelatedServices from '../../components/RelatedServices';
 
 export const metadata = {
   title: 'Keyword Installs Service | Improve App Rankings | ASOWin',
@@ -48,6 +49,9 @@ const KeywordInstallsServicePage = () => {
 
       {/* Get Started */}
       <GetStarted />
+
+      {/* Related Services */}
+      <RelatedServices currentServiceSlug="keyword-installs" />
 
       {/* Footer */}
       <Footer />

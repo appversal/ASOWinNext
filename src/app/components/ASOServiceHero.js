@@ -2,6 +2,7 @@
 import React from 'react';
 import { useRouter } from 'next/navigation';
 import Navbar from './Navbar';
+import HeroBreadcrumb from './HeroBreadcrumb';
 
 const ASOServiceHero = () => {
   const router = useRouter();
@@ -13,6 +14,9 @@ const ASOServiceHero = () => {
         <div className="flex flex-col items-center justify-center py-8 md:py-12 lg:py-20 px-4 sm:px-6 lg:px-16">
           {/* Content */}
           <div className="w-full max-w-[900px] relative">
+            {/* Breadcrumb Navigation */}
+            <HeroBreadcrumb serviceName="Full-Service ASO" serviceSlug="app-store-optimization" />
+
             {/* Content */}
             <div className="text-center flex flex-col items-center">
               <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-6xl xl:text-7xl font-bold leading-tight mb-4 md:mb-6 text-gray-900 whitespace-nowrap">

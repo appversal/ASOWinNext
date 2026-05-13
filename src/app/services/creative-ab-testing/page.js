@@ -36,6 +36,12 @@ const CreativeABTestingServicePage = () => {
       {/* Impact Section */}
       <CreativeABTestingImpactSection />
 
+      {/* Get Started */}
+      <GetStarted />
+
+      {/* Related Services */}
+      <RelatedServices currentServiceSlug="creative-ab-testing" />
+
       {/* Footer */}
       <Footer />
     </div>
