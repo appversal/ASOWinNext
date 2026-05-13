@@ -1,5 +1,6 @@
 'use client';
 import Image from 'next/image';
+import Link from 'next/link';
 
 const ASOSection4 = () => {
   return (
@@ -43,12 +44,21 @@ const ASOSection4 = () => {
                 </div>
 
                 {/* Why It Matters Section */}
-                <div>
+                <div className="mb-6">
                   <h2 className="text-white text-[18px] sm:text-[20px] lg:text-[24px] font-medium mb-2 sm:mb-3">Why It Matters</h2>
                   <p className="text-[#ffffff] text-[12px] sm:text-[13px] lg:text-[14px] font-normal">
                     Paid acquisition amplifies organic strategies and <br />
                     speeds up results.
                   </p>
+                </div>
+
+                {/* Learn More Button */}
+                <div className="mt-8">
+                  <Link href="/services/paid-user-acquisition">
+                    <button className="bg-[#E06F00] text-white px-6 py-2 rounded-lg font-semibold text-[14px] hover:bg-[#d4630a] transition-colors">
+                      Learn More
+                    </button>
+                  </Link>
                 </div>
               </div>
             </div>

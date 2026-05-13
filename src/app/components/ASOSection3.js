@@ -1,4 +1,6 @@
+'use client';
 import React from 'react';
+import Link from 'next/link';
 
 const ASOSection3 = () => {
   return (
@@ -47,6 +49,14 @@ const ASOSection3 = () => {
                       over time.
                     </p>
                   </div>
+
+                  <div className="mt-8">
+                    <Link href="/services/keyword-installs">
+                      <button className="bg-[#E06F00] text-white px-6 py-2 rounded-lg font-semibold text-[14px] hover:bg-[#d4630a] transition-colors">
+                        Learn More
+                      </button>
+                    </Link>
+                  </div>
                 </div>
               </div>
             </div>
@@ -93,6 +103,14 @@ const ASOSection3 = () => {
                       A higher rating directly impacts<br />
                       downloads and user acquisition.
                     </p>
+                  </div>
+
+                  <div className="mt-8">
+                    <Link href="/services/automated-aso-ai">
+                      <button className="bg-[#E06F00] text-white px-6 py-2 rounded-lg font-semibold text-[14px] hover:bg-[#d4630a] transition-colors">
+                        Learn More
+                      </button>
+                    </Link>
                   </div>
                 </div>
               </div>
