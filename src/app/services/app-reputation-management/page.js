@@ -9,6 +9,7 @@ import AppReputationASOConnection from '../../components/AppReputationASOConnect
 import GetStarted from '../../components/GetStarted';
 import Footer from '../../components/Footer';
 import GoogleAnalytics from '../../components/GoogleAnalytics';
+import RelatedServices from '../../components/RelatedServices';
 
 const AppReputationServicePage = () => {
   return (
@@ -35,6 +36,9 @@ const AppReputationServicePage = () => {
 
       {/* Get Started */}
       <GetStarted />
+
+      {/* Related Services */}
+      <RelatedServices currentServiceSlug="app-reputation-management" />
 
       {/* Footer */}
       <Footer />

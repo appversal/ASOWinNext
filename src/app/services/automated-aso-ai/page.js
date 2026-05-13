@@ -10,6 +10,7 @@ import AutomatedASOAIFinalCTA from '../../components/AutomatedASOAIFinalCTA';
 import GetStarted from '../../components/GetStarted';
 import Footer from '../../components/Footer';
 import GoogleAnalytics from '../../components/GoogleAnalytics';
+import RelatedServices from '../../components/RelatedServices';
 
 export const metadata = {
   title: 'Automated ASO with AI | Smart App Growth | ASOWin',
@@ -48,6 +49,9 @@ const AutomatedASOAIServicePage = () => {
 
       {/* Get Started */}
       <GetStarted />
+
+      {/* Related Services */}
+      <RelatedServices currentServiceSlug="automated-aso-ai" />
 
       {/* Footer */}
       <Footer />

@@ -10,6 +10,7 @@ import PaidUAFinalCTA from '../../components/PaidUAFinalCTA';
 import GetStarted from '../../components/GetStarted';
 import Footer from '../../components/Footer';
 import GoogleAnalytics from '../../components/GoogleAnalytics';
+import RelatedServices from '../../components/RelatedServices';
 
 export const metadata = {
   title: 'Paid User Acquisition & Search Ads | App Growth | ASOWin',
@@ -48,6 +49,9 @@ const PaidUAServicePage = () => {
 
       {/* Get Started */}
       <GetStarted />
+
+      {/* Related Services */}
+      <RelatedServices currentServiceSlug="paid-user-acquisition" />
 
       {/* Footer */}
       <Footer />

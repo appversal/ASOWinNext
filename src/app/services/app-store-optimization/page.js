@@ -10,6 +10,7 @@ import ASOWhyChooseSection from '../../components/ASOWhyChooseSection';
 import GetStarted from '../../components/GetStarted';
 import Footer from '../../components/Footer';
 import GoogleAnalytics from '../../components/GoogleAnalytics';
+import RelatedServices from '../../components/RelatedServices';
 
 const ASOServicePage = () => {
   return (
@@ -39,6 +40,9 @@ const ASOServicePage = () => {
 
       {/* Get Started Section */}
       <GetStarted />
+
+      {/* Related Services */}
+      <RelatedServices currentServiceSlug="app-store-optimization" />
 
       {/* Footer */}
       <Footer />
