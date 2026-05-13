@@ -1,6 +1,7 @@
 // components/ASOSection.js
 
 import React from 'react';
+import Link from 'next/link';
 
 const ASOSection2 = () => {
   return (
@@ -43,6 +44,14 @@ const ASOSection2 = () => {
                       and user acquisition.
                     </p>
                   </div>
+
+                  <div className="mt-8">
+                    <Link href="/services/app-reputation-management">
+                      <button className="bg-[#E06F00] text-white px-6 py-2 rounded-lg font-semibold text-[14px] hover:bg-[#d4630a] transition-colors">
+                        Learn More
+                      </button>
+                    </Link>
+                  </div>
                 </div>
               </div>
             </div>
@@ -81,6 +90,14 @@ const ASOSection2 = () => {
                     <p className="text-[12px] sm:text-[14px] text-gray-700">
                       Enhances your app visibility, boosts user retention, and <br /> significantly drives download rate and revenue.
                     </p>
+                  </div>
+
+                  <div className="mt-8">
+                    <Link href="/services/creative-ab-testing">
+                      <button className="bg-[#E06F00] text-white px-6 py-2 rounded-lg font-semibold text-[14px] hover:bg-[#d4630a] transition-colors">
+                        Learn More
+                      </button>
+                    </Link>
                   </div>
                 </div>
               </div>
