@@ -44,6 +44,7 @@ import {
 } from "lucide-react";
 import LazyLottie from "@/components/LazyLottie";
 import { useState } from "react";
+import { trackLinkedInConversion } from "@/lib/linkedin-conversion";
 import mainSceneAnimation from "@/../../public/Main Scene.json";
 
 function ContactForm({ variant = "full" }) {
@@ -64,6 +65,7 @@ function ContactForm({ variant = "full" }) {
         e.preventDefault();
         setIsSubmitting(true);
         setSubmitStatus(null);
+        const submissionId = `${Date.now()}-${Math.random().toString(36).slice(2, 9)}`;
 
         try {
             // Prepare form data with proper field names for Web3Forms
@@ -93,6 +95,7 @@ function ContactForm({ variant = "full" }) {
 
             if (result.success) {
                 setSubmitStatus("success");
+                trackLinkedInConversion(submissionId);
                 setFormData({
                     firstName: "",
                     lastName: "",

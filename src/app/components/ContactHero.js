@@ -5,6 +5,7 @@ import { Facebook, Twitter, Linkedin, Instagram } from "lucide-react";
 import Image from "next/image";
 import Navbar from "./Navbar";
 import { useRouter } from "next/navigation";
+import { trackLinkedInConversion } from "@/lib/linkedin-conversion";
 
 const ContactHero = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -13,6 +14,7 @@ const ContactHero = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     setIsSubmitting(true);
+    const submissionId = `${Date.now()}-${Math.random().toString(36).slice(2, 9)}`;
 
     const formData = new FormData(e.target);
     formData.append("access_key", "a05ea8f5-1d65-4506-bde6-e519d7f5ea71");
@@ -43,6 +45,7 @@ const ContactHero = () => {
             'currency': 'INR'
           });
         }
+        trackLinkedInConversion(submissionId);
         // Redirect to thank you page
         router.push('/thank-you');
       }

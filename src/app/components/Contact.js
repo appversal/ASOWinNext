@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useEffect, useState } from "react";
+import { trackLinkedInConversion } from "@/lib/linkedin-conversion";
 
 export default function Contact() {
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -9,6 +10,7 @@ export default function Contact() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     setIsSubmitting(true);
+    const submissionId = `${Date.now()}-${Math.random().toString(36).slice(2, 9)}`;
 
     const formData = new FormData(e.target);
     formData.append("access_key", "a05ea8f5-1d65-4506-bde6-e519d7f5ea71");
@@ -40,6 +42,7 @@ export default function Contact() {
             'currency': 'INR'
           });
         }
+        trackLinkedInConversion(submissionId);
         e.target.reset();
       }
     } catch (error) {

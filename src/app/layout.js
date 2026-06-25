@@ -2,6 +2,7 @@ import { Manrope } from "next/font/google";
 import "./globals.css";
 import Script from "next/script";
 import GoogleAnalytics from "./components/GoogleAnalytics";
+import LinkedInInsightTag from "./components/LinkedInInsightTag";
 import IntercomProvider from "./components/IntercomProvider";
 import { AuthProvider } from "@/lib/auth-context";
 
@@ -99,6 +100,7 @@ export default function RootLayout({ children }) {
         <link rel="dns-prefetch" href="//www.google-analytics.com" />
         <link rel="dns-prefetch" href="//code.tidio.co" />
         <link rel="dns-prefetch" href="//api.web3forms.com" />
+        <link rel="dns-prefetch" href="//snap.licdn.com" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <link rel="preconnect" href="https://www.googletagmanager.com" />
@@ -133,6 +135,7 @@ export default function RootLayout({ children }) {
         <AuthProvider>
           {children}
           <GoogleAnalytics />
+          <LinkedInInsightTag />
           <IntercomProvider />
         </AuthProvider>
 
