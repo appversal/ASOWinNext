@@ -42,6 +42,7 @@ import {
 } from "react-icons/si";
 import Lottie from "lottie-react";
 import { useState } from "react";
+import { trackLinkedInConversion } from "@/lib/linkedin-conversion";
 import mainSceneAnimation from "@/../../public/Main Scene.json";
 
 function ContactForm({ variant = "full" }) {
@@ -62,6 +63,7 @@ function ContactForm({ variant = "full" }) {
         e.preventDefault();
         setIsSubmitting(true);
         setSubmitStatus(null);
+        const submissionId = `${Date.now()}-${Math.random().toString(36).slice(2, 9)}`;
 
         try {
             // Prepare form data with proper field names for Formspree
@@ -87,6 +89,7 @@ function ContactForm({ variant = "full" }) {
 
             if (response.ok) {
                 setSubmitStatus("success");
+                trackLinkedInConversion(submissionId);
                 setFormData({
                     firstName: "",
                     lastName: "",

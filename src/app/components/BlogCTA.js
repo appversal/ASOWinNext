@@ -1,5 +1,6 @@
 'use client';
 import { useEffect, useState } from 'react';
+import { trackLinkedInConversion } from '@/lib/linkedin-conversion';
 
 const BlogCTA = ({ title, subtitle, buttonText, buttonLink }) => {
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -8,6 +9,7 @@ const BlogCTA = ({ title, subtitle, buttonText, buttonLink }) => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     setIsSubmitting(true);
+    const submissionId = `${Date.now()}-${Math.random().toString(36).slice(2, 9)}`;
 
     const formData = new FormData(e.target);
     formData.append("access_key", "a05ea8f5-1d65-4506-bde6-e519d7f5ea71");
@@ -39,6 +41,7 @@ const BlogCTA = ({ title, subtitle, buttonText, buttonLink }) => {
             'currency': 'INR'
           });
         }
+        trackLinkedInConversion(submissionId);
         e.target.reset();
       }
     } catch (error) {

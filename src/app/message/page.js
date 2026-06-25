@@ -7,6 +7,7 @@ import Footer from "../components/Footer";
 import FAQ from "../../components/FAQ";
 import { Check, Send } from "lucide-react";
 import { Caveat } from "next/font/google";
+import { trackLinkedInConversion } from "@/lib/linkedin-conversion";
 
 const caveat = Caveat({ subsets: ["latin"], weight: ["700"] });
 
@@ -18,6 +19,7 @@ export default function MessagePage() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     setIsSubmitting(true);
+    const submissionId = `${Date.now()}-${Math.random().toString(36).slice(2, 9)}`;
 
     const formData = new FormData(e.target);
     formData.append("access_key", "a05ea8f5-1d65-4506-bde6-e519d7f5ea71");
@@ -49,6 +51,7 @@ export default function MessagePage() {
             'currency': 'INR'
           });
         }
+        trackLinkedInConversion(submissionId);
         e.target.reset();
         setSubmittedEmail(object.email);
       }
