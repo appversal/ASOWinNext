@@ -15,9 +15,9 @@ const BlogHero = ({ category, date, title, description, author, authorAvatar, re
       {/* Hero Section */}
       <div className="w-full px-4 sm:px-6 lg:px-20 pt-8 pb-8 md:pt-12 md:pb-12">
         <div className="max-w-7xl mx-auto">
-          <div className="flex flex-col lg:flex-row gap-8 lg:gap-12 items-start">
+          <div className="flex flex-col lg:flex-row gap-8 lg:gap-12 lg:items-stretch">
             {/* Left Column - Text Content */}
-            <div className="flex-1 lg:w-[55%]">
+            <div className="flex-1 lg:w-[55%] flex flex-col">
               <div className="flex items-center gap-4 mb-4">
                 {category && (
                   <span className="text-sm text-gray-500 uppercase tracking-wide">
@@ -41,7 +41,7 @@ const BlogHero = ({ category, date, title, description, author, authorAvatar, re
                 </p>
               )}
 
-              <div className="flex items-center gap-4">
+              <div className="flex items-center gap-4 mt-8">
                 <div className="relative w-12 h-12 rounded-full overflow-hidden border-2 border-white shadow-sm flex-shrink-0">
                   {authorAvatar ? (
                     <Image
@@ -79,8 +79,8 @@ const BlogHero = ({ category, date, title, description, author, authorAvatar, re
 
             {/* Right Column - Hero Image */}
             {heroImage && (
-              <div className="w-full lg:w-[45%] lg:flex-shrink-0">
-                <div className="relative w-full min-h-[300px] md:min-h-[400px] lg:min-h-[500px] rounded-lg overflow-hidden bg-white flex items-center justify-center">
+              <div className="w-full lg:w-[45%] lg:flex-shrink-0 flex flex-col">
+                <div className="relative w-full flex-1 min-h-[300px] rounded-lg overflow-hidden bg-white flex items-center justify-center">
                   <Image
                     src={heroImage}
                     alt={title}
