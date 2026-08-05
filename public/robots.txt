@@ -1,13 +1,8 @@
 User-agent: *
 Allow: /
 
-# Performance optimizations
-Disallow: /_next/
 Disallow: /api/
 Disallow: /thank-you/
 
 # Sitemap
 Sitemap: https://www.asowin.com/sitemap.xml
-
-# Crawl-delay for better server performance
-Crawl-delay: 1

@@ -37,3 +37,7 @@ yarn-error.log*
 next-env.d.ts
 
 out
+
+# Codex workspace artifacts
+/work/
+/outputs/
