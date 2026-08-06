@@ -5,9 +5,10 @@ import Footer from "../components/Footer";
 import { blogPosts, slugifyAuthor } from "./blogData";
 
 export const metadata = {
-  title: "Apple App Store Ranking | Blog | App Store Ranking | ORM Agency",
+  title: "App Store Optimization Blog: ASO Guides & Research | ASOWin",
   description:
-    "Read Our Blogs to boost your Apple App Store Ranking. We cover App Store Ranking trends and professional ORM Agency advice for mobile success.",
+    "Practical app store optimization guides covering ASO keywords, conversion, creative testing, localization, ratings, analytics, launches, and organic app growth.",
+  alternates: { canonical: "/blog/" },
 };
 
 export default function BlogListing() {
@@ -33,20 +34,13 @@ export default function BlogListing() {
             },
             "mainEntity": {
               "@type": "ItemList",
-              "itemListElement": [
-                {
-                  "@type": "ListItem",
-                  "position": 1,
-                  "url": "https://www.asowin.com/blog/chatgpt-app-ecosystem/",
-                  "name": "Inside the New ChatGPT App Ecosystem: Metadata, Discovery, and Workflow Integration"
-                },
-                {
-                  "@type": "ListItem",
-                  "position": 2,
-                  "url": "https://www.asowin.com/blog/google-play-ranking-strategies-2026/",
-                  "name": "Best Strategies to Boost Google Play Store Ranking in 2026: ASOWin's Expert ASO Guide"
-                }
-              ]
+              "numberOfItems": blogPosts.length,
+              "itemListElement": blogPosts.map((post, index) => ({
+                "@type": "ListItem",
+                "position": index + 1,
+                "url": `https://www.asowin.com/blog/${post.slug}/`,
+                "name": post.title
+              }))
             }
           }),
         }}
@@ -62,7 +56,7 @@ export default function BlogListing() {
               ASOWin Blog
             </h1>
             <p className="text-lg sm:text-xl md:text-2xl text-[#6B7280] max-w-3xl mx-auto leading-relaxed">
-              Insights, strategies, and updates about App Store Optimization and mobile app growth
+              Evidence-led guides for app discovery, conversion, ratings, localization, and sustainable mobile growth
             </p>
           </div>
         </div>
