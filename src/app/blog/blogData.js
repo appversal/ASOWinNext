@@ -2,8 +2,10 @@
  * Central blog data file
  * Add all your blog posts here
  */
+import { seoClusterPosts } from "./seoClusterData";
 
 export const blogPosts = [
+  ...seoClusterPosts,
   {
     slug: 'best-aso-agency-for-app-store-optimization',
     title: 'Best ASO Agency for App Store Optimization: Why iOS Growth Needs More Than Metadata',
@@ -594,4 +596,3 @@ export const getAuthorByName = (name) => {
   const slug = slugifyAuthor(name);
   return authors[slug] || { name, role: 'Author', bio: '', social: {} };
 };
-
