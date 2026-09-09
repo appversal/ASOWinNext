@@ -6,7 +6,7 @@ export const metadata = {
   openGraph: {
     title: "Automated Review Replies - Manage App Reviews at Scale",
     description: "AI-powered intelligent replies to app store reviews. Save time, boost ratings, and improve user engagement.",
-    url: "https://asowin.com/automated-review-replies",
+    url: "https://www.asowin.com/automated-review-replies",
     type: "website"
   }
 };

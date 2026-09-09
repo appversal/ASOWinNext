@@ -174,22 +174,22 @@ export default function AppReputationManagementPlatform() {
             "@graph": [
               {
                 "@type": "BlogPosting",
-                "@id": "https://asowin.com/blog/app-reputation-management-platform/#blogposting",
-                "mainEntityOfPage": "https://asowin.com/blog/app-reputation-management-platform/",
+                "@id": "https://www.asowin.com/blog/app-reputation-management-platform/#blogposting",
+                "mainEntityOfPage": "https://www.asowin.com/blog/app-reputation-management-platform/",
                 "headline": "App Reputation Management Platform: The Ultimate Guide",
                 "description": "Discover how an app reputation management platform can boost your ASO, improve user trust, and increase app downloads through strategic review management.",
-                "image": "https://asowin.com/app_reputation_growth_cover.jpg",
+                "image": "https://www.asowin.com/app_reputation_growth_cover.jpg",
                 "author": {
                   "@type": "Person",
                   "name": "Khwahish Kapoor",
-                  "url": "https://asowin.com/author/khwahish-kapoor/"
+                  "url": "https://www.asowin.com/author/khwahish-kapoor/"
                 },
                 "publisher": {
                   "@type": "Organization",
                   "name": "ASOWin",
                   "logo": {
                     "@type": "ImageObject",
-                    "url": "https://asowin.com/ASOWin.png"
+                    "url": "https://www.asowin.com/ASOWin.png"
                   }
                 },
                 "datePublished": "2023-04-10",

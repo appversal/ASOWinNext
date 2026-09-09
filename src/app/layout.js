@@ -71,8 +71,8 @@ export default function RootLayout({ children }) {
               "@context": "https://schema.org",
               "@type": "Organization",
               "name": "ASOWin",
-              "url": "https://asowin.com/",
-              "logo": "https://asowin.com/ASOWin.png",
+              "url": "https://www.asowin.com/",
+              "logo": "https://www.asowin.com/ASOWin.png",
               "contactPoint": {
                 "@type": "ContactPoint",
                 "telephone": "+1-510-365-7173",

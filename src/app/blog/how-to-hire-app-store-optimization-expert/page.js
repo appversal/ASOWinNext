@@ -190,18 +190,18 @@ export default function HowToHireASOExpert() {
             "@graph": [
               {
                 "@type": "BlogPosting",
-                "@id": "https://asowin.com/blog/how-to-hire-app-store-optimization-expert/#blogposting",
+                "@id": "https://www.asowin.com/blog/how-to-hire-app-store-optimization-expert/#blogposting",
                 "mainEntityOfPage": {
                   "@type": "WebPage",
-                  "@id": "https://asowin.com/blog/how-to-hire-app-store-optimization-expert/"
+                  "@id": "https://www.asowin.com/blog/how-to-hire-app-store-optimization-expert/"
                 },
                 "headline": "How to Hire an App Store Optimization (ASO) Expert",
                 "description": "Learn how to find, evaluate, and hire the right ASO specialist to boost your app's organic visibility and conversion rates.",
-                "image": "https://asowin.com/hire_aso_expert_cover.jpg",
+                "image": "https://www.asowin.com/hire_aso_expert_cover.jpg",
                 "author": {
                   "@type": "Person",
                   "name": "Khwahish Kapoor",
-                  "url": "https://asowin.com/author/khwahish-kapoor/",
+                  "url": "https://www.asowin.com/author/khwahish-kapoor/",
                   "jobTitle": "ASO Strategist",
                   "affiliation": {
                     "@type": "Organization",
@@ -213,7 +213,7 @@ export default function HowToHireASOExpert() {
                   "name": "ASOWin",
                   "logo": {
                     "@type": "ImageObject",
-                    "url": "https://asowin.com/ASOWin.png"
+                    "url": "https://www.asowin.com/ASOWin.png"
                   }
                 },
                 "datePublished": "2023-07-20",

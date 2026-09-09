@@ -5,7 +5,7 @@ export const metadata = {
   openGraph: {
     title: "App Reputation Management Service | ASOWin",
     description: "Build trust and improve your app's ratings with our comprehensive reputation management services.",
-    url: "https://asowin.com/services/app-reputation-management",
+    url: "https://www.asowin.com/services/app-reputation-management",
     type: "website",
   },
 };

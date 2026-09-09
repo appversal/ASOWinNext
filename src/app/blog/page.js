@@ -3,6 +3,11 @@ import Link from "next/link";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import { blogPosts, slugifyAuthor } from "./blogData";
+import { seoClusterPosts } from "./seoClusterData";
+
+const allPosts = [...blogPosts, ...seoClusterPosts].sort(
+  (a, b) => new Date(b.publishedAt || b.date) - new Date(a.publishedAt || a.date),
+);
 
 export const metadata = {
   title: "App Store Optimization Blog: ASO Guides & Research | ASOWin",
@@ -23,19 +28,19 @@ export default function BlogListing() {
             "@type": "CollectionPage",
             "headline": "AsoWin Blog: App Store Optimization & Mobile Marketing Insights",
             "description": "Expert tips, case studies, and the latest trends in App Store Optimization (ASO) and mobile app growth from the Asowin team.",
-            "url": "https://asowin.com/blog/",
+            "url": "https://www.asowin.com/blog/",
             "publisher": {
               "@type": "Organization",
-              "name": "Asowin",
+              "name": "ASOWin",
               "logo": {
                 "@type": "ImageObject",
-                "url": "https://asowin.com/ASOWin.png"
+                "url": "https://www.asowin.com/ASOWin.png"
               }
             },
             "mainEntity": {
               "@type": "ItemList",
-              "numberOfItems": blogPosts.length,
-              "itemListElement": blogPosts.map((post, index) => ({
+              "numberOfItems": allPosts.length,
+              "itemListElement": allPosts.map((post, index) => ({
                 "@type": "ListItem",
                 "position": index + 1,
                 "url": `https://www.asowin.com/blog/${post.slug}/`,
@@ -65,13 +70,13 @@ export default function BlogListing() {
       {/* Blog Posts Grid */}
       <div className="w-full px-4 sm:px-6 lg:px-20 py-16 bg-white">
         <div className="max-w-7xl mx-auto">
-          {blogPosts.length === 0 ? (
+          {allPosts.length === 0 ? (
             <div className="text-center py-20">
               <p className="text-xl text-gray-600">No blog posts available yet.</p>
             </div>
           ) : (
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {blogPosts.map((blog) => (
+              {allPosts.map((blog) => (
                 <div
                   key={blog.slug}
                   className="bg-white rounded-lg shadow-md hover:shadow-xl transition-shadow overflow-hidden group flex flex-col"

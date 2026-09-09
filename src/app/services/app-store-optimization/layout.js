@@ -5,7 +5,7 @@ export const metadata = {
   openGraph: {
     title: "App Store Optimization (ASO) Service | ASOWin",
     description: "Master app store rankings with our comprehensive ASO services.",
-    url: "https://asowin.com/services/app-store-optimization",
+    url: "https://www.asowin.com/services/app-store-optimization",
     type: "website",
   },
 };
