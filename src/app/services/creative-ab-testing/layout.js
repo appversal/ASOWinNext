@@ -5,7 +5,7 @@ export const metadata = {
   openGraph: {
     title: "Creative A/B Testing & Design Service | ASOWin",
     description: "High-converting app store creatives through strategic design and data-driven A/B testing.",
-    url: "https://asowin.com/services/creative-ab-testing",
+    url: "https://www.asowin.com/services/creative-ab-testing",
     type: "website",
   },
 };

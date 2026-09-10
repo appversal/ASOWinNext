@@ -61,8 +61,8 @@ const Contact = () => {
             "mainEntity": {
               "@type": "ContactPage",
               "name": "ASOWin",
-              "url": "https://asowin.com/contact/",
-              "logo": "https://asowin.com/ASOWin.png",
+              "url": "https://www.asowin.com/contact/",
+              "logo": "https://www.asowin.com/ASOWin.png",
               "email": "support@asowin.com",
               "serviceType": "App Store Optimization Service",
               "contactPoint": [
@@ -74,7 +74,7 @@ const Contact = () => {
                 }
               ]
             },
-            "url": "https://asowin.com/contact/",
+            "url": "https://www.asowin.com/contact/",
             "description": "Contact ASOWin for expert App Store Optimization services, app audits, and mobile growth consulting."
           }),
         }}

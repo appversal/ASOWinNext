@@ -33,8 +33,8 @@ const ServicesPage = () => {
                 "provider": {
                   "@type": "Organization",
                   "name": "ASOWin",
-                  "url": "https://asowin.com/",
-                  "logo": "https://asowin.com/ASOWin.png"
+                  "url": "https://www.asowin.com/",
+                  "logo": "https://www.asowin.com/ASOWin.png"
                 },
                 "description": "Comprehensive ASO solutions including Keyword Research, Metadata Optimization, A/B Testing, and Reputation Management for iOS and Android apps.",
                 "areaServed": "Worldwide",
