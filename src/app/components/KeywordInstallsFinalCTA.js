@@ -1,5 +1,6 @@
 'use client';
 import React from 'react';
+import Link from 'next/link';
 
 const KeywordInstallsFinalCTA = () => {
   return (
@@ -18,12 +19,16 @@ const KeywordInstallsFinalCTA = () => {
         </p>
 
         <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
-          <button className="bg-[#fdb124] hover:bg-[#e09910] text-white font-bold py-4 px-8 rounded-full transition-colors text-lg">
-            Start Your Campaign
-          </button>
-          <button className="border-2 border-[#fdb124] text-[#fdb124] hover:bg-[#fdb124] hover:text-white font-bold py-4 px-8 rounded-full transition-colors text-lg">
-            Get Free Audit
-          </button>
+          <Link href="/contact">
+            <button className="w-full sm:w-auto bg-[#fdb124] hover:bg-[#e09910] text-white font-bold py-4 px-8 rounded-full transition-colors text-lg">
+              Start Your Campaign
+            </button>
+          </Link>
+          <Link href="/contact">
+            <button className="w-full sm:w-auto border-2 border-[#fdb124] text-[#fdb124] hover:bg-[#fdb124] hover:text-white font-bold py-4 px-8 rounded-full transition-colors text-lg">
+              Get Free Audit
+            </button>
+          </Link>
         </div>
 
         <p className="text-lg text-gray-300">

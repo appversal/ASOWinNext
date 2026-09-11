@@ -1,5 +1,6 @@
 'use client';
 import React from 'react';
+import Link from 'next/link';
 
 const CreativeABTestingWhyChooseSection = () => {
   const reasons = [
@@ -72,9 +73,11 @@ const CreativeABTestingWhyChooseSection = () => {
           <p className="text-gray-300 mb-6 max-w-[600px] mx-auto">
             Let's discuss your app's visual strategy and how we can help you improve conversions through strategic creative design and A/B testing.
           </p>
-          <button className="bg-[#fdb124] hover:bg-[#e09910] text-white font-bold py-3 px-8 rounded-full transition-colors">
-            Schedule Your Creative Strategy Session
-          </button>
+          <Link href="/contact">
+            <button className="bg-[#fdb124] hover:bg-[#e09910] text-white font-bold py-3 px-8 rounded-full transition-colors">
+              Schedule Your Creative Strategy Session
+            </button>
+          </Link>
         </div>
       </div>
     </section>

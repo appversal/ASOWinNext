@@ -1,5 +1,6 @@
 'use client';
 import React, { useState } from 'react';
+import Link from 'next/link';
 
 const ASOIndustriesSection = () => {
   const [hoveredCard, setHoveredCard] = useState(null);
@@ -136,9 +137,11 @@ const ASOIndustriesSection = () => {
             <p className="text-gray-700 text-base md:text-lg max-w-[700px] mx-auto mb-8 leading-relaxed">
               We work across all app categories and business models. Let's discuss how strategic ASO can drive measurable growth for your unique app ecosystem.
             </p>
-            <button className="bg-gray-900 hover:bg-gray-800 text-[#ffffff] font-bold py-4 px-10 rounded-full transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl text-base md:text-lg">
-              Schedule a Consultation
-            </button>
+            <Link href="/contact">
+              <button className="bg-gray-900 hover:bg-gray-800 text-[#ffffff] font-bold py-4 px-10 rounded-full transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl text-base md:text-lg">
+                Schedule a Consultation
+              </button>
+            </Link>
           </div>
         </div>
       </div>

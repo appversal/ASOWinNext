@@ -271,7 +271,7 @@ function ContactForm({ variant = "full" }) {
                     required
                 />
                 <Label htmlFor="consent" className="text-sm text-muted-foreground leading-relaxed cursor-pointer">
-                    I agree to be contacted by ASOWin, and I accept the data processing terms stated in the <a href="#" className="text-primary hover:underline">Privacy Policy</a>.<span className="text-primary">*</span>
+                    I agree to be contacted by ASOWin, and I accept the data processing terms stated in the <Link href="/privacy-policy" className="text-primary hover:underline">Privacy Policy</Link>.<span className="text-primary">*</span>
                 </Label>
             </div>
             <Button type="submit" size="lg" className="w-full h-12 font-semibold mt-4" data-testid="button-submit" disabled={isSubmitting}>
@@ -703,23 +703,8 @@ export default function AsoAgencyPage() {
                         Get a comprehensive ASO audit of your app and discover exactly how to improve your rankings.
                     </p>
 
-                    <div className="max-w-lg mx-auto">
-                        <div className="flex flex-col sm:flex-row gap-3">
-                            <Input
-                                type="email"
-                                placeholder="Enter your work email"
-                                className="flex-1 h-12 bg-white border-white text-foreground"
-                                data-testid="input-email-final"
-                            />
-                            <Button
-                                size="lg"
-                                className="h-12 px-8 font-semibold bg-primary-foreground text-primary hover:bg-primary-foreground/90"
-                                data-testid="button-cta-final"
-                            >
-                                Get Free Audit
-                                <ArrowRight className="w-4 h-4 ml-2" />
-                            </Button>
-                        </div>
+                    <div className="max-w-xl mx-auto">
+                        <ContactForm variant="compact" />
                     </div>
 
                     <div className="flex flex-wrap items-center justify-center gap-6 mt-8 text-primary-foreground/70 text-sm">

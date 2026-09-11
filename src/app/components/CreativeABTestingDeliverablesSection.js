@@ -1,5 +1,6 @@
 'use client';
 import React from 'react';
+import Link from 'next/link';
 
 const CreativeABTestingDeliverablesSection = () => {
   const deliverables = [
@@ -53,9 +54,11 @@ const CreativeABTestingDeliverablesSection = () => {
           <p className="text-white text-center max-w-[600px] mx-auto mb-6">
             Let's discuss how strategic creative design and A/B testing can drive higher conversions and accelerate your app's growth.
           </p>
-          <button className="bg-white hover:bg-gray-100 text-[#fdb124] font-bold py-3 px-8 rounded-full transition-colors">
-            Start Your Creative Optimization
-          </button>
+          <Link href="/contact">
+            <button className="bg-white hover:bg-gray-100 text-[#fdb124] font-bold py-3 px-8 rounded-full transition-colors">
+              Start Your Creative Optimization
+            </button>
+          </Link>
         </div>
       </div>
     </section>

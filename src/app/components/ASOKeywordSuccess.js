@@ -1,6 +1,7 @@
 'use client';
 import React, { useEffect, useRef, useState } from 'react';
 import Image from 'next/image';
+import Link from 'next/link';
 
 const ASOKeywordSuccess = () => {
   const containerRef = useRef(null);
@@ -102,9 +103,11 @@ const ASOKeywordSuccess = () => {
         {/* Bottom CTA */}
         <div className="text-center pt-4">
           <p className="text-gray-600 mb-6">Ready to see your app rank higher? Let's analyze your keyword opportunities.</p>
-          <button className="px-8 py-3 bg-[#014458] text-white font-bold rounded-lg hover:bg-opacity-90 transition-all hover:shadow-lg">
-            Get Keyword Analysis
-          </button>
+          <Link href="/contact">
+            <button className="px-8 py-3 bg-[#014458] text-white font-bold rounded-lg hover:bg-opacity-90 transition-all hover:shadow-lg">
+              Get Keyword Analysis
+            </button>
+          </Link>
         </div>
       </div>
     </section>

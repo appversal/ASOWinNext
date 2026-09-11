@@ -1,5 +1,6 @@
 'use client';
 import React, { useState } from 'react';
+import Link from 'next/link';
 
 const ASOServiceBreakdown = () => {
   const [expandedService, setExpandedService] = useState(null);
@@ -182,9 +183,11 @@ const ASOServiceBreakdown = () => {
           <p className="text-gray-100 mb-6 max-w-[600px] mx-auto">
             Every app is unique. Let's discuss which ASO services will deliver the best ROI for your goals.
           </p>
-          <button className="bg-white hover:bg-gray-100 text-[#fdb124] font-bold py-3 px-8 rounded-full transition-colors">
-            Schedule Your Strategy Call
-          </button>
+          <Link href="/contact">
+            <button className="bg-white hover:bg-gray-100 text-[#fdb124] font-bold py-3 px-8 rounded-full transition-colors">
+              Schedule Your Strategy Call
+            </button>
+          </Link>
         </div>
       </div>
     </section>
