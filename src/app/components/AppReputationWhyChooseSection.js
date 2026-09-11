@@ -1,5 +1,6 @@
 'use client';
 import React from 'react';
+import Link from 'next/link';
 
 const AppReputationWhyChooseSection = () => {
   const reasons = [
@@ -72,9 +73,11 @@ const AppReputationWhyChooseSection = () => {
           <p className="text-gray-300 mb-6 max-w-[600px] mx-auto">
             Let's discuss how we can improve your app's ratings, build user trust, and drive long-term growth through strategic reputation management.
           </p>
-          <button className="bg-[#fdb124] hover:bg-[#e09910] text-white font-bold py-3 px-8 rounded-full transition-colors">
-            Schedule Your Reputation Audit
-          </button>
+          <Link href="/contact">
+            <button className="bg-[#fdb124] hover:bg-[#e09910] text-white font-bold py-3 px-8 rounded-full transition-colors">
+              Schedule Your Reputation Audit
+            </button>
+          </Link>
         </div>
       </div>
     </section>

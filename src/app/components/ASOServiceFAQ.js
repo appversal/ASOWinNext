@@ -1,5 +1,6 @@
 'use client';
 import React, { useState } from 'react';
+import Link from 'next/link';
 
 const ASOServiceFAQ = () => {
   const [expandedFAQ, setExpandedFAQ] = useState(null);
@@ -111,12 +112,16 @@ const ASOServiceFAQ = () => {
             Our ASO experts are here to answer any questions and help you understand how ASO can drive growth for your app.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <button className="bg-[#fdb124] hover:bg-[#e09910] text-white font-bold py-3 px-8 rounded-full transition-colors">
-              Talk to an Expert
-            </button>
-            <button className="border-2 border-[#fdb124] text-[#fdb124] hover:bg-[#fdb124] hover:text-gray-900 font-bold py-3 px-8 rounded-full transition-colors">
-              View Case Studies
-            </button>
+            <Link href="/contact">
+              <button className="w-full sm:w-auto bg-[#fdb124] hover:bg-[#e09910] text-white font-bold py-3 px-8 rounded-full transition-colors">
+                Talk to an Expert
+              </button>
+            </Link>
+            <Link href="/success-stories">
+              <button className="w-full sm:w-auto border-2 border-[#fdb124] text-[#fdb124] hover:bg-[#fdb124] hover:text-gray-900 font-bold py-3 px-8 rounded-full transition-colors">
+                View Case Studies
+              </button>
+            </Link>
           </div>
         </div>
       </div>

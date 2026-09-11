@@ -1,13 +1,11 @@
 'use client';
 import { useRouter } from "next/navigation";
 
-const BlogBottomCTA = ({ title, description, buttonText, buttonLink }) => {
+const BlogBottomCTA = ({ title, description, buttonText, buttonLink = "/contact" }) => {
   const router = useRouter();
 
   const handleClick = () => {
-    if (buttonLink) {
-      router.push(buttonLink);
-    }
+    router.push(buttonLink || "/contact");
   };
 
   return (

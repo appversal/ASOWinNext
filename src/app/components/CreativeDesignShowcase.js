@@ -1,5 +1,6 @@
 'use client';
 import React, { useState } from 'react';
+import Link from 'next/link';
 
 const CreativeDesignShowcase = () => {
   const [activeCategory, setActiveCategory] = useState('icons');
@@ -109,9 +110,11 @@ const CreativeDesignShowcase = () => {
           <p className="text-gray-100 mb-6 max-w-2xl mx-auto">
             Get a free creative audit and discover which design elements are holding your app back from higher conversions.
           </p>
-          <button className="px-8 py-3 bg-[#fdb124] text-[#014458] font-bold rounded-lg hover:bg-opacity-90 transition-all hover:shadow-lg">
-            Request Creative Audit
-          </button>
+          <Link href="/contact">
+            <button className="px-8 py-3 bg-[#fdb124] text-[#014458] font-bold rounded-lg hover:bg-opacity-90 transition-all hover:shadow-lg">
+              Request Creative Audit
+            </button>
+          </Link>
         </div>
       </div>
     </section>

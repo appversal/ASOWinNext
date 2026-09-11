@@ -1,5 +1,6 @@
 'use client';
 import React from 'react';
+import Link from 'next/link';
 
 const AppReputationIndustriesSection = () => {
   const industries = [
@@ -72,9 +73,11 @@ const AppReputationIndustriesSection = () => {
             <p className="text-white/90 text-base md:text-lg max-w-[700px] mx-auto mb-8 leading-relaxed">
               We work across all app categories. Let's discuss how reputation management can drive growth for your unique app ecosystem.
             </p>
-            <button className="inline-block bg-white text-[#E06F00] font-bold px-8 py-3 md:py-4 rounded-full hover:bg-gray-100 transition-all duration-300 hover:shadow-lg">
-              Get in Touch
-            </button>
+            <Link href="/contact">
+              <button className="inline-block bg-white text-[#E06F00] font-bold px-8 py-3 md:py-4 rounded-full hover:bg-gray-100 transition-all duration-300 hover:shadow-lg">
+                Get in Touch
+              </button>
+            </Link>
           </div>
         </div>
       </div>

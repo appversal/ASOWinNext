@@ -1,5 +1,6 @@
 import React from 'react';
 import Image from 'next/image';
+import Link from 'next/link';
 
 const ReviewRepliesCaseStudy = () => {
   const stats = [
@@ -189,9 +190,11 @@ const ReviewRepliesCaseStudy = () => {
           <p className="text-gray-800 text-lg mb-6">
             Ready to see similar results for your app?
           </p>
-          <button className="bg-[#fdb124] text-white px-8 py-3 rounded-full font-medium hover:bg-[#e09910] transition-colors">
-            Start Your Free Trial
-          </button>
+          <Link href="/contact">
+            <button className="bg-[#fdb124] text-white px-8 py-3 rounded-full font-medium hover:bg-[#e09910] transition-colors">
+              Start Your Free Trial
+            </button>
+          </Link>
         </div>
       </div>
     </section>

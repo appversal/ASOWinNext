@@ -1,5 +1,6 @@
 'use client';
 import React from 'react';
+import Link from 'next/link';
 
 const ASOServiceFeatures = () => {
   const features = [
@@ -68,9 +69,11 @@ const ASOServiceFeatures = () => {
           <p className="text-gray-300 mb-6 max-w-[600px] mx-auto">
             Join 500+ successful apps that have grown with ASOWin. Get a free ASO audit and personalized growth strategy.
           </p>
-          <button className="bg-[#fdb124] hover:bg-[#e09910] text-white font-bold py-3 px-8 rounded-full transition-colors">
-            Get Your Free ASO Audit
-          </button>
+          <Link href="/contact">
+            <button className="bg-[#fdb124] hover:bg-[#e09910] text-white font-bold py-3 px-8 rounded-full transition-colors">
+              Get Your Free ASO Audit
+            </button>
+          </Link>
         </div>
       </div>
     </section>

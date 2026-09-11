@@ -1,5 +1,6 @@
 'use client';
-import React from 'react';
+import React, { useState } from 'react';
+import Link from 'next/link';
 
 const ASOServiceStats = () => {
   const stats = [
@@ -143,9 +144,11 @@ const ASOServiceStats = () => {
             <p className="text-white mb-6 max-w-[600px] mx-auto">
               Let's discuss your app's potential and create a customized ASO strategy for maximum growth.
             </p>
-            <button className="bg-white hover:bg-gray-100 text-gray-900 font-bold py-3 px-8 rounded-full transition-colors">
-              Start Your ASO Journey
-            </button>
+            <Link href="/contact">
+              <button className="bg-white hover:bg-gray-100 text-gray-900 font-bold py-3 px-8 rounded-full transition-colors">
+                Start Your ASO Journey
+              </button>
+            </Link>
           </div>
         </div>
       </div>

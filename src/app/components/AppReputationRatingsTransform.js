@@ -1,5 +1,6 @@
 'use client';
-import React from 'react';
+import React, { useState } from 'react';
+import Link from 'next/link';
 
 const AppReputationRatingsTransform = () => {
   const renderStars = (rating) => (
@@ -109,9 +110,11 @@ const AppReputationRatingsTransform = () => {
         {/* CTA */}
         <div className="text-center">
           <p className="text-gray-600 text-lg mb-6">Ready to transform your app's reputation?</p>
-          <button className="bg-[#fdb124] hover:bg-[#e09910] text-white font-bold py-4 px-8 rounded-full transition-colors text-lg">
-            Let's Get Started
-          </button>
+          <Link href="/contact">
+            <button className="bg-[#fdb124] hover:bg-[#e09910] text-white font-bold py-4 px-8 rounded-full transition-colors text-lg">
+              Let's Get Started
+            </button>
+          </Link>
         </div>
       </div>
     </section>
