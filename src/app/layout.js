@@ -52,10 +52,6 @@ export const metadata = {
     images: ["/og-image.jpg"],
     site: "@asowin",
   },
-  icons: {
-    icon: "/favicon.ico",
-    apple: "/favicon.ico",
-  },
   manifest: "/manifest.json",
 };
 
@@ -105,6 +101,13 @@ export default function RootLayout({ children }) {
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <link rel="preconnect" href="https://www.googletagmanager.com" />
         <link rel="preconnect" href="https://www.google-analytics.com" />
+
+        {/* PNG favicon/logo - Next's file-convention icon.png/apple-icon.png routes
+            don't get auto-injected into <head> under output: "export", so these
+            are added explicitly. Google Ads' logo picker only supports PNG/JPG/GIF/WEBP,
+            not the .ico that was previously the only icon reference. */}
+        <link rel="icon" href="/icon.png" type="image/png" sizes="256x256" />
+        <link rel="apple-touch-icon" href="/apple-icon.png" />
 
         {/* Alternate link for hreflang - USA */}
         <link rel="alternate" href="https://www.asowin.com/" hreflang="en-us" />
