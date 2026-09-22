@@ -1,38 +1,37 @@
+const title = "Pepperfry App Reputation & ASO Case Study | ASOWin";
+const description =
+  "How ASOWin helped Pepperfry improve app ratings from around 3.9 to 4.4+ through app reputation management, AI review replies, ASO, and social media ORM.";
+
 export const metadata = {
-  title: "Pepperfry Success Story - ASOWin",
-  description:
-    "Explore ASOWin's success story with the Pepperfry app. Learn how our tailored ASO strategies and AI-driven solutions boosted app visibility, user engagement, and downloads for this leading furniture platform.",
-  keywords:
-    "Pepperfry ASO, Pepperfry Strategy, ASOWin Pepperfry, App Store Optimization Strategy, Pepperfry Visibility",
+  title,
+  description,
+  alternates: {
+    canonical: "https://www.asowin.com/success-stories/pepperfry/",
+  },
   openGraph: {
-    title: "Pepperfry Success Story - ASOWin",
-    description:
-      "Explore ASOWin's success story with the Pepperfry app. Learn how our tailored ASO strategies and AI-driven solutions boosted app visibility, user engagement, and downloads for this leading furniture platform.",
-    url: "https://www.asowin.com/success-stories/pepperfry",
+    title,
+    description,
+    url: "https://www.asowin.com/success-stories/pepperfry/",
     siteName: "ASOWin",
+    type: "article",
     images: [
       {
-        url: "/og-case-study-1.jpg",
+        url: "/pepperfry-case-study-og.jpg",
         width: 1200,
         height: 630,
-        alt: "Pepperfry ASO Success Story",
+        alt: "Pepperfry and ASOWin: app ratings from around 3.9 to 4.4+",
       },
     ],
-    type: "article",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Pepperfry Success Story - ASOWin",
-    description:
-      "Explore ASOWin's success story with the Pepperfry app. Learn how our tailored ASO strategies and AI-driven solutions boosted app visibility, user engagement, and downloads.",
-    images: ["/og-pepperfry.jpg"],
+    title,
+    description,
+    images: ["/pepperfry-case-study-og.jpg"],
     site: "@asowin",
-  },
-  icons: {
-    icon: "/favicon.ico",
   },
 };
 
-export default function CaseStudy1Layout({ children }) {
-  return <>{children}</>;
+export default function PepperfryLayout({ children }) {
+  return children;
 }

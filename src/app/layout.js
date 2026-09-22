@@ -70,6 +70,7 @@ export default function RootLayout({ children }) {
             __html: JSON.stringify({
               "@context": "https://schema.org",
               "@type": "Organization",
+              "@id": "https://www.asowin.com/#organization",
               "name": "ASOWin",
               "url": "https://www.asowin.com/",
               "logo": "https://www.asowin.com/ASOWin.png",
@@ -106,9 +107,6 @@ export default function RootLayout({ children }) {
         <link rel="preconnect" href="https://www.googletagmanager.com" />
         <link rel="preconnect" href="https://www.google-analytics.com" />
 
-        {/* Alternate link for hreflang - USA */}
-        <link rel="alternate" href="https://www.asowin.com/" hreflang="en-us" />
-
         {/* Preload ONLY small critical assets */}
         <link rel="preload" as="image" href="/ASOWin.png" />
 
@@ -121,7 +119,7 @@ export default function RootLayout({ children }) {
           })(window,document,'script','dataLayer','GTM-58866TH2');`}
         </Script>
       </head>
-      <body>
+      <body suppressHydrationWarning>
         {/* Google Tag Manager (noscript) */}
         <noscript>
           <iframe
