@@ -66,6 +66,7 @@ export default function RootLayout({ children }) {
             __html: JSON.stringify({
               "@context": "https://schema.org",
               "@type": "Organization",
+              "@id": "https://www.asowin.com/#organization",
               "name": "ASOWin",
               "url": "https://www.asowin.com/",
               "logo": "https://www.asowin.com/ASOWin.png",
@@ -124,7 +125,7 @@ export default function RootLayout({ children }) {
           })(window,document,'script','dataLayer','GTM-58866TH2');`}
         </Script>
       </head>
-      <body>
+      <body suppressHydrationWarning>
         {/* Google Tag Manager (noscript) */}
         <noscript>
           <iframe
