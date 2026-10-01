@@ -599,6 +599,56 @@
     <changefreq>monthly</changefreq>
   </url>
 
+  <!-- Competitive ASO Research Cluster (2026-10-02) -->
+  <url>
+    <loc>https://www.asowin.com/blog/best-aso-tools-compared/</loc>
+    <lastmod>2026-10-02T00:00:00+00:00</lastmod>
+    <priority>0.72</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://www.asowin.com/blog/aso-roi-and-cost-benchmarks/</loc>
+    <lastmod>2026-10-02T00:00:00+00:00</lastmod>
+    <priority>0.72</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://www.asowin.com/blog/aso-white-hat-vs-black-hat-guidelines/</loc>
+    <lastmod>2026-10-02T00:00:00+00:00</lastmod>
+    <priority>0.72</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://www.asowin.com/blog/get-featured-app-store-google-play/</loc>
+    <lastmod>2026-10-02T00:00:00+00:00</lastmod>
+    <priority>0.72</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://www.asowin.com/blog/in-house-aso-team-vs-agency/</loc>
+    <lastmod>2026-10-02T00:00:00+00:00</lastmod>
+    <priority>0.72</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://www.asowin.com/blog/app-store-character-limits-cheat-sheet/</loc>
+    <lastmod>2026-10-02T00:00:00+00:00</lastmod>
+    <priority>0.72</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://www.asowin.com/blog/in-app-events-aso-strategy/</loc>
+    <lastmod>2026-10-02T00:00:00+00:00</lastmod>
+    <priority>0.72</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://www.asowin.com/blog/web-to-app-seo-indexing/</loc>
+    <lastmod>2026-10-02T00:00:00+00:00</lastmod>
+    <priority>0.72</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+
   <!-- Legal Pages -->
   <url>
     <loc>https://www.asowin.com/privacy-policy/</loc>
