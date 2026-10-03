@@ -19,11 +19,12 @@ const escapeHtml = (value) =>
 
 const jsonLd = (data) => JSON.stringify(data).replace(/</g, "\\u003c");
 
-const allPosts = [...blogPosts, ...seoClusterPosts];
+// blogPosts already includes seoClusterPosts (see blogData.js), so related-post
+// lookups below only need blogPosts, not a merge with seoClusterPosts again.
 
 const buildContent = (post) => {
   const relatedLinks = post.related
-    .map((slug) => allPosts.find((item) => item.slug === slug))
+    .map((slug) => blogPosts.find((item) => item.slug === slug))
     .filter(Boolean)
     .map(
       (item) =>
@@ -134,7 +135,7 @@ export default async function SeoClusterArticle({ params }) {
   const url = `${SITE_URL}/blog/${post.slug}/`;
   const articleBody = [post.answer, ...post.sections.flatMap((section) => section.paragraphs)].join(" ");
   const relatedBlogs = post.related
-    .map((relatedSlug) => allPosts.find((item) => item.slug === relatedSlug))
+    .map((relatedSlug) => blogPosts.find((item) => item.slug === relatedSlug))
     .filter(Boolean);
 
   const articleSchema = {
