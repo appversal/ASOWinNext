@@ -40,6 +40,8 @@ export default function AppRetentionVsAcquisition() {
 
     <p>Both Apple and Google increasingly factor engagement and retention signals into how they rank and recommend apps. Session frequency, time spent in app, and how long users keep an app installed before uninstalling all contribute to the store's view of app quality.</p>
 
+    <p>To see where your own numbers sit, AppStorys publishes <a href="https://appstorys.com/blog-App-Engagement-Benchmarks-2026" target="_blank" rel="noopener" class="text-[#306777] underline hover:opacity-80">app engagement benchmarks for 2026</a>, covering DAU/MAU stickiness by industry and Day-30 retention by category on iOS and Android.</p>
+
     <p>This means retention is not just a business metric that happens after ASO does its job. It is an input back into the ASO system itself. An app with strong retention tends to earn stronger organic visibility over time, creating a compounding advantage over competitors who only optimize for the install moment.</p>
 
     <p>The reverse is equally true, and often underestimated. An app that consistently acquires low-fit users who churn within days can see its keyword rankings quietly erode even while metadata and creative remain untouched, simply because the underlying engagement pattern feeding into the algorithm has weakened over time.</p>

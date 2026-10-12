@@ -63,7 +63,7 @@ export default function AppStoreRankingFactors2026() {
     <p>4+ star averages drive trust, conversions, and featuring chances. Prompt genuine feedback and respond promptly to build positive signals.</p>
     
     <h4 id="heading-11">In-App Engagement and Retention</h4>
-    <p>Session length, active users, and low uninstalls prove value. Avoid irrelevant traffic that spikes deletes.</p>
+    <p>Session length, active users, and low uninstalls prove value. Avoid irrelevant traffic that spikes deletes. For the levers that move these signals after install, see this guide to <a href="https://appstorys.com/blog-What-Is-In-App-Engagement-Guide" target="_blank" rel="noopener" class="text-[#306777] underline hover:opacity-80">in-app engagement</a>.</p>
     
     <h4 id="heading-12">Conversion Rates</h4>
     <p>Icons, screenshots, and previews impact taps and installs. High rates validate keyword relevance.</p>
