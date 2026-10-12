@@ -3,9 +3,10 @@ import Link from "next/link";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import { blogPosts, slugifyAuthor } from "./blogData";
-import { seoClusterPosts } from "./seoClusterData";
 
-const allPosts = [...blogPosts, ...seoClusterPosts].sort(
+// blogPosts already includes seoClusterPosts (see blogData.js), so this
+// only needs to sort the existing list newest-first, not merge anything in.
+const allPosts = [...blogPosts].sort(
   (a, b) => new Date(b.publishedAt || b.date) - new Date(a.publishedAt || a.date),
 );
 
