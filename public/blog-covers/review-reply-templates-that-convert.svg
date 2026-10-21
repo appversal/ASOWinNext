@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 900" font-family="Inter, -apple-system, Segoe UI, Helvetica, Arial, sans-serif" role="img" aria-label="Review Reply Templates That Help Users and Protect Ratings">
+<defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#92400e"/><stop offset="1" stop-color="#d97706"/></linearGradient></defs>
+<rect width="1200" height="900" fill="url(#g)"/>
+<circle cx="1072" cy="308" r="264" fill="#ffffff" fill-opacity="0.07"/>
+<circle cx="1192" cy="668" r="132" fill="#fef3c7" fill-opacity="0.18"/>
+<circle cx="1120" cy="800" r="150" fill="#ffffff" fill-opacity="0.06"/>
+<rect x="80" y="86" width="371" height="44" rx="22" fill="#fef3c7"/>
+<text x="100" y="116" font-size="22" font-weight="700" letter-spacing="1.5" fill="#1f2937">RATINGS AND REVIEWS</text>
+<text x="80" y="255" font-size="68" font-weight="800" fill="#ffffff">Review Reply Templates</text><text x="80" y="331" font-size="68" font-weight="800" fill="#ffffff">That Help Users and</text><text x="80" y="408" font-size="68" font-weight="800" fill="#ffffff">Protect Ratings</text>
+
+<rect x="80" y="790" width="64" height="6" rx="3" fill="#fef3c7"/>
+<text x="80" y="840" font-size="30" font-weight="800" fill="#ffffff">ASOWin</text>
+<text x="236" y="840" font-size="24" fill="#ffffff" fill-opacity="0.75">App Store Optimization Library</text>
+</svg>

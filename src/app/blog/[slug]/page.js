@@ -22,35 +22,42 @@ const jsonLd = (data) => JSON.stringify(data).replace(/</g, "\\u003c");
 // blogPosts already includes seoClusterPosts (see blogData.js), so related-post
 // lookups below only need blogPosts, not a merge with seoClusterPosts again.
 
+const SERVICE_LABELS = [
+  ["creative-ab-testing", "Creative A/B testing", "Test icons, screenshots, and pages with a clear roadmap"],
+  ["paid-user-acquisition", "Paid user acquisition", "Scale installs with ads aligned to your store pages"],
+  ["keyword-installs", "Keyword installs", "Support priority keywords with compliant, quality-led programs"],
+  ["automated-aso-ai", "Automated ASO with AI", "Faster research, reporting, and monitoring"],
+  ["app-reputation-management", "App reputation management", "Protect and improve ratings and reviews"],
+  ["contact", "Request an ASO consultation", "Talk to the ASOWin team about your app"],
+  ["app-store-optimization", "App store optimization services", "Full-service ASO for visibility and conversion"],
+];
+
+const serviceCard = (href) => {
+  const match = SERVICE_LABELS.find(([key]) => href.includes(key)) || SERVICE_LABELS[SERVICE_LABELS.length - 1];
+  return `<a class="aso-service" href="${escapeHtml(href)}"><strong>${match[1]}</strong><span>${match[2]}</span></a>`;
+};
+
 const buildContent = (post) => {
   const relatedLinks = post.related
     .map((slug) => blogPosts.find((item) => item.slug === slug))
     .filter(Boolean)
     .map(
       (item) =>
-        `<li><a href="/blog/${escapeHtml(item.slug)}/">${escapeHtml(item.title)}</a></li>`,
+        `<a class="aso-related" href="/blog/${escapeHtml(item.slug)}/"><span class="aso-related-cat">${escapeHtml(item.category || "ASO guide")}</span><strong>${escapeHtml(item.title)}</strong></a>`,
     )
     .join("");
 
-  const serviceLinks = (post.serviceLinks || [])
-    .map((href) => {
-      const label = href.includes("creative-ab-testing")
-        ? "Creative A/B testing services"
-        : href.includes("paid-user-acquisition")
-          ? "Paid user acquisition services"
-          : href.includes("reputation") || href.includes("review")
-            ? "App reputation management"
-            : href.includes("contact")
-              ? "Request an ASO consultation"
-              : "App store optimization services";
-      return `<li><a href="${escapeHtml(href)}">${label}</a></li>`;
-    })
-    .join("");
+  const serviceLinks = (post.serviceLinks || []).map(serviceCard).join("");
+  const topics = [post.primaryKeyword, ...post.secondaryKeywords];
 
   return `
-    <p class="blog-answer"><strong>Quick answer:</strong> ${escapeHtml(post.answer)}</p>
-    <h2 id="why-this-matters">What this guide will help you do</h2>
-    <p>This guide focuses on <strong>${escapeHtml(post.primaryKeyword)}</strong> with a practical, evidence-led approach. It covers ${post.secondaryKeywords.map(escapeHtml).join(", ")} without repeating phrases for artificial density. Use the framework to make a clear decision, document the result, and improve the next release.</p>
+    <div class="aso-callout">
+      <div class="aso-callout-label">Quick answer</div>
+      <p>${escapeHtml(post.answer)}</p>
+    </div>
+    <div class="aso-chips" aria-label="Topics covered">
+      ${topics.map((topic) => `<span class="aso-chip">${escapeHtml(topic)}</span>`).join("")}
+    </div>
     ${post.sections
       .map(
         (section, index) => `
@@ -60,19 +67,32 @@ const buildContent = (post) => {
       )
       .join("")}
     <h2 id="action-plan">Action plan</h2>
-    <ol>${post.playbook.map((item) => `<li>${escapeHtml(item)}</li>`).join("")}</ol>
+    <ol class="aso-steps">${post.playbook.map((item) => `<li>${escapeHtml(item)}</li>`).join("")}</ol>
     <h2 id="measurement">Metrics to monitor</h2>
-    <ul>${post.metrics.map((item) => `<li>${escapeHtml(item)}</li>`).join("")}</ul>
-    <p>Record the baseline, release date, audience, markets, and external changes before interpreting movement. Rankings and conversion are useful signals, but a decision is stronger when activation, retention, and business value confirm that the page attracted the right users.</p>
-    <h2 id="next-reading">Continue the topic cluster</h2>
-    <p>Use these supporting resources to move from this strategy into the next implementation step:</p>
-    <ul>${relatedLinks}${serviceLinks}</ul>
+    <ul class="aso-metrics">${post.metrics.map((item) => `<li>${escapeHtml(item)}</li>`).join("")}</ul>
+    <p class="aso-note">Record the baseline, release date, audience, markets, and external changes before interpreting movement. Rankings and conversion are useful signals, but a decision is stronger when activation, retention, and business value confirm that the page attracted the right users.</p>
     <h2 id="faq">Frequently asked questions</h2>
-    ${post.faqs
-      .map(
-        (item, index) => `<h3 id="faq-${index + 1}">${escapeHtml(item.q)}</h3><p>${escapeHtml(item.a)}</p>`,
-      )
-      .join("")}
+    <div class="aso-faq">
+      ${post.faqs
+        .map(
+          (item, index) => `
+            <details class="aso-faq-item"${index === 0 ? " open" : ""}>
+              <summary>${escapeHtml(item.q)}</summary>
+              <div class="aso-faq-answer"><p>${escapeHtml(item.a)}</p></div>
+            </details>`,
+        )
+        .join("")}
+    </div>
+    ${
+      relatedLinks
+        ? `<h2 id="next-reading">Keep reading</h2><div class="aso-related-grid">${relatedLinks}</div>`
+        : ""
+    }
+    ${
+      serviceLinks
+        ? `<h2 id="work-with-asowin">Work with ASOWin</h2><div class="aso-service-grid">${serviceLinks}</div>`
+        : ""
+    }
     ${
       post.sources.length
         ? `<h2 id="sources">Primary sources</h2><p>Platform capabilities and limits can change. Verify current requirements in these official resources:</p><ul>${post.sources

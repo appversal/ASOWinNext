@@ -25,11 +25,12 @@ export const libraryPosts = [
   ...batch01, ...batch02, ...batch03, ...batch04, ...batch05,
   ...batch06, ...batch07, ...batch08, ...batch09, ...batch10,
 ].map((post) => {
+  const topic = post.primaryKeyword.charAt(0).toUpperCase() + post.primaryKeyword.slice(1);
   const headingFor = (heading) =>
     heading === "Mistakes that quietly cost installs"
       ? `Common mistakes with ${post.primaryKeyword}`
       : heading === "A worked example"
-        ? `${post.primaryKeyword}: a worked example`
+        ? `${topic}: a worked example`
         : heading;
   const extra = (extras[post.slug] || []).map(([heading, paragraphs]) => ({ heading: headingFor(heading), paragraphs }));
   const merged = { ...post, sections: [...post.sections, ...extra] };
