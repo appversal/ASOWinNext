@@ -651,3 +651,12 @@ img {
 @media (max-width: 640px) {
   .blog-content .aso-ba { grid-template-columns: 1fr; }
 }
+
+.blog-content a.aso-chip-link {
+  background: #306777;
+  color: #fff;
+  border-color: #306777;
+  text-decoration: none;
+  font-weight: 600;
+}
+.blog-content a.aso-chip-link:hover { background: #1a4d5a; color: #fff; }

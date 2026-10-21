@@ -16,6 +16,16 @@ export const metadata = {
   title: 'Automated ASO with AI | Smart App Growth | ASOWin',
   description:
     'AI-powered app store optimization services. Automate review management, improve ratings, and scale reputation management with intelligent systems.',
+  alternates: { canonical: '/services/automated-aso-ai/' },
+  openGraph: {
+    type: 'website',
+    url: '/services/automated-aso-ai/',
+    siteName: 'ASOWin',
+    title: 'Automated ASO with AI | Smart App Growth | ASOWin',
+    description: 'AI-powered app store optimization services. Automate review management, improve ratings, and scale reputation management with intelligent systems.',
+    images: [{ url: '/og-services.jpg', width: 1200, height: 630 }],
+  },
+  twitter: { card: 'summary_large_image', title: 'Automated ASO with AI | Smart App Growth | ASOWin', description: 'AI-powered app store optimization services. Automate review management, improve ratings, and scale reputation management with intelligent systems.', site: '@asowin' },
 };
 
 const AutomatedASOAIServicePage = () => {

@@ -22,6 +22,7 @@ export const metadata = {
     "SEO Agency, ASO, ASOWin, App Store Optimization, Mobile Growth, App Marketing",
   authors: [{ name: "ASOWin", url: "https://www.asowin.com" }],
   robots: "index, follow",
+  alternates: { canonical: "./" },
   verification: {
     google: "6JpntrcHgqzyZVv6ive8Iqvg3-Z3eTBCsP-fQZdR1Cg",
     other: {
@@ -32,7 +33,6 @@ export const metadata = {
     title: "ASOWin | App Store Optimization for Apps - Leading Global Company",
     description:
       "Discover how ASOWin helps you optimize your app store presence and increase visibility.",
-    url: "https://www.asowin.com",
     siteName: "ASOWin",
     images: [
       {
@@ -91,6 +91,19 @@ export default function RootLayout({ children }) {
             }),
           }}
         />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "WebSite",
+              "name": "ASOWin",
+              "url": "https://www.asowin.com/",
+              "publisher": { "@type": "Organization", "name": "ASOWin", "url": "https://www.asowin.com/" },
+              "inLanguage": "en",
+            }),
+          }}
+        />
 
         {/* Resource hints for performance */}
         <link rel="dns-prefetch" href="//www.googletagmanager.com" />
@@ -109,9 +122,6 @@ export default function RootLayout({ children }) {
             not the .ico that was previously the only icon reference. */}
         <link rel="icon" href="/icon.png" type="image/png" sizes="256x256" />
         <link rel="apple-touch-icon" href="/apple-icon.png" />
-
-        {/* Alternate link for hreflang - USA */}
-        <link rel="alternate" href="https://www.asowin.com/" hreflang="en-us" />
 
         {/* Preload ONLY small critical assets */}
         <link rel="preload" as="image" href="/ASOWin.png" />

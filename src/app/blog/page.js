@@ -3,6 +3,7 @@ import Link from "next/link";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import { blogPosts, slugifyAuthor } from "./blogData";
+import { getCategoryHubs } from "./categories";
 
 // blogPosts already includes seoClusterPosts (see blogData.js), so this
 // only needs to sort the existing list newest-first, not merge anything in.
@@ -14,10 +15,11 @@ export const metadata = {
   title: "App Store Optimization Blog: ASO Guides & Research | ASOWin",
   description:
     "Practical app store optimization guides covering ASO keywords, conversion, creative testing, localization, ratings, analytics, launches, and organic app growth.",
-  alternates: { canonical: "/blog/" },
+  alternates: { canonical: "/blog/", types: { "application/rss+xml": "/blog/feed.xml" } },
 };
 
 export default function BlogListing() {
+  const hubs = getCategoryHubs();
   return (
     <div className="min-h-screen bg-white">
       {/* Blog Collection Schema */}
@@ -67,6 +69,24 @@ export default function BlogListing() {
           </div>
         </div>
       </div>
+
+      {/* Browse by topic */}
+      <nav aria-label="Browse by topic" className="w-full px-4 sm:px-6 lg:px-20 pt-10 bg-white">
+        <div className="max-w-7xl mx-auto">
+          <h2 className="text-lg font-semibold text-gray-900 mb-3">Browse by topic</h2>
+          <div className="flex flex-wrap gap-3">
+            {hubs.map((hub) => (
+              <Link
+                key={hub.slug}
+                href={`/blog/category/${hub.slug}/`}
+                className="px-4 py-2 rounded-full border border-gray-200 text-sm text-gray-700 hover:border-[#306777] hover:text-[#306777] transition-colors"
+              >
+                {hub.name} ({hub.posts.length})
+              </Link>
+            ))}
+          </div>
+        </div>
+      </nav>
 
       {/* Blog Posts Grid */}
       <div className="w-full px-4 sm:px-6 lg:px-20 py-16 bg-white">

@@ -6,6 +6,7 @@ import ReadMoreBlogs from "../../components/ReadMoreBlogs";
 import Footer from "../../components/Footer";
 import { blogPosts } from "../blogData";
 import { seoClusterBySlug, seoClusterPosts } from "../seoClusterData";
+import { categoryKey, getCategoryHubs } from "../categories";
 
 const SITE_URL = "https://www.asowin.com";
 
@@ -50,6 +51,17 @@ const buildContent = (post) => {
 
   const serviceLinks = [...new Set([...(post.serviceLinks || []), "/success-stories/"])].map(serviceCard).join("");
   const topics = [post.primaryKeyword, ...post.secondaryKeywords];
+  const hub = getCategoryHubs().find((item) => item.slug === categoryKey(post.category));
+  const moreInCategory = hub
+    ? hub.posts
+        .filter((item) => item.slug !== post.slug && !post.related.includes(item.slug))
+        .slice(0, 3)
+        .map(
+          (item) =>
+            `<a class="aso-related" href="/blog/${escapeHtml(item.slug)}/"><span class="aso-related-cat">${escapeHtml(hub.name)}</span><strong>${escapeHtml(item.title)}</strong></a>`,
+        )
+        .join("")
+    : "";
 
   return `
     <div class="aso-callout">
@@ -57,6 +69,7 @@ const buildContent = (post) => {
       <p>${escapeHtml(post.answer)}</p>
     </div>
     <div class="aso-chips" aria-label="Topics covered">
+      ${hub ? `<a class="aso-chip aso-chip-link" href="/blog/category/${hub.slug}/">${escapeHtml(hub.name)}</a>` : ""}
       ${topics.map((topic) => `<span class="aso-chip">${escapeHtml(topic)}</span>`).join("")}
     </div>
     ${post.sections
@@ -117,6 +130,11 @@ const buildContent = (post) => {
         : ""
     }
     ${
+      moreInCategory
+        ? `<h2 id="more-in-category">More in ${escapeHtml(hub.name)}</h2><div class="aso-related-grid">${moreInCategory}</div><p><a href="/blog/category/${hub.slug}/">Browse all ${hub.posts.length} ${escapeHtml(hub.name)} guides</a></p>`
+        : ""
+    }
+    ${
       serviceLinks
         ? `<h2 id="work-with-asowin">Work with ASOWin</h2><div class="aso-service-grid">${serviceLinks}</div>`
         : ""
@@ -163,13 +181,13 @@ export async function generateMetadata({ params }) {
       authors: [post.author],
       section: post.category,
       tags: [post.primaryKeyword, ...post.secondaryKeywords],
-      images: [{ url: post.heroImage, alt: post.imageAlt }],
+      images: [{ url: post.ogImage || post.heroImage, width: post.ogImage ? 1200 : undefined, height: post.ogImage ? 630 : undefined, alt: post.imageAlt }],
     },
     twitter: {
       card: "summary_large_image",
       title: post.title,
       description: post.description,
-      images: [post.heroImage],
+      images: [post.ogImage || post.heroImage],
     },
     robots: { index: true, follow: true },
   };
@@ -181,6 +199,7 @@ export default async function SeoClusterArticle({ params }) {
   if (!post) notFound();
 
   const url = `${SITE_URL}/blog/${post.slug}/`;
+  const hub = getCategoryHubs().find((item) => item.slug === categoryKey(post.category));
   const articleBody = [post.answer, ...post.sections.flatMap((section) => section.paragraphs)].join(" ");
   const relatedBlogs = post.related
     .map((relatedSlug) => blogPosts.find((item) => item.slug === relatedSlug))
@@ -191,7 +210,8 @@ export default async function SeoClusterArticle({ params }) {
     "@type": "BlogPosting",
     headline: post.title,
     description: post.description,
-    image: `${SITE_URL}${post.heroImage}`,
+    image: `${SITE_URL}${post.ogImage || post.heroImage}`,
+    inLanguage: "en",
     datePublished: post.publishedAt,
     dateModified: post.updatedAt,
     mainEntityOfPage: { "@type": "WebPage", "@id": url },
@@ -224,7 +244,12 @@ export default async function SeoClusterArticle({ params }) {
     itemListElement: [
       { "@type": "ListItem", position: 1, name: "Home", item: `${SITE_URL}/` },
       { "@type": "ListItem", position: 2, name: "Blog", item: `${SITE_URL}/blog/` },
-      { "@type": "ListItem", position: 3, name: post.title, item: url },
+      ...(hub
+        ? [
+            { "@type": "ListItem", position: 3, name: hub.name, item: `${SITE_URL}/blog/category/${hub.slug}/` },
+            { "@type": "ListItem", position: 4, name: post.title, item: url },
+          ]
+        : [{ "@type": "ListItem", position: 3, name: post.title, item: url }]),
     ],
   };
 

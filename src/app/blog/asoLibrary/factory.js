@@ -6,6 +6,7 @@ export const makeLibraryPost = ({ sections, faqs, ...post }) => ({
   readTime: "5 min read",
   searchIntent: "Informational",
   heroImage: `/blog-covers/${post.slug}.svg`,
+  ogImage: `/blog-og/${post.slug}.png`,
   imageAlt: `${post.primaryKeyword} guide`,
   serviceLinks: ["/services/app-store-optimization/"],
   sources: [],

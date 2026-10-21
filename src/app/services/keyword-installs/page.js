@@ -16,6 +16,16 @@ export const metadata = {
   title: 'Keyword Installs Service | Improve App Rankings | ASOWin',
   description:
     'Strategic keyword install campaigns to improve app rankings and increase organic search visibility. Data-driven approach to sustainable ranking growth.',
+  alternates: { canonical: '/services/keyword-installs/' },
+  openGraph: {
+    type: 'website',
+    url: '/services/keyword-installs/',
+    siteName: 'ASOWin',
+    title: 'Keyword Installs Service | Improve App Rankings | ASOWin',
+    description: 'Strategic keyword install campaigns to improve app rankings and increase organic search visibility. Data-driven approach to sustainable ranking growth.',
+    images: [{ url: '/og-services.jpg', width: 1200, height: 630 }],
+  },
+  twitter: { card: 'summary_large_image', title: 'Keyword Installs Service | Improve App Rankings | ASOWin', description: 'Strategic keyword install campaigns to improve app rankings and increase organic search visibility. Data-driven approach to sustainable ranking growth.', site: '@asowin' },
 };
 
 const KeywordInstallsServicePage = () => {

@@ -16,6 +16,16 @@ export const metadata = {
   title: 'Paid User Acquisition & Search Ads | App Growth | ASOWin',
   description:
     'Strategic paid acquisition services for app growth. Apple Search Ads, Google App Campaigns, and high-converting user acquisition strategies.',
+  alternates: { canonical: '/services/paid-user-acquisition/' },
+  openGraph: {
+    type: 'website',
+    url: '/services/paid-user-acquisition/',
+    siteName: 'ASOWin',
+    title: 'Paid User Acquisition & Search Ads | App Growth | ASOWin',
+    description: 'Strategic paid acquisition services for app growth. Apple Search Ads, Google App Campaigns, and high-converting user acquisition strategies.',
+    images: [{ url: '/og-services.jpg', width: 1200, height: 630 }],
+  },
+  twitter: { card: 'summary_large_image', title: 'Paid User Acquisition & Search Ads | App Growth | ASOWin', description: 'Strategic paid acquisition services for app growth. Apple Search Ads, Google App Campaigns, and high-converting user acquisition strategies.', site: '@asowin' },
 };
 
 const PaidUAServicePage = () => {
