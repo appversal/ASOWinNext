@@ -28,6 +28,7 @@ const SERVICE_LABELS = [
   ["keyword-installs", "Keyword installs", "Support priority keywords with compliant, quality-led programs"],
   ["automated-aso-ai", "Automated ASO with AI", "Faster research, reporting, and monitoring"],
   ["app-reputation-management", "App reputation management", "Protect and improve ratings and reviews"],
+  ["success-stories", "ASOWin case studies", "See results from real client engagements"],
   ["contact", "Request an ASO consultation", "Talk to the ASOWin team about your app"],
   ["app-store-optimization", "App store optimization services", "Full-service ASO for visibility and conversion"],
 ];
@@ -47,7 +48,7 @@ const buildContent = (post) => {
     )
     .join("");
 
-  const serviceLinks = (post.serviceLinks || []).map(serviceCard).join("");
+  const serviceLinks = [...new Set([...(post.serviceLinks || []), "/success-stories/"])].map(serviceCard).join("");
   const topics = [post.primaryKeyword, ...post.secondaryKeywords];
 
   return `
@@ -66,6 +67,33 @@ const buildContent = (post) => {
         `,
       )
       .join("")}
+    ${
+      post.steps && post.steps.length
+        ? `<h2 id="step-by-step">How to do it, step by step</h2>
+    <ol class="aso-howto">${post.steps
+      .map(([title, detail]) => `<li><strong>${escapeHtml(title)}</strong><span>${escapeHtml(detail)}</span></li>`)
+      .join("")}</ol>`
+        : ""
+    }
+    ${
+      post.examples && post.examples.length
+        ? `<h2 id="examples">Before and after examples</h2>
+    <p class="aso-note">Illustrative examples written for a generic app in this category, not client results. Swap in your own product, audience, and data.</p>
+    <div class="aso-examples">${post.examples
+      .map(
+        ([context, before, after, why]) => `
+      <div class="aso-example">
+        <div class="aso-example-context">${escapeHtml(context)}</div>
+        <div class="aso-ba">
+          <div class="aso-before"><span>Before</span><p>${escapeHtml(before)}</p></div>
+          <div class="aso-after"><span>After</span><p>${escapeHtml(after)}</p></div>
+        </div>
+        <p class="aso-why"><strong>Why it works:</strong> ${escapeHtml(why)}</p>
+      </div>`,
+      )
+      .join("")}</div>`
+        : ""
+    }
     <h2 id="action-plan">Action plan</h2>
     <ol class="aso-steps">${post.playbook.map((item) => `<li>${escapeHtml(item)}</li>`).join("")}</ol>
     <h2 id="measurement">Metrics to monitor</h2>

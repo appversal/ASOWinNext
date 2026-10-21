@@ -573,3 +573,81 @@ img {
 @media (max-width: 640px) {
   .blog-content .aso-faq-item summary { font-size: 1rem; }
 }
+
+/* Step-by-step and before/after examples */
+.blog-content ol.aso-howto {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 1.5rem;
+  counter-reset: aso-how;
+  display: grid;
+  gap: 0.75rem;
+}
+.blog-content ol.aso-howto li {
+  counter-increment: aso-how;
+  position: relative;
+  margin: 0;
+  padding: 1rem 1.1rem 1rem 3.6rem;
+  background: #f8fafb;
+  border: 1px solid #e1ebee;
+  border-radius: 0.75rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+.blog-content ol.aso-howto li::before {
+  content: counter(aso-how);
+  position: absolute;
+  left: 1rem;
+  top: 1rem;
+  width: 1.8rem;
+  height: 1.8rem;
+  border-radius: 999px;
+  background: #f0a32b;
+  color: #1f2937;
+  font-weight: 800;
+  font-size: 0.85rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.blog-content ol.aso-howto li strong { color: #111827; font-size: 1.02rem; line-height: 1.4; }
+.blog-content ol.aso-howto li span { font-size: 0.97rem; line-height: 1.65; color: #4b5563; }
+.blog-content .aso-examples { display: grid; gap: 1rem; margin-bottom: 1.5rem; }
+.blog-content .aso-example {
+  border: 1px solid #e5e7eb;
+  border-radius: 0.9rem;
+  padding: 1rem 1.1rem 0.9rem;
+  background: #fff;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+}
+.blog-content .aso-example-context {
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  color: #306777;
+  margin-bottom: 0.6rem;
+}
+.blog-content .aso-ba { display: grid; grid-template-columns: 1fr 1fr; gap: 0.75rem; }
+.blog-content .aso-before,
+.blog-content .aso-after { border-radius: 0.6rem; padding: 0.75rem 0.9rem; }
+.blog-content .aso-before { background: #fef2f2; border: 1px solid #fecaca; }
+.blog-content .aso-after { background: #f0fdf4; border: 1px solid #bbf7d0; }
+.blog-content .aso-before span,
+.blog-content .aso-after span {
+  display: block;
+  font-size: 0.7rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin-bottom: 0.3rem;
+}
+.blog-content .aso-before span { color: #b91c1c; }
+.blog-content .aso-after span { color: #15803d; }
+.blog-content .aso-before p,
+.blog-content .aso-after p { margin: 0; font-size: 0.97rem; line-height: 1.55; color: #1f2937; }
+.blog-content .aso-why { margin: 0.75rem 0 0; font-size: 0.95rem; line-height: 1.6; color: #4b5563; }
+@media (max-width: 640px) {
+  .blog-content .aso-ba { grid-template-columns: 1fr; }
+}
