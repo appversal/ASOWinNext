@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import { PROOF } from "./proofFacts";
 
 const services = [
   {
@@ -71,41 +72,26 @@ const Services = () => {
               <p className="text-gray-300 text-[14px] sm:text-[16px] font-sans mt-2 md:mt-4 max-w-[600px] lg:text-[18px]">
                 Get your App to be a leader in all targeted keywords.
                 <br className="hidden sm:block" />
-                Clients witnessed significant improvement in overall numbers.
+                Recent keyword results from our client case studies:
               </p>
             </div>
 
-            {/* Stats Grid */}
+            {/* Stats Grid: keyword results from published case studies */}
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 sm:gap-8 mt-8 md:mt-0">
-              <div>
-                <h3 className="text-[40px] sm:text-[50px] md:text-[60px] font-semibold mb-2">
-                  50%
-                </h3>
-                <p className="text-[14px] sm:text-[16px] text-white font-sans">
-                  Keywords Went From <br className="hidden sm:block" /> Unranked
-                  To Ranked Status
-                </p>
-              </div>
-
-              <div>
-                <h3 className="text-[40px] sm:text-[50px] md:text-[60px] font-semibold mb-2">
-                  3x
-                </h3>
-                <p className="text-[14px] sm:text-[16px] text-white font-sans">
-                  Improvement In <br className="hidden sm:block" /> Conversion
-                  Rates
-                </p>
-              </div>
-
-              <div>
-                <h3 className="text-[40px] sm:text-[50px] md:text-[60px] font-semibold mb-2">
-                  10
-                </h3>
-                <p className="text-[14px] sm:text-[16px] text-white font-sans">
-                  Keywords Per Client <br className="hidden sm:block" /> Reached
-                  Top 3
-                </p>
-              </div>
+              {[
+                { proof: PROOF.lsm, value: PROOF.lsm.shortStat.value, text: `LSM Apps for “Phone” on US Google Play, up from ${PROOF.lsm.shortStat.from}` },
+                { proof: PROOF.indiabulls, value: PROOF.indiabulls.stats[0].value, text: "Indiabulls Securities keywords from unranked into the Top 50" },
+                { proof: PROOF.bybit, value: PROOF.bybit.stats[0].value, text: "Bybit rankings across Spain and Latin America" },
+              ].map((stat) => (
+                <Link key={stat.proof.href} href={stat.proof.href} className="group">
+                  <h3 className="text-[40px] sm:text-[32px] md:text-[34px] lg:text-[48px] xl:text-[60px] font-semibold mb-2 whitespace-nowrap">
+                    {stat.value}
+                  </h3>
+                  <p className="text-[14px] sm:text-[16px] text-white font-sans group-hover:underline">
+                    {stat.text}
+                  </p>
+                </Link>
+              ))}
             </div>
           </div>
 
@@ -113,7 +99,7 @@ const Services = () => {
           <div className="w-full md:w-[40%] md:min-h-[505px] md:mt-[-40px] md:h-full flex justify-center md:justify-end">
             <Image
               src="/phone.png"
-              alt="Phone with bubbles"
+              alt="Phone showing an app ranked #1 in App Store search"
               width={300}
               height={500}
               className="w-full md:max-w-none md:w-full h-full object-contain"
@@ -150,7 +136,7 @@ const Services = () => {
                   <div className="space-y-4">
                     <Image
                       src={service.icon}
-                      alt="icon"
+                      alt=""
                       width={30}
                       height={30}
                       className="w-[30px] h-[30px] object-contain"

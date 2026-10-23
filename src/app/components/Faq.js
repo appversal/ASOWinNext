@@ -24,7 +24,7 @@ const Faq = () => {
     {
       id: '4',
       question: 'How does ASOWin handle reputation management for apps?',
-      answer: 'We manage app reputation by responding to user reviews, boosting app ratings, and addressing negative feedback effectively. Our incentivized community of over 20 lakh members helps improve app reputation and ratings organically.'
+      answer: 'We monitor and reply to user reviews, work with your product team to fix the issues behind negative feedback, and time in-app rating prompts (the App Store review prompt and the Google Play In-App Review API) so satisfied users are asked to rate your app. We never buy, incentivize or fake ratings or reviews, which both the App Store and Google Play prohibit.'
     },
     {
       id: '5',

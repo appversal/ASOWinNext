@@ -33,7 +33,7 @@ const ServicesHero = () => {
             {/* Content */}
             <div className="text-center lg:text-left px-2 lg:px-0">
               <h1 className="text-5xl sm:text-6xl md:text-6xl lg:text-6xl xl:text-7xl 2xl:text-8xl font-bold leading-tight mb-4 md:mb-6">
-                <span className="block">App Store</span>
+                <span className="block">App Store</span>{" "}
                 <span className="block">Optimization Service</span>
               </h1>
               

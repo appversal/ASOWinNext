@@ -24,7 +24,7 @@ const HeroSection = () => {
 
         <div className="relative z-10 max-w-4xl mt-24 md:mt-32 mx-auto font-serif">
           <h1 className="text-4xl md:text-6xl lg:text-[110px] xl:text-[135px] font-bold text-[#111111] mb-6 leading-tight">
-            App Store
+            App Store{" "}
             <br />
             Optimization
           </h1>

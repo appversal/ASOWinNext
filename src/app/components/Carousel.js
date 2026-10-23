@@ -2,20 +2,7 @@
 
 import React, { useEffect, useRef } from "react";
 import Image from "next/image";
-
-// Hardcoded logos list
-const logos = [
-  { name: "bajaj_finserv", class: "w-32", img: "/carousel_logos/bajaj_finserv_logo.png" },
-  { name: "delhivery", class: "w-32", img: "/carousel_logos/delhivery_logo.png" },
-  { name: "lsm_apps", class: "w-32", img: "/carousel_logos/lsm_apps_logo.png" },
-  { name: "pepperfry", class: "w-32", img: "/carousel_logos/pepperfry_logo.png" },
-  { name: "playojo", class: "w-32", img: "/carousel_logos/playojo_logo.png" },
-  { name: "ring_kisht", class: "w-32", img: "/carousel_logos/ring_kisht_logo.png" },
-  { name: "shremaroo", class: "w-32", img: "/carousel_logos/shremaroo_logo.png" },
-  { name: "vikergames", class: "w-32", img: "/carousel_logos/vikergames_logo.png" },
-  { name: "volt_money", class: "w-32", img: "/carousel_logos/volt_money_logo.png" },
-  { name: "zupee", class: "w-32", img: "/carousel_logos/zupee_logo.png" },
-];
+import { CLIENT_LOGOS as logos } from "./clientLogos";
 
 const Carousel = () => {
   const containerRef = useRef(null);
@@ -57,15 +44,16 @@ const Carousel = () => {
           className="flex space-x-12 md:space-x-16 lg:space-x-24 will-change-transform"
           style={{ transition: "none" }}
         >
-          {/* Double the logos for seamless looping */}
+          {/* Double the logos for seamless looping; the copy is hidden from screen readers and crawlers */}
           {[...logos, ...logos].map((logo, index) => (
             <div
               key={index}
-              className={`flex items-center justify-center flex-shrink-0 ${logo.class}`}
+              className="flex items-center justify-center flex-shrink-0 w-32"
+              aria-hidden={index >= logos.length ? "true" : undefined}
             >
               <Image
                 src={logo.img}
-                alt={logo.name}
+                alt={index >= logos.length ? "" : `${logo.name} logo`}
                 width={128}
                 height={48}
                 className="h-12 object-contain"

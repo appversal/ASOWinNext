@@ -1,0 +1,16 @@
+export const makeLibraryPost = ({ sections, faqs, ...post }) => ({
+  author: "Saarthak Srivastav",
+  date: "October 19, 2026",
+  publishedAt: "2026-10-19",
+  updatedAt: "2026-10-19",
+  readTime: "5 min read",
+  searchIntent: "Informational",
+  heroImage: `/blog-covers/${post.slug}.svg`,
+  ogImage: `/blog-og/${post.slug}.png`,
+  imageAlt: `${post.primaryKeyword} guide`,
+  serviceLinks: ["/services/app-store-optimization/"],
+  sources: [],
+  ...post,
+  sections: sections.map(([heading, paragraphs]) => ({ heading, paragraphs })),
+  faqs: faqs.map(([q, a]) => ({ q, a })),
+});

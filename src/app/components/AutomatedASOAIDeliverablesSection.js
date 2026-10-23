@@ -5,7 +5,7 @@ const AutomatedASOAIDeliverablesSection = () => {
   const deliverables = [
     'AI-powered review response systems',
     'Proactive rating management',
-    'Community-driven engagement strategies',
+    'In-app rating prompt strategy',
     'Sentiment analysis and monitoring',
     'Reputation tracking dashboards',
     'Review categorization workflows',

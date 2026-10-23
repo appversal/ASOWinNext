@@ -6,6 +6,9 @@ import Link from "next/link";
 const Navbar = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isServicesMobileOpen, setIsServicesMobileOpen] = useState(false);
+  // Desktop dropdown: opens on hover, or on tap/click of the chevron for touch screens
+  // (the "Services" label itself is a link to /services/).
+  const [isServicesDesktopOpen, setIsServicesDesktopOpen] = useState(false);
 
   return (
     <header className="sticky top-4 z-50 mx-4 md:mx-8 lg:mx-10 2xl:mx-20 font">
@@ -18,7 +21,7 @@ const Navbar = () => {
               width={118}
               className="w-[100px] md:w-[118px] 2xl:w-[140px] h-auto"
               src="/ASOWin.png"
-              alt="Logo"
+              alt="ASOWin"
             />
 
           </span>
@@ -34,18 +37,40 @@ const Navbar = () => {
             >
               Home
             </Link>
-            <div className="relative group">
-              <div className="flex items-center gap-1 cursor-pointer py-2">
-                <span
+            <div
+              className="relative group"
+              onMouseLeave={() => setIsServicesDesktopOpen(false)}
+              onKeyDown={(e) => e.key === "Escape" && setIsServicesDesktopOpen(false)}
+            >
+              <div className="flex items-center gap-1 py-2">
+                <Link
+                  href="/services/"
                   className="text-[#111111] font-medium hover:text-black text-sm lg:text-[14px] 2xl:text-[14px]"
                 >
                   Services
-                </span>
-                <svg className="w-4 h-4 text-gray-500 group-hover:text-black transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7" />
-                </svg>
+                </Link>
+                <button
+                  type="button"
+                  onClick={() => setIsServicesDesktopOpen((open) => !open)}
+                  className="p-1 -m-1 rounded-md text-gray-500 hover:text-black focus:outline-none focus-visible:ring-2 focus-visible:ring-[#fdb124]"
+                  aria-label="Show services menu"
+                  aria-expanded={isServicesDesktopOpen}
+                  aria-controls="desktop-services-menu"
+                >
+                  <svg className={`w-4 h-4 transition-transform duration-200 ${isServicesDesktopOpen ? "rotate-180" : ""}`} fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7" />
+                  </svg>
+                </button>
               </div>
-              <div className="absolute top-[100%] left-0 w-72 pt-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
+              <div
+                id="desktop-services-menu"
+                className={`absolute top-[100%] left-0 w-72 pt-2 transition-all duration-200 z-50 ${
+                  isServicesDesktopOpen
+                    ? "opacity-100 visible"
+                    : "opacity-0 invisible group-hover:opacity-100 group-hover:visible group-focus-within:opacity-100 group-focus-within:visible"
+                }`}
+                onClick={() => setIsServicesDesktopOpen(false)}
+              >
                 <div className="bg-white shadow-xl rounded-xl border border-gray-100 py-2">
                   <Link
                     href="/services/app-store-optimization"
@@ -184,11 +209,13 @@ const Navbar = () => {
               </Link>
               <div className="flex flex-col">
                 <div className="flex items-center justify-between px-4 py-3 hover:bg-gray-50 rounded-xl transition-colors">
-                  <span
+                  <Link
+                    href="/services/"
                     className="text-[#111122] font-semibold text-[15px]"
+                    onClick={() => setIsMobileMenuOpen(false)}
                   >
                     Services
-                  </span>
+                  </Link>
                   <button
                     onClick={() => setIsServicesMobileOpen(!isServicesMobileOpen)}
                     className="p-1 rounded-md hover:bg-gray-200 text-gray-600 focus:outline-none"

@@ -1,0 +1,764 @@
+"use client";
+
+import Link from "next/link";
+import { PROOF } from "../../components/proofFacts";
+import Image from "next/image";
+
+import { Button } from "@/components/ui/button";
+import { Card } from "@/components/ui/card";
+import { Input } from "@/components/ui/input";
+import { Badge } from "@/components/ui/badge";
+import { Textarea } from "@/components/ui/textarea";
+import { Checkbox } from "@/components/ui/checkbox";
+import { Label } from "@/components/ui/label";
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
+import {
+    TrendingUp,
+    Star,
+    Target,
+    Zap,
+    CheckCircle,
+    ArrowRight,
+    BarChart3,
+    Search,
+    Smartphone,
+    Clock,
+    Rocket,
+    Shield,
+    Award,
+    Users,
+    Mail,
+    ChevronRight
+} from "lucide-react";
+import {
+    SiGoogleplay,
+    SiAppstore
+} from "react-icons/si";
+import { useState } from "react";
+import { trackLinkedInConversion } from "@/lib/linkedin-conversion";
+
+function ContactForm({ variant = "full" }) {
+    const [formData, setFormData] = useState({
+        firstName: "",
+        lastName: "",
+        email: "",
+        jobTitle: "",
+        appLive: "",
+        message: "",
+        consent: false,
+    });
+
+    const [isSubmitting, setIsSubmitting] = useState(false);
+    const [submitStatus, setSubmitStatus] = useState(null);
+
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+        setIsSubmitting(true);
+        setSubmitStatus(null);
+        const submissionId = `${Date.now()}-${Math.random().toString(36).slice(2, 9)}`;
+
+        try {
+            // Prepare form data with proper field names for Formspree
+            const submissionData = {
+                "First Name": formData.firstName || "",
+                "Last Name": formData.lastName || "",
+                "Email": formData.email,
+                "Job Title": formData.jobTitle || "",
+                "App Live Status": formData.appLive || "",
+                "Message": formData.message || "",
+                "Consent": formData.consent ? "Yes" : "No",
+                "Form Type": variant, // Identifies which form was submitted
+                "Submission Date": new Date().toISOString(),
+            };
+
+            const response = await fetch("https://formspree.io/f/xgokpzgq", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify(submissionData),
+            });
+
+            if (response.ok) {
+                setSubmitStatus("success");
+                trackLinkedInConversion(submissionId);
+                setFormData({
+                    firstName: "",
+                    lastName: "",
+                    email: "",
+                    jobTitle: "",
+                    appLive: "",
+                    message: "",
+                    consent: false,
+                });
+            } else {
+                setSubmitStatus("error");
+            }
+        } catch (error) {
+            setSubmitStatus("error");
+        } finally {
+            setIsSubmitting(false);
+        }
+    };
+
+    if (variant === "hero") {
+        return (
+            <form onSubmit={handleSubmit} className="w-full max-w-lg">
+                <div className="flex flex-col gap-4">
+                    <div className="grid grid-cols-2 gap-3">
+                        <Input
+                            name="firstName"
+                            placeholder="First name *"
+                            value={formData.firstName}
+                            onChange={(e) => setFormData({ ...formData, firstName: e.target.value })}
+                            className="bg-white border-gray-300 shadow-sm focus-visible:ring-2 focus-visible:ring-primary/40 focus-visible:border-primary h-12"
+                            data-testid="input-firstname-hero"
+                        />
+                        <Input
+                            name="lastName"
+                            placeholder="Last name *"
+                            value={formData.lastName}
+                            onChange={(e) => setFormData({ ...formData, lastName: e.target.value })}
+                            className="bg-white border-gray-300 shadow-sm focus-visible:ring-2 focus-visible:ring-primary/40 focus-visible:border-primary h-12"
+                            data-testid="input-lastname-hero"
+                        />
+                    </div>
+                    <Input
+                        name="email"
+                        type="email"
+                        placeholder="Work email *"
+                        value={formData.email}
+                        onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+                        className="bg-white border-gray-300 shadow-sm focus-visible:ring-2 focus-visible:ring-primary/40 focus-visible:border-primary h-12"
+                        data-testid="input-email-hero"
+                        required
+                    />
+                    <Button type="submit" size="lg" className="h-12 font-semibold" data-testid="button-cta-hero" disabled={isSubmitting}>
+                        {isSubmitting ? "Submitting..." : "Get Free ASO Audit"}
+                        <ArrowRight className="w-4 h-4 ml-2" />
+                    </Button>
+                    {submitStatus === "success" && (
+                        <p className="text-sm text-primary">✓ Thank you! We'll contact you within 24 hours.</p>
+                    )}
+                    {submitStatus === "error" && (
+                        <p className="text-sm text-destructive">✗ Something went wrong. Please try again.</p>
+                    )}
+                </div>
+            </form>
+        );
+    }
+    if (variant === "compact") {
+        return (
+            <form onSubmit={handleSubmit} className="w-full">
+                <div className="flex flex-col gap-3">
+                    <div className="flex flex-col sm:flex-row gap-3">
+                        <Input
+                            name="email"
+                            type="email"
+                            placeholder="Enter your work email"
+                            value={formData.email}
+                            onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+                            className="flex-1 bg-white border-gray-300 shadow-sm focus-visible:ring-2 focus-visible:ring-primary/40 focus-visible:border-primary h-12"
+                            data-testid="input-email-compact"
+                            required
+                        />
+                        <Button type="submit" size="lg" className="h-12 px-8 font-semibold" data-testid="button-cta-compact" disabled={isSubmitting}>
+                            {isSubmitting ? "Submitting..." : "Get Free Audit"}
+                            <ChevronRight className="w-4 h-4 ml-1" />
+                        </Button>
+                    </div>
+                    {submitStatus === "success" && (
+                        <p className="text-sm text-primary">✓ Thank you! We'll contact you within 24 hours.</p>
+                    )}
+                    {submitStatus === "error" && (
+                        <p className="text-sm text-destructive">✗ Something went wrong. Please try again.</p>
+                    )}
+                </div>
+            </form>
+        );
+    }
+
+    return (
+        <form onSubmit={handleSubmit} className="space-y-5">
+            <div className="grid sm:grid-cols-2 gap-4">
+                <div className="space-y-2">
+                    <Label htmlFor="firstName" className="text-xs font-semibold text-gray-700">First name<span className="text-primary">*</span></Label>
+                    <Input
+                        id="firstName"
+                        name="firstName"
+                        value={formData.firstName}
+                        onChange={(e) => setFormData({ ...formData, firstName: e.target.value })}
+                        className="bg-gray-50 border-gray-200 rounded-lg focus-visible:bg-white focus-visible:ring-2 focus-visible:ring-primary/40 focus-visible:border-primary transition-colors h-11"
+                        data-testid="input-firstname"
+                    />
+                </div>
+                <div className="space-y-2">
+                    <Label htmlFor="lastName" className="text-xs font-semibold text-gray-700">Last name<span className="text-primary">*</span></Label>
+                    <Input
+                        id="lastName"
+                        name="lastName"
+                        value={formData.lastName}
+                        onChange={(e) => setFormData({ ...formData, lastName: e.target.value })}
+                        className="bg-gray-50 border-gray-200 rounded-lg focus-visible:bg-white focus-visible:ring-2 focus-visible:ring-primary/40 focus-visible:border-primary transition-colors h-11"
+                        data-testid="input-lastname"
+                    />
+                </div>
+            </div>
+            <div className="grid sm:grid-cols-2 gap-4">
+                <div className="space-y-2">
+                    <Label htmlFor="email" className="text-xs font-semibold text-gray-700">Work email<span className="text-primary">*</span></Label>
+                    <Input
+                        id="email"
+                        name="email"
+                        type="email"
+                        value={formData.email}
+                        onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+                        className="bg-gray-50 border-gray-200 rounded-lg focus-visible:bg-white focus-visible:ring-2 focus-visible:ring-primary/40 focus-visible:border-primary transition-colors h-11"
+                        data-testid="input-email"
+                        required
+                    />
+                </div>
+                <div className="space-y-2">
+                    <Label htmlFor="jobTitle" className="text-xs font-semibold text-gray-700">Job title<span className="text-primary">*</span></Label>
+                    <Input
+                        id="jobTitle"
+                        name="jobTitle"
+                        value={formData.jobTitle}
+                        onChange={(e) => setFormData({ ...formData, jobTitle: e.target.value })}
+                        className="bg-gray-50 border-gray-200 rounded-lg focus-visible:bg-white focus-visible:ring-2 focus-visible:ring-primary/40 focus-visible:border-primary transition-colors h-11"
+                        data-testid="input-jobtitle"
+                    />
+                </div>
+            </div>
+            <div className="space-y-2">
+                <Label className="text-xs font-semibold text-gray-700">Do you have an app that's currently live on the app stores?<span className="text-primary">*</span></Label>
+                <Select value={formData.appLive} onValueChange={(value) => setFormData({ ...formData, appLive: value })}>
+                    <SelectTrigger className="bg-gray-50 border-gray-200 rounded-lg focus-visible:bg-white focus-visible:ring-2 focus-visible:ring-primary/40 focus-visible:border-primary transition-colors h-11" data-testid="select-applive">
+                        <SelectValue placeholder="Please Select" />
+                    </SelectTrigger>
+                    <SelectContent className="bg-white border-gray-200 text-gray-900 z-50">
+                        <SelectItem value="yes" className="hover:bg-gray-100 focus:bg-gray-100 cursor-pointer">Yes, my app is live</SelectItem>
+                        <SelectItem value="soon" className="hover:bg-gray-100 focus:bg-gray-100 cursor-pointer">Launching soon</SelectItem>
+                        <SelectItem value="planning" className="hover:bg-gray-100 focus:bg-gray-100 cursor-pointer">Still in planning phase</SelectItem>
+                        <SelectItem value="no" className="hover:bg-gray-100 focus:bg-gray-100 cursor-pointer">No, I don't have an app yet</SelectItem>
+                    </SelectContent>
+                </Select>
+            </div>
+            <div className="space-y-2">
+                <Label htmlFor="message" className="text-xs font-semibold text-gray-700">How can we help?</Label>
+                <span className="text-muted-foreground text-xs ml-2">Optional</span>
+                <Textarea
+                    id="message"
+                    name="message"
+                    value={formData.message}
+                    onChange={(e) => setFormData({ ...formData, message: e.target.value })}
+                    className="bg-gray-50 border-gray-200 rounded-lg focus-visible:bg-white focus-visible:ring-2 focus-visible:ring-primary/40 focus-visible:border-primary transition-colors min-h-[96px] resize-none"
+                    data-testid="textarea-message"
+                />
+            </div>
+            <div className="flex items-start gap-3 pt-2">
+                <Checkbox
+                    id="consent"
+                    checked={formData.consent}
+                    onCheckedChange={(checked) => setFormData({ ...formData, consent: checked })}
+                    data-testid="checkbox-consent"
+                    required
+                />
+                <Label htmlFor="consent" className="text-sm text-muted-foreground leading-relaxed cursor-pointer">
+                    I agree to be contacted by ASOWin, and I accept the data processing terms stated in the <Link href="/privacy-policy" className="text-primary hover:underline">Privacy Policy</Link>.<span className="text-primary">*</span>
+                </Label>
+            </div>
+            <Button type="submit" size="lg" className="w-full h-12 font-semibold mt-2 rounded-lg shadow-lg shadow-primary/25 hover:shadow-primary/40" data-testid="button-submit" disabled={isSubmitting}>
+                {isSubmitting ? "Submitting..." : "Request my free audit"}
+                {!isSubmitting && <ArrowRight className="w-4 h-4 ml-2" />}
+            </Button>
+            {submitStatus === "success" && (
+                <p className="text-sm text-primary text-center">✓ Thank you! We'll contact you within 24 hours.</p>
+            )}
+            {submitStatus === "error" && (
+                <p className="text-sm text-destructive text-center">✗ Something went wrong. Please try again.</p>
+            )}
+        </form>
+    );
+}
+
+export default function AsoAgencyPage() {
+    const metrics = [
+        { value: "37%", label: "Average Conversion Rate", sublabel: "for all Clients Combined" },
+        { value: "136", label: "Keywords Ranked", sublabel: "#1 Position" },
+        { value: "10M+", label: "Downloads Delivered", sublabel: "for all Clients Combined" },
+        { value: "90", label: "Days to Results", sublabel: "Guaranteed Timeline" },
+    ];
+
+    const services = [
+        {
+            icon: Search,
+            title: "Full-Service ASO",
+            description: "Boost your app's discoverability and downloads with our comprehensive ASO services. From optimizing metadata to refining your app store listing.",
+        },
+        {
+            icon: Target,
+            title: "Keyword Research & Rankings",
+            description: "We identify the most relevant and high-performing keywords for your app, enabling it to appear in top searches across Play Store and App Store.",
+        },
+        {
+            icon: BarChart3,
+            title: "Design Services & A/B Testing",
+            description: "Make a lasting first impression with stunning app screenshots, videos, and icons. We conduct rigorous A/B testing to identify visuals that convert.",
+        },
+        {
+            icon: Star,
+            title: "App Reputation Management",
+            description: "Maintain a positive app image with our reputation management services. We handle user reviews and ratings, respond to feedback professionally.",
+        },
+        {
+            icon: Rocket,
+            title: "Paid User Acquisition (UA)",
+            description: "Supercharge your growth with targeted user acquisition campaigns. We leverage Apple Search Ads and other paid channels to maximize ROI.",
+        },
+        {
+            icon: Smartphone,
+            title: "Creative Asset Optimization",
+            description: "A/B tested screenshots, icons, and promotional videos that convert browsers into loyal users. Data-driven creative decisions.",
+        },
+    ];
+
+    const clientLogos = [
+        { name: "Pepperfry", href: "/success-stories/pepperfry/" },
+        { name: "Bybit", href: "/success-stories/bybit/" },
+        { name: "Indiabulls Securities", href: "/success-stories/indiabulls-securities/" },
+        { name: "LSM Apps", href: "/success-stories/lsm-apps/" },
+        { name: "Viker Games", href: "/success-stories/viker-games/" },
+    ];
+
+    // One approved quote with a single attribution; other cards link to published case studies.
+    const testimonial = {
+        quote: "We absolutely love the work the ASOWin team does for our App on a daily basis. Super satisfied and we highly value the dedication and high quality service offered.",
+        company: "Pepperfry",
+        href: "/success-stories/pepperfry/",
+    };
+
+    const caseStudyCards = ["lsm", "viker"].map((key) => ({
+        href: PROOF[key].href,
+        name: PROOF[key].name,
+        result: PROOF[key].summary,
+    }));
+
+    const benefits = [
+        "No long-term contracts required",
+        "Free comprehensive ASO audit",
+        "Pay monthly, cancel anytime",
+        "Dedicated account manager",
+        "Weekly performance reports",
+        "24/7 Slack & Email support",
+    ];
+
+    return (
+        <div className="min-h-screen bg-background overflow-hidden aso-agency-page home-theme">
+            {/* Animated Background Pattern */}
+            <div className="fixed inset-0 opacity-5 pointer-events-none">
+                <div className="absolute inset-0" style={{
+                    backgroundImage: `radial-gradient(circle at 2px 2px, #014458 1px, transparent 0)`,
+                    backgroundSize: '40px 40px'
+                }} />
+            </div>
+
+            {/* Hero Section */}
+            <section className="relative pt-8 pb-20 sm:pt-12 sm:pb-28 bg-gradient-to-b from-[#FFEDE3] to-white">
+                <div className="absolute top-20 left-10 w-64 h-64 bg-primary/10 rounded-full blur-3xl" />
+                <div className="absolute bottom-20 right-10 w-96 h-96 bg-primary/5 rounded-full blur-3xl" />
+
+                <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                    {/* Top Bar */}
+                    <div className="flex items-center justify-between mb-16">
+                        <Link href="/" className="flex items-center gap-3 hover:opacity-80 transition-opacity">
+                            <Image
+                                src="/ASOWin.png"
+                                alt="ASOWin Logo"
+                                width={118}
+                                height={38}
+                                className="w-[100px] md:w-[118px] h-auto"
+                            />
+                        </Link>
+                        <Badge className="bg-primary/20 text-primary border-primary/30 px-4 py-1">
+                            <Award className="w-3 h-3 mr-1" />
+                            Trusted by Top US Apps
+                        </Badge>
+                    </div>
+
+                    <div className="grid lg:grid-cols-2 gap-12 items-center">
+                        {/* Left Column - Content */}
+                        <div className="text-left">
+                            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-card border border-border mb-6">
+                                <div className="flex items-center gap-2">
+                                    <SiGoogleplay className="w-4 h-4 text-primary" />
+                                    <SiAppstore className="w-4 h-4 text-primary" />
+                                </div>
+                                <span className="text-sm font-medium text-muted-foreground">Play Store & App Store Experts</span>
+                            </div>
+
+                            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight mb-6" data-testid="text-main-headline">
+                                <span className="gradient-text">App Store Optimization</span>
+                                <span className="text-foreground"> Agency for US Apps</span>
+                            </h1>
+
+                            <p className="text-xl sm:text-2xl text-muted-foreground mb-8 max-w-xl" data-testid="text-subheadline">
+                                Rank Higher on Play Store & App Store in 90 Days. Guaranteed.
+                            </p>
+
+                            {/* Hero Form */}
+                            <div className="mb-8">
+                                <ContactForm variant="hero" />
+                            </div>
+
+                            <p className="text-sm text-muted-foreground">
+                                Free audit delivered within 24 hours. No credit card required.
+                            </p>
+                        </div>
+
+                        {/* Right Column - Animation */}
+                        <div className="hidden lg:flex items-center justify-center">
+                            <div className="relative w-full max-w-lg">
+                                <Image
+                                    src="/phone.png"
+                                    alt="Phone showing an app ranked #1 in App Store search"
+                                    width={2420}
+                                    height={2266}
+                                    className="w-full h-auto"
+                                />
+                            </div>
+                        </div>                </div>
+                </div>
+            </section>
+
+            {/* Client Logos - First Row */}
+            <section className="py-12 border-y border-border bg-card/50">
+                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                    <p className="text-center text-sm text-muted-foreground mb-8 uppercase tracking-widest font-medium">
+                        Client Case Studies
+                    </p>
+                    <div className="flex flex-wrap items-center justify-center gap-8 md:gap-12">
+                        {clientLogos.map((client, index) => (
+                            <Link
+                                key={client.href}
+                                href={client.href}
+                                className="text-lg font-semibold text-muted-foreground/60 hover:text-foreground transition-colors"
+                                data-testid={`client-logo-${index}`}
+                            >
+                                {client.name}
+                            </Link>
+                        ))}
+                    </div>
+                </div>
+            </section>
+
+            {/* Metrics Section */}
+            <section className="py-20">
+                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                    <div className="text-center mb-16">
+                        <Badge variant="secondary" className="mb-4">Results That Speak</Badge>
+                        <h2 className="text-3xl sm:text-4xl font-bold mb-4">
+                            Some incredible numbers witnessed across the globe
+                        </h2>
+                    </div>
+
+                    <div className="grid grid-cols-2 lg:grid-cols-4 gap-6">
+                        {metrics.map((metric, index) => (
+                            <Card key={index} className="p-6 text-center bg-card/50 border-border hover-elevate" data-testid={`metric-${index}`}>
+                                <div className="text-4xl sm:text-5xl font-bold gradient-text mb-2">
+                                    {metric.value}
+                                </div>
+                                <div className="text-sm font-medium text-foreground mb-1">{metric.label}</div>
+                                <div className="text-xs text-muted-foreground">{metric.sublabel}</div>
+                            </Card>
+                        ))}
+                    </div>
+                </div>
+            </section>
+
+            {/* Quick Form Section */}
+            <section className="py-16 bg-primary/5 border-y border-primary/20">
+                <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+                    <h3 className="text-2xl font-bold mb-4">Ready to boost your app rankings?</h3>
+                    <p className="text-muted-foreground mb-6">Get your free ASO audit in 24 hours</p>
+                    <ContactForm variant="compact" />
+                </div>
+            </section>
+
+            {/* Services Section */}
+            <section className="py-20">
+                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                    <div className="text-center mb-16">
+                        <Badge variant="secondary" className="mb-4">Our ASO Services</Badge>
+                        <h2 className="text-3xl sm:text-4xl font-bold mb-4" data-testid="text-services-heading">
+                            Complete App Store Optimization Services
+                        </h2>
+                        <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+                            Everything you need to dominate app store rankings and drive organic downloads.
+                        </p>
+                    </div>
+
+                    <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                        {services.map((service, index) => (
+                            <Card key={index} className="p-6 bg-card/50 border-border hover-elevate group" data-testid={`service-${index}`}>
+                                <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center mb-4 group-hover:bg-primary/20 transition-colors">
+                                    <service.icon className="w-6 h-6 text-primary" />
+                                </div>
+                                <h3 className="text-lg font-semibold mb-2">{service.title}</h3>
+                                <p className="text-muted-foreground text-sm">{service.description}</p>
+                            </Card>
+                        ))}
+                    </div>
+                </div>
+            </section>
+
+            {/* Testimonials */}
+            <section className="py-20 bg-card/30">
+                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                    <div className="text-center mb-16">
+                        <Badge variant="secondary" className="mb-4">Client Success Stories</Badge>
+                        <h2 className="text-3xl sm:text-4xl font-bold mb-4">
+                            Client Feedback and Results
+                        </h2>
+                    </div>
+
+                    <div className="grid md:grid-cols-3 gap-6">
+                        <Card className="p-6 bg-card border-border" data-testid="testimonial-0">
+                            <blockquote className="text-foreground mb-6 text-sm leading-relaxed">
+                                "{testimonial.quote}"
+                            </blockquote>
+                            <Link href={testimonial.href} className="text-sm font-medium text-foreground hover:text-primary">
+                                {testimonial.company}
+                            </Link>
+                        </Card>
+                        {caseStudyCards.map((study) => (
+                            <Link key={study.href} href={study.href} className="block">
+                                <Card className="p-6 h-full bg-card border-border hover-elevate">
+                                    <p className="text-xs font-semibold uppercase tracking-widest text-primary mb-3">Case study</p>
+                                    <p className="text-lg font-semibold text-foreground mb-2">{study.name}</p>
+                                    <p className="text-sm text-muted-foreground mb-6">{study.result}</p>
+                                    <span className="text-sm font-medium text-primary">Read the case study →</span>
+                                </Card>
+                            </Link>
+                        ))}
+                    </div>
+                </div>
+            </section>
+
+            {/* Why Choose Us */}
+            <section className="py-20">
+                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                    <div className="grid lg:grid-cols-2 gap-12 items-center">
+                        <div>
+                            <Badge variant="secondary" className="mb-4">Why ASOWin</Badge>
+                            <h2 className="text-3xl sm:text-4xl font-bold mb-6">
+                                The ASO Agency That <span className="gradient-text">Delivers Results</span>
+                            </h2>
+                            <p className="text-lg text-muted-foreground mb-8">
+                                We're not just another app ranking agency. We combine deep Play Store ASO expertise
+                                with App Store keyword ranking strategies to maximize your app's organic growth.
+                            </p>
+
+                            <div className="grid sm:grid-cols-2 gap-4 mb-8">
+                                {benefits.map((benefit, index) => (
+                                    <div key={index} className="flex items-center gap-3" data-testid={`benefit-${index}`}>
+                                        <CheckCircle className="w-5 h-5 text-primary flex-shrink-0" />
+                                        <span className="text-sm font-medium">{benefit}</span>
+                                    </div>
+                                ))}
+                            </div>
+
+                            <ContactForm variant="compact" />
+                        </div>
+
+                        <div className="hidden lg:flex items-center justify-center">
+                            <div className="w-full max-w-md">
+                                <Image
+                                    src="/phone.png"
+                                    alt="Phone showing an app ranked #1 in App Store search"
+                                    width={2420}
+                                    height={2266}
+                                    className="w-full h-auto"
+                                />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            {/* Process Section */}
+            <section className="py-20 bg-card/30">
+                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                    <div className="text-center mb-16">
+                        <Badge variant="secondary" className="mb-4">Our Process</Badge>
+                        <h2 className="text-3xl sm:text-4xl font-bold mb-4">
+                            How Our App Store Optimization Works
+                        </h2>
+                        <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+                            A proven, data-driven approach to improve your app rankings.
+                        </p>
+                    </div>
+
+                    <div className="grid md:grid-cols-4 gap-6">
+                        {[
+                            { step: "01", title: "Free Audit", desc: "Complete ASO analysis of your app", icon: Search },
+                            { step: "02", title: "Strategy", desc: "Custom keyword & ranking plan", icon: Target },
+                            { step: "03", title: "Execution", desc: "Optimize listings & creative assets", icon: Zap },
+                            { step: "04", title: "Growth", desc: "Track rankings & iterate", icon: TrendingUp },
+                        ].map((item, index) => (
+                            <div key={index} className="text-center" data-testid={`process-${index}`}>
+                                <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-primary/10 mb-4 relative">
+                                    <item.icon className="w-7 h-7 text-primary" />
+                                    <span className="absolute -top-2 -right-2 w-6 h-6 rounded-full bg-primary text-primary-foreground text-xs font-bold flex items-center justify-center">
+                                        {item.step}
+                                    </span>
+                                </div>
+                                <h3 className="text-lg font-semibold mb-2">{item.title}</h3>
+                                <p className="text-sm text-muted-foreground">{item.desc}</p>
+                            </div>
+                        ))}
+                    </div>
+                </div>
+            </section>
+
+            {/* Full Contact Form Section: split card, brand panel + form */}
+            <section className="py-20 sm:py-24 bg-[#FFF6EE]" id="contact">
+                <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+                    <div className="grid grid-cols-1 lg:grid-cols-[minmax(0,5fr)_minmax(0,7fr)] overflow-hidden rounded-3xl bg-white shadow-2xl shadow-[#014458]/10 ring-1 ring-black/5">
+                        {/* Left - brand panel */}
+                        <div className="relative overflow-hidden bg-[#014458] text-white p-8 sm:p-10 lg:p-12 flex flex-col">
+                            <div className="pointer-events-none absolute -top-24 -right-24 w-80 h-80 rounded-full bg-[#1d7f9c]/50 blur-3xl" aria-hidden="true" />
+                            <div className="pointer-events-none absolute -bottom-32 -left-20 w-72 h-72 rounded-full bg-[#fdb124]/10 blur-3xl" aria-hidden="true" />
+                            <div className="relative">
+                                <p className="text-xs font-semibold text-[#FFB842] uppercase tracking-[0.2em] mb-4">Get in touch</p>
+                                <h2 className="text-3xl sm:text-4xl font-bold leading-tight mb-4">
+                                    How can we help?
+                                </h2>
+                                <p className="text-white/75 mb-8">
+                                    Tell us about your app. Our team will review your store listing and send you a free ASO audit.
+                                </p>
+                                <ul className="space-y-3 mb-10">
+                                    {benefits.slice(0, 4).map((benefit) => (
+                                        <li key={benefit} className="flex items-center gap-3 text-sm sm:text-base">
+                                            <span className="flex items-center justify-center w-6 h-6 rounded-full bg-[#fdb124]/20 flex-shrink-0">
+                                                <CheckCircle className="w-4 h-4 text-[#FFB842]" />
+                                            </span>
+                                            {benefit}
+                                        </li>
+                                    ))}
+                                </ul>
+                            </div>
+
+                            <div className="relative mt-auto space-y-6">
+                                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 border-t border-white/15 pt-6 text-sm">
+                                    <div>
+                                        <p className="text-white/50 text-xs mb-1">Response time</p>
+                                        <p className="flex items-center gap-2 font-medium"><Clock className="w-4 h-4 text-[#FFB842]" />Within 24 hours</p>
+                                    </div>
+                                    <div>
+                                        <p className="text-white/50 text-xs mb-1">Email</p>
+                                        <a href="mailto:support@asowin.com" className="flex items-center gap-2 font-medium hover:text-[#FFB842]">
+                                            <Mail className="w-4 h-4 text-[#FFB842] flex-shrink-0" />support@asowin.com
+                                        </a>
+                                    </div>
+                                </div>
+                                <div>
+                                    <p className="text-white/50 text-xs mb-3">Client case studies</p>
+                                    <div className="flex flex-wrap gap-2">
+                                        {clientLogos.map((client) => (
+                                            <Link
+                                                key={client.href}
+                                                href={client.href}
+                                                className="px-3 py-1.5 rounded-full bg-white/10 ring-1 ring-white/15 text-xs font-medium text-white/85 hover:bg-white/20 hover:text-white transition-colors"
+                                            >
+                                                {client.name}
+                                            </Link>
+                                        ))}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        {/* Right - form */}
+                        <div className="p-8 sm:p-10 lg:p-12">
+                            <h3 className="text-2xl font-bold text-foreground mb-1">Get your free ASO audit</h3>
+                            <p className="text-sm text-muted-foreground mb-8">Fill in the form below. No credit card required.</p>
+                            <ContactForm variant="full" />
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            {/* Final CTA Section */}
+            <section className="py-20 bg-[#014458] relative overflow-hidden">
+                <div className="absolute inset-0 opacity-10">
+                    <div className="absolute inset-0" style={{
+                        backgroundImage: `radial-gradient(circle at 2px 2px, white 1px, transparent 0)`,
+                        backgroundSize: '30px 30px'
+                    }} />
+                </div>
+
+                <div className="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+                    <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 border border-white/20 mb-8">
+                        <Zap className="w-4 h-4 text-white" />
+                        <span className="text-sm font-medium text-white">Limited Spots Available This Month</span>
+                    </div>
+
+                    <h2 className="text-3xl sm:text-4xl font-bold text-white mb-4">
+                        Ready to Rank Higher?
+                    </h2>
+                    <p className="text-lg text-white/80 mb-8 max-w-xl mx-auto">
+                        Get a comprehensive ASO audit of your app and discover exactly how to improve your rankings.
+                    </p>
+
+                    <div className="max-w-xl mx-auto">
+                        <ContactForm variant="compact" />
+                    </div>
+
+                    <div className="flex flex-wrap items-center justify-center gap-6 mt-8 text-white/70 text-sm">
+                        <div className="flex items-center gap-2">
+                            <Shield className="w-4 h-4" />
+                            <span>No contracts</span>
+                        </div>
+                        <div className="flex items-center gap-2">
+                            <Users className="w-4 h-4" />
+                            <span>Dedicated manager</span>
+                        </div>
+                        <div className="flex items-center gap-2">
+                            <Clock className="w-4 h-4" />
+                            <span>Results in 90 days</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            {/* Footer */}
+            <footer className="py-12 border-t border-border">
+                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                    <div className="flex flex-col md:flex-row items-center justify-between gap-6">
+                        <div className="flex items-center gap-3">
+                            <Link href="/" className="flex items-center gap-3 hover:opacity-80 transition-opacity">
+                                <Image
+                                    src="/ASOWin.png"
+                                    alt="ASOWin Logo"
+                                    width={118}
+                                    height={38}
+                                    className="w-[100px] md:w-[118px] h-auto"
+                                />
+                            </Link>
+                        </div>
+                        <p className="text-sm text-muted-foreground text-center">
+                            The #1 App Store Optimization Agency for Growth-Focused Apps
+                        </p>
+                        <div className="flex items-center gap-4">
+                            <a href="mailto:hello@asowin.com" className="flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground transition-colors">
+                                <Mail className="w-4 h-4" />
+                                <span>hello@asowin.com</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </footer>
+        </div>
+    );
+}

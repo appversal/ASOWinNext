@@ -24,7 +24,7 @@ const ASOSection2 = () => {
                   <ul className="space-y-2 text-[10px] sm:text-[11px] text-red-800 font-bold tracking-widest">
                     <li>• RESPONDING TO USER REVIEWS</li>
                     <li>• PROACTIVE RATING MANAGEMENT</li>
-                    <li>• COMMUNITY-DRIVEN RATING IMPROVEMENTS</li>
+                    <li>• IN-APP RATING PROMPT STRATEGY</li>
                   </ul>
                 </div>
 

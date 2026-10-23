@@ -2,11 +2,11 @@
 import Image from "next/image";
 import Navbar from "./Navbar";
 import Link from "next/link";
-import { slugifyAuthor } from "../blog/blogData";
+import { authorPath, getAuthorByName } from "../(site)/blog/authors";
 
 const BlogHero = ({ category, date, title, description, author, authorAvatar, readTime, heroImage }) => {
-  const isKhwahishKapoor = author === "Khwahish Kapoor";
-  const authorSlug = isKhwahishKapoor ? slugifyAuthor(author) : null;
+  const authorHref = authorPath(author);
+  const avatar = authorAvatar || getAuthorByName(author).avatar;
 
   return (
     <div className="w-full bg-white">
@@ -43,9 +43,9 @@ const BlogHero = ({ category, date, title, description, author, authorAvatar, re
 
               <div className="flex items-center gap-4 mt-8">
                 <div className="relative w-12 h-12 rounded-full overflow-hidden border-2 border-white shadow-sm flex-shrink-0">
-                  {authorAvatar ? (
+                  {avatar ? (
                     <Image
-                      src={authorAvatar}
+                      src={avatar}
                       alt={author || "Author"}
                       fill
                       className="object-cover object-top"
@@ -58,8 +58,8 @@ const BlogHero = ({ category, date, title, description, author, authorAvatar, re
                 </div>
                 <div>
                   {author && (
-                    authorSlug ? (
-                      <Link href={`/author/${authorSlug}`} className="text-base font-bold text-gray-900 hover:text-[#306777] transition-colors">
+                    authorHref ? (
+                      <Link href={authorHref} className="text-base font-bold text-gray-900 hover:text-[#306777] transition-colors">
                         {author}
                       </Link>
                     ) : (

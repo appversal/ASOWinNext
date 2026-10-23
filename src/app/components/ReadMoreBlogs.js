@@ -1,7 +1,7 @@
 'use client';
 import Image from "next/image";
 import Link from "next/link";
-import { blogPosts } from "../blog/blogData";
+import { blogPosts } from "../(site)/blog/blogData";
 
 const ReadMoreBlogs = ({ currentSlug, blogs }) => {
   // Use provided blogs or get from blogData, excluding current blog post

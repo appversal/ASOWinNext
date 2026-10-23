@@ -1,64 +1,33 @@
 "use client"; // Ensures client-side rendering
 
 import React, { useRef, useEffect, useState } from "react";
-import Image from "next/image";
 
 const AboutSection = () => {
   const contentRef = useRef(null);
   const [contentHeight, setContentHeight] = useState(0);
-  const [isVisible, setIsVisible] = useState(false);
-  const [typedChars, setTypedChars] = useState(0);
-  const [contentText, setContentText] = useState("");
+  // Text is fully visible in the server HTML; the fade-in only applies once
+  // JavaScript runs and the block is still below the fold.
+  const [hidden, setHidden] = useState(false);
 
   useEffect(() => {
-    if (contentRef.current) {
-      setContentHeight(contentRef.current.offsetHeight);
-      setContentText(contentRef.current.innerText || ""); // Ensure safe text retrieval
-    }
+    const el = contentRef.current;
+    if (!el) return;
+    setContentHeight(el.offsetHeight);
 
+    if (el.getBoundingClientRect().top < window.innerHeight) return;
+    setHidden(true);
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
-          setIsVisible(true);
+          setHidden(false);
+          observer.disconnect();
         }
       },
       { threshold: 0.1 }
     );
-
-    if (contentRef.current) {
-      observer.observe(contentRef.current);
-    }
-
+    observer.observe(el);
     return () => observer.disconnect();
   }, []);
-
-  useEffect(() => {
-    if (isVisible) {
-      const totalChars = contentText.length;
-      const interval = setInterval(() => {
-        setTypedChars((prev) => {
-          if (prev < totalChars) return prev + 1;
-          clearInterval(interval);
-          return prev;
-        });
-      }, 10);
-
-      return () => clearInterval(interval);
-    }
-  }, [isVisible, contentText]);
-
-  const applyTypingEffect = (text, startIndex) => {
-    return text.split("").map((char, index) => (
-      <span
-        key={startIndex + index}
-        className={`transition-colors duration-200 ${
-          startIndex + index < typedChars ? "text-white" : "text-opacity-0"
-        }`}
-      >
-        {char}
-      </span>
-    ));
-  };
 
   return (
     <div className="w-full bg-[#1A1A1A] py-20 lg:py-32 relative">
@@ -89,26 +58,29 @@ const AboutSection = () => {
 
       {/* Content Container */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-20 relative z-10">
-        <div className="ml-16 md:ml-20 lg:ml-24 max-w-4xl" ref={contentRef}>
+        <div
+          ref={contentRef}
+          className={`ml-16 md:ml-20 lg:ml-24 max-w-4xl text-white transition-all duration-1000 ease-out motion-reduce:transition-none ${
+            hidden ? "opacity-0 translate-y-6" : "opacity-100 translate-y-0"
+          }`}
+        >
           {/* First Paragraph */}
           <p className="text-2xl sm:text-3xl lg:text-4xl leading-relaxed">
-            {applyTypingEffect(
-              "With a global presence and offices around the world, ",
-              0
-            )}
-            <span className="text-[#E9A63A]">ASOWin</span>
-            {applyTypingEffect(
-              " partners with businesses across industries to enhance app visibility, drive user acquisition, and improve retention. Our comprehensive offerings include app concept validation, keyword optimization, A/B testing, market insights, and automated review management. ",
-              100
-            )}
+            With a global presence and offices around the world,{" "}
+            <span className="text-[#E9A63A]">ASOWin</span> partners with
+            businesses across industries to enhance app visibility, drive user
+            acquisition, and improve retention. Our comprehensive offerings
+            include app concept validation, keyword optimization, A/B testing,
+            market insights, and automated review management.
           </p>
 
           {/* Second Paragraph */}
           <p className="text-2xl sm:text-3xl lg:text-4xl leading-relaxed mt-8">
-            {applyTypingEffect(
-              "By leveraging advanced AI tools and focusing on innovation, we simplify processes, generate actionable insights, and deliver measurable growth for our clients. Our customer-first approach ensures that every solution is tailored to meet the unique needs and goals of our partners, making their success our top priority.",
-              300
-            )}
+            By leveraging advanced AI tools and focusing on innovation, we
+            simplify processes, generate actionable insights, and deliver
+            measurable growth for our clients. Our customer-first approach
+            ensures that every solution is tailored to meet the unique needs
+            and goals of our partners, making their success our top priority.
           </p>
         </div>
       </div>

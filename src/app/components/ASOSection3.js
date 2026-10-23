@@ -62,7 +62,7 @@ const ASOSection3 = () => {
             </div>
           </div>
 
-          {/* Right Card - Creative A/B Testing */}
+          {/* Right Card - Automated ASO with AI */}
           <div className="relative">
             {/* Teal accent strip */}
             <div className="absolute hidden sm:block -top-6 right-0 w-full h-60 bg-[#8eafff] transform -skew-x-1 -mr-6" />
@@ -78,9 +78,9 @@ const ASOSection3 = () => {
                     Key Deliverables:
                   </h3>
                   <ul className="space-y-2 text-[11px] font-bold text-white tracking-widest">
-                    <li>• RESPONDING TO USER REVIEWS</li>
-                    <li>• PROACTIVE RATING MANAGEMENT</li>
-                    <li>• COMMUNITY-DRIVEN RATING IMPROVEMENTS</li>
+                    <li>• AI REVIEW ANALYSIS AND TAGGING</li>
+                    <li>• BRAND-VOICE REPLY DRAFTS</li>
+                    <li>• RANKING AND RATING CHANGE ALERTS</li>
                   </ul>
                 </div>
 
@@ -90,8 +90,8 @@ const ASOSection3 = () => {
                       What We Do:
                     </h3>
                     <p className="text-[14px] font-normal text-white">
-                      Improve your app's ratings and reviews,<br />
-                      enhancing user trust and appeal.
+                      AI sorts reviews, drafts replies and tracks store changes;<br />
+                      our ASO team reviews the output and acts on it.
                     </p>
                   </div>
 
@@ -100,8 +100,8 @@ const ASOSection3 = () => {
                       Why It Matters:
                     </h3>
                     <p className="text-[14px] text-white">
-                      A higher rating directly impacts<br />
-                      downloads and user acquisition.
+                      Faster action on store data,<br />
+                      without losing specialist judgment.
                     </p>
                   </div>
 

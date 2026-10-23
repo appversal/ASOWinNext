@@ -40,6 +40,8 @@ export const landingPages = {
   // Keyword: App Store Optimization services. Angle: the full scope of services.
   appStoreOptimizationServices: {
     path: "/app-store-optimization-services/",
+    // Retired: 301 to its owner page in Cloudflare; noindex until the redirect is live.
+    noindex: true,
     serviceName: "App Store Optimization Services",
     seoTitle: "App Store Optimization Services for iOS & Android | ASOWin",
     description:
@@ -130,8 +132,8 @@ export const landingPages = {
     ],
     ctaTitle: "See where your app can rank.",
     related: [
-      { href: "/aso-services/", label: "Monthly ASO services" },
-      { href: "/app-store-optimization/", label: "What is App Store Optimization?" },
+      { href: "/services/app-store-optimization/", label: "App Store Optimization services" },
+      { href: "/blog/app-store-optimization-guide/", label: "What is App Store Optimization?" },
       { href: "/google-play-store-optimization/", label: "Google Play Store optimization" },
     ],
   },
@@ -139,6 +141,8 @@ export const landingPages = {
   // Keyword: aso services. Angle: ASO as an ongoing monthly program.
   asoServices: {
     path: "/aso-services/",
+    // Retired: 301 to its owner page in Cloudflare; noindex until the redirect is live.
+    noindex: true,
     serviceName: "ASO Services",
     seoTitle: "ASO Services: Monthly App Store Optimization | ASOWin",
     description:
@@ -231,8 +235,8 @@ export const landingPages = {
     ],
     ctaTitle: "Put your app store listing on a monthly growth plan.",
     related: [
-      { href: "/app-store-optimization-services/", label: "App Store Optimization services" },
-      { href: "/aso-agency/", label: "ASO agency" },
+      { href: "/services/app-store-optimization/", label: "App Store Optimization services" },
+      { href: "/", label: "ASO agency" },
       { href: "/success-stories/", label: "Case studies" },
     ],
   },
@@ -240,6 +244,8 @@ export const landingPages = {
   // Keyword: App Store Optimization. Angle: how ranking works, then the offer.
   appStoreOptimization: {
     path: "/app-store-optimization/",
+    // Retired: 301 to its owner page in Cloudflare; noindex until the redirect is live.
+    noindex: true,
     serviceName: "App Store Optimization",
     seoTitle: "App Store Optimization (ASO): How to Rank Your App | ASOWin",
     description:
@@ -332,15 +338,17 @@ export const landingPages = {
     ],
     ctaTitle: "Find out how your app scores on every ranking factor.",
     related: [
-      { href: "/app-store-optimization-services/", label: "App Store Optimization services" },
-      { href: "/play-store-optimization/", label: "Play Store optimization" },
-      { href: "/aso-agency/", label: "ASO agency" },
+      { href: "/services/app-store-optimization/", label: "App Store Optimization services" },
+      { href: "/google-play-store-optimization/", label: "Google Play Store optimization" },
+      { href: "/", label: "ASO agency" },
     ],
   },
 
   // Keyword: aso agency. Angle: choosing and working with an agency.
   asoAgency: {
     path: "/aso-agency/",
+    // Retired: 301 to its owner page in Cloudflare; noindex until the redirect is live.
+    noindex: true,
     serviceName: "ASO Agency",
     seoTitle: "ASO Agency | App Store Optimization Agency | ASOWin",
     description:
@@ -433,7 +441,7 @@ export const landingPages = {
     ],
     ctaTitle: "Find out what an ASO agency can do for your app.",
     related: [
-      { href: "/aso-services/", label: "ASO services" },
+      { href: "/services/app-store-optimization/", label: "ASO services" },
       { href: "/blog/how-to-choose-the-best-aso-agency/", label: "How to choose an ASO agency" },
       { href: "/success-stories/", label: "Case studies" },
     ],
@@ -532,8 +540,8 @@ export const landingPages = {
     ],
     ctaTitle: "Rank higher on Google Play.",
     related: [
-      { href: "/play-store-optimization/", label: "Play Store listing optimization" },
-      { href: "/app-store-optimization-services/", label: "App Store Optimization services" },
+      { href: "/services/app-store-optimization/", label: "App Store Optimization services" },
+      { href: "/services/creative-ab-testing/", label: "Creative A/B testing" },
       { href: "/success-stories/lsm-apps/", label: "LSM Apps case study" },
     ],
   },
@@ -541,6 +549,8 @@ export const landingPages = {
   // Keyword: play store optimization. Angle: listing conversion.
   playStoreOptimization: {
     path: "/play-store-optimization/",
+    // Retired: 301 to its owner page in Cloudflare; noindex until the redirect is live.
+    noindex: true,
     serviceName: "Play Store Optimization",
     seoTitle: "Play Store Optimization: Listing & Conversion | ASOWin",
     description:
@@ -632,7 +642,7 @@ export const landingPages = {
     ctaTitle: "Turn more Play Store visitors into installs.",
     related: [
       { href: "/google-play-store-optimization/", label: "Google Play Store optimization" },
-      { href: "/app-store-optimization/", label: "App Store Optimization" },
+      { href: "/services/app-store-optimization/", label: "App Store Optimization" },
       { href: "/success-stories/lsm-apps/", label: "LSM Apps case study" },
     ],
   },
@@ -644,6 +654,7 @@ export function landingMetadata(page) {
     title: page.seoTitle,
     description: page.description,
     alternates: { canonical: url },
+    ...(page.noindex && { robots: { index: false, follow: true } }),
     openGraph: {
       title: page.seoTitle,
       description: page.description,

@@ -1,0 +1,12 @@
+import { postMetadata } from "../postMetadata";
+
+const baseMetadata = {
+  title: "How AI Is Transforming App Store Optimization in 2026 | ASOWin",
+  description: "AI is reshaping how app stores rank and surface apps. Learn how semantic search, NLP, and automation are changing ASO in 2026, and how ASOWin helps teams keep pace.",
+};
+
+export const metadata = postMetadata("ai-in-app-store-optimization", baseMetadata);
+
+export default function AiInAppStoreOptimizationLayout({ children }) {
+  return <>{children}</>;
+}

@@ -1,8 +1,24 @@
 User-agent: *
 Allow: /
-
 Disallow: /api/
-Disallow: /thank-you/
+
+# AI search and answer-engine crawlers are allowed explicitly, so a future
+# change to the * group can't block them by accident.
+# Also keep Cloudflare > Security > Bots > "Block AI bots" turned OFF.
+User-agent: GPTBot
+User-agent: OAI-SearchBot
+User-agent: ChatGPT-User
+User-agent: ClaudeBot
+User-agent: Claude-SearchBot
+User-agent: PerplexityBot
+User-agent: Google-Extended
+User-agent: Applebot-Extended
+User-agent: CCBot
+Allow: /
+Disallow: /api/
+
+# /thank-you/ and the dashboards are not disallowed on purpose: they carry
+# a noindex tag, and crawlers must be able to fetch them to see it.
 
 # Sitemap
 Sitemap: https://www.asowin.com/sitemap.xml

@@ -196,51 +196,25 @@ import Image from "next/image";
 import { useRouter } from 'next/navigation';
 import { Loader2 } from "lucide-react";
 import Link from "next/link";
-
+import { PROOF, CASE_STUDY_ORDER } from "./proofFacts";
 
 const ImageSkeleton = () => (
-  <div className="w-full h-full">
-    <Image
-      src="/skeleton.png"
-      alt="Loading skeleton"
-      layout="fill"
-      objectFit="contain"
-      priority
-    />
-  </div>
+  <div className="w-full h-full rounded-2xl bg-gray-100 animate-pulse" aria-hidden="true" />
 );
 
+const toCard = (proof, logo, image) => ({
+  logo,
+  title: proof.name,
+  href: proof.href,
+  stats: proof.stats,
+  description: proof.bullets.map((b) => `• ${b}`).join("<br/><br/>"),
+  image,
+});
+
 const caseStudyData = {
-  "03": {
-    logo: "/lsm.png",
-    title: "LSM Apps",
-    stats: [
-      { value: "Top #2", label: "Rank" },
-      { value: "+12,000", label: "Daily Downloads" },
-    ],
-    description: "Boosting Keyword Rankings and Downloads for Easy Phone<br/><br/>• Achieved top rankings for competitive keywords<br/><br/>• Drove consistent growth in organic installs<br/><br/>• Enhanced visibility across multiple app categories",
-    image: "/casestudy.png",
-  },
-  "01": {
-    logo: "/pflogo.jpg",
-    title: "Pepperfry",
-    stats: [
-      { value: "#1", label: "Rankings" },
-      { value: "Keywords", label: " Success" },
-    ],
-    description: "• Ranked highest for category keyword<br/><br/>• 10x increase in total rate<br/><br/>• Significant boost in organic visibility",
-    image: "/casestudy2.png",
-  },
-  "02": {
-    logo: "/iblogo.jpg",
-    title: "Indiabulls Securities",
-    stats: [
-      { value: "50+", label: "keywords" },
-      { value: "Visibility", label: "Success Rate" },
-    ],
-    description: "• Managed month on month ASO for Indiabulls Securities<br/><br/>• Ranked for more than 25+ unranked keywords<br/><br/>• Improved app visibility and category ranking",
-    image: "/casestudy3.png",
-  },
+  "03": toCard(PROOF.lsm, "/lsm.png", "/casestudy.png"),
+  "01": toCard(PROOF.pepperfry, "/pflogo.jpg", "/casestudy2.png"),
+  "02": toCard(PROOF.indiabulls, "/iblogo.jpg", "/casestudy3.png"),
 };
 
 const CaseStudy = () => {
@@ -320,7 +294,7 @@ const CaseStudy = () => {
                 {activeData.subtitle}
               </p>
               <Link
-                href={activeCase === "01" ? "/success-stories/pepperfry" : activeCase === "02" ? "/success-stories/indiabulls-securities" : "/success-stories/lsm-apps"}
+                href={activeData.href}
                 className="inline-block bg-[#FF6B00] text-white px-6 sm:px-8 py-2.5 sm:py-3 mt-4 sm:mt-5 rounded-full text-sm font-medium hover:bg-[#FF6B00]/90 transition-colors"
               >
                 READ THE SUCCESS STORY
@@ -390,6 +364,34 @@ const CaseStudy = () => {
             />
           </div>
         </div>
+      </div>
+
+      {/* Every case study as a crawlable link, whichever tab is open */}
+      <div className="px-4 sm:px-[80px] mt-12 lg:mt-20">
+        <h3 className="text-sm font-semibold tracking-widest text-[#014458] uppercase mb-4">
+          All success stories
+        </h3>
+        <ul className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4">
+          {CASE_STUDY_ORDER.map((key) => {
+            const proof = PROOF[key];
+            return (
+              <li key={key}>
+                <Link
+                  href={proof.href}
+                  className="block h-full rounded-xl border border-gray-200 p-4 hover:border-[#FF6B00] hover:shadow-md transition-all group"
+                >
+                  <span className="block font-semibold text-[#111111] group-hover:text-[#FF6B00]">
+                    {proof.name} ASO case study
+                  </span>
+                  <span className="block text-sm text-black/60 mt-1">{proof.summary}</span>
+                </Link>
+              </li>
+            );
+          })}
+        </ul>
+        <Link href="/success-stories/" className="inline-block mt-6 text-[#FF6B00] font-medium hover:underline">
+          View all success stories →
+        </Link>
       </div>
     </div>
   );
