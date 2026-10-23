@@ -39,6 +39,8 @@ export const PROOF = {
       { value: "#10 → #2", label: "For “Phone”, US Play Store" },
       { value: "+12,000", label: "Daily downloads" },
     ],
+    // Compact form for narrow stat columns (homepage teal box).
+    shortStat: { value: "#2", from: "#10" },
     bullets: [
       "Easy Phone moved from #10 to #2 for “Phone” on the US Play Store",
       "12,000 additional daily downloads reported",

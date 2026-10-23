@@ -79,12 +79,12 @@ const Services = () => {
             {/* Stats Grid: keyword results from published case studies */}
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 sm:gap-8 mt-8 md:mt-0">
               {[
-                { proof: PROOF.lsm, value: PROOF.lsm.stats[0].value, text: "LSM Apps for “Phone” on US Google Play" },
+                { proof: PROOF.lsm, value: PROOF.lsm.shortStat.value, text: `LSM Apps for “Phone” on US Google Play, up from ${PROOF.lsm.shortStat.from}` },
                 { proof: PROOF.indiabulls, value: PROOF.indiabulls.stats[0].value, text: "Indiabulls Securities keywords from unranked into the Top 50" },
                 { proof: PROOF.bybit, value: PROOF.bybit.stats[0].value, text: "Bybit rankings across Spain and Latin America" },
               ].map((stat) => (
                 <Link key={stat.proof.href} href={stat.proof.href} className="group">
-                  <h3 className="text-[40px] sm:text-[50px] md:text-[60px] font-semibold mb-2 whitespace-nowrap">
+                  <h3 className="text-[40px] sm:text-[32px] md:text-[34px] lg:text-[48px] xl:text-[60px] font-semibold mb-2 whitespace-nowrap">
                     {stat.value}
                   </h3>
                   <p className="text-[14px] sm:text-[16px] text-white font-sans group-hover:underline">
