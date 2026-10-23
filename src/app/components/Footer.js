@@ -5,6 +5,50 @@ import Image from "next/image";
 import Link from "next/link";
 import { Loader2 } from "lucide-react";
 
+const footerColumns = [
+  {
+    title: "Services",
+    links: [
+      { label: "App Store Optimization", href: "/services/app-store-optimization/" },
+      { label: "App Reputation Management", href: "/services/app-reputation-management/" },
+      { label: "Creative A/B Testing", href: "/services/creative-ab-testing/" },
+      { label: "Keyword Installs", href: "/services/keyword-installs/" },
+      { label: "Automated ASO with AI", href: "/services/automated-aso-ai/" },
+      { label: "Paid UA & Apple Search Ads", href: "/services/paid-user-acquisition/" },
+      { label: "AI Review Replies", href: "/automated-review-replies/" },
+    ],
+  },
+  {
+    title: "Success stories",
+    links: [
+      { label: "Pepperfry", href: "/success-stories/pepperfry/" },
+      { label: "Bybit", href: "/success-stories/bybit/" },
+      { label: "Indiabulls Securities", href: "/success-stories/indiabulls-securities/" },
+      { label: "LSM Apps", href: "/success-stories/lsm-apps/" },
+      { label: "Viker Games", href: "/success-stories/viker-games/" },
+    ],
+  },
+  {
+    title: "Markets",
+    links: [
+      { label: "ASO Agency USA", href: "/aso-agency-usa/" },
+      { label: "ASO Agency India", href: "/aso-agency-india/" },
+      { label: "Agensi ASO Indonesia", href: "/aso-agency-indonesia/" },
+      { label: "Google Play ASO", href: "/google-play-store-optimization/" },
+    ],
+  },
+  {
+    title: "Resources",
+    links: [
+      { label: "Blog", href: "/blog/" },
+      { label: "ASO Guide", href: "/blog/app-store-optimization-guide/" },
+      { label: "ASO Glossary", href: "/blog/aso-glossary-key-terms/" },
+      { label: "Our Book", href: "/book/" },
+      { label: "Media Kit", href: "/media-kit/" },
+    ],
+  },
+];
+
 const Footer = () => {
   const [isLoading, setIsLoading] = useState({
     book: false
@@ -28,9 +72,11 @@ const Footer = () => {
         className="w-full relative"
         style={{
           backgroundImage: "url('/footer.png')",
+          backgroundColor: "#014458",
           backgroundSize: "cover",
+          backgroundPosition: "top",
           backgroundRepeat: "no-repeat",
-          height: "350px",
+          minHeight: "350px",
         }}
       >
         <div className="container mx-auto px-4 sm:px-6 md:px-8 lg:px-16">
@@ -40,7 +86,7 @@ const Footer = () => {
             <div className="mb-6 sm:mb-8 md:mb-0 mt-12 sm:mt-16 md:mt-24">
               <Image
                 src="/ASOWin.png"
-                alt="ASOWin Logo"
+                alt="ASOWin"
                 width={200}
                 height={100}
                 className="w-[150px] h-auto sm:w-[180px] md:w-[200px]"
@@ -49,42 +95,46 @@ const Footer = () => {
             </div>
 
             {/* Navigation */}
-            <nav className="flex flex-wrap gap-4 sm:gap-6 md:gap-8 lg:gap-12 mt-6 sm:mt-16 md:mt-28 text-center md:text-left">
-              <Link
-                href="/services"
-                className="text-white hover:text-[#FFB842] text-sm font-semibold whitespace-nowrap"
-              >
-                SERVICES
-              </Link>
-              <Link
-                href="/book"
-                className="text-white hover:text-[#FFB842] text-sm font-semibold whitespace-nowrap"
-              >
-                OUR BOOK
-              </Link>
-              <Link
-                href="/blog"
-                className="text-white hover:text-[#FFB842] text-sm font-semibold whitespace-nowrap"
-              >
-                BLOG
-              </Link>
-              <Link
-                href="/about"
-                className="text-white hover:text-[#FFB842] text-sm font-semibold whitespace-nowrap"
-              >
-                ABOUT
-              </Link>
-              <Link
-                href="/contact"
-                className="text-white hover:text-[#FFB842] text-sm font-semibold whitespace-nowrap"
-              >
-                CONTACT US
-              </Link>
+            <nav className="flex flex-wrap justify-center gap-4 sm:gap-6 md:gap-8 lg:gap-12 mt-6 sm:mt-16 md:mt-28 text-center md:text-left" aria-label="Footer">
+              {[
+                { label: "SERVICES", href: "/services/" },
+                { label: "SUCCESS STORIES", href: "/success-stories/" },
+                { label: "ABOUT", href: "/about/" },
+                { label: "CONTACT US", href: "/contact/" },
+              ].map((item) => (
+                <Link
+                  key={item.href}
+                  href={item.href}
+                  className="text-white hover:text-[#FFB842] text-sm font-semibold whitespace-nowrap"
+                >
+                  {item.label}
+                </Link>
+              ))}
             </nav>
           </div>
 
+          {/* Link columns */}
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 mt-12 md:mt-16 pb-10 border-b border-white/15">
+            {footerColumns.map((column) => (
+              <div key={column.title}>
+                <p className="text-[#FFB842] text-xs font-semibold tracking-widest uppercase mb-4">
+                  {column.title}
+                </p>
+                <ul className="space-y-2">
+                  {column.links.map((link) => (
+                    <li key={link.href}>
+                      <Link href={link.href} className="text-white/80 hover:text-white text-sm">
+                        {link.label}
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            ))}
+          </div>
+
           {/* Bottom section */}
-          <div className="absolute bottom-4 sm:bottom-6 md:bottom-8 left-0 right-0 px-4 sm:px-6 md:px-8 lg:px-16">
+          <div className="py-6 sm:py-8">
             <div className="flex flex-col sm:flex-row justify-between items-center space-y-4 sm:space-y-0">
               <p className="text-white/80 text-xs order-3 sm:order-1 text-center sm:text-left">
                 © 2026 ASOWin Inc. All Rights Reserved.

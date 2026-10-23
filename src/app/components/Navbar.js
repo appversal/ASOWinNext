@@ -18,7 +18,7 @@ const Navbar = () => {
               width={118}
               className="w-[100px] md:w-[118px] 2xl:w-[140px] h-auto"
               src="/ASOWin.png"
-              alt="Logo"
+              alt="ASOWin"
             />
 
           </span>
@@ -36,16 +36,17 @@ const Navbar = () => {
             </Link>
             <div className="relative group">
               <div className="flex items-center gap-1 cursor-pointer py-2">
-                <span
+                <Link
+                  href="/services/"
                   className="text-[#111111] font-medium hover:text-black text-sm lg:text-[14px] 2xl:text-[14px]"
                 >
                   Services
-                </span>
+                </Link>
                 <svg className="w-4 h-4 text-gray-500 group-hover:text-black transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7" />
                 </svg>
               </div>
-              <div className="absolute top-[100%] left-0 w-72 pt-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
+              <div className="absolute top-[100%] left-0 w-72 pt-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible group-focus-within:opacity-100 group-focus-within:visible transition-all duration-200 z-50">
                 <div className="bg-white shadow-xl rounded-xl border border-gray-100 py-2">
                   <Link
                     href="/services/app-store-optimization"
@@ -184,11 +185,13 @@ const Navbar = () => {
               </Link>
               <div className="flex flex-col">
                 <div className="flex items-center justify-between px-4 py-3 hover:bg-gray-50 rounded-xl transition-colors">
-                  <span
+                  <Link
+                    href="/services/"
                     className="text-[#111122] font-semibold text-[15px]"
+                    onClick={() => setIsMobileMenuOpen(false)}
                   >
                     Services
-                  </span>
+                  </Link>
                   <button
                     onClick={() => setIsServicesMobileOpen(!isServicesMobileOpen)}
                     className="p-1 rounded-md hover:bg-gray-200 text-gray-600 focus:outline-none"

@@ -98,6 +98,52 @@
   color: hsl(var(--foreground));
 }
 
+/* Homepage palette for the USA and Indonesia market pages:
+   white/peach surfaces, #111111 text, #fdb124 buttons, #014458 accents, Manrope */
+.aso-agency-page.home-theme {
+  --button-outline: rgba(0, 0, 0, .10);
+  --badge-outline: rgba(0, 0, 0, .05);
+  --elevate-1: rgba(0, 0, 0, .03);
+  --elevate-2: rgba(0, 0, 0, .06);
+
+  --background: 0 0% 100%;
+  --foreground: 0 0% 7%;
+  --border: 220 13% 91%;
+
+  --card: 210 20% 98%;
+  --card-foreground: 0 0% 7%;
+  --card-border: 220 13% 91%;
+
+  --popover: 0 0% 100%;
+  --popover-foreground: 0 0% 7%;
+  --popover-border: 220 13% 91%;
+
+  --primary: 39 98% 57%;
+  --primary-foreground: 0 0% 100%;
+
+  --secondary: 210 20% 96%;
+  --secondary-foreground: 0 0% 7%;
+
+  --muted: 210 20% 96%;
+  --muted-foreground: 218 17% 35%;
+
+  --accent: 194 97% 18%;
+  --accent-foreground: 0 0% 100%;
+
+  --input: 220 13% 85%;
+  --ring: 39 98% 57%;
+
+  --font-sans: 'Manrope', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-serif: 'Manrope', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+
+  --shadow-sm: 0 1px 3px 0 rgba(0, 0, 0, 0.08), 0 1px 2px -1px rgba(0, 0, 0, 0.06);
+  --shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.08), 0 1px 2px -1px rgba(0, 0, 0, 0.06);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.08), 0 2px 4px -2px rgba(0, 0, 0, 0.06);
+  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.08), 0 4px 6px -4px rgba(0, 0, 0, 0.06);
+
+  font-family: var(--font-sans);
+}
+
 /* Font optimization - loaded via preload in layout.js */
 body {
   color: var(--foreground);
@@ -361,6 +407,16 @@ img {
     50% {
       transform: translateY(-10px);
     }
+  }
+
+  .aso-agency-page.home-theme .gradient-text {
+    background: linear-gradient(135deg, #FF6B00 0%, #fdb124 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+  }
+
+  .aso-agency-page.home-theme .animate-pulse-glow {
+    animation: none;
   }
 
   .aso-agency-page .animate-float {

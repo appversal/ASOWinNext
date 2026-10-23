@@ -28,8 +28,8 @@ const AutomatedASOAIServicesSection = () => {
       ]
     },
     {
-      title: 'Community-Driven Rating Improvements',
-      description: 'Strong communities create stronger app reputations.',
+      title: 'Feedback-Driven Rating Improvements',
+      description: 'Ratings improve when the issues behind bad reviews get fixed.',
       points: [
         'User sentiment monitoring',
         'Engagement-focused communication',

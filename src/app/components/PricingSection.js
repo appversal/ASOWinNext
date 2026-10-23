@@ -24,9 +24,9 @@ const PricingSection = () => {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-16">
           {/* Left Column - Heading */}
           <div className="lg:col-span-4">
-            <h1 className="text-5xl md:text-6xl lg:text-8xl font-medium mb-4">
-              Plans &<br />Pricing
-            </h1>
+            <h2 className="text-5xl md:text-6xl lg:text-8xl font-medium mb-4">
+              Plans &{" "}<br />Pricing
+            </h2>
             <p className="text-2xl md:text-3xl font-medium">
               The right plan<br />for your needs
             </p>
@@ -48,7 +48,7 @@ const PricingSection = () => {
                 <div className="flex-grow">
                   <h2 className="text-[35px] text-[#F37A60] font-semibold mb-4">One Time</h2>
                   <p className="text-[#535353] text-[16px] mb-8">
-                    Ideal for sellers levelling up their operations and marketing.
+                    For app publishers who need a short ranking push around a launch or campaign.
                   </p>
 
                   <div className="mb-8">
@@ -98,7 +98,7 @@ const PricingSection = () => {
                 <div className="flex-grow">
                   <h2 className="text-[35px] text-[#F37A60] font-semibold mb-4">Monthly</h2>
                   <p className="text-[#535353] text-[16px] mb-8">
-                    Ideal for sellers levelling up their operations and marketing.
+                    For app publishers who want steady, compounding growth in rankings and installs.
                   </p>
 
                   <div className="mb-8">

@@ -2,25 +2,14 @@
 import React, { useEffect, useRef, useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
+import { CLIENT_LOGOS } from './clientLogos';
 
 const ASOKeywordSuccess = () => {
   const containerRef = useRef(null);
   const scrollPositionRef = useRef(0);
   const [isHovering, setIsHovering] = useState(false);
 
-  // Client logos - same as carousel on home page
-  const clientLogos = [
-    { name: "bajaj_finserv", img: "/carousel_logos/bajaj_finserv_logo.png" },
-    { name: "delhivery", img: "/carousel_logos/delhivery_logo.png" },
-    { name: "lsm_apps", img: "/carousel_logos/lsm_apps_logo.png" },
-    { name: "pepperfry", img: "/carousel_logos/pepperfry_logo.png" },
-    { name: "playojo", img: "/carousel_logos/playojo_logo.png" },
-    { name: "ring_kisht", img: "/carousel_logos/ring_kisht_logo.png" },
-    { name: "shremaroo", img: "/carousel_logos/shremaroo_logo.png" },
-    { name: "vikergames", img: "/carousel_logos/vikergames_logo.png" },
-    { name: "volt_money", img: "/carousel_logos/volt_money_logo.png" },
-    { name: "zupee", img: "/carousel_logos/zupee_logo.png" },
-  ];
+  const clientLogos = CLIENT_LOGOS;
 
   useEffect(() => {
     const container = containerRef.current;
@@ -82,10 +71,11 @@ const ASOKeywordSuccess = () => {
                 <div
                   key={index}
                   className="flex items-center justify-center flex-shrink-0 w-48 h-24 bg-white rounded-lg border border-gray-100 hover:shadow-md transition-all duration-300 cursor-pointer group"
+                  aria-hidden={index >= clientLogos.length ? "true" : undefined}
                 >
                   <Image
                     src={logo.img}
-                    alt={logo.name}
+                    alt={index >= clientLogos.length ? "" : `${logo.name} logo`}
                     width={128}
                     height={48}
                     className="h-16 object-contain px-4 group-hover:scale-125 transition-transform duration-300"

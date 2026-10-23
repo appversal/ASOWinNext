@@ -1,0 +1,46 @@
+# ASOWin
+
+> ASOWin is a global App Store Optimization (ASO) agency with teams in the USA, India, Indonesia and Singapore, offering ASO, app reputation management, Apple Search Ads and paid UA, creative A/B testing and AI-powered review replies.
+
+ASOWin grows app rankings, ratings and installs on the Apple App Store and Google Play for brands in fintech, e-commerce, gaming and consumer apps. Clients include Pepperfry, Bybit, Indiabulls Securities, LSM Apps and Viker Games (see case studies below). Offices: California, Delaware, Jakarta, Singapore, Mumbai and Noida. Contact: support@asowin.com.
+
+## Services
+- [App Store Optimization](https://www.asowin.com/services/app-store-optimization/): keyword research, metadata, competitor analysis and localization for the App Store and Google Play
+- [App Reputation Management](https://www.asowin.com/services/app-reputation-management/): review monitoring, review replies, in-app rating prompt strategy and issue analysis
+- [Creative A/B Testing & Design](https://www.asowin.com/services/creative-ab-testing/): icons, screenshots, preview videos and store listing A/B tests
+- [Paid User Acquisition & Apple Search Ads](https://www.asowin.com/services/paid-user-acquisition/): Apple Search Ads and app install campaigns planned alongside ASO
+- [Automated ASO with AI](https://www.asowin.com/services/automated-aso-ai/): AI review analysis, reply drafts, change alerts and reporting, reviewed by ASO specialists
+- [Keyword Installs](https://www.asowin.com/services/keyword-installs/): keyword-targeted install campaigns alongside ASO
+- [AI Review Replies](https://www.asowin.com/automated-review-replies/): ASOWin's AI product that replies to app reviews in a brand's voice
+- [Google Play Store Optimization](https://www.asowin.com/google-play-store-optimization/): ASO for Google Play listings
+- [All services](https://www.asowin.com/services/)
+
+## Case studies
+- [Pepperfry](https://www.asowin.com/success-stories/pepperfry/): app rating improved from about 3.9 to 4.4+
+- [Bybit](https://www.asowin.com/success-stories/bybit/): Top 3 rankings in Spain and Latin America through Spanish-language ASO
+- [Indiabulls Securities](https://www.asowin.com/success-stories/indiabulls-securities/): 50+ keywords moved from unranked into the Top 50 on both stores
+- [LSM Apps](https://www.asowin.com/success-stories/lsm-apps/): Easy Phone moved from #10 to #2 for "Phone" on US Google Play
+- [Viker Games](https://www.asowin.com/success-stories/viker-games/): #1 Top Free Games in Australia and 500,000+ installs in one day
+- [All case studies](https://www.asowin.com/success-stories/)
+
+## Markets
+- [ASO agency USA](https://www.asowin.com/aso-agency-usa/)
+- [ASO agency India](https://www.asowin.com/aso-agency-india/)
+- [Agensi ASO Indonesia](https://www.asowin.com/aso-agency-indonesia/) (Bahasa Indonesia)
+
+## Guides
+- [App Store Optimization: the complete guide](https://www.asowin.com/blog/app-store-optimization-guide/)
+- [ASO glossary](https://www.asowin.com/blog/aso-glossary-key-terms/)
+- [ASO keyword research](https://www.asowin.com/blog/aso-keyword-research/)
+- [How to improve app ratings](https://www.asowin.com/blog/improve-app-ratings/)
+- [App store localization strategy](https://www.asowin.com/blog/app-store-localization-strategy/)
+- [ASO ROI and cost benchmarks](https://www.asowin.com/blog/aso-roi-and-cost-benchmarks/)
+- [Apple Search Ads vs organic ASO](https://www.asowin.com/blog/apple-search-ads-vs-organic-aso/)
+- [ASO checklist](https://www.asowin.com/blog/app-store-optimization-checklist-2026/)
+- [Book: App Store Optimization: The Ultimate Book](https://www.asowin.com/book/): free 18-page guide to App Store and Google Play ranking factors
+
+## Optional
+- [About ASOWin](https://www.asowin.com/about/)
+- [Contact](https://www.asowin.com/contact/)
+- [Blog](https://www.asowin.com/blog/)
+- [Sitemap](https://www.asowin.com/sitemap.xml)

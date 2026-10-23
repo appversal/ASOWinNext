@@ -1,5 +1,6 @@
-import { blogPosts } from "./blog/blogData";
-import { getCategoryHubs } from "./blog/categories";
+import { blogPosts } from "./(site)/blog/blogData";
+import { getCategoryHubs } from "./(site)/blog/categories";
+import { authors } from "./(site)/blog/authors";
 
 export const dynamic = "force-static";
 
@@ -21,6 +22,8 @@ const STATIC_PAGES = [
   ["/aso-agency-india/", "2026-05-04", 0.8, "monthly"],
   ["/aso-agency-indonesia/", "2026-05-04", 0.8, "monthly"],
   ["/automated-review-replies/", "2026-05-04", 0.75, "monthly"],
+  ["/google-play-store-optimization/", "2026-10-22", 0.8, "monthly"],
+  ["/media-kit/", "2026-10-22", 0.5, "monthly"],
   ["/success-stories/", "2026-05-04", 0.75, "monthly"],
   ["/book/", "2026-05-04", 0.7, "yearly"],
   ["/privacy-policy/", "2026-05-04", 0.5, "yearly"],
@@ -59,6 +62,13 @@ export default function sitemap() {
     priority: 0.7,
   }));
 
+  const authorEntries = Object.keys(authors).map((slug) => ({
+    url: `${SITE_URL}/author/${slug}/`,
+    lastModified: newest,
+    changeFrequency: "monthly",
+    priority: 0.5,
+  }));
+
   const postEntries = blogPosts.map((post) => ({
     url: `${SITE_URL}/blog/${post.slug}/`,
     lastModified: toDate(post.updatedAt || post.publishedAt || post.date),
@@ -67,7 +77,7 @@ export default function sitemap() {
   }));
 
   const seen = new Set();
-  return [...staticEntries, ...hubEntries, ...postEntries].filter((entry) => {
+  return [...staticEntries, ...hubEntries, ...authorEntries, ...postEntries].filter((entry) => {
     if (seen.has(entry.url)) return false;
     seen.add(entry.url);
     return true;
