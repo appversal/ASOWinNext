@@ -2,6 +2,8 @@
 
 import React from "react";
 import Image from "next/image";
+import { PROOF } from "../../components/proofFacts";
+import { CLIENT_LOGOS } from "../../components/clientLogos";
 import Link from "next/link";
 import Footer from "../../components/Footer";
 import FAQ from "../../../components/FAQ";
@@ -67,24 +69,19 @@ export default function MessagePage() {
 
             <div className="w-full h-[1px] bg-[#eedcd3] my-2 max-w-2xl"></div>
 
-            {/* Stats Grid */}
+            {/* Stats Grid: results from published case studies */}
             <div className="grid grid-cols-2 sm:grid-cols-4 gap-6">
-              <div className="space-y-1">
-                <h3 className="text-4xl font-bold text-[#fdb124]">37%</h3>
-                <p className="text-[11px] font-bold text-[#888] tracking-wider uppercase">Avg Conversion Rate</p>
-              </div>
-              <div className="space-y-1">
-                <h3 className="text-4xl font-bold text-[#fdb124]">136+</h3>
-                <p className="text-[11px] font-bold text-[#888] tracking-wider uppercase">Keywords Ranked #1</p>
-              </div>
-              <div className="space-y-1">
-                <h3 className="text-4xl font-bold text-[#fdb124]">10M+</h3>
-                <p className="text-[11px] font-bold text-[#888] tracking-wider uppercase">Downloads Delivered</p>
-              </div>
-              <div className="space-y-1">
-                <h3 className="text-4xl font-bold text-[#fdb124]">#1</h3>
-                <p className="text-[11px] font-bold text-[#888] tracking-wider uppercase">ASO Platform</p>
-              </div>
+              {[
+                { value: PROOF.pepperfry.stats[0].value, label: "Pepperfry app rating" },
+                { value: PROOF.indiabulls.stats[0].value, label: "Indiabulls keywords in Top 50" },
+                { value: PROOF.lsm.shortStat.value, label: "LSM Apps for “Phone”, US" },
+                { value: PROOF.viker.stats[0].value, label: "Viker Games, Top Free AU" },
+              ].map((stat) => (
+                <div key={stat.label} className="space-y-1">
+                  <h3 className="text-4xl font-bold text-[#fdb124]">{stat.value}</h3>
+                  <p className="text-[11px] font-bold text-[#888] tracking-wider uppercase">{stat.label}</p>
+                </div>
+              ))}
             </div>
 
             <div className="pt-8">
@@ -121,24 +118,13 @@ export default function MessagePage() {
           </div>
 
           <div className="flex flex-wrap justify-center gap-4 md:gap-6 w-full">
-            {[
-              "bajaj_finserv_logo.png",
-              "delhivery_logo.png",
-              "pepperfry_logo.png",
-              "playojo_logo.png",
-              "vikergames_logo.png",
-              "volt_money_logo.png",
-              "ring_kisht_logo.png",
-              "shremaroo_logo.png",
-              "zupee_logo.png",
-              "lsm_apps_logo.png",
-            ].map((logo, idx) => (
+            {CLIENT_LOGOS.map((logo, idx) => (
               <div key={idx} className="bg-white border border-[#e5e5e5] rounded-[16px] p-6 flex items-center justify-center h-28 md:h-32 w-[calc(50%-0.5rem)] sm:w-[calc(33.333%-1rem)] lg:w-[calc(20%-1.2rem)] hover:shadow-md hover:border-[#ddd] transition-all">
                 <Image
-                  src={`/carousel_logos/${logo}`}
+                  src={logo.img}
                   width={200}
                   height={80}
-                  alt="Client Logo"
+                  alt={`${logo.name} logo`}
                   className="object-contain w-full h-full max-h-[44px] md:max-h-[52px] opacity-80 hover:opacity-100 transition-opacity"
                 />
               </div>
@@ -223,9 +209,9 @@ export default function MessagePage() {
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {[
-              { img: "casestudy.png", title: "Gaming Top Charts", metric: "Top #3", desc: "Reached Top 3 in Strategy Games in US", link: "/success-stories/lsm-apps" },
-              { img: "casestudy2.png", title: "Lifestyle App SEO", metric: "+40%", desc: "Boost in conversion rate via creative A/B testing", link: "/success-stories/pepperfry" },
-              { img: "casestudy3.png", title: "Fintech App Growth", metric: "+150%", desc: "Increase in organic installs within 3 months", link: "/success-stories/indiabulls-securities" }
+              { img: "casestudy.png", title: PROOF.lsm.name, metric: PROOF.lsm.stats[0].value, desc: PROOF.lsm.summary, link: PROOF.lsm.href },
+              { img: "casestudy2.png", title: PROOF.pepperfry.name, metric: PROOF.pepperfry.stats[0].value, desc: PROOF.pepperfry.summary, link: PROOF.pepperfry.href },
+              { img: "casestudy3.png", title: PROOF.indiabulls.name, metric: PROOF.indiabulls.stats[0].value, desc: PROOF.indiabulls.summary, link: PROOF.indiabulls.href }
             ].map((caseStudy, idx) => (
               <Link href={caseStudy.link} key={idx} className="bg-white border border-[#f2e6df] shadow-sm rounded-3xl overflow-hidden flex flex-col group hover:border-[#fdb124] hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
                 <div className="relative aspect-[4/3] w-full overflow-hidden bg-[#fafafa] p-6 md:p-8 flex items-center justify-center">
