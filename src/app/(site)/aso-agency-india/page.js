@@ -43,10 +43,8 @@ import {
     Gamepad2,
     MapPin
 } from "lucide-react";
-import LazyLottie from "@/components/LazyLottie";
 import { useState } from "react";
 import { trackLinkedInConversion } from "@/lib/linkedin-conversion";
-import mainSceneAnimation from "@/../../public/Main Scene.json";
 
 function ContactForm({ variant = "full" }) {
     const [formData, setFormData] = useState({
@@ -126,7 +124,7 @@ function ContactForm({ variant = "full" }) {
                             placeholder="First name *"
                             value={formData.firstName}
                             onChange={(e) => setFormData({ ...formData, firstName: e.target.value })}
-                            className="bg-card border-border h-12"
+                            className="bg-white border-gray-300 shadow-sm focus-visible:ring-2 focus-visible:ring-primary/40 focus-visible:border-primary h-12"
                             data-testid="input-firstname-hero"
                         />
                         <Input
@@ -134,7 +132,7 @@ function ContactForm({ variant = "full" }) {
                             placeholder="Last name *"
                             value={formData.lastName}
                             onChange={(e) => setFormData({ ...formData, lastName: e.target.value })}
-                            className="bg-card border-border h-12"
+                            className="bg-white border-gray-300 shadow-sm focus-visible:ring-2 focus-visible:ring-primary/40 focus-visible:border-primary h-12"
                             data-testid="input-lastname-hero"
                         />
                     </div>
@@ -144,7 +142,7 @@ function ContactForm({ variant = "full" }) {
                         placeholder="Work email *"
                         value={formData.email}
                         onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                        className="bg-card border-border h-12"
+                        className="bg-white border-gray-300 shadow-sm focus-visible:ring-2 focus-visible:ring-primary/40 focus-visible:border-primary h-12"
                         data-testid="input-email-hero"
                         required
                     />
@@ -173,7 +171,7 @@ function ContactForm({ variant = "full" }) {
                             placeholder="Enter your work email"
                             value={formData.email}
                             onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                            className="flex-1 bg-card border-border h-12"
+                            className="flex-1 bg-white border-gray-300 shadow-sm focus-visible:ring-2 focus-visible:ring-primary/40 focus-visible:border-primary h-12"
                             data-testid="input-email-compact"
                             required
                         />
@@ -194,59 +192,61 @@ function ContactForm({ variant = "full" }) {
     }
 
     return (
-        <form onSubmit={handleSubmit} className="space-y-4">
+        <form onSubmit={handleSubmit} className="space-y-5">
             <div className="grid sm:grid-cols-2 gap-4">
                 <div className="space-y-2">
-                    <Label htmlFor="firstName" className="text-sm text-foreground">First name<span className="text-primary">*</span></Label>
+                    <Label htmlFor="firstName" className="text-xs font-semibold text-gray-700">First name<span className="text-primary">*</span></Label>
                     <Input
                         id="firstName"
                         name="firstName"
                         value={formData.firstName}
                         onChange={(e) => setFormData({ ...formData, firstName: e.target.value })}
-                        className="bg-background border-border h-11"
+                        className="bg-gray-50 border-gray-200 rounded-lg focus-visible:bg-white focus-visible:ring-2 focus-visible:ring-primary/40 focus-visible:border-primary transition-colors h-11"
                         data-testid="input-firstname"
                     />
                 </div>
                 <div className="space-y-2">
-                    <Label htmlFor="lastName" className="text-sm text-foreground">Last name<span className="text-primary">*</span></Label>
+                    <Label htmlFor="lastName" className="text-xs font-semibold text-gray-700">Last name<span className="text-primary">*</span></Label>
                     <Input
                         id="lastName"
                         name="lastName"
                         value={formData.lastName}
                         onChange={(e) => setFormData({ ...formData, lastName: e.target.value })}
-                        className="bg-background border-border h-11"
+                        className="bg-gray-50 border-gray-200 rounded-lg focus-visible:bg-white focus-visible:ring-2 focus-visible:ring-primary/40 focus-visible:border-primary transition-colors h-11"
                         data-testid="input-lastname"
                     />
                 </div>
             </div>
-            <div className="space-y-2">
-                <Label htmlFor="email" className="text-sm text-foreground">Work email<span className="text-primary">*</span></Label>
-                <Input
-                    id="email"
-                    name="email"
-                    type="email"
-                    value={formData.email}
-                    onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                    className="bg-background border-border h-11"
-                    data-testid="input-email"
-                    required
-                />
+            <div className="grid sm:grid-cols-2 gap-4">
+                <div className="space-y-2">
+                    <Label htmlFor="email" className="text-xs font-semibold text-gray-700">Work email<span className="text-primary">*</span></Label>
+                    <Input
+                        id="email"
+                        name="email"
+                        type="email"
+                        value={formData.email}
+                        onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+                        className="bg-gray-50 border-gray-200 rounded-lg focus-visible:bg-white focus-visible:ring-2 focus-visible:ring-primary/40 focus-visible:border-primary transition-colors h-11"
+                        data-testid="input-email"
+                        required
+                    />
+                </div>
+                <div className="space-y-2">
+                    <Label htmlFor="jobTitle" className="text-xs font-semibold text-gray-700">Job title<span className="text-primary">*</span></Label>
+                    <Input
+                        id="jobTitle"
+                        name="jobTitle"
+                        value={formData.jobTitle}
+                        onChange={(e) => setFormData({ ...formData, jobTitle: e.target.value })}
+                        className="bg-gray-50 border-gray-200 rounded-lg focus-visible:bg-white focus-visible:ring-2 focus-visible:ring-primary/40 focus-visible:border-primary transition-colors h-11"
+                        data-testid="input-jobtitle"
+                    />
+                </div>
             </div>
             <div className="space-y-2">
-                <Label htmlFor="jobTitle" className="text-sm text-foreground">Job title<span className="text-primary">*</span></Label>
-                <Input
-                    id="jobTitle"
-                    name="jobTitle"
-                    value={formData.jobTitle}
-                    onChange={(e) => setFormData({ ...formData, jobTitle: e.target.value })}
-                    className="bg-background border-border h-11"
-                    data-testid="input-jobtitle"
-                />
-            </div>
-            <div className="space-y-2">
-                <Label className="text-sm text-foreground">Do you have an app that's currently live on the app stores?<span className="text-primary">*</span></Label>
+                <Label className="text-xs font-semibold text-gray-700">Do you have an app that's currently live on the app stores?<span className="text-primary">*</span></Label>
                 <Select value={formData.appLive} onValueChange={(value) => setFormData({ ...formData, appLive: value })}>
-                    <SelectTrigger className="bg-background border-border h-11" data-testid="select-applive">
+                    <SelectTrigger className="bg-gray-50 border-gray-200 rounded-lg focus-visible:bg-white focus-visible:ring-2 focus-visible:ring-primary/40 focus-visible:border-primary transition-colors h-11" data-testid="select-applive">
                         <SelectValue placeholder="Please Select" />
                     </SelectTrigger>
                     <SelectContent className="bg-white border-gray-200 text-gray-900 z-50">
@@ -258,14 +258,14 @@ function ContactForm({ variant = "full" }) {
                 </Select>
             </div>
             <div className="space-y-2">
-                <Label htmlFor="message" className="text-sm text-foreground">How can we help?</Label>
+                <Label htmlFor="message" className="text-xs font-semibold text-gray-700">How can we help?</Label>
                 <span className="text-muted-foreground text-xs ml-2">Optional</span>
                 <Textarea
                     id="message"
                     name="message"
                     value={formData.message}
                     onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                    className="bg-background border-border min-h-[100px]"
+                    className="bg-gray-50 border-gray-200 rounded-lg focus-visible:bg-white focus-visible:ring-2 focus-visible:ring-primary/40 focus-visible:border-primary transition-colors min-h-[96px] resize-none"
                     data-testid="textarea-message"
                 />
             </div>
@@ -281,8 +281,9 @@ function ContactForm({ variant = "full" }) {
                     I agree to be contacted by ASOWin, and I accept the data processing terms stated in the <Link href="/privacy-policy" className="text-primary hover:underline">Privacy Policy</Link>.<span className="text-primary">*</span>
                 </Label>
             </div>
-            <Button type="submit" size="lg" className="w-full h-12 font-semibold mt-4" data-testid="button-submit" disabled={isSubmitting}>
-                {isSubmitting ? "Submitting..." : "Let's connect!"}
+            <Button type="submit" size="lg" className="w-full h-12 font-semibold mt-2 rounded-lg shadow-lg shadow-primary/25 hover:shadow-primary/40" data-testid="button-submit" disabled={isSubmitting}>
+                {isSubmitting ? "Submitting..." : "Request my free audit"}
+                {!isSubmitting && <ArrowRight className="w-4 h-4 ml-2" />}
             </Button>
             {submitStatus === "success" && (
                 <p className="text-sm text-primary text-center">✓ Thank you! We'll contact you within 24 hours.</p>
@@ -377,17 +378,17 @@ export default function AsoAgencyPage() {
     ];
 
     return (
-        <div className="min-h-screen bg-background overflow-hidden aso-agency-page">
+        <div className="min-h-screen bg-background overflow-hidden aso-agency-page home-theme">
             {/* Animated Background Pattern */}
             <div className="fixed inset-0 opacity-5 pointer-events-none">
                 <div className="absolute inset-0" style={{
-                    backgroundImage: `radial-gradient(circle at 2px 2px, hsl(142 76% 45%) 1px, transparent 0)`,
+                    backgroundImage: `radial-gradient(circle at 2px 2px, #014458 1px, transparent 0)`,
                     backgroundSize: '40px 40px'
                 }} />
             </div>
 
             {/* Hero Section */}
-            <section className="relative pt-8 pb-2 sm:pt-12 sm:pb-6">
+            <section className="relative pt-8 pb-2 sm:pt-12 sm:pb-6 bg-gradient-to-b from-[#FFEDE3] to-white">
                 <div className="absolute top-20 left-10 w-64 h-64 bg-primary/10 rounded-full blur-3xl" />
                 <div className="absolute bottom-20 right-10 w-96 h-96 bg-primary/5 rounded-full blur-3xl" />
 
@@ -442,8 +443,11 @@ export default function AsoAgencyPage() {
                         {/* Right Column - Animation */}
                         <div className="hidden lg:flex items-center justify-center">
                             <div className="relative w-full max-w-lg">
-                                <LazyLottie
-                                    animationData={mainSceneAnimation}
+                                <Image
+                                    src="/phone.png"
+                                    alt="Phone showing an app ranked #1 in App Store search"
+                                    width={2420}
+                                    height={2266}
                                     className="w-full h-auto"
                                 />
                             </div>
@@ -636,7 +640,13 @@ export default function AsoAgencyPage() {
 
                         <div className="hidden lg:flex items-center justify-center">
                             <div className="w-full max-w-md">
-                                <LazyLottie animationData={mainSceneAnimation} className="w-full" />
+                                <Image
+                                    src="/phone.png"
+                                    alt="Phone showing an app ranked #1 in App Store search"
+                                    width={2420}
+                                    height={2266}
+                                    className="w-full h-auto"
+                                />
                             </div>
                         </div>
                     </div>
@@ -678,47 +688,75 @@ export default function AsoAgencyPage() {
                 </div>
             </section >
 
-            {/* Full Contact Form Section */}
-            < section className="py-20" id="contact" >
-                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                    <div className="grid lg:grid-cols-2 gap-12">
-                        {/* Left - Info */}
-                        <div>
-                            <p className="text-sm text-muted-foreground uppercase tracking-widest mb-4">Get In Touch</p>
-                            <h2 className="text-4xl sm:text-5xl font-bold mb-8">
-                                How can we<br />help?
-                            </h2>
+            {/* Full Contact Form Section: split card, brand panel + form */}
+            <section className="py-20 sm:py-24 bg-[#FFF6EE]" id="contact">
+                <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+                    <div className="grid grid-cols-1 lg:grid-cols-[minmax(0,5fr)_minmax(0,7fr)] overflow-hidden rounded-3xl bg-white shadow-2xl shadow-[#014458]/10 ring-1 ring-black/5">
+                        {/* Left - brand panel */}
+                        <div className="relative overflow-hidden bg-[#014458] text-white p-8 sm:p-10 lg:p-12 flex flex-col">
+                            <div className="pointer-events-none absolute -top-24 -right-24 w-80 h-80 rounded-full bg-[#1d7f9c]/50 blur-3xl" aria-hidden="true" />
+                            <div className="pointer-events-none absolute -bottom-32 -left-20 w-72 h-72 rounded-full bg-[#fdb124]/10 blur-3xl" aria-hidden="true" />
+                            <div className="relative">
+                                <p className="text-xs font-semibold text-[#FFB842] uppercase tracking-[0.2em] mb-4">Get in touch</p>
+                                <h2 className="text-3xl sm:text-4xl font-bold leading-tight mb-4">
+                                    How can we help?
+                                </h2>
+                                <p className="text-white/75 mb-8">
+                                    Tell us about your app. Our team will review your store listing and send you a free ASO audit.
+                                </p>
+                                <ul className="space-y-3 mb-10">
+                                    {benefits.slice(0, 4).map((benefit) => (
+                                        <li key={benefit} className="flex items-center gap-3 text-sm sm:text-base">
+                                            <span className="flex items-center justify-center w-6 h-6 rounded-full bg-[#fdb124]/20 flex-shrink-0">
+                                                <CheckCircle className="w-4 h-4 text-[#FFB842]" />
+                                            </span>
+                                            {benefit}
+                                        </li>
+                                    ))}
+                                </ul>
+                            </div>
 
-                            {/* Client Logos Grid */}
-                            <div className="grid grid-cols-4 gap-4 mt-12">
-                                {clientLogos.slice(0, 8).map((client, index) => (
-                                    <div key={index} className="flex items-center justify-center p-4 rounded-lg bg-card/50 border border-border" title={client.name}>
-                                        {client.logo ? (
-                                            <Image
-                                                src={client.logo}
-                                                alt={client.name}
-                                                width={60}
-                                                height={60}
-                                                className="object-contain w-auto h-8 opacity-60 grayscale"
-                                            />
-                                        ) : (
-                                            <client.icon className="w-6 h-6 text-muted-foreground/60" />
-                                        )}
+                            <div className="relative mt-auto space-y-6">
+                                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 border-t border-white/15 pt-6 text-sm">
+                                    <div>
+                                        <p className="text-white/50 text-xs mb-1">Response time</p>
+                                        <p className="flex items-center gap-2 font-medium"><Clock className="w-4 h-4 text-[#FFB842]" />Within 24 hours</p>
                                     </div>
-                                ))}
+                                    <div>
+                                        <p className="text-white/50 text-xs mb-1">Email</p>
+                                        <a href="mailto:support@asowin.com" className="flex items-center gap-2 font-medium hover:text-[#FFB842]">
+                                            <Mail className="w-4 h-4 text-[#FFB842] flex-shrink-0" />support@asowin.com
+                                        </a>
+                                    </div>
+                                </div>
+                                <div>
+                                    <p className="text-white/50 text-xs mb-3">Trusted by app teams in India</p>
+                                    <div className="flex flex-wrap gap-2">
+                                        {clientLogos.slice(0, 8).map((client) => (
+                                            <span
+                                                key={client.name}
+                                                className="px-3 py-1.5 rounded-full bg-white/10 ring-1 ring-white/15 text-xs font-medium text-white/85"
+                                            >
+                                                {client.name}
+                                            </span>
+                                        ))}
+                                    </div>
+                                </div>
                             </div>
                         </div>
 
-                        {/* Right - Form */}
-                        <Card className="p-8 bg-card border-border">
+                        {/* Right - form */}
+                        <div className="p-8 sm:p-10 lg:p-12">
+                            <h3 className="text-2xl font-bold text-foreground mb-1">Get your free ASO audit</h3>
+                            <p className="text-sm text-muted-foreground mb-8">Fill in the form below. No credit card required.</p>
                             <ContactForm variant="full" />
-                        </Card>
+                        </div>
                     </div>
                 </div>
-            </section >
+            </section>
 
             {/* Final CTA Section */}
-            < section className="py-20 bg-primary relative overflow-hidden" >
+            <section className="py-20 bg-[#014458] relative overflow-hidden">
                 <div className="absolute inset-0 opacity-10">
                     <div className="absolute inset-0" style={{
                         backgroundImage: `radial-gradient(circle at 2px 2px, white 1px, transparent 0)`,
@@ -732,10 +770,10 @@ export default function AsoAgencyPage() {
                         <span className="text-sm font-medium text-white">Limited Spots Available This Month</span>
                     </div>
 
-                    <h2 className="text-3xl sm:text-4xl font-bold text-primary-foreground mb-4">
+                    <h2 className="text-3xl sm:text-4xl font-bold text-white mb-4">
                         Ready to Rank Higher?
                     </h2>
-                    <p className="text-lg text-primary-foreground/80 mb-8 max-w-xl mx-auto">
+                    <p className="text-lg text-white/80 mb-8 max-w-xl mx-auto">
                         Get a comprehensive ASO audit of your app and discover exactly how to improve your rankings.
                     </p>
 
@@ -743,7 +781,7 @@ export default function AsoAgencyPage() {
                         <ContactForm variant="compact" />
                     </div>
 
-                    <div className="flex flex-wrap items-center justify-center gap-6 mt-8 text-primary-foreground/70 text-sm">
+                    <div className="flex flex-wrap items-center justify-center gap-6 mt-8 text-white/70 text-sm">
                         <div className="flex items-center gap-2">
                             <Shield className="w-4 h-4" />
                             <span>No contracts</span>
