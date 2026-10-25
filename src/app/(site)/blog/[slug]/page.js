@@ -45,6 +45,8 @@ const SERVICE_LABELS = [
   ["automated-aso-ai", "Automated ASO with AI", "Faster research, reporting, and monitoring"],
   ["app-reputation-management", "App reputation management", "Protect and improve ratings and reviews"],
   ["success-stories", "ASOWin case studies", "See results from real client engagements"],
+  ["aso-agency-india", "ASO agency in India", "ASO for Indian apps from our Mumbai and Noida teams"],
+  ["aso-agency-usa", "ASO agency in the USA", "ASO and Apple Search Ads for US app growth"],
   ["contact", "Request an ASO consultation", "Talk to the ASOWin team about your app"],
   ["app-store-optimization", "App store optimization services", "Full-service ASO for visibility and conversion"],
 ];

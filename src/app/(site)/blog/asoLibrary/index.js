@@ -18,6 +18,7 @@ import { deep02 } from "./deep02";
 import { deep03 } from "./deep03";
 import { deep04 } from "./deep04";
 import { deep05 } from "./deep05";
+import { agencyGuides } from "./agencies";
 
 const deep = { ...deep01, ...deep02, ...deep03, ...deep04, ...deep05 };
 const extras = { ...extras01, ...extras02, ...extras03, ...extras04, ...extras05 };
@@ -30,6 +31,7 @@ const wordCount = (post) =>
 export const libraryPosts = [
   ...batch01, ...batch02, ...batch03, ...batch04, ...batch05,
   ...batch06, ...batch07, ...batch08, ...batch09, ...batch10,
+  ...agencyGuides,
 ].map((post) => {
   const topic = post.primaryKeyword.charAt(0).toUpperCase() + post.primaryKeyword.slice(1);
   const headingFor = (heading) =>
@@ -41,6 +43,6 @@ export const libraryPosts = [
   const extra = (extras[post.slug] || []).map(([heading, paragraphs]) => ({ heading: headingFor(heading), paragraphs }));
   const d = deep[post.slug] || {};
   const calc = d.calc ? [{ heading: d.calc[0], paragraphs: d.calc[1] }] : [];
-  const merged = { ...post, sections: [...post.sections, ...extra, ...calc], steps: d.steps || [], examples: d.examples || [] };
+  const merged = { ...post, sections: [...post.sections, ...extra, ...calc], steps: d.steps || post.steps || [], examples: d.examples || post.examples || [] };
   return { ...merged, readTime: `${Math.max(2, Math.round(wordCount(merged) / 200))} min read` };
 });

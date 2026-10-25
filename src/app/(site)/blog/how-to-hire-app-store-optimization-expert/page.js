@@ -140,6 +140,8 @@ export default function HowToHireASOExpert() {
     <p><strong>Freelancers/Contractors:</strong> Flexibility, lower cost, specialist focus. Best for: Specific projects, limited budgets, or supplementing internal teams.</p>
     
     <p><strong>In-house employees:</strong> Long-term perspective, dedicated focus, cultural alignment. Best for: Apps central to business strategy, long-term commitment, dedicated budget.</p>
+
+    <p>If an agency is the right fit, use our <a href="/blog/best-aso-agency/" style="color: #014458; text-decoration: underline;">checklist for choosing the best ASO agency</a> and our list of <a href="/blog/top-aso-agencies/" style="color: #014458; text-decoration: underline;">top ASO agencies</a> to build your shortlist.</p>
     
     <p><strong>Consultants:</strong> Strategic guidance, less ongoing execution. Best for: Companies with execution capability but needing strategy expertise.</p>
 
