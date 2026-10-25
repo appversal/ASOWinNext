@@ -1,8 +1,8 @@
 import { postMetadata } from "../postMetadata";
 
 const baseMetadata = {
-  title: "How to Hire an App Store Optimization Expert: 10 Critical Questions | ASOWin",
-  description: "Learn how to hire the right App Store Optimization Expert. Discover 10 essential questions to ask, red flags to avoid, and how to find the best ASO agency or specialist for your app.",
+  title: "App Store Optimization Expert: How to Hire the Right One | ASOWin",
+  description: "Hiring an app store optimization expert or ASO consultant? 10 questions to ask, red flags to avoid, and when to choose an ASO agency over a freelancer.",
 };
 
 export const metadata = postMetadata("how-to-hire-app-store-optimization-expert", baseMetadata);

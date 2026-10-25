@@ -16,6 +16,8 @@ export const seoClusterPosts = [
     slug: "app-store-optimization-guide",
     title: "App Store Optimization: The Complete ASO Guide for 2026",
     description: "Learn how app store optimization works across Apple App Store and Google Play, from keyword research and creative testing to ratings, localization, and measurement.",
+    seoTitle: "App Store Optimization (ASO): The Complete Guide for 2026",
+    seoDescription: "What app store optimization is and how to do it on the App Store and Google Play: keywords, metadata, screenshots, ratings and localization, step by step.",
     primaryKeyword: "app store optimization",
     secondaryKeywords: ["ASO guide", "app store SEO", "improve app visibility"],
     category: "ASO Fundamentals",
@@ -76,6 +78,8 @@ export const seoClusterPosts = [
     slug: "app-store-keyword-field",
     title: "Apple App Store Keyword Field: How to Use Every Character Strategically",
     description: "Optimize the iOS App Store keyword field with a relevance-first method, clean term allocation, localization, and a repeatable testing process.",
+    seoTitle: "iOS App Store Keywords: 100-Character Field Rules (2026)",
+    seoDescription: "How to fill the 100-character App Store Connect keyword field: picking iOS app keywords, using commas, localizing by market and testing what ranks.",
     primaryKeyword: "App Store keyword field",
     secondaryKeywords: ["iOS keywords", "App Store Connect keywords", "100 character keyword field"],
     category: "Keyword Strategy",
@@ -485,7 +489,7 @@ export const seoClusterPosts = [
     faqs: [{ q: "What is the difference between review management and review monitoring?", a: "Monitoring finds mentions. Management adds classification, response, escalation, resolution, product learning, and governance." }, { q: "Should reviews be deleted?", a: "Platforms control moderation. Report content only through legitimate policy channels; do not attempt to suppress valid criticism." }], related: ["respond-negative-app-reviews", "improve-app-ratings", "app-reputation-management-platform", "review-sentiment-analysis-ranking-factor"], serviceLinks: ["/services/app-reputation-management/", "/automated-review-replies/"], sources: [],
   }),
   makePost({
-    slug: "aso-kpis-metrics", title: "ASO KPIs: The Metrics That Connect Visibility to Revenue", description: "Build an ASO scorecard across discovery, conversion, quality, retention, and value with clear definitions, segments, and decision rules.", primaryKeyword: "ASO KPIs", secondaryKeywords: ["ASO metrics", "measure app store optimization", "app store analytics metrics"], category: "Measurement", searchIntent: "Informational", heroImage: "/asosection4.png", imageAlt: "ASO KPI funnel from discovery to retained value",
+    slug: "aso-kpis-metrics", title: "ASO KPIs: The Metrics That Connect Visibility to Revenue", description: "Build an ASO scorecard across discovery, conversion, quality, retention, and value with clear definitions, segments, and decision rules.", seoTitle: "ASO KPIs & Reporting: How to Measure App Store Optimization", seoDescription: "The ASO KPIs and metrics to track across discovery, conversion, retention and revenue, and how to turn them into a simple ASO report.", primaryKeyword: "ASO KPIs", secondaryKeywords: ["ASO metrics", "measure app store optimization", "app store analytics metrics"], category: "Measurement", searchIntent: "Informational", heroImage: "/asosection4.png", imageAlt: "ASO KPI funnel from discovery to retained value",
     answer: "The core ASO KPI chain is relevant visibility, product-page engagement, first-time downloads, conversion, activation, retention, and business value. Add ratings, crashes, uninstalls, and review themes as quality signals. Define every denominator and segment by platform, market, source, page, and release. Rankings are diagnostic indicators—not the final outcome.",
     sections: [
       { heading: "Build a metric tree", paragraphs: ["Start with the business outcome, then map retained or paying users back through activation, first-time download, product-page conversion, page views, and impressions. Add controllable inputs such as metadata coverage, tests shipped, and issue resolution.", "Separate leading indicators from outcomes. A rank change can appear quickly; retained incremental value takes longer. Both belong in the same causal model."] },

@@ -1,8 +1,8 @@
 import { postMetadata } from "../postMetadata";
 
 const baseMetadata = {
-  title: "Best Keyword Research Tools for App Store Optimization in 2026 | ASOWin",
-  description: "Compare the best keyword research tools for ASO in 2026, from App Store Connect and Google Play Console to third-party trackers, and learn how ASOWin turns keyword data into a ranking strategy.",
+  title: "Free & Paid ASO Keyword Research Tools Compared (2026) | ASOWin",
+  description: "Free and paid ASO keyword research tools compared: App Store Connect, Google Play Console and third-party trackers with keyword difficulty data.",
 };
 
 export const metadata = postMetadata("keyword-research-tools-for-aso", baseMetadata);

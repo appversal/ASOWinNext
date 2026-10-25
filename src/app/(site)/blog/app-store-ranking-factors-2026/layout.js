@@ -1,8 +1,8 @@
 import { postMetadata } from "../postMetadata";
 
 const baseMetadata = {
-  title: "Apple App Store Ranking Factors for 2026 | ASOWin Blog",
-  description: "Complete guide to organic search ranking factors in the Apple App Store. Learn about metadata optimization, engagement signals, and ASO strategies for 2026.",
+  title: "App Store Ranking Factors 2026: What Apple Actually Weighs | ASOWin",
+  description: "The App Store ranking factors that matter in 2026: title, subtitle, keyword field, downloads, ratings, engagement and updates, and what to fix first.",
 };
 
 export const metadata = postMetadata("app-store-ranking-factors-2026", baseMetadata);

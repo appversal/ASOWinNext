@@ -45,6 +45,8 @@ const SERVICE_LABELS = [
   ["automated-aso-ai", "Automated ASO with AI", "Faster research, reporting, and monitoring"],
   ["app-reputation-management", "App reputation management", "Protect and improve ratings and reviews"],
   ["success-stories", "ASOWin case studies", "See results from real client engagements"],
+  ["aso-agency-india", "ASO agency in India", "ASO for Indian apps from our Mumbai and Noida teams"],
+  ["aso-agency-usa", "ASO agency in the USA", "ASO and Apple Search Ads for US app growth"],
   ["contact", "Request an ASO consultation", "Talk to the ASOWin team about your app"],
   ["app-store-optimization", "App store optimization services", "Full-service ASO for visibility and conversion"],
 ];
@@ -181,15 +183,15 @@ export async function generateMetadata({ params }) {
 
   const canonical = `/blog/${post.slug}/`;
   return {
-    title: `${post.title} | ASOWin`,
-    description: post.description,
+    title: `${post.seoTitle || post.title} | ASOWin`,
+    description: post.seoDescription || post.description,
     authors: [{ name: post.author, url: authorPath(post.author) || "/about/" }],
     alternates: { canonical },
     openGraph: {
       type: "article",
       url: canonical,
-      title: post.title,
-      description: post.description,
+      title: post.seoTitle || post.title,
+      description: post.seoDescription || post.description,
       publishedTime: post.publishedAt,
       modifiedTime: post.updatedAt,
       authors: [post.author],
@@ -199,8 +201,8 @@ export async function generateMetadata({ params }) {
     },
     twitter: {
       card: "summary_large_image",
-      title: post.title,
-      description: post.description,
+      title: post.seoTitle || post.title,
+      description: post.seoDescription || post.description,
       images: [post.ogImage || post.heroImage],
     },
     robots: { index: true, follow: true },

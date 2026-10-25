@@ -1,8 +1,8 @@
 import { postMetadata } from "../postMetadata";
 
 const baseMetadata = {
-  title: "Best ASO Agency for App Store Optimization: Why iOS Growth Needs More Than Metadata | ASOWin",
-  description: "Searching for the best ASO agency for App Store growth? Learn how ASOWin helps iOS apps improve visibility, product pages, keywords, creatives, reviews, and conversions.",
+  title: "iOS App Store Optimization Agency: What to Look For | ASOWin",
+  description: "Choosing an iOS app store optimisation agency? What an ASO marketing agency should deliver: keywords, product pages, creatives, reviews and reporting.",
 };
 
 export const metadata = postMetadata("best-aso-agency-for-app-store-optimization", baseMetadata);
