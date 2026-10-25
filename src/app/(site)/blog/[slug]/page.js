@@ -181,15 +181,15 @@ export async function generateMetadata({ params }) {
 
   const canonical = `/blog/${post.slug}/`;
   return {
-    title: `${post.title} | ASOWin`,
-    description: post.description,
+    title: `${post.seoTitle || post.title} | ASOWin`,
+    description: post.seoDescription || post.description,
     authors: [{ name: post.author, url: authorPath(post.author) || "/about/" }],
     alternates: { canonical },
     openGraph: {
       type: "article",
       url: canonical,
-      title: post.title,
-      description: post.description,
+      title: post.seoTitle || post.title,
+      description: post.seoDescription || post.description,
       publishedTime: post.publishedAt,
       modifiedTime: post.updatedAt,
       authors: [post.author],
@@ -199,8 +199,8 @@ export async function generateMetadata({ params }) {
     },
     twitter: {
       card: "summary_large_image",
-      title: post.title,
-      description: post.description,
+      title: post.seoTitle || post.title,
+      description: post.seoDescription || post.description,
       images: [post.ogImage || post.heroImage],
     },
     robots: { index: true, follow: true },

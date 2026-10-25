@@ -1,8 +1,8 @@
 import { postMetadata } from "../postMetadata";
 
 const baseMetadata = {
-  title: "The Best ASO Agency for App Growth: What Brands Should Look For | ASOWin",
-  description: "Looking for the best ASO agency for your app? Learn what makes an ASO partner effective and how ASOWin helps apps improve visibility, rankings, conversions, and organic growth.",
+  title: "Best ASO Company for App Growth: How to Choose | ASOWin",
+  description: "What the best ASO company should deliver for app growth: keyword strategy, store listing optimization, creatives and reporting, and how ASOWin approaches it.",
 };
 
 export const metadata = postMetadata("best-aso-agency-for-app-growth", baseMetadata);
