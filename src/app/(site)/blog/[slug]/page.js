@@ -4,7 +4,7 @@ import BlogContent from "../../../components/BlogContent";
 import BlogCTA from "../../../components/BlogCTA";
 import ReadMoreBlogs from "../../../components/ReadMoreBlogs";
 import Footer from "../../../components/Footer";
-import { blogPosts, authors, authorPath, slugifyAuthor } from "../blogData";
+import { blogPosts, authors, authorPath, slugifyAuthor, standaloneSlugs } from "../blogData";
 import { seoClusterBySlug, seoClusterPosts } from "../seoClusterData";
 import { categoryKey, getCategoryHubs } from "../categories";
 
@@ -80,6 +80,14 @@ const inboundBySlug = (() => {
 const serviceCard = (href) => {
   const match = SERVICE_LABELS.find(([key]) => href.includes(key)) || SERVICE_LABELS[SERVICE_LABELS.length - 1];
   return `<a class="aso-service" href="${escapeHtml(href)}"><strong>${match[1]}</strong><span>${match[2]}</span></a>`;
+};
+
+// Search results cut titles around 60 characters. When a long "Topic: Promise"
+// title has no hand-written seoTitle, the keyword-led topic part becomes the <title>.
+const searchTitle = (post) => {
+  if (post.seoTitle) return post.seoTitle;
+  const main = post.title.split(": ")[0];
+  return post.title.length + " | ASOWin".length > 65 && main !== post.title && main.length >= 20 ? main : post.title;
 };
 
 const buildContent = (post) => {
@@ -211,7 +219,7 @@ const buildContent = (post) => {
 export const dynamicParams = false;
 
 export function generateStaticParams() {
-  return seoClusterPosts.map((post) => ({ slug: post.slug }));
+  return seoClusterPosts.filter((post) => !standaloneSlugs.has(post.slug)).map((post) => ({ slug: post.slug }));
 }
 
 export async function generateMetadata({ params }) {
@@ -222,7 +230,7 @@ export async function generateMetadata({ params }) {
 
   const canonical = `/blog/${post.slug}/`;
   return {
-    title: `${post.seoTitle || post.title} | ASOWin`,
+    title: `${searchTitle(post)} | ASOWin`,
     description: post.seoDescription || post.description,
     authors: [{ name: post.author, url: authorPath(post.author) || "/about/" }],
     alternates: { canonical },

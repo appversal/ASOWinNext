@@ -11,7 +11,7 @@ const makePost = (post) => ({
   ...post,
 });
 
-export const seoClusterPosts = [
+const clusterPosts = [
   makePost({
     slug: "app-store-optimization-guide",
     title: "App Store Optimization: The Complete ASO Guide for 2026",
@@ -732,6 +732,17 @@ export const seoClusterPosts = [
   }),
   ...libraryPosts,
 ];
+
+// One spelling per topic ("and", not "&"), and single-post topics folded into the
+// nearest hub so every guide gets a hub page and "More in" links.
+const CATEGORY_ALIASES = {
+  "ASO Fundamentals": "Reference Guides",
+  "Tools & Technology": "Strategy and Operations",
+  "Technical ASO": "Growth Strategy",
+};
+const normalizeCategory = (name) => (CATEGORY_ALIASES[name] || name).replace(/ & /g, " and ");
+
+export const seoClusterPosts = clusterPosts.map((post) => ({ ...post, category: normalizeCategory(post.category) }));
 
 export const seoClusterBySlug = Object.fromEntries(
   seoClusterPosts.map((post) => [post.slug, post]),

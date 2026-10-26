@@ -4,8 +4,7 @@
  */
 import { seoClusterPosts } from "./seoClusterData";
 
-export const blogPosts = [
-  ...seoClusterPosts,
+const standalonePosts = [
   {
     slug: 'best-aso-agency-for-app-store-optimization',
     title: 'Best ASO Agency for App Store Optimization: Why iOS Growth Needs More Than Metadata',
@@ -566,6 +565,71 @@ export const blogPosts = [
     embeddedImageAlt: 'Google Play Store listing localized in Bahasa Indonesia showing app size and local payment method messaging'
   },
   // Add more blog posts here as you create them
+];
+
+// Topic hub for each standalone post, so they appear in /blog/category/ pages
+// and in the "More in" links of related guides.
+const STANDALONE_CATEGORIES = {
+  "best-aso-agency-for-app-store-optimization": "Strategy and Operations",
+  "best-aso-agency-for-play-store-optimization": "Strategy and Operations",
+  "how-to-choose-the-best-aso-agency": "Strategy and Operations",
+  "best-aso-agency-for-app-growth": "Strategy and Operations",
+  "why-asowin-is-the-best-aso-agency-choice": "Strategy and Operations",
+  "beyond-keywords-semantic-intent-aso-2026": "Keyword Strategy",
+  "aso-emerging-markets-app-size-2026": "Market Guides",
+  "semantic-intent-aso-2026": "Keyword Strategy",
+  "review-sentiment-analysis-ranking-factor": "Ratings and Reviews",
+  "how-to-hire-app-store-optimization-expert": "Strategy and Operations",
+  "app-reputation-management-platform": "Ratings and Reviews",
+  "why-fortune-500-needs-aso-agency": "Strategy and Operations",
+  "full-cycle-aso-service-keyword-research-conversion": "Strategy and Operations",
+  "chatgpt-app-ecosystem": "Growth Strategy",
+  "app-store-ranking-factors-2026": "Reference Guides",
+  "google-play-ranking-strategies-2026": "Keyword Strategy",
+  "app-market-research-complete-guide": "Strategy and Operations",
+  "ab-testing-for-aso": "Conversion Optimization",
+  "app-icon-design-tips-and-practices": "Creative Optimization",
+  "free-trial-strategies": "Monetization",
+  "google-play-ai-revolution": "Growth Strategy",
+  "app-store-optimization-checklist-2026": "Reference Guides",
+  "ios-vs-android-aso-differences": "Reference Guides",
+  "common-aso-mistakes-to-avoid": "Reference Guides",
+  "aso-metrics-and-kpis-to-track": "Measurement",
+  "app-retention-vs-acquisition": "Retention and Engagement",
+  "keyword-research-tools-for-aso": "Keyword Strategy",
+  "long-tail-keywords-app-store-optimization": "Keyword Strategy",
+  "keyword-density-app-description": "Metadata Craft",
+  "how-to-increase-app-installs-organically": "Launch and Growth",
+  "app-store-conversion-rate-optimization": "Conversion Optimization",
+  "how-to-respond-to-app-store-reviews": "Ratings and Reviews",
+  "improve-app-rating-from-3-to-5-stars": "Ratings and Reviews",
+  "app-review-management-strategy": "Ratings and Reviews",
+  "fintech-app-aso-strategies": "Industry Playbooks",
+  "ecommerce-app-aso-strategies": "Industry Playbooks",
+  "ai-in-app-store-optimization": "Growth Strategy",
+  "automate-aso-reporting-with-ai": "Measurement",
+  "chatgpt-prompts-for-aso": "Strategy and Operations",
+  "gaming-app-aso-strategies": "Game Growth",
+  "app-localization-guide-global-markets": "Localization",
+  "app-screenshot-design-best-practices": "Creative Optimization",
+  "app-store-video-preview-guide": "Creative Optimization",
+  "custom-product-pages-apple-guide": "Conversion Optimization",
+  "apple-search-ads-vs-organic-aso": "Paid Acquisition",
+  "google-app-campaigns-best-practices": "Paid Acquisition",
+  "google-play-custom-store-listings-guide": "Conversion Optimization",
+  "paid-vs-organic-user-acquisition-balance": "Paid Acquisition",
+  "aso-agency-usa-guide": "Market Guides",
+  "aso-for-indian-app-market": "Market Guides",
+  "aso-for-indonesian-app-market": "Market Guides",
+};
+
+// Slugs with their own page folder. A library entry with the same slug never
+// renders (the folder wins), so it is left out to avoid a duplicate listing.
+export const standaloneSlugs = new Set(standalonePosts.map((post) => post.slug));
+
+export const blogPosts = [
+  ...seoClusterPosts.filter((post) => !standaloneSlugs.has(post.slug)),
+  ...standalonePosts.map((post) => ({ category: STANDALONE_CATEGORIES[post.slug], ...post })),
 ];
 
 export { authors, slugifyAuthor, getAuthorByName, authorPath } from "./authors";
