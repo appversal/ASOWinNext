@@ -69,12 +69,16 @@ export default function sitemap() {
     priority: 0.5,
   }));
 
-  const postEntries = blogPosts.map((post) => ({
-    url: `${SITE_URL}/blog/${post.slug}/`,
-    lastModified: toDate(post.updatedAt || post.publishedAt || post.date),
-    changeFrequency: "monthly",
-    priority: 0.7,
-  }));
+  const postEntries = blogPosts.map((post) => {
+    const image = post.ogImage || post.heroImage;
+    return {
+      url: `${SITE_URL}/blog/${post.slug}/`,
+      lastModified: toDate(post.updatedAt || post.publishedAt || post.date),
+      changeFrequency: "monthly",
+      priority: 0.7,
+      ...(image && { images: [`${SITE_URL}${image}`] }),
+    };
+  });
 
   const seen = new Set();
   return [...staticEntries, ...hubEntries, ...authorEntries, ...postEntries].filter((entry) => {

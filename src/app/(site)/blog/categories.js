@@ -23,6 +23,12 @@ const DESCRIPTIONS = {
   "conversion-optimization": "Techniques for turning store visitors into installs: page structure, creative testing, and conversion measurement.",
   "launch-and-growth": "Pre-launch preparation, launch checklists, and the early growth levers that shape an app's first months.",
   "keyword-strategy": "Keyword research, field allocation, long-tail targeting, and platform-specific tactics for App Store and Google Play search.",
+  "platform-guides": "Step-by-step guides to publishing and maintaining apps on the App Store and Google Play: developer accounts, testing tracks, review times, fees, and exact asset specifications.",
+  "other-app-stores": "Optimization guides for stores beyond the main iOS and Google Play phone storefronts: Huawei AppGallery, Samsung Galaxy Store, Chinese Android stores, EU marketplaces, Mac, Chrome, and TV app stores.",
+  "app-marketing": "Mobile app marketing beyond the store listing: launch plans, free promotion channels, social and community marketing, PR, influencers, and landing pages that feed organic growth.",
+  "retention-and-engagement": "Onboarding, push notifications, referrals, churn reduction, and retention benchmarks that turn installs into active users and protect the ratings that ASO depends on.",
+  "paid-acquisition": "Apple Ads, Meta, TikTok, and other paid user acquisition channels, plus the measurement stack behind them: CPI, SKAdNetwork, AdAttributionKit, ATT, MMPs, and deep links.",
+  "game-growth": "ASO and growth playbooks for mobile games by genre, from hyper-casual and puzzle to RPG, strategy, and card games, plus soft launch, live ops, creatives, and localization.",
   "localization": "Localization strategy and culturalization for app listings: prioritizing markets, adapting meaning, and measuring results.",
 };
 
