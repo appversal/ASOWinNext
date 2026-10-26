@@ -13,7 +13,7 @@ const esc = (value) =>
 export function GET() {
   const posts = [...blogPosts]
     .sort((a, b) => new Date(b.publishedAt || b.date) - new Date(a.publishedAt || a.date))
-    .slice(0, 100);
+;
   const items = posts
     .map((post) => {
       const link = `${SITE_URL}/blog/${post.slug}/`;

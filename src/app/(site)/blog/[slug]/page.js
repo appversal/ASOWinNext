@@ -281,7 +281,30 @@ export default async function SeoClusterArticle({ params }) {
     keywords: [post.primaryKeyword, ...post.secondaryKeywords].join(", "),
     wordCount: articleBody.trim().split(/\s+/).length,
     isAccessibleForFree: true,
+    // Answer-engine hints: the quick answer is the summary, and the callout and
+    // FAQ are the passages best suited to be read aloud or quoted.
+    abstract: plain(post.answer),
+    about: { "@type": "Thing", name: post.primaryKeyword },
+    isPartOf: { "@type": "Blog", "@id": `${SITE_URL}/blog/#blog`, name: "ASOWin Blog", url: `${SITE_URL}/blog/` },
+    speakable: { "@type": "SpeakableSpecification", cssSelector: [".aso-callout", "#faq"] },
+    ...(post.sources.length && { citation: post.sources.map((source) => source.url) }),
   };
+
+  const howToSchema = post.steps?.length
+    ? {
+        "@context": "https://schema.org",
+        "@type": "HowTo",
+        name: post.title,
+        description: plain(post.answer),
+        step: post.steps.map(([name, text], index) => ({
+          "@type": "HowToStep",
+          position: index + 1,
+          name,
+          text: plain(text),
+          url: `${url}#step-by-step`,
+        })),
+      }
+    : null;
 
   const faqSchema = {
     "@context": "https://schema.org",
@@ -312,6 +335,7 @@ export default async function SeoClusterArticle({ params }) {
     <div className="min-h-screen bg-white">
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: jsonLd(articleSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: jsonLd(faqSchema) }} />
+      {howToSchema && <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: jsonLd(howToSchema) }} />}
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: jsonLd(breadcrumbSchema) }} />
       <BlogHero
         category={post.category}
