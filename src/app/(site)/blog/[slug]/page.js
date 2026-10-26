@@ -35,6 +35,13 @@ const authorSchema = (name) => {
 
 const jsonLd = (data) => JSON.stringify(data).replace(/</g, "\\u003c");
 
+// Body copy may carry internal links written as [anchor](/path/). Only
+// site-relative paths become links; anything else stays escaped text.
+const INLINE_LINK = /\[([^\]]+)\]\((\/[^)\s]*)\)/g;
+const inline = (value) =>
+  escapeHtml(value).replace(INLINE_LINK, (_, text, href) => `<a href="${href}">${text}</a>`);
+const plain = (value) => String(value).replace(INLINE_LINK, "$1");
+
 // blogPosts already includes seoClusterPosts (see blogData.js), so related-post
 // lookups below only need blogPosts, not a merge with seoClusterPosts again.
 
@@ -50,6 +57,25 @@ const SERVICE_LABELS = [
   ["contact", "Request an ASO consultation", "Talk to the ASOWin team about your app"],
   ["app-store-optimization", "App store optimization services", "Full-service ASO for visibility and conversion"],
 ];
+
+// Posts that point at a slug, via related cards or inline links, newest first.
+// Lets established guides surface the newer guides that build on them.
+const inboundBySlug = (() => {
+  const map = new Map();
+  const newest = [...blogPosts].sort(
+    (a, b) => new Date(b.publishedAt || b.date) - new Date(a.publishedAt || a.date),
+  );
+  for (const item of newest) {
+    const body = [item.answer, ...(item.sections || []).flatMap((s) => s.paragraphs), ...(item.faqs || []).map((f) => f.a)].join(" ");
+    const linked = [...body.matchAll(INLINE_LINK)].map(([, , href]) => href.match(/^\/blog\/([^/]+)\/?$/)?.[1]);
+    for (const target of new Set([...(item.related || []), ...linked].filter(Boolean))) {
+      if (target === item.slug) continue;
+      if (!map.has(target)) map.set(target, []);
+      map.get(target).push(item);
+    }
+  }
+  return map;
+})();
 
 const serviceCard = (href) => {
   const match = SERVICE_LABELS.find(([key]) => href.includes(key)) || SERVICE_LABELS[SERVICE_LABELS.length - 1];
@@ -69,21 +95,29 @@ const buildContent = (post) => {
   const serviceLinks = [...new Set([...(post.serviceLinks || []), "/success-stories/"])].map(serviceCard).join("");
   const topics = [post.primaryKeyword, ...post.secondaryKeywords];
   const hub = getCategoryHubs().find((item) => item.slug === categoryKey(post.category));
-  const moreInCategory = hub
-    ? hub.posts
-        .filter((item) => item.slug !== post.slug && !post.related.includes(item.slug))
-        .slice(0, 3)
-        .map(
-          (item) =>
-            `<a class="aso-related" href="/blog/${escapeHtml(item.slug)}/"><span class="aso-related-cat">${escapeHtml(hub.name)}</span><strong>${escapeHtml(item.title)}</strong></a>`,
-        )
-        .join("")
-    : "";
+  const categoryPosts = hub
+    ? hub.posts.filter((item) => item.slug !== post.slug && !post.related.includes(item.slug)).slice(0, 3)
+    : [];
+  const moreInCategory = categoryPosts
+    .map(
+      (item) =>
+        `<a class="aso-related" href="/blog/${escapeHtml(item.slug)}/"><span class="aso-related-cat">${escapeHtml(hub.name)}</span><strong>${escapeHtml(item.title)}</strong></a>`,
+    )
+    .join("");
+  const shown = new Set([post.slug, ...post.related, ...categoryPosts.map((item) => item.slug)]);
+  const goDeeper = (inboundBySlug.get(post.slug) || [])
+    .filter((item) => !shown.has(item.slug))
+    .slice(0, 4)
+    .map(
+      (item) =>
+        `<a class="aso-related" href="/blog/${escapeHtml(item.slug)}/"><span class="aso-related-cat">${escapeHtml(item.category || "ASO guide")}</span><strong>${escapeHtml(item.title)}</strong></a>`,
+    )
+    .join("");
 
   return `
     <div class="aso-callout">
       <div class="aso-callout-label">Quick answer</div>
-      <p>${escapeHtml(post.answer)}</p>
+      <p>${inline(post.answer)}</p>
     </div>
     <div class="aso-chips" aria-label="Topics covered">
       ${hub ? `<a class="aso-chip aso-chip-link" href="/blog/category/${hub.slug}/">${escapeHtml(hub.name)}</a>` : ""}
@@ -93,7 +127,7 @@ const buildContent = (post) => {
       .map(
         (section, index) => `
           <h2 id="section-${index + 1}">${escapeHtml(section.heading)}</h2>
-          ${section.paragraphs.map((paragraph) => `<p>${escapeHtml(paragraph)}</p>`).join("")}
+          ${section.paragraphs.map((paragraph) => `<p>${inline(paragraph)}</p>`).join("")}
         `,
       )
       .join("")}
@@ -101,7 +135,7 @@ const buildContent = (post) => {
       post.steps && post.steps.length
         ? `<h2 id="step-by-step">How to do it, step by step</h2>
     <ol class="aso-howto">${post.steps
-      .map(([title, detail]) => `<li><strong>${escapeHtml(title)}</strong><span>${escapeHtml(detail)}</span></li>`)
+      .map(([title, detail]) => `<li><strong>${escapeHtml(title)}</strong><span>${inline(detail)}</span></li>`)
       .join("")}</ol>`
         : ""
     }
@@ -136,7 +170,7 @@ const buildContent = (post) => {
           (item, index) => `
             <details class="aso-faq-item"${index === 0 ? " open" : ""}>
               <summary>${escapeHtml(item.q)}</summary>
-              <div class="aso-faq-answer"><p>${escapeHtml(item.a)}</p></div>
+              <div class="aso-faq-answer"><p>${inline(item.a)}</p></div>
             </details>`,
         )
         .join("")}
@@ -144,6 +178,11 @@ const buildContent = (post) => {
     ${
       relatedLinks
         ? `<h2 id="next-reading">Keep reading</h2><div class="aso-related-grid">${relatedLinks}</div>`
+        : ""
+    }
+    ${
+      goDeeper
+        ? `<h2 id="go-deeper">Go deeper on this topic</h2><div class="aso-related-grid">${goDeeper}</div>`
         : ""
     }
     ${
@@ -216,7 +255,7 @@ export default async function SeoClusterArticle({ params }) {
 
   const url = `${SITE_URL}/blog/${post.slug}/`;
   const hub = getCategoryHubs().find((item) => item.slug === categoryKey(post.category));
-  const articleBody = [post.answer, ...post.sections.flatMap((section) => section.paragraphs)].join(" ");
+  const articleBody = plain([post.answer, ...post.sections.flatMap((section) => section.paragraphs)].join(" "));
   const relatedBlogs = post.related
     .map((relatedSlug) => blogPosts.find((item) => item.slug === relatedSlug))
     .filter(Boolean);
@@ -250,7 +289,7 @@ export default async function SeoClusterArticle({ params }) {
     mainEntity: post.faqs.map((item) => ({
       "@type": "Question",
       name: item.q,
-      acceptedAnswer: { "@type": "Answer", text: item.a },
+      acceptedAnswer: { "@type": "Answer", text: plain(item.a) },
     })),
   };
 
