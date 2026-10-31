@@ -45,6 +45,8 @@ ASOWin grows app rankings, ratings and installs on the Apple App Store and Googl
 - [Apple Ads campaign structure](https://www.asowin.com/blog/apple-ads-campaign-structure/)
 - [SKAdNetwork and AdAttributionKit](https://www.asowin.com/blog/skadnetwork-adattributionkit-guide/)
 - [GEO and AEO for mobile apps](https://www.asowin.com/blog/geo-aeo-for-mobile-apps/)
+- [How to make money from an app](https://www.asowin.com/blog/how-to-make-money-from-an-app/)
+- [How much it costs to make an app](https://www.asowin.com/blog/how-much-does-it-cost-to-make-an-app/)
 - [Book: App Store Optimization: The Ultimate Book](https://www.asowin.com/book/): free 18-page guide to App Store and Google Play ranking factors
 
 ## Guide library by topic
