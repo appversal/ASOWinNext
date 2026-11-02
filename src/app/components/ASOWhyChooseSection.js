@@ -31,7 +31,7 @@ const ASOWhyChooseSection = () => {
     {
       icon: '/why_asowin_icons/log.png',
       title: 'Proven Track Record',
-      description: 'We\'ve driven billions of organic downloads and helped 500+ apps scale successfully.'
+      description: 'Published results include a 3.9 to 4.4+ rating for Pepperfry, 50+ keywords into the Top 50 for Indiabulls Securities and #1 Top Free Games in Australia for Viker Games.'
     }
   ];
 

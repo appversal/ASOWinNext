@@ -30,10 +30,10 @@ const KeywordInstallsStrategySection = () => {
       ]
     },
     {
-      title: 'Controlled & Measured Install Campaigns',
+      title: 'Measured Keyword Campaigns',
       description: 'We execute carefully managed keyword install campaigns designed to support organic ranking growth.',
       points: [
-        'Controlled install pacing',
+        'Budget pacing by keyword',
         'Geographic targeting',
         'Keyword-specific tracking',
         'Ranking movement analysis',

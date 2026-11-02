@@ -8,11 +8,13 @@ const ASOIndustriesSection = () => {
   const industries = [
     {
       name: 'Fintech Apps',
-      description: 'Payment solutions, banking, and financial management'
+      description: 'Payment solutions, banking, and financial management',
+      href: '/industries/fintech-aso/'
     },
     {
       name: 'Gaming Apps',
-      description: 'Casual, mid-core, and hardcore game optimization'
+      description: 'Casual, mid-core, and hardcore game optimization',
+      href: '/industries/gaming-aso/'
     },
     {
       name: 'AI Applications',
@@ -95,7 +97,13 @@ const ASOIndustriesSection = () => {
                 <h3 className={`text-lg md:text-lg font-bold transition-colors duration-300 mb-4 flex-grow
                   ${hoveredCard === index ? 'text-white' : 'text-gray-900'}
                 `}>
-                  {industry.name}
+                  {industry.href ? (
+                    <Link href={industry.href} className="after:absolute after:inset-0">
+                      {industry.name}
+                    </Link>
+                  ) : (
+                    industry.name
+                  )}
                 </h3>
 
                 {/* Description - Visible on Hover */}

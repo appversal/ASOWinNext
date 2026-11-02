@@ -5,7 +5,7 @@ const KeywordInstallsDeliverablesSection = () => {
   const deliverables = [
     'Keyword research and targeting',
     'Search ranking strategy',
-    'Controlled install campaigns',
+    'Keyword-targeted install campaigns',
     'Keyword performance tracking',
     'Ranking improvement monitoring',
     'Search visibility analysis',
@@ -46,15 +46,15 @@ const KeywordInstallsDeliverablesSection = () => {
           {/* Right Side - Visual Stats */}
           <div className="space-y-6">
             <div className="bg-white rounded-2xl p-8 border-2 border-[#fdb124]/30 shadow-lg">
-              <div className="text-5xl font-bold text-[#014458] mb-3">100%</div>
-              <p className="text-xl text-gray-700 font-semibold mb-2">Organic Ranking Focus</p>
-              <p className="text-gray-600">All campaigns optimized for sustainable search rankings without algorithm penalties</p>
+              <div className="text-5xl font-bold text-[#014458] mb-3">Organic</div>
+              <p className="text-xl text-gray-700 font-semibold mb-2">Ranking Focus</p>
+              <p className="text-gray-600">Campaigns planned with metadata and creative work, aimed at rankings that hold after the campaign ends</p>
             </div>
 
             <div className="bg-white rounded-2xl p-8 border-2 border-[#fdb124]/30 shadow-lg">
               <div className="text-5xl font-bold text-[#014458] mb-3">Real-time</div>
               <p className="text-xl text-gray-700 font-semibold mb-2">Performance Tracking</p>
-              <p className="text-gray-600">Monitor keyword rankings, install velocity, and search visibility continuously</p>
+              <p className="text-gray-600">Monitor keyword rankings, installs and search visibility continuously</p>
             </div>
 
             <div className="bg-white rounded-2xl p-8 border-2 border-[#fdb124]/30 shadow-lg">

@@ -31,12 +31,14 @@ const footerColumns = [
     ],
   },
   {
-    title: "Markets",
+    title: "Markets & industries",
     links: [
       { label: "ASO Agency USA", href: "/aso-agency-usa/" },
       { label: "ASO Agency India", href: "/aso-agency-india/" },
       { label: "Agensi ASO Indonesia", href: "/aso-agency-indonesia/" },
       { label: "Agencia ASO España y LatAm", href: "/es/agencia-aso/" },
+      { label: "Fintech ASO", href: "/industries/fintech-aso/" },
+      { label: "Gaming ASO", href: "/industries/gaming-aso/" },
       { label: "Google Play ASO", href: "/google-play-store-optimization/" },
     ],
   },

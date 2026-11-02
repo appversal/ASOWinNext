@@ -23,6 +23,8 @@ const STATIC_PAGES = [
   ["/aso-agency-india/", "2026-11-02", 0.8, "monthly"],
   ["/aso-agency-indonesia/", "2026-11-02", 0.8, "monthly"],
   ["/es/agencia-aso/", "2026-11-02", 0.8, "monthly"],
+  ["/industries/fintech-aso/", "2026-11-02", 0.85, "monthly"],
+  ["/industries/gaming-aso/", "2026-11-02", 0.85, "monthly"],
   ["/automated-review-replies/", "2026-05-04", 0.75, "monthly"],
   ["/google-play-store-optimization/", "2026-10-22", 0.8, "monthly"],
   ["/media-kit/", "2026-11-02", 0.5, "monthly"],

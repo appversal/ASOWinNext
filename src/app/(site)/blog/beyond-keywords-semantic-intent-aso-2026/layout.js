@@ -1,7 +1,7 @@
 import { postMetadata } from "../postMetadata";
 
 const baseMetadata = {
-  title: "Beyond Keywords: Why Your 2026 App Store Optimization Service Must Prioritize Semantic Intent | ASOWin Blog",
+  title: "Why ASO Services Must Prioritize Semantic Intent in 2026",
   description: "Learn why keyword-focused ASO is outdated and semantic intent is the future. Discover why specialized ASO agencies outperform general marketing firms and the conversion-first approach that defines modern ASO strategy.",
 };
 

@@ -1,5 +1,5 @@
 export const metadata = {
-  title: "Automated Review Replies | AI-Powered App Review Management | ASOWin",
+  title: "AI Review Replies: Automated App Review Management | ASOWin",
   description:
     "Engage with users at scale using AI-powered, personalized replies to app store reviews. Improve ratings, save time, and boost user trust. Try free today!",
   openGraph: {

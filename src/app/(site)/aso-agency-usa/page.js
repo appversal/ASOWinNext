@@ -751,7 +751,7 @@ export default function AsoAgencyPage() {
                             </Link>
                         </div>
                         <p className="text-sm text-muted-foreground text-center">
-                            The #1 App Store Optimization Agency for Growth-Focused Apps
+                            A global App Store Optimization agency for growth-focused apps
                         </p>
                         <div className="flex items-center gap-4">
                             <a href="mailto:support@asowin.com" className="flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground transition-colors">

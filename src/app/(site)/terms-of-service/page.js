@@ -6,6 +6,15 @@ import TableOfContents from "../../components/TableOfContents";
 export const metadata = {
     title: "Terms & Conditions | ASOWin",
     description: "Read our terms and conditions to understand your rights and obligations when using ASOWin services.",
+    alternates: { canonical: "/terms-of-service/" },
+    openGraph: {
+        type: "website",
+        url: "/terms-of-service/",
+        siteName: "ASOWin",
+        title: "Terms & Conditions | ASOWin",
+        description: "Read our terms and conditions to understand your rights and obligations when using ASOWin services.",
+        images: [{ url: "/og-image.jpg", width: 1200, height: 630 }],
+    },
 };
 
 export default function TermsOfService() {

@@ -98,6 +98,10 @@ export const SERVICE_FAQS = {
         a: "Apple Search Ads is Apple's advertising platform for promoting apps in App Store search results and other App Store placements. Advertisers bid on keywords, and ads appear at the top of results for people already searching for an app like theirs.",
       },
       {
+        q: "How does Apple Search Ads work?",
+        a: "Apple Search Ads places your app at the top of App Store search results for keywords you bid on. You pay per tap or per install, Apple matches ads to searches by relevance and bid, and the ad uses your product page or a custom product page as its creative.",
+      },
+      {
         q: "How do paid campaigns and ASO work together?",
         a: "Paid campaigns bring extra visitors to the store listing, and ASO decides how many of them install. A better listing lowers the cost per install, while Apple Search Ads keyword data shows which search terms convert and are worth targeting in organic metadata.",
       },
@@ -142,7 +146,24 @@ export const SERVICE_FAQS = {
     serviceType: "Keyword-targeted app install campaigns",
     description:
       "Keyword install campaigns planned alongside ASO to support app rankings for target search terms.",
-    faqs: [],
+    faqs: [
+      {
+        q: "What are keyword installs?",
+        a: "Keyword installs are installs from people who searched a specific term in the App Store or Google Play and then installed your app. Installs that follow a search tell the store the app is relevant to that term, which can support its ranking for it.",
+      },
+      {
+        q: "How do keyword install campaigns relate to ASO?",
+        a: "They work on top of ASO, not instead of it. The app's title, keywords and screenshots have to match the term first, so the people who search it actually install and keep the app. Without that, a campaign's ranking effect fades when it stops.",
+      },
+      {
+        q: "Are incentivized or fake installs allowed?",
+        a: "No. Google Play's Developer Program Policy prohibits manipulating store placement with fraudulent or incentivized installs, and Apple's App Review Guidelines prohibit manipulating charts or search. Keyword-targeted installs should come from real users reached through channels such as Apple Search Ads and Google App Campaigns.",
+      },
+      {
+        q: "What should a keyword install campaign report?",
+        a: "Rankings for each target keyword before, during and after the campaign, installs and conversion rate by keyword, and retention of the users acquired. Rankings that drop back as soon as the campaign ends are a sign the listing or keyword choice needs work.",
+      },
+    ],
   },
   "automated-review-replies": {
     name: "AI Review Replies",
@@ -360,6 +381,66 @@ export const SERVICE_FAQS = {
       {
         q: "¿Garantizáis posiciones en las tiendas?",
         a: "No. Apple y Google deciden las posiciones y ninguna agencia puede controlarlas. Nos comprometemos con la investigación, las pruebas y unos informes transparentes.",
+      },
+    ],
+  },
+  "fintech-aso": {
+    name: "Fintech ASO",
+    path: "/industries/fintech-aso/",
+    serviceType: "App Store Optimization for fintech apps",
+    description:
+      "App Store Optimization for banking, trading, crypto, payments and lending apps on the App Store and Google Play.",
+    intro: "Common questions from fintech app teams",
+    faqs: [
+      {
+        q: "What does an ASO agency do for fintech apps?",
+        a: "It researches the finance searches your users make, writes accurate metadata for each store, tests trust-led screenshots, and manages ratings around onboarding and payouts. ASOWin's finance work includes Indiabulls Securities, where 50+ unranked keywords moved into the Top 50.",
+      },
+      {
+        q: "Can fintech apps promise returns or instant approval in their listing?",
+        a: "They shouldn't. Claims like guaranteed returns, risk-free investing or instant approval can get a listing rejected, attract regulators' attention and damage trust. Specific, accurate benefits work better and stay within store policy.",
+      },
+      {
+        q: "Do crypto and lending apps face extra store rules?",
+        a: "Yes. Google Play asks every app for a financial features declaration, and crypto, trading and lending apps need the right licences in many countries on both stores. Rules change, so we check each market's current policy before planning a listing.",
+      },
+      {
+        q: "How do ratings affect finance app installs?",
+        a: "Finance users compare ratings closely before trusting an app with money. Replying to reviews about verification or payouts, fixing recurring issues and prompting for ratings after successful transactions all help lift the rating and conversion.",
+      },
+      {
+        q: "Do you localize fintech listings?",
+        a: "Yes. Finance vocabulary varies by market and language. For Bybit, Spanish-language crypto keywords produced Top 3 rankings in Spain and Latin America.",
+      },
+    ],
+  },
+  "gaming-aso": {
+    name: "Gaming ASO",
+    path: "/industries/gaming-aso/",
+    serviceType: "App Store Optimization for mobile games",
+    description:
+      "App Store Optimization for mobile games: genre keywords, creative testing, in-app events, localization and ratings.",
+    intro: "Common questions from game studios",
+    faqs: [
+      {
+        q: "How is ASO for games different from ASO for apps?",
+        a: "Games convert mostly on creative: the icon, preview video and first screenshots. Players search by genre and mechanic, and listings need regular refreshes for events and updates, so game ASO leans on creative testing and live events more than app ASO does.",
+      },
+      {
+        q: "What results has ASOWin achieved for games?",
+        a: "For Viker Games, ASOWin's campaign reported a #1 Top Free Games position in Australia, 500,000+ installs in a single day and rankings for multiple high-value gaming keywords.",
+      },
+      {
+        q: "Do in-app events help game rankings?",
+        a: "They can help visibility. Apple in-app events and Google Play promotional content appear on the store and in search results, giving players a reason to install or return. Plan them around real content updates.",
+      },
+      {
+        q: "Should we test creatives before a global launch?",
+        a: "Yes. A soft launch or Google Play pre-registration gives early data on which icon, video and screenshots convert, so the global launch starts with proven creatives.",
+      },
+      {
+        q: "Do you localize games for different markets?",
+        a: "Yes. Charts are country by country, so localized keywords and screenshots help a game compete in each market. We work with native-speaking specialists for each language.",
       },
     ],
   },

@@ -2,6 +2,7 @@ import Link from "next/link";
 import Navbar from "../../components/Navbar";
 import Footer from "../../components/Footer";
 import styles from "./case-studies.module.css";
+import { PARENT } from "../../components/entity";
 
 export function Arrow({ diagonal = false }) {
   return <span aria-hidden="true">{diagonal ? "↗" : "→"}</span>;
@@ -21,6 +22,10 @@ export function CaseStudyCTA() {
           Work with ASOWin, an app store optimization agency, on your next
           stage of growth. Explore our <Link href="/services/app-store-optimization/">ASO services</Link> or
           {" "}<Link href="/services/app-reputation-management/">app reputation management</Link> approach.
+        </p>
+        <p>
+          Delivered by ASOWin{PARENT ? `, part of the ${PARENT.name} group` : ""}. This page is the primary source
+          for these results.
         </p>
       </div>
       <Link href="/contact" className={styles.lightButton}>

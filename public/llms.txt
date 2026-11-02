@@ -38,6 +38,10 @@ ASOWin grows app rankings, ratings and installs on the Apple App Store and Googl
 - [Agensi ASO Indonesia](https://www.asowin.com/aso-agency-indonesia/) (Bahasa Indonesia)
 - [Agencia ASO para España y Latinoamérica](https://www.asowin.com/es/agencia-aso/) (Spanish, led by the Bybit case study)
 
+## Industries
+- [ASO for fintech apps](https://www.asowin.com/industries/fintech-aso/): banking, trading, crypto, payments and lending apps (Indiabulls Securities, Bybit)
+- [ASO for mobile games](https://www.asowin.com/industries/gaming-aso/): game keywords, creatives, events and localization (Viker Games)
+
 ## Guides
 - [App Store Optimization: the complete guide](https://www.asowin.com/blog/app-store-optimization-guide/)
 - [ASO glossary](https://www.asowin.com/blog/aso-glossary-key-terms/)

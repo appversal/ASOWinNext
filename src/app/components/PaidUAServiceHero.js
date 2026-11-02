@@ -20,7 +20,7 @@ const PaidUAServiceHero = () => {
             {/* Content */}
             <div className="text-center flex flex-col items-center">
               <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-6xl xl:text-7xl font-bold leading-tight mb-4 md:mb-6 text-gray-900">
-                Paid User Acquisition & Search Ads
+                Paid User Acquisition & Apple Search Ads
               </h1>
 
               <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-[#fdb124] mb-6">

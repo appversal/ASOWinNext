@@ -11,13 +11,13 @@ import ServiceFaq from "../components/ServiceFaq";
 export const metadata = {
   title: "ASOWin | Global App Store Optimization (ASO) Agency",
   description:
-    "ASOWin is a global ASO agency growing app rankings, ratings and installs on the App Store and Google Play. ASO, review management, Apple Search Ads and creative testing.",
+    "ASOWin is a global ASO agency that grows app rankings, ratings and installs on the App Store and Google Play with ASO, review management and Apple Search Ads.",
   authors: [{ name: "ASOWin", url: "https://www.asowin.com" }],
   robots: "index, follow",
   openGraph: {
     title: "ASOWin | Global App Store Optimization (ASO) Agency",
     description:
-      "ASOWin is a global ASO agency growing app rankings, ratings and installs on the App Store and Google Play. ASO, review management, Apple Search Ads and creative testing.",
+      "ASOWin is a global ASO agency that grows app rankings, ratings and installs on the App Store and Google Play with ASO, review management and Apple Search Ads.",
     url: "https://www.asowin.com/",
     siteName: "ASOWin",
     images: [
@@ -34,7 +34,7 @@ export const metadata = {
     card: "summary_large_image",
     title: "ASOWin | Global App Store Optimization (ASO) Agency",
     description:
-      "ASOWin is a global ASO agency growing app rankings, ratings and installs on the App Store and Google Play. ASO, review management, Apple Search Ads and creative testing.",
+      "ASOWin is a global ASO agency that grows app rankings, ratings and installs on the App Store and Google Play with ASO, review management and Apple Search Ads.",
     images: ["/og-image.jpg"],
     site: "@asowin",
   },

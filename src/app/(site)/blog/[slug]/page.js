@@ -1,3 +1,4 @@
+import { fitDescription, fitTitle } from "../seoText";
 import { notFound } from "next/navigation";
 import BlogHero from "../../../components/BlogHero";
 import BlogContent from "../../../components/BlogContent";
@@ -81,14 +82,6 @@ const inboundBySlug = (() => {
 const serviceCard = (href) => {
   const match = SERVICE_LABELS.find(([key]) => href.includes(key)) || SERVICE_LABELS[SERVICE_LABELS.length - 1];
   return `<a class="aso-service" href="${escapeHtml(href)}"><strong>${match[1]}</strong><span>${match[2]}</span></a>`;
-};
-
-// Search results cut titles around 60 characters. When a long "Topic: Promise"
-// title has no hand-written seoTitle, the keyword-led topic part becomes the <title>.
-const searchTitle = (post) => {
-  if (post.seoTitle) return post.seoTitle;
-  const main = post.title.split(": ")[0];
-  return post.title.length + " | ASOWin".length > 65 && main !== post.title && main.length >= 20 ? main : post.title;
 };
 
 const buildContent = (post) => {
@@ -231,15 +224,15 @@ export async function generateMetadata({ params }) {
 
   const canonical = `/blog/${post.slug}/`;
   return {
-    title: `${searchTitle(post)} | ASOWin`,
-    description: post.seoDescription || post.description,
+    title: fitTitle(post.seoTitle || post.title),
+    description: fitDescription(post.seoDescription || post.description),
     authors: [{ name: post.author, url: authorPath(post.author) || "/about/" }],
     alternates: { canonical },
     openGraph: {
       type: "article",
       url: canonical,
       title: post.seoTitle || post.title,
-      description: post.seoDescription || post.description,
+      description: fitDescription(post.seoDescription || post.description),
       publishedTime: post.publishedAt,
       modifiedTime: post.updatedAt,
       authors: [post.author],
@@ -250,7 +243,7 @@ export async function generateMetadata({ params }) {
     twitter: {
       card: "summary_large_image",
       title: post.seoTitle || post.title,
-      description: post.seoDescription || post.description,
+      description: fitDescription(post.seoDescription || post.description),
       images: [post.ogImage || post.heroImage],
     },
     robots: { index: true, follow: true },

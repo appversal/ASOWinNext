@@ -1,3 +1,4 @@
+import { fitDescription, fitTitle } from "../../seoText";
 import { notFound } from "next/navigation";
 import Link from "next/link";
 import Navbar from "../../../../components/Navbar";
@@ -19,14 +20,15 @@ export async function generateMetadata({ params }) {
   const { category } = await params;
   const hub = findHub(category);
   if (!hub) return {};
-  const title = `${hub.name}: ${hub.posts.length} ASO Guides | ASOWin`;
+  const title = fitTitle(`${hub.name}: ${hub.posts.length} ASO Guides`);
+  const description = fitDescription(hub.description);
   const canonical = `/blog/category/${hub.slug}/`;
   return {
     title,
-    description: hub.description,
+    description,
     alternates: { canonical },
-    openGraph: { type: "website", url: canonical, title, description: hub.description, siteName: "ASOWin" },
-    twitter: { card: "summary_large_image", title, description: hub.description, site: "@asowin" },
+    openGraph: { type: "website", url: canonical, title, description, siteName: "ASOWin" },
+    twitter: { card: "summary_large_image", title, description, site: "@asowin" },
   };
 }
 

@@ -14,7 +14,7 @@ export default function FintechAppASOStrategies() {
 
     <p>A generic ASO playbook tells you to optimize your title, test your screenshots, and chase high-volume keywords. That advice is not wrong, but for a fintech app it is incomplete in a way that matters. Users deciding whether to install a banking app, a payment wallet, or an investment platform are not just evaluating features. They are deciding whether to trust an app with their money, their identity, and often their financial future.</p>
 
-    <p>At ASOWin, we treat fintech ASO as its own discipline, layered on top of standard App Store Optimization fundamentals. The keyword research and metadata work still matter, but they sit alongside a second, equally important workstream: building visible trust signals, staying compliance-safe in every word of copy, and treating reviews as a reputational risk category rather than routine feedback.</p>
+    <p>At ASOWin, we treat fintech ASO as its own discipline, layered on top of standard App Store Optimization fundamentals. The keyword research and metadata work still matter, but they sit alongside a second, equally important workstream: building visible trust signals, staying compliance-safe in every word of copy, and treating reviews as a reputational risk category rather than routine feedback. See how this works in practice on our <a href="/industries/fintech-aso/" style="color: #014458; text-decoration: underline;">fintech ASO</a> page.</p>
 
     <p>This guide covers what actually changes when the app in question handles money.</p>
 
