@@ -1,25 +1,23 @@
-"use client";
-
-import React, { useState } from "react";
-import { ChevronLeft, ChevronRight } from "lucide-react";
+import React from "react";
 import Image from "next/image";
+import Link from "next/link";
 
 const AIAgent = () => {
   const features = [
     {
       id: "1. INTELLIGENT KEYWORD RESEARCH",
       description:
-        "Our AI agent analyzes vast amounts of data to identify high-impact keywords tailored to your app's niche, automatically updating strategies to align with market trends and user behavior.",
+        "AI clusters keywords by intent and relevance for your app's niche, so specialists can prioritise the terms most likely to drive installs.",
     },
     {
       id: "2. AUTOMATED COMPETITOR ANALYSIS",
       description:
-        "Gain real-time insights into your competitors' performance. The AI agent tracks shifts in rankings, keywords, and strategies, giving you a competitive edge without the manual effort.",
+        "Gain real-time insights into your competitors' performance. AI tracks shifts in competitors' rankings, keywords and store listings and flags the changes worth acting on.",
     },
     {
       id: "3. DESIGN TESTING WITH AI PRECISION",
       description:
-        "The AI agent will optimize your creative assets by running automated A/B tests, determining which visuals and messaging resonate most with your audience.",
+        "AI helps us generate and prioritise creative variants for store listing A/B tests, determining which visuals and messaging resonate most with your audience.",
     },
     {
       id: "4. USER ENGAGEMENT OPTIMIZATION",
@@ -27,18 +25,6 @@ const AIAgent = () => {
         "Leverage AI insights to enhance user engagement and retention through personalized recommendations and dynamic content adjustments.",
     },
   ];
-
-  const [currentIndex, setCurrentIndex] = useState(0);
-
-  const handleNext = () => {
-    setCurrentIndex((prevIndex) => (prevIndex + 2) % features.length);
-  };
-
-  const handlePrev = () => {
-    setCurrentIndex(
-      (prevIndex) => (prevIndex - 2 + features.length) % features.length
-    );
-  };
 
   const CubeIcon = () => (
     <svg width="40" height="40" viewBox="0 0 24 24" fill="currentColor">
@@ -52,7 +38,7 @@ const AIAgent = () => {
       <div className="absolute inset-0 z-0">
         <Image
           src="/imgmain.png" // Place your imgmain.png inside the public folder
-          alt="AI Hand with Background Pattern"
+          alt=""
           fill
           className="object-cover md:object-center"
         />
@@ -62,9 +48,9 @@ const AIAgent = () => {
         {/* Left Section with Heading */}
         <div className="lg:w-1/2 text-center lg:text-left">
           <h2 className="text-[#FF6B00] text-4xl md:text-5xl lg:text-[45px] xl:text-6xl font-normal leading-tight">
-            ASOWin's AI Agent:<br />
-            Revolutionizing App<br />
-            Store Optimization
+            How ASOWin Uses AI<br />
+            in App Store<br />
+            Optimization
           </h2>
         </div>
 
@@ -73,20 +59,25 @@ const AIAgent = () => {
           {/* Paragraph */}
           <div>
             <p className="text-gray-800 text-lg mb-6 leading-relaxed">
-              At ASOWin, innovation is at the heart of what we do. To stay ahead
-              in the dynamic world of App Store Optimization (ASO), we're
-              building our very own AI Agent.
+              ASOWin uses AI for keyword research, competitor tracking, creative
+              testing and review analysis, with every change reviewed by an ASO
+              specialist before it goes live. It powers our{" "}
+              <Link href="/services/automated-aso-ai/" className="text-[#FF6B00] font-medium hover:underline">
+                Automated ASO with AI
+              </Link>{" "}
+              service and our{" "}
+              <Link href="/automated-review-replies/" className="text-[#FF6B00] font-medium hover:underline">
+                AI review replies
+              </Link>{" "}
+              product.
             </p>
           </div>
 
           {/* Cards */}
           <div className="relative grid grid-cols-1 md:grid-cols-2 gap-6">
-            {[
-              features[currentIndex],
-              features[(currentIndex + 1) % features.length],
-            ].map((feature, index) => (
+            {features.map((feature) => (
               <div
-                key={index}
+                key={feature.id}
                 className="group bg-[#F5F7F9] rounded-lg p-8 border-2 border-transparent hover:border-[#FF6B00] hover:bg-white transition-all duration-300"
               >
                 <div className="mb-8 text-gray-400 group-hover:text-[#FF6B00] transition-colors">
@@ -100,24 +91,6 @@ const AIAgent = () => {
                 </div>
               </div>
             ))}
-          </div>
-
-          {/* Navigation Arrows */}
-          <div className="flex justify-end space-x-4">
-            <button
-              className="p-2 rounded-full bg-[#004258] text-white hover:bg-opacity-90 transition-colors"
-              onClick={handlePrev}
-              aria-label="Previous slide"
-            >
-              <ChevronLeft size={24} aria-hidden="true" />
-            </button>
-            <button
-              className="p-2 rounded-full bg-[#004258] text-white hover:bg-opacity-90 transition-colors"
-              onClick={handleNext}
-              aria-label="Next slide"
-            >
-              <ChevronRight size={24} aria-hidden="true" />
-            </button>
           </div>
 
         </div>

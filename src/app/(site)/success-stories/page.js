@@ -160,7 +160,7 @@ export default function SuccessStories() {
               <p>The best ASO agency for your app should demonstrate relevant experience in your category, platform, and target market. Compare the starting point, work delivered, and reported outcomes in these case studies—not just a headline number.</p>
               <p>Viker Games covers mobile game ASO, Bybit highlights localized ASO, Indiabulls Securities focuses on finance keyword visibility, LSM Apps covers Google Play discovery, and Pepperfry shows ongoing reputation management. Explore our <Link href="/services/app-store-optimization/">app store optimization services</Link> to see how we approach a new campaign.</p>
             </div>
-            <Link className={styles.textLink} href="/blog/how-to-choose-the-best-aso-agency/">Read our guide to choosing an ASO agency <Arrow diagonal /></Link>
+            <Link className={styles.textLink} href="/blog/best-aso-agency/">Read our guide to choosing an ASO agency <Arrow diagonal /></Link>
           </div>
         </section>
         <CaseStudyCTA />

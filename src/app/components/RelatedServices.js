@@ -104,6 +104,26 @@ const relatedServicesMap = {
       icon: "/img6.png"
     }
   ],
+  "app-store-localization": [
+    {
+      title: "Full-Service ASO",
+      description: "Comprehensive optimization to boost your app's discoverability and downloads.",
+      href: "/services/app-store-optimization",
+      icon: "/img2.png"
+    },
+    {
+      title: "Design Services & A/B Testing",
+      description: "Optimize your app visuals through data-driven A/B testing for better conversions.",
+      href: "/services/creative-ab-testing",
+      icon: "/img6.png"
+    },
+    {
+      title: "App Reputation Management",
+      description: "Build trust and credibility through strategic reputation and review management.",
+      href: "/services/app-reputation-management",
+      icon: "/img4.png"
+    }
+  ],
   "automated-aso-ai": [
     {
       title: "Full-Service ASO",

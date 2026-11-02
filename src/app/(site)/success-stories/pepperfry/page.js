@@ -43,6 +43,8 @@ const schema = {
       url: "https://www.asowin.com/success-stories/pepperfry/",
       inLanguage: "en",
       articleSection: "App reputation management",
+      datePublished: "2026-10-23",
+      dateModified: "2026-11-02",
       headline: "Pepperfry app reputation case study: App ratings improved from around 3.9 to 4.4+.",
       description:
         "How ASOWin supported Pepperfry with app reputation management, AI-powered review responses, ASO, and social media reputation management.",

@@ -26,7 +26,7 @@ const WhyASO = () => {
             <p className="text-[#494949] text-[14px] font-normal leading-relaxed">
               Your App's key to top charts is here. ASO can help boost discoverability, increase organic installs and conversion rates. 
 
-              Our excellent team of over 100+ experts are here to help your App reach the brand recognition you could've only imagined.
+              Our ASO specialists in the USA, India, Indonesia and Singapore handle keyword research, store listing creative and ratings for app brands worldwide.
             </p>
           </div>
         </div>

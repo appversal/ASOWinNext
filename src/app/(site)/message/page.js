@@ -105,7 +105,7 @@ export default function MessagePage() {
                 "Top Charts & Featured Placements",
                 "Conversion Rate Optimization",
                 "Global ASO Strategies",
-                "Assured Ranking Improvements",
+                "Transparent Ranking Reports",
               ].map((item, index) => (
                 <div key={index} className="flex items-center space-x-3">
                   <div className="bg-[#fff0e6] rounded-full p-1">
@@ -135,8 +135,8 @@ export default function MessagePage() {
 
             <div className="pt-8">
               <h2 className="text-3xl md:text-[34px] font-bold text-center sm:text-left leading-tight tracking-tight">
-                Get your App to the top charts. <br />
-                That&apos;s an assurance.
+                Free ASO audit for your app, <br />
+                delivered within 24 hours.
               </h2>
             </div>
           </div>
@@ -261,8 +261,8 @@ export default function MessagePage() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {[
               { title: "AI-Powered Analysis", desc: "Proprietary algorithms that analyze millions of data points to find your highest-converting keywords.", icon: "ai.png" },
-              { title: "Global Reach", desc: "Localize your app metadata across 60+ languages to dominate top charts worldwide.", icon: "earth.png" },
-              { title: "Guaranteed Growth", desc: "Data-backed strategies that ensure your organic downloads multiply month over month.", icon: "growth.png" }
+              { title: "Global Reach", desc: "Localize your app metadata for every market you target, with keyword research in each language.", icon: "earth.png" },
+              { title: "Measured Growth", desc: "Every change is tested and reported, so you can see which work moved rankings, conversion and organic downloads.", icon: "growth.png" }
             ].map((feature, idx) => (
               <div key={idx} className="bg-white p-8 rounded-3xl shadow-sm border border-[#f2e6df] hover:shadow-xl transition-all duration-300 hover:-translate-y-1 group">
                 <div className="w-14 h-14 bg-[#fff0e6] rounded-2xl flex items-center justify-center mb-6 group-hover:bg-[#fdb124] group-hover:text-white transition-colors duration-300">
@@ -280,7 +280,7 @@ export default function MessagePage() {
       <section className="py-24 bg-white border-b border-[#f2e6df]">
         <div className="max-w-[1400px] mx-auto px-4 md:px-8 lg:px-16">
           <div className="text-center max-w-2xl mx-auto mb-20">
-            <h2 className="text-4xl font-extrabold text-[#111] mb-6 tracking-tight">How we guarantee your <span className="text-[#fdb124] italic">Success</span></h2>
+            <h2 className="text-4xl font-extrabold text-[#111] mb-6 tracking-tight">How we work towards your <span className="text-[#fdb124] italic">Success</span></h2>
             <p className="text-lg text-[#555] font-medium leading-relaxed">A systematic approach to uncovering hidden opportunities and scaling your app&apos;s growth predictably.</p>
           </div>
 

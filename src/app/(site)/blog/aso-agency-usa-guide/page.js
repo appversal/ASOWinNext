@@ -57,7 +57,7 @@ export default function AsoAgencyUsaGuide() {
 
     <p>Keyword research for the US market cannot simply reuse a global keyword list. American users search with different phrasing, different colloquialisms, and different intent patterns than users in other English-speaking markets, let alone non-English markets. Effective US keyword strategy accounts for regional spelling conventions, common American product terminology, and the specific competitive keyword landscape within each app category.</p>
 
-    <p>This is where the broader principles covered in our <a href="/blog/best-aso-agency-for-app-growth/" class="text-[#306777] underline hover:opacity-80">guide to choosing the best ASO agency for app growth</a> apply directly. An agency without real US market experience will often miss these nuances, leading to keyword targeting that looks reasonable on paper but underperforms against the actual search patterns of American users.</p>
+    <p>This is where the broader principles covered in our <a href="/blog/best-aso-agency/" class="text-[#306777] underline hover:opacity-80">guide to choosing the best ASO agency for app growth</a> apply directly. An agency without real US market experience will often miss these nuances, leading to keyword targeting that looks reasonable on paper but underperforms against the actual search patterns of American users.</p>
 
     <p>Seasonal and cultural timing also plays a bigger role in the US than many international teams expect. Search behavior shifts around major American holidays, back-to-school periods, and tax season in ways that a team unfamiliar with the local calendar can easily miss, leading to missed opportunities for keyword and creative updates timed to when demand is naturally highest.</p>
 
@@ -73,7 +73,7 @@ export default function AsoAgencyUsaGuide() {
 
     <p>Large US enterprises and well-known consumer brands entering or expanding in the app stores face a different challenge: high user expectations tied to brand reputation, along with intense scrutiny from existing customers who compare the app experience directly against the brand's other digital properties. Falling short on store presence can actively damage brand perception, not just app performance.</p>
 
-    <p>We explore this dynamic in depth in <a href="/blog/why-fortune-500-needs-aso-agency/" class="text-[#306777] underline hover:opacity-80">our guide on why Fortune 500 companies need a dedicated ASO agency</a>, and the same logic applies broadly to any established US brand launching or scaling a mobile app.</p>
+    <p>We explore this dynamic in depth in <a href="/blog/in-house-aso-team-vs-agency/" class="text-[#306777] underline hover:opacity-80">our guide on why Fortune 500 companies need a dedicated ASO agency</a>, and the same logic applies broadly to any established US brand launching or scaling a mobile app.</p>
 
     <p>Even outside the Fortune 500, mid-market and venture-backed US brands face a version of the same pressure. Users increasingly expect a consistent, polished experience across web, email, and mobile app touchpoints from any company they already trust, and a weak or neglected app store presence can quietly undercut brand credibility built through every other channel.</p>
 

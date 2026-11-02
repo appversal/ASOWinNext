@@ -75,7 +75,7 @@ export default function BlogListing() {
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-8 md:mb-12">
             <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-[#1a1a1a] mb-4 md:mb-6 leading-tight">
-              ASOWin Blog
+              App Store Optimization Guides and Research
             </h1>
             <p className="text-lg sm:text-xl md:text-2xl text-[#6B7280] max-w-3xl mx-auto leading-relaxed">
               Evidence-led guides for app discovery, conversion, ratings, localization, and sustainable mobile growth

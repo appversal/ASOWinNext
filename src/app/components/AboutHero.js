@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import Navbar from "./Navbar";
+import { PARENT } from "./entity";
 
 const AboutHero = () => {
   return (
@@ -22,11 +23,11 @@ const AboutHero = () => {
           <div className="max-w-7xl mx-auto">
             {/* Main Heading */}
             <h1
-              className="text-[2.75rem] sm:text-5xl lg:text-[97px] leading-[1.1] font-bold text-[#1a1a1a] mb-12"
+              className="text-[2.5rem] sm:text-5xl lg:text-[80px] leading-[1.1] font-bold text-[#1a1a1a] mb-12"
               style={{ textShadow: "2px 2px 5px rgba(0, 0, 0, 0.5)" }}
             >
-              App Growth Company
-              <br className="hidden lg:block" /> with ASOWin
+              About ASOWin,{" "}
+              <br className="hidden lg:block" />a Global App Store Optimization Agency
             </h1>
 
             {/* Description Section */}
@@ -45,23 +46,35 @@ const AboutHero = () => {
                 </div>
 
                 <p className="lg:text-[26px] sm:text-xl text-[#374151] leading-loose max-w-[37rem]">
-                  ASOWin is a visionary app growth company headquartered in{" "}
+                  ASOWin is a global App Store Optimization agency
+                  headquartered in{" "}
                   <span className="text-[#E9A63A] font-medium">
                     Fremont, California
                   </span>
                   , and registered in{" "}
-                  <span className="text-[#E9A63A] font-medium">Delaware</span>.
+                  <span className="text-[#E9A63A] font-medium">Delaware</span>
+                  {PARENT && (
+                    <>
+                      , and part of the{" "}
+                      <a href={PARENT.url} className="text-[#E9A63A] font-medium hover:underline">
+                        {PARENT.name}
+                      </a>{" "}
+                      group
+                    </>
+                  )}
+                  .
                 </p>
               </div>
 
               {/* Additional Info */}
               <p className="text-[19px] sm:text-lg text-[#6B7280] ml-[5.2rem] leading-relaxed max-w-[37rem]">
                 <span className="text-black">
-                  We specialize in delivering cutting-edge App Store
-                  Optimization (ASO) and{" "}
+                  Our teams in the USA, India, Indonesia and Singapore grow app
+                  rankings, ratings and installs on the Apple App Store and
+                  Google Play,
                 </span>{" "}
-                App Reputation Management solutions, with a steadfast
-                commitment to putting customer service at the heart.
+                through ASO, app reputation management, Apple Search Ads and
+                creative testing.
               </p>
             </div>
           </div>

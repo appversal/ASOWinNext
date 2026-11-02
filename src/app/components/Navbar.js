@@ -109,10 +109,16 @@ const Navbar = () => {
                     Creative A/B Testing & Design
                   </Link>
                   <Link
+                    href="/services/app-store-localization"
+                    className="block px-6 py-2.5 text-sm font-medium text-gray-700 hover:bg-gray-50 hover:text-black transition-colors"
+                  >
+                    App Store Localization
+                  </Link>
+                  <Link
                     href="/automated-review-replies"
                     className="block px-6 py-2.5 text-sm font-medium text-gray-700 hover:bg-gray-50 hover:text-black transition-colors flex items-center gap-2"
                   >
-                    <span>AI Reply-to-Reviews</span>
+                    <span>AI Reply-to-Reviews</span>{" "}
                     <span className="inline-flex items-center px-2 py-0.5 rounded-full text-xs font-bold bg-gradient-to-r from-[#fdb124] to-[#e09910] text-white">
                       NEW
                     </span>
@@ -271,11 +277,18 @@ const Navbar = () => {
                       Creative A/B Testing
                     </Link>
                     <Link
+                      href="/services/app-store-localization"
+                      className="px-4 py-2 text-gray-600 font-medium text-[14px] hover:text-[#111122] hover:bg-gray-50 rounded-lg transition-colors"
+                      onClick={() => setIsMobileMenuOpen(false)}
+                    >
+                      App Store Localization
+                    </Link>
+                    <Link
                       href="/automated-review-replies"
                       className="px-4 py-2 text-gray-600 font-medium text-[14px] hover:text-[#111122] hover:bg-gray-50 rounded-lg transition-colors flex items-center gap-2"
                       onClick={() => setIsMobileMenuOpen(false)}
                     >
-                      <span>Review Replies</span>
+                      <span>Review Replies</span>{" "}
                       <span className="inline-flex items-center px-2 py-0.5 rounded-full text-xs font-bold bg-gradient-to-r from-[#fdb124] to-[#e09910] text-white">
                         NEW
                       </span>

@@ -27,7 +27,7 @@ export default function HowToHireASOExpert() {
       <li><strong>A consultant:</strong> For strategy and guidance while your team executes</li>
     </ul>
     
-    <p>Each hiring path requires different evaluation criteria. A freelancer's checklist differs from vetting a <strong><a href="/blog/why-fortune-500-needs-aso-agency" style="color: #014458; text-decoration: underline;">best ASO agency</a></strong>.</p>
+    <p>Each hiring path requires different evaluation criteria. A freelancer's checklist differs from vetting a <strong><a href="/blog/in-house-aso-team-vs-agency/" style="color: #014458; text-decoration: underline;">best ASO agency</a></strong>.</p>
 
     <h2 id="heading-2">Question 1: What Is Your Experience with Apps in Our Category?</h2>
     

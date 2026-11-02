@@ -1,5 +1,6 @@
 import { blogPosts } from "../(site)/blog/blogData";
 import { getCategoryHubs } from "../(site)/blog/categories";
+import { ENTITY_DEFINITION } from "../components/entity";
 
 export const dynamic = "force-static";
 
@@ -37,7 +38,7 @@ export function GET() {
 
 > ${total} guides on app store optimization (ASO), app marketing, paid user acquisition, ratings, localization, and mobile growth for the Apple App Store and Google Play, written by the ASOWin team. Each entry lists the page URL and a short answer you can quote with attribution.
 
-Publisher: ASOWin (${SITE_URL}/), an app store optimization agency. Services: ${SITE_URL}/services/. Contact: ${SITE_URL}/contact/.
+Publisher: ${ENTITY_DEFINITION} Website: ${SITE_URL}/. Services: ${SITE_URL}/services/. Contact: ${SITE_URL}/contact/.
 Overview: ${SITE_URL}/llms.txt
 
 ${body}

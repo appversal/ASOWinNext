@@ -5,6 +5,7 @@ import GoogleAnalytics from "./components/GoogleAnalytics";
 import LinkedInInsightTag from "./components/LinkedInInsightTag";
 import IntercomProvider from "./components/IntercomProvider";
 import { AuthProvider } from "@/lib/auth-context";
+import { ENTITY_SHORT, organizationSchema } from "./components/entity";
 
 const manrope = Manrope({
   subsets: ["latin"],
@@ -16,9 +17,8 @@ const manrope = Manrope({
 // Shared by the (site) and (id) root layouts, which differ only in <html lang>.
 export const rootMetadata = {
   metadataBase: new URL('https://www.asowin.com'),
-  title: "ASOWin | App Store Optimization for Apps - Leading Global Company",
-  description:
-    "Discover how ASOWin helps you optimize your app store presence and increase visibility. Learn more about our services and case studies.",
+  title: "ASOWin | Global App Store Optimization (ASO) Agency",
+  description: ENTITY_SHORT,
   authors: [{ name: "ASOWin", url: "https://www.asowin.com" }],
   robots: "index, follow",
   alternates: { canonical: "./" },
@@ -29,9 +29,8 @@ export const rootMetadata = {
     },
   },
   openGraph: {
-    title: "ASOWin | App Store Optimization for Apps - Leading Global Company",
-    description:
-      "Discover how ASOWin helps you optimize your app store presence and increase visibility.",
+    title: "ASOWin | Global App Store Optimization (ASO) Agency",
+    description: ENTITY_SHORT,
     siteName: "ASOWin",
     images: [
       {
@@ -45,9 +44,8 @@ export const rootMetadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "ASOWin | App Store Optimization for Apps - Leading Global Company",
-    description:
-      "Discover how ASOWin helps you optimize your app store presence and increase visibility.",
+    title: "ASOWin | Global App Store Optimization (ASO) Agency",
+    description: ENTITY_SHORT,
     images: ["/og-image.jpg"],
     site: "@asowin",
   },
@@ -62,32 +60,7 @@ export default function RootShell({ lang, children }) {
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
-            __html: JSON.stringify({
-              "@context": "https://schema.org",
-              "@type": "Organization",
-              "@id": "https://www.asowin.com/#organization",
-              "name": "ASOWin",
-              "url": "https://www.asowin.com/",
-              "logo": "https://www.asowin.com/ASOWin.png",
-              "contactPoint": {
-                "@type": "ContactPoint",
-                "telephone": "+1-510-365-7173",
-                "contactType": "customer service",
-                "email": "support@asowin.com",
-                "areaServed": "Worldwide",
-              },
-              "address": [
-                {
-                  "@type": "PostalAddress",
-                  "streetAddress": "16192 Coastal Hwy",
-                  "addressLocality": "Lewes",
-                  "addressRegion": "DE",
-                  "postalCode": "19958",
-                  "addressCountry": "USA",
-                },
-              ],
-              "sameAs": ["https://www.linkedin.com/company/asowin/"],
-            }),
+            __html: JSON.stringify(organizationSchema),
           }}
         />
         <script
@@ -98,8 +71,9 @@ export default function RootShell({ lang, children }) {
               "@type": "WebSite",
               "name": "ASOWin",
               "url": "https://www.asowin.com/",
-              "publisher": { "@type": "Organization", "name": "ASOWin", "url": "https://www.asowin.com/" },
-              "inLanguage": ["en", "id"],
+              "@id": "https://www.asowin.com/#website",
+              "publisher": { "@id": "https://www.asowin.com/#organization" },
+              "inLanguage": ["en", "id", "es"],
             }),
           }}
         />

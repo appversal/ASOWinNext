@@ -49,6 +49,8 @@ export default function GrowthCaseStudy({ story }) {
         headline: `${story.name} ${story.searchTopic}: ${story.headline} ${story.emphasis}`,
         description: story.description,
         mainEntityOfPage: url,
+        datePublished: "2026-10-23",
+        dateModified: "2026-11-02",
         image: `https://www.asowin.com${story.og}`,
         author: {
           "@type": "Organization",

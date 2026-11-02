@@ -22,6 +22,7 @@ const schema = {
       "@type": "Article", "@id": `${url}#article`, url,
       headline: "Viker Games achieves #1 in Australia and 500,000+ installs in one day",
       description: viker.description, inLanguage: "en", mainEntityOfPage: url,
+      datePublished: "2026-10-23", dateModified: "2026-11-02",
       image: ["https://www.asowin.com/viker-portfolio.webp", "https://www.asowin.com/viker-case-study-og.jpg"],
       author: { "@type": "Organization", "@id": "https://www.asowin.com/#organization", name: "ASOWin", url: "https://www.asowin.com/" },
       publisher: { "@type": "Organization", "@id": "https://www.asowin.com/#organization", name: "ASOWin" },

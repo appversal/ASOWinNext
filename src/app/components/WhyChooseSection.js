@@ -6,8 +6,8 @@ import Image from "next/image";
 const WhyChooseSection = () => {
   const features = [
     {
-      title: "10+ Years of Excellence:",
-      description: "A decade of industry expertise and proven results."
+      title: "Published Results:",
+      description: "Five public case studies, from a 3.9 to 4.4+ rating for Pepperfry to #1 Top Free Games in Australia for Viker Games."
     },
     {
       title: "Customer-Centric Philosophy:",
@@ -20,7 +20,7 @@ const WhyChooseSection = () => {
     {
       title: "Global Presence:",
       description:
-        "Headquartered in Fremont, California, with offices worldwide, offering region-specific strategies."
+        "Headquartered in Fremont, California, with offices in Mumbai, Noida, Jakarta and Singapore, offering region-specific strategies."
     },
     {
       title: "Comprehensive Solutions:",
@@ -29,7 +29,7 @@ const WhyChooseSection = () => {
     },
     {
       title: "Team Strength:",
-      description: "Over 100 experts who live and breathe mobile app growth."
+      description: "ASO strategists, designers and analysts across the USA, India, Indonesia and Singapore."
     }
   ];
 

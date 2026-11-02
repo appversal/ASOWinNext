@@ -4,6 +4,7 @@ import React, { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { Loader2 } from "lucide-react";
+import { PARENT } from "./entity";
 
 const footerColumns = [
   {
@@ -12,6 +13,7 @@ const footerColumns = [
       { label: "App Store Optimization", href: "/services/app-store-optimization/" },
       { label: "App Reputation Management", href: "/services/app-reputation-management/" },
       { label: "Creative A/B Testing", href: "/services/creative-ab-testing/" },
+      { label: "App Store Localization", href: "/services/app-store-localization/" },
       { label: "Keyword Installs", href: "/services/keyword-installs/" },
       { label: "Automated ASO with AI", href: "/services/automated-aso-ai/" },
       { label: "Paid UA & Apple Search Ads", href: "/services/paid-user-acquisition/" },
@@ -34,6 +36,7 @@ const footerColumns = [
       { label: "ASO Agency USA", href: "/aso-agency-usa/" },
       { label: "ASO Agency India", href: "/aso-agency-india/" },
       { label: "Agensi ASO Indonesia", href: "/aso-agency-indonesia/" },
+      { label: "Agencia ASO España y LatAm", href: "/es/agencia-aso/" },
       { label: "Google Play ASO", href: "/google-play-store-optimization/" },
     ],
   },
@@ -138,6 +141,15 @@ const Footer = () => {
             <div className="flex flex-col sm:flex-row justify-between items-center space-y-4 sm:space-y-0">
               <p className="text-white/80 text-xs order-3 sm:order-1 text-center sm:text-left">
                 © 2026 ASOWin Inc. All Rights Reserved.
+                {PARENT && (
+                  <>
+                    {" "}Part of the{" "}
+                    <a href={PARENT.url} className="underline hover:text-white">
+                      {PARENT.name}
+                    </a>{" "}
+                    group.
+                  </>
+                )}
               </p>
 
               <div className="flex flex-wrap justify-center sm:justify-start gap-3 sm:gap-4 md:gap-6 order-1 sm:order-2">

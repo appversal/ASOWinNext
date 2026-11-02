@@ -1,11 +1,12 @@
 export const metadata = {
     title: "Agensi ASO Indonesia | Layanan Optimasi App Store - ASOWin",
-    description: "Agensi ASO terkemuka di Indonesia. Peringkat lebih tinggi di Play Store & App Store dalam 90 hari. Hasil terjamin dengan layanan optimasi app store komprehensif kami.",
+    description: "Agensi ASO di Jakarta: riset kata kunci Bahasa Indonesia, optimasi Google Play dan App Store, manajemen rating, dan Apple Search Ads untuk aplikasi Indonesia.",
     openGraph: {
         title: "Agensi ASO Indonesia | Layanan Optimasi App Store - ASOWin",
-        description: "Agensi ASO terkemuka di Indonesia. Peringkat lebih tinggi di Play Store & App Store dalam 90 hari. Hasil terjamin.",
-        url: "https://www.asowin.com/aso-agency-indonesia",
+        description: "Agensi ASO di Jakarta: riset kata kunci Bahasa Indonesia, optimasi Google Play dan App Store, manajemen rating, dan Apple Search Ads untuk aplikasi Indonesia.",
+        url: "https://www.asowin.com/aso-agency-indonesia/",
         siteName: "ASOWin",
+        locale: "id_ID",
         type: "website",
         images: [{ url: "/og-indonesia.jpg", width: 1200, height: 630, alt: "ASOWin agensi ASO Indonesia" }],
     },

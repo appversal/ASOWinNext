@@ -1,0 +1,15 @@
+# Cloudflare Pages redirects (applied at the edge for the static export).
+# Merged "best ASO agency" posts: one buyer's guide instead of several pages
+# competing for the same searches.
+/blog/how-to-choose-the-best-aso-agency/            /blog/best-aso-agency/                  301
+/blog/how-to-choose-the-best-aso-agency             /blog/best-aso-agency/                  301
+/blog/best-aso-agency-for-app-store-optimization/   /blog/best-aso-agency/                  301
+/blog/best-aso-agency-for-app-store-optimization    /blog/best-aso-agency/                  301
+/blog/best-aso-agency-for-app-growth/               /blog/best-aso-agency/                  301
+/blog/best-aso-agency-for-app-growth                /blog/best-aso-agency/                  301
+/blog/why-asowin-is-the-best-aso-agency-choice/     /blog/best-aso-agency/                  301
+/blog/why-asowin-is-the-best-aso-agency-choice      /blog/best-aso-agency/                  301
+/blog/best-aso-agency-for-play-store-optimization/  /google-play-store-optimization/        301
+/blog/best-aso-agency-for-play-store-optimization   /google-play-store-optimization/        301
+/blog/why-fortune-500-needs-aso-agency/             /blog/in-house-aso-team-vs-agency/      301
+/blog/why-fortune-500-needs-aso-agency              /blog/in-house-aso-team-vs-agency/      301

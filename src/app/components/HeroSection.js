@@ -23,22 +23,25 @@ const HeroSection = () => {
         </div>
 
         <div className="relative z-10 max-w-4xl mt-24 md:mt-32 mx-auto font-serif">
-          <h1 className="text-4xl md:text-6xl lg:text-[110px] xl:text-[135px] font-bold text-[#111111] mb-6 leading-tight">
-            App Store{" "}
-            <br />
-            Optimization
+          <h1 className="text-4xl md:text-6xl lg:text-[88px] xl:text-[100px] font-bold text-[#111111] mb-6 leading-tight">
+            Global App Store Optimization Agency
+            <span className="block text-2xl md:text-4xl lg:text-5xl font-semibold mt-4">
+              for the App Store and Google Play
+            </span>
           </h1>
-          <br />
 
           <div className="text-center mb-12">
             <p className="text-[#111111] text-base md:text-[21px] mb-1">
-              We handle ASO for some of the largest brands globally.
+              ASO, ratings and reviews, Apple Search Ads and creative testing for app
+              brands in fintech, e-commerce and gaming.
             </p>
             <br />
             <p className="text-[#111111] text-base md:text-[21px]">
-              Top Charts | Featured | Assured | Customer Service | With all our heart
-              <br />
-              Get your App to the top charts. That's an assurance.
+              Recent result:{" "}
+              <Link href="/success-stories/viker-games/" className="underline decoration-[#fdb124] underline-offset-4 hover:text-[#014458]">
+                Viker Games reached #1 Top Free Games in Australia
+              </Link>
+              .
             </p>
           </div>
 
