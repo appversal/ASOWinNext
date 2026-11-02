@@ -20,7 +20,7 @@ export default function CustomProductPagesAppleGuide() {
 
     <h2 id="heading-1">Short Answer: What Are Apple Custom Product Pages?</h2>
 
-    <p>Custom Product Pages are alternate versions of your App Store listing, each with its own screenshots, app preview videos, and promotional text, while keeping the same app name and description. You can create up to 35 variants, assign each one a unique URL, and direct specific traffic sources such as paid ads, social posts, or email campaigns to the version most relevant to that audience.</p>
+    <p>Custom Product Pages are alternate versions of your App Store listing, each with its own screenshots, app preview videos, and promotional text, while keeping the same app name and description. You can create up to 70 variants, assign each one a unique URL, and direct specific traffic sources such as paid ads, social posts, or email campaigns to the version most relevant to that audience.</p>
 
     <h2 id="heading-2">What Custom Product Pages Actually Are</h2>
 
@@ -211,7 +211,7 @@ export default function CustomProductPagesAppleGuide() {
                 "name": "What are Apple Custom Product Pages?",
                 "acceptedAnswer": {
                   "@type": "Answer",
-                  "text": "Custom Product Pages, or CPPs, let developers create up to 35 additional variants of their App Store product page, each with its own screenshots, video previews, and app icon, while keeping the same app description and metadata. Each variant gets a unique URL that can be used in specific marketing campaigns or ad sources."
+                  "text": "Custom Product Pages, or CPPs, let developers create up to 70 additional variants of their App Store product page, each with its own screenshots, video previews, and app icon, while keeping the same app description and metadata. Each variant gets a unique URL that can be used in specific marketing campaigns or ad sources."
                 }
               },
               {
@@ -219,7 +219,7 @@ export default function CustomProductPagesAppleGuide() {
                 "name": "How many Custom Product Pages can I create?",
                 "acceptedAnswer": {
                   "@type": "Answer",
-                  "text": "Apple allows up to 35 Custom Product Pages per app at any given time, in addition to the default product page. Most teams do not need anywhere close to that number and instead focus on 3 to 6 high-intent variants tied to their most important acquisition channels or audience segments."
+                  "text": "Apple allows up to 70 Custom Product Pages per app at any given time, in addition to the default product page. Most teams do not need anywhere close to that number and instead focus on 3 to 6 high-intent variants tied to their most important acquisition channels or audience segments."
                 }
               },
               {
