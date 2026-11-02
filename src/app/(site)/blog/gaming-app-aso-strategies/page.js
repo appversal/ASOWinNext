@@ -14,7 +14,7 @@ export default function GamingAppAsoStrategies() {
 
     <p>Mobile games are one of the most competitive categories in either app store, and they play by a slightly different set of ASO rules than most other app types. Players decide fast, often within seconds of landing on a store listing, and they decide based heavily on what they see and feel, not just what they read.</p>
 
-    <p>That changes the priority order for App Store Optimization. Video and screenshot quality often matter as much as keyword strategy. Content updates and live events create recurring opportunities to refresh a listing rather than leaving it static for months. And genre-level keyword competition is often brutal, dominated by titles with huge install bases and marketing budgets.</p>
+    <p>That changes the priority order for App Store Optimization. Video and screenshot quality often matter as much as keyword strategy. Content updates and live events create recurring opportunities to refresh a listing rather than leaving it static for months. And genre-level keyword competition is often brutal, dominated by titles with huge install bases and marketing budgets. Our <a href="/industries/gaming-aso/" style="color: #014458; text-decoration: underline;">game ASO service</a> is built around this order.</p>
 
     <p>At ASOWin, we treat mobile game ASO as its own discipline, built around creative velocity, video-first listings, and genre-aware keyword targeting. This playbook covers what actually moves the needle for games specifically, building on our broader <a href="/blog/app-store-optimization-checklist-2026/" class="text-[#306777] underline hover:opacity-80">2026 App Store Optimization checklist</a>.</p>
 

@@ -98,6 +98,10 @@ export const SERVICE_FAQS = {
         a: "Apple Search Ads is Apple's advertising platform for promoting apps in App Store search results and other App Store placements. Advertisers bid on keywords, and ads appear at the top of results for people already searching for an app like theirs.",
       },
       {
+        q: "How does Apple Search Ads work?",
+        a: "Apple Search Ads places your app at the top of App Store search results for keywords you bid on. You pay per tap or per install, Apple matches ads to searches by relevance and bid, and the ad uses your product page or a custom product page as its creative.",
+      },
+      {
         q: "How do paid campaigns and ASO work together?",
         a: "Paid campaigns bring extra visitors to the store listing, and ASO decides how many of them install. A better listing lowers the cost per install, while Apple Search Ads keyword data shows which search terms convert and are worth targeting in organic metadata.",
       },
@@ -142,7 +146,24 @@ export const SERVICE_FAQS = {
     serviceType: "Keyword-targeted app install campaigns",
     description:
       "Keyword install campaigns planned alongside ASO to support app rankings for target search terms.",
-    faqs: [],
+    faqs: [
+      {
+        q: "What are keyword installs?",
+        a: "Keyword installs are installs from people who searched a specific term in the App Store or Google Play and then installed your app. Installs that follow a search tell the store the app is relevant to that term, which can support its ranking for it.",
+      },
+      {
+        q: "How do keyword install campaigns relate to ASO?",
+        a: "They work on top of ASO, not instead of it. The app's title, keywords and screenshots have to match the term first, so the people who search it actually install and keep the app. Without that, a campaign's ranking effect fades when it stops.",
+      },
+      {
+        q: "Are incentivized or fake installs allowed?",
+        a: "No. Google Play's Developer Program Policy prohibits manipulating store placement with fraudulent or incentivized installs, and Apple's App Review Guidelines prohibit manipulating charts or search. Keyword-targeted installs should come from real users reached through channels such as Apple Search Ads and Google App Campaigns.",
+      },
+      {
+        q: "What should a keyword install campaign report?",
+        a: "Rankings for each target keyword before, during and after the campaign, installs and conversion rate by keyword, and retention of the users acquired. Rankings that drop back as soon as the campaign ends are a sign the listing or keyword choice needs work.",
+      },
+    ],
   },
   "automated-review-replies": {
     name: "AI Review Replies",
@@ -151,5 +172,276 @@ export const SERVICE_FAQS = {
     description:
       "ASOWin's AI product that drafts and posts app review replies in your brand voice and routes critical reviews to your support team.",
     faqs: [],
+  },
+  home: {
+    name: "ASOWin",
+    path: "/",
+    faqOnly: true,
+    title: "ASO questions, answered",
+    intro: "What app brands ask before they hire an App Store Optimization agency",
+    faqs: [
+      {
+        q: "What does an App Store Optimization agency do?",
+        a: "An ASO agency improves how apps rank and convert on the App Store and Google Play. ASOWin, a global ASO agency, handles keyword research, metadata, creative A/B testing, ratings and review management, and Apple Search Ads for app brands.",
+      },
+      {
+        q: "How long does ASO take to show results?",
+        a: "Keyword rankings usually start to move within a few weeks of a metadata update, once the store re-indexes the new release. Lasting gains in rankings and organic installs usually take three to six months of testing and iteration.",
+      },
+      {
+        q: "How much does an ASO agency cost?",
+        a: "It depends on the number of apps, stores, languages and markets, and on whether you need creative production, review management or paid campaigns as well. ASOWin starts every project with a free ASO audit and then quotes a monthly retainer for the agreed scope.",
+      },
+      {
+        q: "Does ASOWin guarantee App Store or Google Play rankings?",
+        a: "No. Apple and Google decide rankings, and no agency can control them, so a ranking guarantee is a warning sign. We commit to the research, tests and transparent reporting, and our published case studies show the results that approach has produced.",
+      },
+      {
+        q: "Which markets does ASOWin work in?",
+        a: "ASOWin works worldwide from offices in Fremont (California), Mumbai, Noida, Jakarta and Singapore. Published results include the US (LSM Apps), India (Pepperfry, Indiabulls Securities), Spain and Latin America (Bybit) and Australia (Viker Games).",
+      },
+      {
+        q: "Should I hire an ASO agency or use an ASO tool?",
+        a: "Tools give you keyword and ranking data; an agency turns that data into metadata, creative tests and review work, and does the work for you. Teams with an in-house ASO specialist often only need a tool. Teams without one, or with many apps and markets, usually get more from an agency.",
+      },
+      {
+        q: "How does App Reputation Management help ranking?",
+        a: "App Reputation Management improves your star rating and conversion rate, which influence how both the App Store and Google Play rank apps.",
+      },
+    ],
+  },
+  "aso-agency-usa": {
+    name: "ASO Agency USA",
+    path: "/aso-agency-usa/",
+    serviceType: "App Store Optimization",
+    areaServed: { "@type": "Country", name: "United States" },
+    description:
+      "App Store Optimization, Apple Search Ads and ratings management for apps on the US App Store and Google Play.",
+    intro: "Common questions from US app teams",
+    faqs: [
+      {
+        q: "What does an ASO agency in the USA do?",
+        a: "It researches the keywords US users search, rewrites your App Store and Google Play metadata, tests icons and screenshots, manages ratings and reviews, and often runs Apple Search Ads. ASOWin does this from its headquarters in Fremont, California.",
+      },
+      {
+        q: "How is ASO for the US App Store different?",
+        a: "The US storefront is crowded, so conversion rate and ratings matter as much as keywords. It also indexes the Spanish (Mexico) localization, which gives you a second set of keyword fields, and Apple Search Ads take the first slot in search results.",
+      },
+      {
+        q: "Has ASOWin worked with US apps?",
+        a: "Yes. For LSM Apps, Easy Phone moved from #10 to #2 for “Phone” on US Google Play, with 12,000 additional daily downloads reported. The full case study is on asowin.com.",
+      },
+      {
+        q: "Do you run Apple Search Ads for US apps?",
+        a: "Yes. We plan Apple Search Ads alongside ASO, use search term reports to find organic keyword opportunities, and send ad traffic to custom product pages that match each keyword theme.",
+      },
+      {
+        q: "How much does ASO cost for a US app?",
+        a: "Cost depends on the number of apps, stores and languages and whether you need creative production or paid campaigns. We start with a free ASO audit, then quote a monthly retainer for the agreed scope.",
+      },
+      {
+        q: "Do you guarantee rankings in the US?",
+        a: "No. Apple and Google decide rankings and no agency controls them. We commit to the research, testing and transparent reporting, and our case studies show what that approach has produced.",
+      },
+    ],
+  },
+  "aso-agency-india": {
+    name: "ASO Agency India",
+    path: "/aso-agency-india/",
+    serviceType: "App Store Optimization",
+    areaServed: { "@type": "Country", name: "India" },
+    description:
+      "Google Play-first App Store Optimization, regional-language listings and ratings management for apps in India.",
+    intro: "Common questions from Indian app teams",
+    faqs: [
+      {
+        q: "Why do Indian apps need a different ASO approach?",
+        a: "Most smartphones in India run Android, users search in English, Hindi, regional languages and Hinglish, and many use budget phones with limited storage. That makes Google Play metadata, regional-language listings and app size central to ASO in India.",
+      },
+      {
+        q: "Do you create Hindi and regional-language store listings?",
+        a: "Yes. Google Play supports listings in Hindi and other Indian languages such as Bengali, Marathi, Tamil and Telugu. We research keywords in each language, including transliterated searches, instead of translating English keywords.",
+      },
+      {
+        q: "Which Indian apps has ASOWin worked with?",
+        a: "Published case studies include Pepperfry, whose app rating rose from about 3.9 to 4.4+, and Indiabulls Securities, where 50+ previously unranked keywords moved into the Top 50 on both stores.",
+      },
+      {
+        q: "Can you work on fintech and lending apps in India?",
+        a: "Yes. Finance apps in India face extra Google Play declarations and close review of their claims. We keep listings accurate, avoid promises about returns or approvals, and check metadata against current store policy.",
+      },
+      {
+        q: "Where is ASOWin's team in India?",
+        a: "ASOWin has offices in Mumbai and Noida, so Indian clients work with a team in their own time zone.",
+      },
+      {
+        q: "Do you guarantee rankings on the Play Store?",
+        a: "No. Google and Apple decide rankings and no agency controls them. We commit to the research, testing and transparent reporting, and our case studies show the results.",
+      },
+    ],
+  },
+  "aso-agency-indonesia": {
+    name: "Agensi ASO Indonesia",
+    path: "/aso-agency-indonesia/",
+    serviceType: "App Store Optimization",
+    areaServed: { "@type": "Country", name: "Indonesia" },
+    lang: "id",
+    description:
+      "Layanan App Store Optimization dalam Bahasa Indonesia, manajemen rating, dan Apple Search Ads untuk aplikasi di Indonesia.",
+    intro: "Pertanyaan umum dari tim aplikasi di Indonesia",
+    faqs: [
+      {
+        q: "Apa yang dilakukan agensi ASO?",
+        a: "Agensi ASO meningkatkan peringkat dan konversi aplikasi di App Store dan Google Play melalui riset kata kunci, optimasi judul dan deskripsi, pengujian ikon dan screenshot, serta manajemen rating dan ulasan.",
+      },
+      {
+        q: "Apakah ASOWin punya tim di Indonesia?",
+        a: "Ya. ASOWin memiliki kantor di Jakarta, sehingga klien di Indonesia bekerja dengan tim di zona waktu yang sama.",
+      },
+      {
+        q: "Apakah ASOWin mengoptimalkan listing dalam Bahasa Indonesia?",
+        a: "Ya. Kami meneliti kata kunci langsung dalam Bahasa Indonesia, termasuk istilah sehari-hari dan campuran bahasa Inggris, lalu menulis metadata untuk App Store dan Google Play.",
+      },
+      {
+        q: "Berapa lama hasil ASO mulai terlihat?",
+        a: "Peringkat kata kunci biasanya mulai bergerak beberapa minggu setelah pembaruan metadata. Kenaikan yang stabil pada peringkat dan instalasi organik umumnya membutuhkan tiga sampai enam bulan pengujian dan iterasi.",
+      },
+      {
+        q: "Berapa biaya layanan ASO?",
+        a: "Biaya tergantung jumlah aplikasi, toko aplikasi, bahasa, dan pasar. Setiap proyek dimulai dengan audit ASO gratis, lalu kami memberikan penawaran bulanan sesuai cakupan kerja.",
+      },
+      {
+        q: "Apakah ASOWin menjamin peringkat?",
+        a: "Tidak. Apple dan Google yang menentukan peringkat, dan tidak ada agensi yang bisa mengendalikannya. Kami berkomitmen pada riset, pengujian, dan laporan yang transparan.",
+      },
+    ],
+  },
+  "app-store-localization": {
+    name: "App Store Localization",
+    path: "/services/app-store-localization/",
+    serviceType: "App store localization",
+    description:
+      "Multi-language App Store and Google Play metadata, localized keyword research and localized screenshots that help apps rank and convert in new markets.",
+    faqs: [
+      {
+        q: "What is app store localization?",
+        a: "App store localization adapts your App Store and Google Play listing for each language and market: the title, subtitle or short description, keywords, description, screenshots and preview video. Done well, it is new keyword research in each language, not a translation of the English listing.",
+      },
+      {
+        q: "How is localization different from translation?",
+        a: "Translation converts your English words. Localization starts from what people in each market actually search for, which is often a different term, a local brand name or a mix of English and the local language, and from what makes them install.",
+      },
+      {
+        q: "What is cross-localization on the App Store?",
+        a: "Each App Store storefront indexes more than one localization. The US storefront, for example, also indexes Spanish (Mexico) metadata. Filling those extra fields with different keywords increases the number of searches an app can rank for.",
+      },
+      {
+        q: "Which languages do you localize into?",
+        a: "Our published results include English and Spanish-language ASO, our Jakarta team works in Bahasa Indonesia, and we work with native-speaking specialists for other languages. For Bybit, Spanish-language ASO produced Top 3 rankings in Spain and Latin America.",
+      },
+      {
+        q: "Should screenshots be localized too?",
+        a: "Yes, for priority markets. Localized captions and culturally relevant visuals usually convert better than English screenshots. We test localized creatives with store listing experiments on Google Play and product page optimization on the App Store.",
+      },
+    ],
+  },
+  "agencia-aso-es": {
+    name: "Agencia ASO para España y Latinoamérica",
+    path: "/es/agencia-aso/",
+    serviceType: "App Store Optimization",
+    areaServed: [
+      { "@type": "Country", name: "Spain" },
+      { "@type": "Place", name: "Latin America" },
+    ],
+    lang: "es",
+    description:
+      "App Store Optimization en español para España y Latinoamérica: investigación de palabras clave, fichas localizadas, valoraciones y Apple Search Ads.",
+    intro: "Lo que preguntan los equipos de apps antes de contratar una agencia ASO",
+    faqs: [
+      {
+        q: "¿Qué hace una agencia ASO?",
+        a: "Una agencia ASO mejora el posicionamiento y la conversión de una app en el App Store y Google Play: investiga palabras clave, optimiza el título y las descripciones, prueba iconos y capturas, y gestiona valoraciones y reseñas.",
+      },
+      {
+        q: "¿Habéis trabajado con apps en España y Latinoamérica?",
+        a: "Sí. Para Bybit, la estrategia ASO en español empezó en España y se amplió a Latinoamérica, con posiciones Top 3 en ambos mercados según el caso de estudio publicado en asowin.com.",
+      },
+      {
+        q: "¿Es lo mismo el español de España que el de Latinoamérica para ASO?",
+        a: "No. App Store Connect ofrece español de España y español de México, y Google Play ofrece es-ES, español de Latinoamérica (es-419) y español de Estados Unidos. Las búsquedas cambian entre países, así que investigamos palabras clave para cada variante.",
+      },
+      {
+        q: "¿Cuánto tarda el ASO en dar resultados?",
+        a: "Las posiciones de palabras clave suelen moverse pocas semanas después de actualizar los metadatos. Las mejoras sostenidas en posiciones e instalaciones orgánicas suelen requerir de tres a seis meses de pruebas e iteración.",
+      },
+      {
+        q: "¿Cuánto cuesta una agencia ASO?",
+        a: "Depende del número de apps, tiendas, idiomas y mercados. Cada proyecto empieza con una auditoría ASO gratuita y después proponemos una cuota mensual según el alcance acordado.",
+      },
+      {
+        q: "¿Garantizáis posiciones en las tiendas?",
+        a: "No. Apple y Google deciden las posiciones y ninguna agencia puede controlarlas. Nos comprometemos con la investigación, las pruebas y unos informes transparentes.",
+      },
+    ],
+  },
+  "fintech-aso": {
+    name: "Fintech ASO",
+    path: "/industries/fintech-aso/",
+    serviceType: "App Store Optimization for fintech apps",
+    description:
+      "App Store Optimization for banking, trading, crypto, payments and lending apps on the App Store and Google Play.",
+    intro: "Common questions from fintech app teams",
+    faqs: [
+      {
+        q: "What does an ASO agency do for fintech apps?",
+        a: "It researches the finance searches your users make, writes accurate metadata for each store, tests trust-led screenshots, and manages ratings around onboarding and payouts. ASOWin's finance work includes Indiabulls Securities, where 50+ unranked keywords moved into the Top 50.",
+      },
+      {
+        q: "Can fintech apps promise returns or instant approval in their listing?",
+        a: "They shouldn't. Claims like guaranteed returns, risk-free investing or instant approval can get a listing rejected, attract regulators' attention and damage trust. Specific, accurate benefits work better and stay within store policy.",
+      },
+      {
+        q: "Do crypto and lending apps face extra store rules?",
+        a: "Yes. Google Play asks every app for a financial features declaration, and crypto, trading and lending apps need the right licences in many countries on both stores. Rules change, so we check each market's current policy before planning a listing.",
+      },
+      {
+        q: "How do ratings affect finance app installs?",
+        a: "Finance users compare ratings closely before trusting an app with money. Replying to reviews about verification or payouts, fixing recurring issues and prompting for ratings after successful transactions all help lift the rating and conversion.",
+      },
+      {
+        q: "Do you localize fintech listings?",
+        a: "Yes. Finance vocabulary varies by market and language. For Bybit, Spanish-language crypto keywords produced Top 3 rankings in Spain and Latin America.",
+      },
+    ],
+  },
+  "gaming-aso": {
+    name: "Gaming ASO",
+    path: "/industries/gaming-aso/",
+    serviceType: "App Store Optimization for mobile games",
+    description:
+      "App Store Optimization for mobile games: genre keywords, creative testing, in-app events, localization and ratings.",
+    intro: "Common questions from game studios",
+    faqs: [
+      {
+        q: "How is ASO for games different from ASO for apps?",
+        a: "Games convert mostly on creative: the icon, preview video and first screenshots. Players search by genre and mechanic, and listings need regular refreshes for events and updates, so game ASO leans on creative testing and live events more than app ASO does.",
+      },
+      {
+        q: "What results has ASOWin achieved for games?",
+        a: "For Viker Games, ASOWin's campaign reported a #1 Top Free Games position in Australia, 500,000+ installs in a single day and rankings for multiple high-value gaming keywords.",
+      },
+      {
+        q: "Do in-app events help game rankings?",
+        a: "They can help visibility. Apple in-app events and Google Play promotional content appear on the store and in search results, giving players a reason to install or return. Plan them around real content updates.",
+      },
+      {
+        q: "Should we test creatives before a global launch?",
+        a: "Yes. A soft launch or Google Play pre-registration gives early data on which icon, video and screenshots convert, so the global launch starts with proven creatives.",
+      },
+      {
+        q: "Do you localize games for different markets?",
+        a: "Yes. Charts are country by country, so localized keywords and screenshots help a game compete in each market. We work with native-speaking specialists for each language.",
+      },
+    ],
   },
 };

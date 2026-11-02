@@ -4,9 +4,17 @@ import Footer from "../../../components/Footer";
 import { getCategoryHubs } from "../categories";
 
 export const metadata = {
-  title: "ASO Topics: Browse App Store Optimization Guides by Category | ASOWin",
+  title: "ASO Topics: App Store Optimization Guides by Category",
   description: "Browse ASO guides by topic: industry playbooks, market guides, metadata, creative testing, ratings and reviews, measurement, policy, and growth strategy.",
   alternates: { canonical: "/blog/category/" },
+  openGraph: {
+    type: "website",
+    url: "/blog/category/",
+    siteName: "ASOWin",
+    title: "ASO Topics: App Store Optimization Guides by Category",
+    description: "Browse ASO guides by topic: industry playbooks, market guides, metadata, creative testing, ratings and reviews, measurement, policy, and growth strategy.",
+    images: [{ url: "/og-blog.jpg", width: 1200, height: 630 }],
+  },
 };
 
 export default function CategoryIndex() {

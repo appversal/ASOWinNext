@@ -13,6 +13,7 @@ const schema = {
       "@type": "Article", "@id": `${url}#article`, url,
       headline: "Bybit ASO case study: Top 3 rankings across Spain and Latin America",
       description: bybit.description, inLanguage: "en", mainEntityOfPage: url,
+      datePublished: "2026-10-23", dateModified: "2026-11-02",
       image: ["https://www.asowin.com/bybit-cover.webp", "https://www.asowin.com/bybit-case-study-og.jpg"],
       author: { "@type": "Organization", "@id": "https://www.asowin.com/#organization", name: "ASOWin", url: "https://www.asowin.com/" },
       publisher: { "@type": "Organization", "@id": "https://www.asowin.com/#organization", name: "ASOWin" },

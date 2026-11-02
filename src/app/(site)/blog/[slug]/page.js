@@ -1,3 +1,4 @@
+import { fitDescription, fitTitle } from "../seoText";
 import { notFound } from "next/navigation";
 import BlogHero from "../../../components/BlogHero";
 import BlogContent from "../../../components/BlogContent";
@@ -9,6 +10,7 @@ import { seoClusterBySlug, seoClusterPosts } from "../seoClusterData";
 import { categoryKey, getCategoryHubs } from "../categories";
 
 const SITE_URL = "https://www.asowin.com";
+const GLOSSARY_TERM = /([A-Z][A-Za-z0-9/' -]{0,58}?): (.+?\.)(?=\s+[A-Z][A-Za-z0-9/' -]{0,58}?: |\s*$)/g;
 
 const escapeHtml = (value) =>
   String(value)
@@ -80,14 +82,6 @@ const inboundBySlug = (() => {
 const serviceCard = (href) => {
   const match = SERVICE_LABELS.find(([key]) => href.includes(key)) || SERVICE_LABELS[SERVICE_LABELS.length - 1];
   return `<a class="aso-service" href="${escapeHtml(href)}"><strong>${match[1]}</strong><span>${match[2]}</span></a>`;
-};
-
-// Search results cut titles around 60 characters. When a long "Topic: Promise"
-// title has no hand-written seoTitle, the keyword-led topic part becomes the <title>.
-const searchTitle = (post) => {
-  if (post.seoTitle) return post.seoTitle;
-  const main = post.title.split(": ")[0];
-  return post.title.length + " | ASOWin".length > 65 && main !== post.title && main.length >= 20 ? main : post.title;
 };
 
 const buildContent = (post) => {
@@ -230,15 +224,15 @@ export async function generateMetadata({ params }) {
 
   const canonical = `/blog/${post.slug}/`;
   return {
-    title: `${searchTitle(post)} | ASOWin`,
-    description: post.seoDescription || post.description,
+    title: fitTitle(post.seoTitle || post.title),
+    description: fitDescription(post.seoDescription || post.description),
     authors: [{ name: post.author, url: authorPath(post.author) || "/about/" }],
     alternates: { canonical },
     openGraph: {
       type: "article",
       url: canonical,
       title: post.seoTitle || post.title,
-      description: post.seoDescription || post.description,
+      description: fitDescription(post.seoDescription || post.description),
       publishedTime: post.publishedAt,
       modifiedTime: post.updatedAt,
       authors: [post.author],
@@ -249,7 +243,7 @@ export async function generateMetadata({ params }) {
     twitter: {
       card: "summary_large_image",
       title: post.seoTitle || post.title,
-      description: post.seoDescription || post.description,
+      description: fitDescription(post.seoDescription || post.description),
       images: [post.ogImage || post.heroImage],
     },
     robots: { index: true, follow: true },
@@ -298,7 +292,33 @@ export default async function SeoClusterArticle({ params }) {
     ...(post.sources.length && { citation: post.sources.map((source) => source.url) }),
   };
 
-  const howToSchema = post.steps?.length
+  // A glossary is a set of definitions, not a how-to: mark each "Term: definition."
+  // sentence up as a DefinedTerm so answer engines can cite it.
+  const glossaryTerms = post.glossary
+    ? post.sections.flatMap((section, index) =>
+        section.paragraphs.flatMap((paragraph) =>
+          [...paragraph.matchAll(GLOSSARY_TERM)].map(([, name, description]) => ({
+            "@type": "DefinedTerm",
+            name,
+            description,
+            url: `${url}#section-${index + 1}`,
+          })),
+        ),
+      )
+    : [];
+  const glossarySchema = glossaryTerms.length
+    ? {
+        "@context": "https://schema.org",
+        "@type": "DefinedTermSet",
+        "@id": `${url}#glossary`,
+        name: post.title,
+        url,
+        publisher: { "@id": `${SITE_URL}/#organization` },
+        hasDefinedTerm: glossaryTerms,
+      }
+    : null;
+
+  const howToSchema = post.steps?.length && !post.glossary
     ? {
         "@context": "https://schema.org",
         "@type": "HowTo",
@@ -344,6 +364,7 @@ export default async function SeoClusterArticle({ params }) {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: jsonLd(articleSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: jsonLd(faqSchema) }} />
       {howToSchema && <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: jsonLd(howToSchema) }} />}
+      {glossarySchema && <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: jsonLd(glossarySchema) }} />}
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: jsonLd(breadcrumbSchema) }} />
       <BlogHero
         category={post.category}

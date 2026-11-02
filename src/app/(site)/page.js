@@ -6,18 +6,19 @@ import Footer from "../components/Footer";
 import HeroSection from "../components/HeroSection";
 import Services from "../components/Services";
 import Stats from "../components/Stats";
+import ServiceFaq from "../components/ServiceFaq";
 
 export const metadata = {
   title: "ASOWin | Global App Store Optimization (ASO) Agency",
   description:
-    "ASOWin is a global ASO agency growing app rankings, ratings and installs on the App Store and Google Play. ASO, review management, Apple Search Ads and creative testing.",
+    "ASOWin is a global ASO agency that grows app rankings, ratings and installs on the App Store and Google Play with ASO, review management and Apple Search Ads.",
   authors: [{ name: "ASOWin", url: "https://www.asowin.com" }],
   robots: "index, follow",
   openGraph: {
     title: "ASOWin | Global App Store Optimization (ASO) Agency",
     description:
-      "ASOWin is a global ASO agency growing app rankings, ratings and installs on the App Store and Google Play. ASO, review management, Apple Search Ads and creative testing.",
-    url: "https://www.asowin.com",
+      "ASOWin is a global ASO agency that grows app rankings, ratings and installs on the App Store and Google Play with ASO, review management and Apple Search Ads.",
+    url: "https://www.asowin.com/",
     siteName: "ASOWin",
     images: [
       {
@@ -33,7 +34,7 @@ export const metadata = {
     card: "summary_large_image",
     title: "ASOWin | Global App Store Optimization (ASO) Agency",
     description:
-      "ASOWin is a global ASO agency growing app rankings, ratings and installs on the App Store and Google Play. ASO, review management, Apple Search Ads and creative testing.",
+      "ASOWin is a global ASO agency that grows app rankings, ratings and installs on the App Store and Google Play with ASO, review management and Apple Search Ads.",
     images: ["/og-image.jpg"],
     site: "@asowin",
   },
@@ -41,6 +42,16 @@ export const metadata = {
     icon: "/favicon.ico",
   },
 };
+
+const HOME_SERVICES = [
+  ["App Store Optimization", "/services/app-store-optimization/"],
+  ["App Reputation Management", "/services/app-reputation-management/"],
+  ["Creative A/B Testing & Design", "/services/creative-ab-testing/"],
+  ["Paid User Acquisition & Apple Search Ads", "/services/paid-user-acquisition/"],
+  ["App Store Localization", "/services/app-store-localization/"],
+  ["Automated ASO with AI", "/services/automated-aso-ai/"],
+  ["AI Review Replies", "/automated-review-replies/"],
+];
 
 export default function Home() {
   return (
@@ -56,13 +67,11 @@ export default function Home() {
             "@type": "WebPage",
             "name": metadata.title,
             "description": metadata.description,
-            "url": "https://www.asowin.com",
-            "image": metadata.openGraph.images[0].url,
-            "publisher": {
-              "@type": "Organization",
-              "name": "ASOWin",
-              "url": "https://www.asowin.com",
-            },
+            "url": "https://www.asowin.com/",
+            "image": "https://www.asowin.com/og-image.jpg",
+            "isPartOf": { "@id": "https://www.asowin.com/#website" },
+            "about": { "@id": "https://www.asowin.com/#organization" },
+            "publisher": { "@id": "https://www.asowin.com/#organization" },
           }),
         }}
       />
@@ -74,61 +83,18 @@ export default function Home() {
           __html: JSON.stringify({
             "@context": "https://schema.org",
             "@type": "Service",
-            "serviceType": "App Store Optimization Service",
-            "provider": {
-              "@type": "Organization",
-              "name": "ASOWin",
-            },
-            "areaServed": "USA",
+            "@id": "https://www.asowin.com/#service",
+            "serviceType": "App Store Optimization",
+            "provider": { "@id": "https://www.asowin.com/#organization" },
+            "areaServed": "Worldwide",
             "hasOfferCatalog": {
               "@type": "OfferCatalog",
               "name": "App Growth Services",
-              "itemListElement": [
-                {
-                  "@type": "Offer",
-                  "itemOffered": {
-                    "@type": "Service",
-                    "name": "App Keyword Ranking",
-                  },
-                },
-                {
-                  "@type": "Offer",
-                  "itemOffered": {
-                    "@type": "Service",
-                    "name": "App Reputation Management Solution",
-                  },
-                },
-              ],
+              "itemListElement": HOME_SERVICES.map(([name, path]) => ({
+                "@type": "Offer",
+                "itemOffered": { "@type": "Service", "name": name, "url": `https://www.asowin.com${path}` },
+              })),
             },
-          }),
-        }}
-      />
-
-      {/* FAQ Schema */}
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "FAQPage",
-            "mainEntity": [
-              {
-                "@type": "Question",
-                "name": "What does an App Store Optimization agency do?",
-                "acceptedAnswer": {
-                  "@type": "Answer",
-                  "text": "An ASO agency improves how apps rank and convert on the App Store and Google Play. ASOWin, a global ASO agency, handles keyword research, metadata, creative A/B testing, ratings and review management, and Apple Search Ads for app brands.",
-                },
-              },
-              {
-                "@type": "Question",
-                "name": "How does App Reputation Management help ranking?",
-                "acceptedAnswer": {
-                  "@type": "Answer",
-                  "text": "App Reputation Management improves your star rating and conversion rates, which influence how both the App Store and Google Play rank apps.",
-                },
-              },
-            ],
           }),
         }}
       />
@@ -141,6 +107,7 @@ export default function Home() {
         <AIAgent />
         <Stats />
         <CaseStudy />
+        <ServiceFaq slug="home" />
         <Contact />
         <Footer />
       </main>

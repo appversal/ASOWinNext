@@ -3,6 +3,7 @@ import Image from "next/image";
 import Navbar from "../../components/Navbar";
 import Footer from "../../components/Footer";
 import { PROOF, CASE_STUDY_ORDER } from "../../components/proofFacts";
+import { ENTITY_DEFINITION, OFFICES, PARENT } from "../../components/entity";
 
 const url = "https://www.asowin.com/media-kit/";
 
@@ -23,13 +24,14 @@ export const metadata = {
 };
 
 // The one-sentence description editors can quote word for word.
-const DEFINITION =
-  "ASOWin is a global App Store Optimization (ASO) agency with teams in the USA, India, Indonesia and Singapore, offering ASO, app reputation management, Apple Search Ads and paid UA, creative A/B testing and AI-powered review replies.";
+const DEFINITION = ENTITY_DEFINITION;
 
 const facts = [
-  { label: "Company", value: "ASOWin Inc." },
+  { label: "Company", value: "ASOWin Inc., registered in Delaware, USA" },
+  ...(PARENT ? [{ label: "Group", value: `Part of the ${PARENT.name} group (${PARENT.url.replace(/^https?:\/\/|\/$/g, "")})` }] : []),
   { label: "What we do", value: "App Store Optimization agency for the Apple App Store and Google Play" },
-  { label: "Offices", value: "California, Delaware, Jakarta, Singapore, Mumbai, Noida" },
+  { label: "Headquarters", value: "Fremont, California, USA" },
+  { label: "Offices", value: OFFICES.map((o) => o.name).join(", ") },
   { label: "Client industries", value: "Fintech, e-commerce, gaming and consumer apps" },
   { label: "Website", value: "www.asowin.com" },
   { label: "Press contact", value: "support@asowin.com" },
@@ -109,8 +111,8 @@ export default function MediaKitPage() {
                   href={PROOF[key].href}
                   className="block h-full rounded-xl border border-gray-200 p-5 hover:border-[#fdb124] hover:shadow-md transition-all"
                 >
-                  <span className="block text-lg font-semibold text-[#111111]">{PROOF[key].name}</span>
-                  <span className="block text-gray-600 mt-1">{PROOF[key].summary}</span>
+                  <span className="block text-lg font-semibold text-[#111111]">{PROOF[key].name}</span>{" "}
+                  <span className="block text-gray-600 mt-1">{PROOF[key].summary}</span>{" "}
                   <span className="block text-sm text-[#014458] mt-3">Read the case study →</span>
                 </Link>
               </li>

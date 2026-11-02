@@ -1,0 +1,9 @@
+# Cloudflare Pages reads this file at deploy time.
+# Keep the pages.dev preview hosts out of search results so only
+# https://www.asowin.com is indexed. Don't block these hosts in robots.txt:
+# crawlers must fetch the pages to see this header.
+https://asowinnext.pages.dev/*
+  X-Robots-Tag: noindex
+
+https://:version.asowinnext.pages.dev/*
+  X-Robots-Tag: noindex

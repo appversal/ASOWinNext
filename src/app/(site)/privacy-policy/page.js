@@ -6,6 +6,15 @@ import TableOfContents from "../../components/TableOfContents";
 export const metadata = {
     title: "Privacy Policy | ASOWin",
     description: "Read our privacy policy to understand how ASOWin collects, uses, and protects your personal information.",
+    alternates: { canonical: "/privacy-policy/" },
+    openGraph: {
+        type: "website",
+        url: "/privacy-policy/",
+        siteName: "ASOWin",
+        title: "Privacy Policy | ASOWin",
+        description: "Read our privacy policy to understand how ASOWin collects, uses, and protects your personal information.",
+        images: [{ url: "/og-image.jpg", width: 1200, height: 630 }],
+    },
 };
 
 export default function PrivacyPolicy() {

@@ -1,8 +1,8 @@
 import Link from "next/link";
 import { PROOF, CASE_STUDY_ORDER } from "./proofFacts";
+import { ENTITY_DEFINITION, OFFICES, PARENT } from "./entity";
 
 // Verifiable facts about ASOWin, each backed by a page on the site.
-const offices = ["California", "Delaware", "Jakarta", "Singapore", "Mumbai", "Noida"];
 
 const services = [
   { name: "App Store Optimization", href: "/services/app-store-optimization/" },
@@ -22,18 +22,21 @@ const AboutFacts = () => (
         ASOWin at a glance
       </h2>
       <p className="text-base md:text-lg text-gray-600 max-w-3xl mb-12">
-        ASOWin is a global App Store Optimization (ASO) agency. We grow app rankings, ratings and installs on the
-        Apple App Store and Google Play for brands in fintech, e-commerce, gaming and consumer apps.
+        {ENTITY_DEFINITION} We work with brands in fintech, e-commerce, gaming and consumer apps.
       </p>
 
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-10">
         <div>
           <h3 className="text-sm font-semibold tracking-widest text-[#E9A63A] uppercase mb-4">Offices</h3>
           <ul className="space-y-2 text-[#374151] text-lg">
-            {offices.map((office) => (
-              <li key={office}>{office}</li>
+            {OFFICES.map((office) => (
+              <li key={office.name}>
+                {office.name}
+                {office.hq && <span className="text-sm text-gray-500"> (headquarters)</span>}
+              </li>
             ))}
           </ul>
+          <p className="mt-3 text-sm text-gray-500">ASOWin Inc. is registered in Delaware, USA.</p>
         </div>
 
         <div>
@@ -57,7 +60,7 @@ const AboutFacts = () => (
                 <Link href={study.href} className="group">
                   <span className="block text-lg text-[#1a1a1a] group-hover:text-[#E9A63A] transition-colors">
                     {study.name}
-                  </span>
+                  </span>{" "}
                   <span className="block text-sm text-gray-600">{study.summary}</span>
                 </Link>
               </li>
@@ -73,6 +76,15 @@ const AboutFacts = () => (
         </Link>
         , a free guide to how the App Store and Google Play rank apps.
       </p>
+      {PARENT && (
+        <p className="mt-4 text-base md:text-lg text-gray-600">
+          ASOWin is part of the{" "}
+          <a href={PARENT.url} className="text-[#E9A63A] font-medium hover:underline">
+            {PARENT.name}
+          </a>{" "}
+          group. Case studies on asowin.com are the primary source for ASOWin&apos;s client results.
+        </p>
+      )}
     </div>
   </section>
 );

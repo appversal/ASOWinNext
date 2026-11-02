@@ -442,7 +442,7 @@ export const landingPages = {
     ctaTitle: "Find out what an ASO agency can do for your app.",
     related: [
       { href: "/services/app-store-optimization/", label: "ASO services" },
-      { href: "/blog/how-to-choose-the-best-aso-agency/", label: "How to choose an ASO agency" },
+      { href: "/blog/best-aso-agency/", label: "How to choose an ASO agency" },
       { href: "/success-stories/", label: "Case studies" },
     ],
   },

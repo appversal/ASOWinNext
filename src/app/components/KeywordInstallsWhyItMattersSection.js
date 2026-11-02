@@ -21,18 +21,21 @@ const KeywordInstallsWhyItMattersSection = () => {
             
             <div className="space-y-6">
               <div>
-                <div className="text-4xl font-bold text-[#fdb124] mb-2">85%</div>
-                <p className="text-gray-300">Of app installs begin with search discovery</p>
+                <div className="text-4xl font-bold text-[#fdb124] mb-2">~65%</div>
+                <p className="text-gray-300">
+                  Of App Store downloads happen directly after a search, according to{" "}
+                  <a href="https://searchads.apple.com/" className="underline" rel="noopener noreferrer" target="_blank">Apple Search Ads</a>
+                </p>
               </div>
               
               <div className="border-t border-white/20 pt-6">
-                <div className="text-3xl font-bold text-[#fdb124] mb-2">Top 5 Keywords</div>
-                <p className="text-gray-300">Account for 40-60% of organic search traffic</p>
+                <div className="text-3xl font-bold text-[#fdb124] mb-2">Top results</div>
+                <p className="text-gray-300">Only the first one or two apps fit on a phone screen in App Store search results</p>
               </div>
 
               <div className="border-t border-white/20 pt-6">
-                <div className="text-3xl font-bold text-[#fdb124] mb-2">3x-5x</div>
-                <p className="text-gray-300">Higher CTR for top-ranked apps vs mid-position rankings</p>
+                <div className="text-3xl font-bold text-[#fdb124] mb-2">Relevance first</div>
+                <p className="text-gray-300">Both stores rank apps on keyword relevance, conversion and ratings, not on installs alone</p>
               </div>
             </div>
           </div>

@@ -346,7 +346,7 @@ export const advanced03 = [
       ]],
       ["When an agency fits", [
         "Agencies fit apps that need ongoing optimization across several areas: continuous keyword and creative testing, multiple markets and languages, ratings and reputation management, paid and organic coordination, and regular reporting. They also suit teams without internal ASO expertise who need strategy as well as execution.",
-        "Our [how to choose the best ASO agency](/blog/how-to-choose-the-best-aso-agency/) and [best ASO agency](/blog/best-aso-agency/) guides explain evaluating agencies.",
+        "Our [best ASO agency checklist](/blog/best-aso-agency/) and [top ASO agencies](/blog/top-aso-agencies/) guides explain how to evaluate agencies.",
       ]],
       ["Cost and value", [
         "Freelancers usually cost less per project or month, while agencies cost more but provide broader capacity and skills. Compare cost with expected impact: an agency that runs continuous tests across markets may produce more value than a freelancer's one-time work, while a freelancer may be the better value for a single focused task.",
@@ -406,7 +406,7 @@ export const advanced03 = [
       ["Are ranking guarantees a red flag?", "Often yes. Rankings depend on many factors, and guarantees can signal risky tactics."],
       ["Can I combine a freelancer and an agency?", "Yes. Many teams use agencies for strategy and testing and freelancers for specific tasks."],
     ],
-    related: ["in-house-aso-team-vs-agency", "how-to-choose-the-best-aso-agency", "best-aso-agency", "aso-roi-and-cost-benchmarks"],
+    related: ["in-house-aso-team-vs-agency", "best-aso-agency", "top-aso-agencies", "aso-roi-and-cost-benchmarks"],
     serviceLinks: ["/services/app-store-optimization/", "/contact/"],
     sources: [],
   }),

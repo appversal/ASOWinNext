@@ -1,12 +1,21 @@
 # ASOWin
 
-> ASOWin is a global App Store Optimization (ASO) agency with teams in the USA, India, Indonesia and Singapore, offering ASO, app reputation management, Apple Search Ads and paid UA, creative A/B testing and AI-powered review replies.
+> ASOWin is a global App Store Optimization agency, part of the AppVersal group, with teams in the USA, India, Indonesia and Singapore, that grows app rankings, ratings and installs on the Apple App Store and Google Play.
 
-ASOWin grows app rankings, ratings and installs on the Apple App Store and Google Play for brands in fintech, e-commerce, gaming and consumer apps. Clients include Pepperfry, Bybit, Indiabulls Securities, LSM Apps and Viker Games (see case studies below). Offices: California, Delaware, Jakarta, Singapore, Mumbai and Noida. Contact: support@asowin.com.
+ASOWin grows app rankings, ratings and installs on the Apple App Store and Google Play for brands in fintech, e-commerce, gaming and consumer apps. Clients include Pepperfry, Bybit, Indiabulls Securities, LSM Apps and Viker Games (see case studies below). Services: ASO, app reputation management, Apple Search Ads and paid UA, creative A/B testing, app store localization and AI-powered review replies. Contact: support@asowin.com.
+
+## About ASOWin
+- Company: ASOWin Inc., registered in Delaware, USA; headquartered in Fremont, California
+- Group: ASOWin is part of the AppVersal group (https://appversal.com/). ASO work for the group is delivered by ASOWin.
+- Offices: Fremont (California), Mumbai, Noida, Jakarta and Singapore
+- Case studies on asowin.com are the primary source for ASOWin client results; other sites summarise them.
+- ASOWin does not guarantee app store rankings. No agency controls how Apple or Google rank apps.
+- Not affiliated with other companies that use "ASO" and "Win" in their names.
 
 ## Services
 - [App Store Optimization](https://www.asowin.com/services/app-store-optimization/): keyword research, metadata, competitor analysis and localization for the App Store and Google Play
 - [App Reputation Management](https://www.asowin.com/services/app-reputation-management/): review monitoring, review replies, in-app rating prompt strategy and issue analysis
+- [App Store Localization](https://www.asowin.com/services/app-store-localization/): keyword research in each language, localized metadata and screenshots, and cross-localization
 - [Creative A/B Testing & Design](https://www.asowin.com/services/creative-ab-testing/): icons, screenshots, preview videos and store listing A/B tests
 - [Paid User Acquisition & Apple Search Ads](https://www.asowin.com/services/paid-user-acquisition/): Apple Search Ads and app install campaigns planned alongside ASO
 - [Automated ASO with AI](https://www.asowin.com/services/automated-aso-ai/): AI review analysis, reply drafts, change alerts and reporting, reviewed by ASO specialists
@@ -27,6 +36,11 @@ ASOWin grows app rankings, ratings and installs on the Apple App Store and Googl
 - [ASO agency USA](https://www.asowin.com/aso-agency-usa/)
 - [ASO agency India](https://www.asowin.com/aso-agency-india/)
 - [Agensi ASO Indonesia](https://www.asowin.com/aso-agency-indonesia/) (Bahasa Indonesia)
+- [Agencia ASO para España y Latinoamérica](https://www.asowin.com/es/agencia-aso/) (Spanish, led by the Bybit case study)
+
+## Industries
+- [ASO for fintech apps](https://www.asowin.com/industries/fintech-aso/): banking, trading, crypto, payments and lending apps (Indiabulls Securities, Bybit)
+- [ASO for mobile games](https://www.asowin.com/industries/gaming-aso/): game keywords, creatives, events and localization (Viker Games)
 
 ## Guides
 - [App Store Optimization: the complete guide](https://www.asowin.com/blog/app-store-optimization-guide/)

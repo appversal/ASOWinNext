@@ -21,6 +21,12 @@ const rows = [
     includes: "Icons, screenshots, preview videos, store A/B tests",
   },
   {
+    name: "App Store Localization",
+    href: "/services/app-store-localization/",
+    bestFor: "Apps expanding into new languages and markets",
+    includes: "Native keyword research, localized metadata and screenshots, cross-localization",
+  },
+  {
     name: "Keyword Installs",
     href: "/services/keyword-installs/",
     bestFor: "Launches or campaigns that need a short push for specific keywords",

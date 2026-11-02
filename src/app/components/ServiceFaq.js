@@ -2,8 +2,16 @@ import { SERVICE_FAQS } from "../(site)/services/service-faqs";
 
 const SITE = "https://www.asowin.com";
 
-// Visible FAQ plus Service, BreadcrumbList and FAQPage schema for a service page.
+const LABELS = {
+  en: { title: "Frequently Asked Questions", intro: "Common questions about" },
+  id: { title: "Pertanyaan yang Sering Diajukan", intro: "Pertanyaan umum tentang" },
+  es: { title: "Preguntas frecuentes", intro: "Preguntas comunes sobre" },
+};
+
+// Visible FAQ plus Service, BreadcrumbList and FAQPage schema for a service or market page.
 // Uses <details> so every answer is in the server HTML and works without JavaScript.
+// Entry options: `faqOnly` (homepage: FAQPage only), `areaServed` (market pages),
+// `lang: "id"` / `"es"` (translated labels), `title` / `intro` (heading overrides).
 const ServiceFaq = ({ slug }) => {
   const service = SERVICE_FAQS[slug];
   if (!service) return null;
@@ -15,7 +23,7 @@ const ServiceFaq = ({ slug }) => {
   }
   crumbs.push({ name: service.name, item: url });
 
-  const graph = [
+  const graph = service.faqOnly ? [] : [
     {
       "@type": "Service",
       "@id": `${url}#service`,
@@ -24,7 +32,8 @@ const ServiceFaq = ({ slug }) => {
       description: service.description,
       url,
       provider: { "@id": `${SITE}/#organization` },
-      areaServed: "Worldwide",
+      areaServed: service.areaServed || "Worldwide",
+      ...(service.lang && { inLanguage: service.lang }),
     },
     {
       "@type": "BreadcrumbList",
@@ -67,10 +76,10 @@ const ServiceFaq = ({ slug }) => {
                 id={`${slug}-faq-title`}
                 className="text-4xl sm:text-5xl font-bold text-[#111111] mb-4"
               >
-                Frequently Asked Questions
+                {service.title || (LABELS[service.lang] || LABELS.en).title}
               </h2>
               <p className="text-gray-600 text-lg max-w-2xl mx-auto">
-                Common questions about {service.name}
+                {service.intro || `${(LABELS[service.lang] || LABELS.en).intro} ${service.name}`}
               </p>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-4 items-start">

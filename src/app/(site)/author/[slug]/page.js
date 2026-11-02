@@ -1,3 +1,4 @@
+import { fitDescription } from "../../blog/seoText";
 import React from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
@@ -18,7 +19,7 @@ export async function generateMetadata({ params }) {
   if (!author) return {};
   const url = `/author/${slug}/`;
   const title = `${author.name} | ASOWin Author`;
-  const description = author.bio || `Articles by ${author.name} on the ASOWin blog.`;
+  const description = fitDescription(author.bio || `Articles by ${author.name} on the ASOWin blog.`);
   return {
     title,
     description,

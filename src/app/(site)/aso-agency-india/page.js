@@ -1,6 +1,9 @@
 "use client";
 
 import Link from "next/link";
+import MarketLocal from "@/app/components/market/MarketLocal";
+import { MARKETS } from "@/app/components/market/marketContent";
+import ServiceFaq from "@/app/components/ServiceFaq";
 import { PROOF } from "../../components/proofFacts";
 import Image from "next/image";
 
@@ -298,12 +301,8 @@ function ContactForm({ variant = "full" }) {
 import { SiGoogleplay, SiAppstore } from "react-icons/si";
 
 export default function AsoAgencyPage() {
-    const metrics = [
-        { value: "37%", label: "Average Conversion Rate", sublabel: "for all Clients Combined" },
-        { value: "136", label: "Keywords Ranked", sublabel: "#1 Position" },
-        { value: "10M+", label: "Downloads Delivered", sublabel: "for all Clients Combined" },
-        { value: "90", label: "Days to Results", sublabel: "Guaranteed Timeline" },
-    ];
+    const market = MARKETS.india;
+    const metrics = market.metrics;
 
     const services = [
         {
@@ -314,7 +313,7 @@ export default function AsoAgencyPage() {
         {
             icon: Target,
             title: "Keyword Research & Rankings",
-            description: "We identify the most relevant and high-performing keywords for your app, enabling it to appear in top searches across Play Store and App Store.",
+            description: "We research the keywords Indian users search in English, Hindi, regional languages and Hinglish, so your app appears in the searches that matter on Google Play and the App Store.",
         },
         {
             icon: BarChart3,
@@ -324,12 +323,12 @@ export default function AsoAgencyPage() {
         {
             icon: Star,
             title: "App Reputation Management",
-            description: "Maintain a positive app image with our reputation management services. We handle user reviews and ratings, respond to feedback professionally.",
+            description: "Reply to high review volumes in English and Hindi, time in-app rating prompts, and turn recurring complaints into product fixes, as we did for Pepperfry.",
         },
         {
             icon: Rocket,
             title: "Paid User Acquisition (UA)",
-            description: "Supercharge your growth with targeted user acquisition campaigns. We leverage Apple Search Ads and other paid channels to maximize ROI.",
+            description: "Google App Campaigns and Apple Search Ads planned alongside ASO, so paid traffic lands on listings already built to convert Indian users.",
         },
         {
             icon: Smartphone,
@@ -406,7 +405,7 @@ export default function AsoAgencyPage() {
                         </Link>
                         <Badge className="bg-primary/20 text-primary border-primary/30 px-4 py-1">
                             <Award className="w-3 h-3 mr-1" />
-                            Trusted by Top Indian Apps
+                            {market.badge}
                         </Badge>
                     </div>
 
@@ -427,7 +426,7 @@ export default function AsoAgencyPage() {
                             </h1>
 
                             <p className="text-xl sm:text-2xl text-muted-foreground mb-8 max-w-xl" data-testid="text-subheadline">
-                                Rank Higher on Play Store & App Store in 90 Days. Guaranteed.
+                                {market.subheadline}
                             </p>
 
                             {/* Hero Form */}
@@ -523,9 +522,9 @@ export default function AsoAgencyPage() {
             <section className="py-20">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                     <div className="text-center mb-16">
-                        <Badge variant="secondary" className="mb-4">Results That Speak</Badge>
+                        <Badge variant="secondary" className="mb-4">{market.resultsBadge}</Badge>
                         <h2 className="text-3xl sm:text-4xl font-bold mb-4">
-                            Some incredible numbers witnessed across the globe
+                            {market.resultsHeading}
                         </h2>
                     </div>
 
@@ -542,6 +541,8 @@ export default function AsoAgencyPage() {
                     </div>
                 </div>
             </section>
+
+            <MarketLocal market="india" />
 
             {/* Quick Form Section */}
             <section className="py-16 bg-primary/5 border-y border-primary/20">
@@ -622,8 +623,8 @@ export default function AsoAgencyPage() {
                                 The ASO Agency That <span className="gradient-text">Delivers Results</span>
                             </h2>
                             <p className="text-lg text-muted-foreground mb-8">
-                                We're not just another app ranking agency. We combine deep Play Store ASO expertise
-                                with App Store keyword ranking strategies to maximize your app's organic growth.
+                                Our Mumbai and Noida teams work in your time zone and know the Indian market: Google Play-first
+                                listings, regional-language keywords, fintech compliance and festival-season planning.
                             </p>
 
                             <div className="grid sm:grid-cols-2 gap-4 mb-8">
@@ -687,6 +688,8 @@ export default function AsoAgencyPage() {
                     </div>
                 </div>
             </section >
+
+            <ServiceFaq slug="aso-agency-india" />
 
             {/* Full Contact Form Section: split card, brand panel + form */}
             <section className="py-20 sm:py-24 bg-[#FFF6EE]" id="contact">
@@ -767,7 +770,7 @@ export default function AsoAgencyPage() {
                 <div className="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
                     <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 border border-white/20 mb-8">
                         <Zap className="w-4 h-4 text-white" />
-                        <span className="text-sm font-medium text-white">Limited Spots Available This Month</span>
+                        <span className="text-sm font-medium text-white">Free ASO audit for every new app</span>
                     </div>
 
                     <h2 className="text-3xl sm:text-4xl font-bold text-white mb-4">
@@ -792,7 +795,7 @@ export default function AsoAgencyPage() {
                         </div>
                         <div className="flex items-center gap-2">
                             <Clock className="w-4 h-4" />
-                            <span>Results in 90 days</span>
+                            <span>Free audit in 24 hours</span>
                         </div>
                     </div>
                 </div>
@@ -814,12 +817,12 @@ export default function AsoAgencyPage() {
                             </Link>
                         </div>
                         <p className="text-sm text-muted-foreground text-center">
-                            The #1 App Store Optimization Agency for Growth-Focused Apps
+                            A global App Store Optimization agency for growth-focused apps
                         </p>
                         <div className="flex items-center gap-4">
-                            <a href="mailto:hello@asowin.com" className="flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground transition-colors">
+                            <a href="mailto:support@asowin.com" className="flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground transition-colors">
                                 <Mail className="w-4 h-4" />
-                                <span>hello@asowin.com</span>
+                                <span>support@asowin.com</span>
                             </a>
                         </div>
                     </div>

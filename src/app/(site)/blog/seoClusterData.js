@@ -655,7 +655,7 @@ const clusterPosts = [
       { q: "Can one generalist growth marketer own ASO alongside paid acquisition?", a: "It works at the founder-led stage, but ASO and paid acquisition each require enough specialist depth that combining them long-term usually means both are executed at a surface level." },
       { q: "What should you look for in an agency if you already have an in-house team?", a: "Look for specialist capacity your team lacks—such as localization depth, creative testing velocity, or cross-client benchmarking—rather than overlapping generalist strategy work." },
     ],
-    related: ["aso-agency-usa-guide", "why-fortune-500-needs-aso-agency", "aso-kpis-metrics", "aso-audit-checklist"],
+    related: ["aso-agency-usa-guide", "in-house-aso-team-vs-agency", "aso-kpis-metrics", "aso-audit-checklist"],
     serviceLinks: ["/services/app-store-optimization/", "/contact/"],
     sources: [],
   }),

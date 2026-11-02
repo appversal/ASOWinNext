@@ -1,6 +1,8 @@
 import { blogPosts } from "./blogData";
+import { fitDescription, fitTitle } from "./seoText";
 
-export function postMetadata(slug, base) {
+export function postMetadata(slug, raw) {
+  const base = { ...raw, title: fitTitle(raw.title), description: fitDescription(raw.description) };
   const post = blogPosts.find((item) => item.slug === slug);
   const url = `/blog/${slug}/`;
   const image = post && (post.ogImage || post.heroImage);

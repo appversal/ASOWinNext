@@ -23,7 +23,7 @@ const HiringASOExpertFaq = () => {
     },
     {
       id: '4',
-      question: 'How do I know if an ASO Expert understands my market (e.g., Delaware, California)?',
+      question: 'How do I know if an ASO Expert understands my market (e.g., the US, India or Indonesia)?',
       answer: 'Ask about their regional market experience directly. Good indicators: Named apps they\'ve optimized in your region; understanding of regional user behavior and device preferences; knowledge of local competition; experience with regional language nuances or cultural factors; discussion of how strategies differ by region. Red flags: Treating all US markets identically, no regional case studies, inability to discuss market-specific challenges or opportunities.'
     },
     {

@@ -32,7 +32,7 @@ const AppReputationWhyChooseSection = () => {
     {
       icon: '✨',
       title: 'Proven Track Record',
-      description: 'We\'ve managed reputation for 500+ apps with average rating improvements to 4.5+ stars.'
+      description: 'For Pepperfry, review replies and feedback-driven fixes took the app rating from about 3.9 to 4.4+, sustained month on month.'
     }
   ];
 

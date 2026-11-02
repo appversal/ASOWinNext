@@ -58,7 +58,7 @@ const ReviewRepliesFeatures = () => {
       deliverables: [
         "Always-On Automation",
         "Zero Manual Work Required",
-        "Consistent Quality Guaranteed"
+        "Consistent Brand Voice"
       ],
       bgColor: "from-[#f0f4ff] to-[#d9e4ff]",
       textColor: "text-indigo-800"

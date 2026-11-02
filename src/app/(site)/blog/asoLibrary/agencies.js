@@ -76,7 +76,7 @@ export const agencyGuides = [
       ["Is ASOWin on this list because ASOWin wrote it?", "ASOWin wrote this list and includes itself, which we state openly. Every other agency is described only with facts from its own website or public directories, and none is scored or ranked against ASOWin."],
       ["Which ASO agencies work with Indian apps?", "ASOWin, Studio Mosaic and Infidigit all have teams in India. ASOWin’s Indian case studies include Pepperfry and Indiabulls Securities."],
     ],
-    related: ["best-aso-agency", "best-app-store-optimization-agency", "how-to-choose-the-best-aso-agency", "aso-roi-and-cost-benchmarks"],
+    related: ["best-aso-agency", "best-app-store-optimization-agency", "in-house-aso-team-vs-agency", "aso-roi-and-cost-benchmarks"],
     serviceLinks: ["/services/app-store-optimization/", "/contact/"],
   }),
 
@@ -151,7 +151,7 @@ export const agencyGuides = [
       ["What are red flags when hiring an ASO agency?", "Guaranteed #1 rankings, promises of results in a fixed number of days, buying reviews or installs, one set of metadata for both stores, and reporting that shows rankings but never installs."],
       ["Is an ASO agency better than doing ASO in-house?", "An agency is better when you need experience across many apps and markets quickly. In-house is better when ASO is central to your growth and you can hire a senior specialist. Many teams use both."],
     ],
-    related: ["top-aso-agencies", "best-app-store-optimization-agency", "how-to-choose-the-best-aso-agency", "aso-kpis-metrics"],
+    related: ["top-aso-agencies", "best-app-store-optimization-agency", "in-house-aso-team-vs-agency", "aso-kpis-metrics"],
     serviceLinks: ["/services/app-store-optimization/", "/contact/"],
   }),
 

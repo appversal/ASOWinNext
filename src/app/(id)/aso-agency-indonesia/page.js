@@ -1,6 +1,9 @@
 "use client";
 
 import Link from "next/link";
+import MarketLocal from "@/app/components/market/MarketLocal";
+import { MARKETS } from "@/app/components/market/marketContent";
+import ServiceFaq from "@/app/components/ServiceFaq";
 import { PROOF } from "../../components/proofFacts";
 import Image from "next/image";
 
@@ -286,12 +289,8 @@ function ContactForm({ variant = "full" }) {
 }
 
 export default function AsoAgencyPage() {
-    const metrics = [
-        { value: "37%", label: "Rata-rata tingkat konversi", sublabel: "dari seluruh klien." },
-        { value: "136", label: "Kata kunci yang berhasil", sublabel: "menempati peringkat pertama." },
-        { value: "10M+", label: "Total unduhan yang telah", sublabel: "dihasilkan untuk seluruh klien." },
-        { value: "90", label: "Target waktu pencapaian", sublabel: "hasil yang dijamin." },
-    ];
+    const market = MARKETS.indonesia;
+    const metrics = market.metrics;
 
     const services = [
         {
@@ -386,7 +385,7 @@ export default function AsoAgencyPage() {
                         </Link>
                         <Badge className="bg-primary/20 text-primary border-primary/30 px-4 py-1">
                             <Award className="w-3 h-3 mr-1" />
-                            Dipercaya oleh Aplikasi Top Indonesia
+                            {market.badge}
                         </Badge>
                     </div>
 
@@ -408,7 +407,7 @@ export default function AsoAgencyPage() {
                             </h1>
 
                             <p className="text-xl sm:text-2xl text-muted-foreground mb-8 max-w-xl" data-testid="text-subheadline">
-                                Peringkat Lebih Tinggi di Play Store & App Store dalam 90 Hari. Terjamin.
+                                {market.subheadline}
                             </p>
 
                             {/* Hero Form */}
@@ -461,9 +460,9 @@ export default function AsoAgencyPage() {
             <section className="py-20">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                     <div className="text-center mb-16">
-                        <Badge variant="secondary" className="mb-4">Hasil yang Berbicara</Badge>
+                        <Badge variant="secondary" className="mb-4">{market.resultsBadge}</Badge>
                         <h2 className="text-3xl sm:text-4xl font-bold mb-4">
-                            Pencapaian luar biasa di berbagai negara
+                            {market.resultsHeading}
                         </h2>
                     </div>
 
@@ -480,6 +479,8 @@ export default function AsoAgencyPage() {
                     </div>
                 </div>
             </section>
+
+            <MarketLocal market="indonesia" />
 
             {/* Quick Form Section */}
             <section className="py-16 bg-primary/5 border-y border-primary/20">
@@ -626,6 +627,8 @@ export default function AsoAgencyPage() {
                 </div>
             </section>
 
+            <ServiceFaq slug="aso-agency-indonesia" />
+
             {/* Full Contact Form Section: split card, brand panel + form */}
             <section className="py-20 sm:py-24 bg-[#FFF6EE]" id="contact">
                 <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -706,7 +709,7 @@ export default function AsoAgencyPage() {
                 <div className="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
                     <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 border border-white/20 mb-8">
                         <Zap className="w-4 h-4 text-white" />
-                        <span className="text-sm font-medium text-white">Slot Terbatas Bulan Ini</span>
+                        <span className="text-sm font-medium text-white">Audit ASO gratis untuk setiap aplikasi baru</span>
                     </div>
 
                     <h2 className="text-3xl sm:text-4xl font-bold text-white mb-4">
@@ -731,7 +734,7 @@ export default function AsoAgencyPage() {
                         </div>
                         <div className="flex items-center gap-2">
                             <Clock className="w-4 h-4" />
-                            <span>Hasil dalam 90 hari</span>
+                            <span>Audit gratis dalam 24 jam</span>
                         </div>
                     </div>
                 </div>
@@ -753,12 +756,12 @@ export default function AsoAgencyPage() {
                             </Link>
                         </div>
                         <p className="text-sm text-muted-foreground text-center">
-                            Agensi Optimasi App Store #1 untuk Aplikasi yang Berfokus pada Pertumbuhan
+                            Agensi Optimasi App Store global untuk aplikasi yang berfokus pada pertumbuhan
                         </p>
                         <div className="flex items-center gap-4">
-                            <a href="mailto:hello@asowin.com" className="flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground transition-colors">
+                            <a href="mailto:support@asowin.com" className="flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground transition-colors">
                                 <Mail className="w-4 h-4" />
-                                <span>hello@asowin.com</span>
+                                <span>support@asowin.com</span>
                             </a>
                         </div>
                     </div>

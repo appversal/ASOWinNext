@@ -20,7 +20,7 @@ export default function PaidVsOrganicUserAcquisitionBalance() {
 
     <p>We have seen the cost of getting this wrong from both directions. Apps that pour budget almost exclusively into paid channels often hit a ceiling where every incremental install costs more than the last, because the underlying store listing was never built to convert cold traffic efficiently. Apps that avoid paid spend entirely, hoping organic growth alone will carry them, frequently underestimate how long it takes to build meaningful keyword authority in a competitive category, and lose ground to competitors willing to invest in both channels simultaneously.</p>
 
-    <p>This balance matters just as much for large, established brands as it does for startups. As we cover in <a href="/blog/why-fortune-500-needs-aso-agency/" class="text-[#306777] underline hover:opacity-80">our guide on why Fortune 500 companies need a dedicated ASO agency</a>, well-known consumer brands often assume their existing brand recognition alone will drive organic installs, only to find that paid acquisition is still necessary to defend category visibility against smaller, more ASO-savvy competitors.</p>
+    <p>This balance matters just as much for large, established brands as it does for startups. As we cover in <a href="/blog/in-house-aso-team-vs-agency/" class="text-[#306777] underline hover:opacity-80">our guide on why Fortune 500 companies need a dedicated ASO agency</a>, well-known consumer brands often assume their existing brand recognition alone will drive organic installs, only to find that paid acquisition is still necessary to defend category visibility against smaller, more ASO-savvy competitors.</p>
 
     <h2 id="heading-1">Short Answer: What Is the Right Paid to Organic Ratio?</h2>
 
