@@ -24,6 +24,22 @@ export default function IosVsAndroidAsoDifferences() {
 
     <p>The key difference is how each store indexes keywords and structures metadata. Apple relies on the app name, subtitle, and a hidden 100-character keyword field, while Google Play indexes the title, short description, and the entire long description text. This single structural difference changes almost every other decision in your ASO strategy, from keyword density to how you plan custom listings.</p>
 
+    <div class="aso-table-wrap">
+      <table class="aso-table">
+        <caption class="sr-only">iOS vs Android ASO differences</caption>
+        <thead><tr><th scope="col"></th><th scope="col">App Store (iOS)</th><th scope="col">Google Play (Android)</th></tr></thead>
+        <tbody>
+          <tr><th scope="row">Title</th><td>App name, up to 30 characters</td><td>Title, up to 30 characters</td></tr>
+          <tr><th scope="row">Second text field</th><td>Subtitle, up to 30 characters</td><td>Short description, up to 80 characters</td></tr>
+          <tr><th scope="row">Keywords</th><td>Hidden keyword field, 100 characters</td><td>No keyword field; the full description is indexed</td></tr>
+          <tr><th scope="row">Long description</th><td>Not used for search ranking</td><td>Up to 4,000 characters, indexed for search</td></tr>
+          <tr><th scope="row">Alternate listings</th><td>Custom product pages, up to 70</td><td>Custom store listings, up to 50</td></tr>
+          <tr><th scope="row">Native A/B testing</th><td>Product page optimization</td><td>Store listing experiments</td></tr>
+          <tr><th scope="row">Rating shown</th><td>Per country, can be reset with a new version</td><td>Weighted toward recent ratings, per country and device</td></tr>
+        </tbody>
+      </table>
+    </div>
+
     <h2 id="heading-2">Why Ranking Algorithms Are Not Interchangeable</h2>
 
     <p>Both Apple and Google evaluate keyword relevance, download velocity, engagement, and ratings when deciding how to rank an app for a given search term. But the weighting behind those signals is proprietary and different for each store. We go into the specific signals in more depth in our guide to <a href="/blog/app-store-ranking-factors-2026/" class="text-[#306777] underline hover:opacity-80">App Store ranking factors for 2026</a> and our companion piece on <a href="/blog/google-play-ranking-strategies-2026/" class="text-[#306777] underline hover:opacity-80">Google Play ranking strategies</a>.</p>
@@ -64,7 +80,7 @@ export default function IosVsAndroidAsoDifferences() {
 
     <p>Apple's Custom Product Pages and Google's Custom Store Listings solve a similar problem in different ways. Both let you build variant listings tailored to a specific traffic source, campaign, or audience segment without altering your default listing.</p>
 
-    <p>Apple allows up to 35 custom product page variations that can be linked to specific ad campaigns or external links, while Google Play's custom store listings can be targeted by country, or tied to specific acquisition sources. Neither tool replaces core ASO work, but both are powerful for testing messaging against specific segments before rolling changes into your default listing.</p>
+    <p>Apple allows up to 70 custom product page variations that can be linked to specific ad campaigns or external links, while Google Play's custom store listings can be targeted by country, or tied to specific acquisition sources. Neither tool replaces core ASO work, but both are powerful for testing messaging against specific segments before rolling changes into your default listing.</p>
 
     <p>Where these tools genuinely shine is in reconciling paid and organic strategy. A campaign targeting a specific user segment, say small business owners rather than freelancers, can point to a custom listing variant that speaks directly to that segment's language and pain points, rather than forcing every visitor through the same generic default page regardless of how they arrived.</p>
 

@@ -1,3 +1,4 @@
+import { tables } from "./asoLibrary/tables";
 import { libraryPosts } from "./asoLibrary";
 
 const publishedAt = "2026-08-05";
@@ -742,7 +743,11 @@ const CATEGORY_ALIASES = {
 };
 const normalizeCategory = (name) => (CATEGORY_ALIASES[name] || name).replace(/ & /g, " and ");
 
-export const seoClusterPosts = clusterPosts.map((post) => ({ ...post, category: normalizeCategory(post.category) }));
+export const seoClusterPosts = clusterPosts.map((post) => ({
+  ...post,
+  category: normalizeCategory(post.category),
+  ...(tables[post.slug] && { table: tables[post.slug] }),
+}));
 
 export const seoClusterBySlug = Object.fromEntries(
   seoClusterPosts.map((post) => [post.slug, post]),

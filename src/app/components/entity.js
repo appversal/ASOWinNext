@@ -73,7 +73,7 @@ export const organizationSchema = {
   },
   sameAs: ["https://www.linkedin.com/company/asowin/"],
   ...(PARENT && {
-    parentOrganization: { "@type": "Organization", name: PARENT.name, url: PARENT.url },
+    parentOrganization: { "@type": "Organization", "@id": `${PARENT.url}#organization`, name: PARENT.name, url: PARENT.url },
   }),
 };
 

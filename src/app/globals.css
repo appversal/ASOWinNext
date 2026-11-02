@@ -716,3 +716,11 @@ img {
   font-weight: 600;
 }
 .blog-content a.aso-chip-link:hover { background: #1a4d5a; color: #fff; }
+
+/* Comparison tables in guides */
+.blog-content .aso-table-wrap { overflow-x: auto; margin: 1.25rem 0 0.75rem; border: 1px solid #e5e7eb; border-radius: 12px; }
+.blog-content table.aso-table { margin: 0; width: 100%; border-collapse: collapse; font-size: 0.95rem; line-height: 1.5; min-width: 560px; }
+.blog-content table.aso-table th, .blog-content table.aso-table td { padding: 0.75rem 0.9rem; text-align: left; vertical-align: top; border-bottom: 1px solid #e5e7eb; }
+.blog-content table.aso-table thead th { background: #014458; color: #fff; font-weight: 600; }
+.blog-content table.aso-table tbody th { background: #f8fafc; color: #111827; font-weight: 600; width: 22%; }
+.blog-content table.aso-table tbody tr:last-child th, .blog-content table.aso-table tbody tr:last-child td { border-bottom: 0; }

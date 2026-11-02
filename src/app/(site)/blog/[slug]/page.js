@@ -84,6 +84,24 @@ const serviceCard = (href) => {
   return `<a class="aso-service" href="${escapeHtml(href)}"><strong>${match[1]}</strong><span>${match[2]}</span></a>`;
 };
 
+// Side-by-side answers render as a real <table> so search and answer engines can
+// lift rows directly. The first column is the row label.
+const comparisonTable = ({ title, intro, headers, rows, verdict }) => `
+    <h2 id="comparison">${escapeHtml(title)}</h2>
+    ${intro ? `<p>${inline(intro)}</p>` : ""}
+    <div class="aso-table-wrap">
+      <table class="aso-table">
+        <thead><tr>${headers.map((h) => `<th scope="col">${escapeHtml(h)}</th>`).join("")}</tr></thead>
+        <tbody>${rows
+          .map(
+            (row) =>
+              `<tr>${row.map((cell, i) => (i === 0 ? `<th scope="row">${escapeHtml(cell)}</th>` : `<td>${inline(cell)}</td>`)).join("")}</tr>`,
+          )
+          .join("")}</tbody>
+      </table>
+    </div>
+    ${verdict ? `<p class="aso-note"><strong>Verdict:</strong> ${inline(verdict)}</p>` : ""}`;
+
 const buildContent = (post) => {
   const relatedLinks = post.related
     .map((slug) => blogPosts.find((item) => item.slug === slug))
@@ -125,6 +143,7 @@ const buildContent = (post) => {
       ${hub ? `<a class="aso-chip aso-chip-link" href="/blog/category/${hub.slug}/">${escapeHtml(hub.name)}</a>` : ""}
       ${topics.map((topic) => `<span class="aso-chip">${escapeHtml(topic)}</span>`).join("")}
     </div>
+    ${post.table ? comparisonTable(post.table) : ""}
     ${post.sections
       .map(
         (section, index) => `

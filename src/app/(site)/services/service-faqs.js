@@ -81,6 +81,10 @@ export const SERVICE_FAQS = {
         a: "Run each test for at least seven days so it covers a full weekly cycle, and until the store reports a confident result. Low-traffic apps may need several weeks. Ending a test early often picks a winner that does not hold up.",
       },
       {
+        q: "What is the difference between product page optimization and store listing experiments?",
+        a: "Both are native A/B tests. Product page optimization on the App Store tests up to three treatments of the icon, screenshots and preview videos against the original. Store listing experiments on Google Play test up to three variants of graphics and text against the current listing. Each splits real store traffic and reports the conversion difference.",
+      },
+      {
         q: "What are Custom Product Pages and Custom Store Listings?",
         a: "They are alternate versions of an app's store page. Apple's Custom Product Pages and Google Play's Custom Store Listings let you show different screenshots and messaging to different audiences, ads or countries, so each visitor sees the most relevant version.",
       },
@@ -269,6 +273,10 @@ export const SERVICE_FAQS = {
       {
         q: "Can you work on fintech and lending apps in India?",
         a: "Yes. Finance apps in India face extra Google Play declarations and close review of their claims. We keep listings accurate, avoid promises about returns or approvals, and check metadata against current store policy.",
+      },
+      {
+        q: "How much does ASO cost in India?",
+        a: "It depends on the number of apps, stores and Indian languages, and on whether you need creative production or review management as well. ASOWin starts with a free ASO audit, then quotes a monthly retainer for the agreed scope. Regional-language listings add cost per language, so a common approach is to start with English and Hindi and expand from there.",
       },
       {
         q: "Where is ASOWin's team in India?",
