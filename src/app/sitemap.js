@@ -27,6 +27,7 @@ const STATIC_PAGES = [
   ["/industries/gaming-aso/", "2026-11-02", 0.85, "monthly"],
   ["/automated-review-replies/", "2026-05-04", 0.75, "monthly"],
   ["/google-play-store-optimization/", "2026-10-22", 0.8, "monthly"],
+  ["/faq/", "2026-11-05", 0.6, "monthly"],
   ["/media-kit/", "2026-11-02", 0.5, "monthly"],
   ["/success-stories/", "2026-05-04", 0.75, "monthly"],
   ["/book/", "2026-05-04", 0.7, "yearly"],
