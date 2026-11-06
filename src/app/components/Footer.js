@@ -50,6 +50,7 @@ const footerColumns = [
       { label: "ASO Glossary", href: "/blog/aso-glossary-key-terms/" },
       { label: "Our Book", href: "/book/" },
       { label: "Media Kit", href: "/media-kit/" },
+      { label: "FAQ", href: "/faq/" },
     ],
   },
 ];

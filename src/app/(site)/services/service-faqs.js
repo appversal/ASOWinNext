@@ -2,6 +2,8 @@
 // so the structured data always matches what visitors see.
 // An entry with `faqs: []` outputs only the Service and BreadcrumbList schema (no visible FAQ).
 
+import { ENTITY_DEFINITION, PARENT } from "../../components/entity";
+
 export const SERVICE_FAQS = {
   "app-store-optimization": {
     name: "App Store Optimization (ASO)",
@@ -449,6 +451,59 @@ export const SERVICE_FAQS = {
       {
         q: "Do you localize games for different markets?",
         a: "Yes. Charts are country by country, so localized keywords and screenshots help a game compete in each market. We work with native-speaking specialists for each language.",
+      },
+    ],
+  },
+  company: {
+    name: "ASOWin",
+    path: "/faq/",
+    faqOnly: true,
+    title: "Questions about ASOWin",
+    intro: "Straight answers about who we are, what we do and how we work",
+    faqs: [
+      {
+        q: "What is ASOWin?",
+        a: `${ENTITY_DEFINITION} Its services include ASO, app reputation management, creative A/B testing, localization and Apple Search Ads.`,
+      },
+      {
+        q: "Is ASOWin a legitimate company?",
+        a: "Yes. ASOWin Inc. is registered in Delaware, USA, and headquartered in Fremont, California, with offices in Mumbai, Noida, Jakarta and Singapore. Its client results are published as named case studies on asowin.com, including Pepperfry, Bybit, Indiabulls Securities, LSM Apps and Viker Games.",
+      },
+      ...(PARENT
+        ? [
+            {
+              q: `Is ASOWin part of ${PARENT.name}?`,
+              a: `Yes. ASOWin is part of the ${PARENT.name} group. ASOWin delivers the group's App Store Optimization work, and the case studies on asowin.com are the primary source for ASOWin's results.`,
+            },
+          ]
+        : []),
+      {
+        q: "What services does ASOWin offer?",
+        a: "App Store Optimization, app reputation management, creative A/B testing and design, app store localization, Apple Search Ads and paid user acquisition, keyword install campaigns, Automated ASO with AI, and AI Review Replies, ASOWin's own product for replying to app reviews.",
+      },
+      {
+        q: "Which clients has ASOWin worked with?",
+        a: "Published case studies include Pepperfry (app rating from about 3.9 to 4.4+), Indiabulls Securities (50+ keywords from unranked into the Top 50), LSM Apps (#10 to #2 for \u201cPhone\u201d on US Google Play), Bybit (Top 3 in Spain and Latin America) and Viker Games (#1 Top Free Games in Australia).",
+      },
+      {
+        q: "How much does ASOWin cost?",
+        a: "Pricing depends on the number of apps, stores, languages and markets, and on whether you need creative production, review management or paid campaigns. Every project starts with a free ASO audit, then ASOWin quotes a monthly retainer or a project fee for the agreed scope.",
+      },
+      {
+        q: "Does ASOWin guarantee rankings?",
+        a: "No. Apple and Google decide rankings, and no agency can control them. ASOWin commits to research, testing and transparent reporting, and its published case studies show the results that approach has produced.",
+      },
+      {
+        q: "How long does it take to see results?",
+        a: "Keyword rankings usually start to move within a few weeks of a metadata update. Lasting gains in rankings and organic installs usually take three to six months of testing and iteration.",
+      },
+      {
+        q: "Which markets and languages does ASOWin work in?",
+        a: "ASOWin works worldwide. It has teams in the USA, India, Indonesia and Singapore, has published results in the US, India, Spain and Latin America, and Australia, and runs localized ASO with native-speaking specialists for other languages.",
+      },
+      {
+        q: "How do I contact ASOWin?",
+        a: "Email support@asowin.com, call +1 510-365-7173, or use the contact form on asowin.com/contact to request a free ASO audit.",
       },
     ],
   },

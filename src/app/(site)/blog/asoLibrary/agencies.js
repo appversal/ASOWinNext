@@ -25,7 +25,7 @@ export const agencyGuides = [
       ]],
       ["Phiture: ASO and mobile growth consultancy", [
         "Phiture is a mobile growth consultancy based in Berlin with an office in New York. It lists ASO alongside performance marketing, retention and CRM, subscription revenue and growth consulting.",
-        "It is well known in the ASO community: it runs the annual ASO Conference in Berlin, and co-founder Moritz Daan wrote the Advanced ASO book. Best for subscription and consumer apps that want ASO as part of a broader growth program.",
+        "It is well known in the ASO community: it runs the annual ASO Conference in Berlin, and co-founder Moritz Daan wrote the Advanced ASO book. Best for subscription and consumer apps that want ASO as part of a broader growth program. Comparing it with others? See [Phiture alternatives](/blog/phiture-alternatives/) and [ASOWin vs Phiture vs SplitMetrics](/blog/asowin-vs-phiture-vs-splitmetrics/).",
       ]],
       ["Moburst: full-service mobile-first agency", [
         "Moburst is a mobile-first digital agency headquartered in New York, founded in 2013, with offices in the US, London and Israel. ASO sits within its organic growth services next to SEO, alongside user acquisition and creative.",
@@ -49,11 +49,11 @@ export const agencyGuides = [
       ]],
       ["ASOWin: global ASO agency with published case studies", [
         "ASOWin is a global App Store Optimization agency with teams in the USA, India, Indonesia and Singapore. It offers ASO, app reputation management, creative A/B testing, Apple Search Ads and paid UA, and its own AI Review Replies product.",
-        "Its published case studies include Pepperfry (app rating from about 3.9 to 4.4+), Indiabulls Securities (50+ keywords from unranked into the Top 50), LSM Apps (#10 to #2 for “Phone” on US Google Play), Bybit (Top 3 in Spain and Latin America) and Viker Games (#1 Top Free Games in Australia). Best for fintech, e-commerce and gaming apps, and for teams growing in India, Southeast Asia and Spanish-speaking markets.",
+        "Its published case studies include Pepperfry (app rating from about 3.9 to 4.4+), Indiabulls Securities (50+ keywords from unranked into the Top 50), LSM Apps (#10 to #2 for “Phone” on US Google Play), Bybit (Top 3 in Spain and Latin America) and Viker Games (#1 Top Free Games in Australia). Best for fintech, e-commerce and gaming apps, and for teams growing in India, Southeast Asia and Spanish-speaking markets. See all [ASOWin case studies](/success-stories/) and answers in the [ASOWin FAQ](/faq/).",
       ]],
       ["Tools are not agencies", [
         "Lists of ASO agencies often mix in ASO software such as AppTweak, App Radar or Sensor Tower. These are data platforms that your team or your agency uses; they do not run your ASO for you.",
-        "If you have an in-house ASO specialist, a tool may be enough. If you do not, compare agencies first and ask which tools they use.",
+        "If you have an in-house ASO specialist, a tool may be enough. For testing and Apple Ads platforms, see [SplitMetrics alternatives](/blog/splitmetrics-alternatives/). If you do not, compare agencies first and ask which tools they use.",
       ]],
     ],
     playbook: [
@@ -93,16 +93,16 @@ export const agencyGuides = [
     answer: "The best ASO agency for your app is the one that can show published results in your category, explains exactly how it will research keywords and test creatives for your markets, reports on installs and conversion rather than rankings alone, and refuses to buy reviews or installs. Judge every agency on the same checklist: proof, process, policy, people, reporting and price.",
     sections: [
       ["Start with proof, not promises", [
-        "Ask for at least one published case study with numbers you can check, such as a rating moving from 3.9 to 4.4+ or a keyword moving from #10 to #2. A case study should name the app, the store, the market and what the agency actually did.",
+        "Ask for at least one published case study with numbers you can check, such as a rating moving from 3.9 to 4.4+ or a keyword moving from #10 to #2. A case study should name the app, the store, the market and what the agency actually did, like the ones on our [success stories](/success-stories/) page.",
         "Be wary of agencies that promise a #1 ranking or a guaranteed timeline. Store algorithms change, competitors react, and no agency controls Apple or Google.",
       ]],
       ["Check the process for your markets", [
         "Good ASO starts with keyword research in each market and language you care about, not a translated keyword list. Ask how the agency researches Hindi, Bahasa Indonesia or Spanish searches if those markets matter to you.",
-        "Ask how they handle the two stores differently. The App Store indexes the app name, subtitle and a hidden 100-character keyword field; Google Play indexes the title and descriptions. An agency that writes one set of metadata for both is not doing ASO properly.",
+        "Ask how they handle the two stores differently. The App Store indexes the app name, subtitle and a hidden 100-character keyword field; Google Play indexes the title and descriptions. An agency that writes one set of metadata for both is not doing ASO properly. Our [iOS vs Android ASO](/blog/ios-vs-android-aso-differences/) guide shows the differences, and our [app store localization](/services/app-store-localization/) service covers multi-language research.",
       ]],
       ["Make policy a hard filter", [
         "Apple and Google both prohibit paid, fake or incentivized ratings and reviews. Ask every agency directly whether they buy reviews, use review exchanges or run incentivized installs, and get the answer in writing.",
-        "A policy-safe agency improves ratings with in-app review prompts, reply strategy and fixes to the issues behind bad reviews. Shortcuts can get an app removed from the store.",
+        "A policy-safe agency improves ratings with in-app review prompts, reply strategy and fixes to the issues behind bad reviews, as in our guide to [improving app ratings](/blog/improve-app-ratings/). Shortcuts can get an app removed from the store.",
       ]],
       ["Know who will do the work", [
         "Ask who will run your account day to day, how much ASO experience they have, and how many other apps they manage. A senior pitch followed by a junior team is a common gap.",
@@ -110,15 +110,15 @@ export const agencyGuides = [
       ]],
       ["Agree on reporting before you start", [
         "Rankings alone are a weak measure. Ask for reporting on impressions, product page views, conversion rate, first-time downloads and, where possible, retention for organic users.",
-        "Agree on a baseline in the first two weeks so you can judge progress against your own numbers, not the agency’s.",
+        "Agree on a baseline in the first two weeks so you can judge progress against your own numbers, not the agency’s. Our [ASO KPIs](/blog/aso-kpis-metrics/) guide lists what to track.",
       ]],
       ["Understand the pricing model", [
         "Most ASO agencies charge a monthly retainer, a one-time audit and setup fee, or a project fee for a specific piece of work such as a creative test. Retainers suit ongoing optimization; projects suit a launch or a rebrand.",
-        "Ask what is included: number of markets, languages, creative tests per month, and whether paid campaigns such as Apple Search Ads are part of the fee or billed separately.",
+        "Ask what is included: number of markets, languages, creative tests per month, and whether paid campaigns such as Apple Search Ads are part of the fee or billed separately. Our [ASO cost guide](/blog/aso-roi-and-cost-benchmarks/) compares engagement types.",
       ]],
       ["Agency, in-house or tools?", [
         "An agency makes sense when you need experience across many apps and markets quickly, or when you cannot hire an ASO specialist. In-house makes sense when ASO is core to growth and you can hire and train someone senior.",
-        "ASO tools give you data, not decisions. Many teams combine one in-house owner, a tool, and an agency for markets or skills they lack.",
+        "ASO tools give you data, not decisions. Many teams combine one in-house owner, a tool, and an agency for markets or skills they lack. See [in-house vs agency](/blog/in-house-aso-team-vs-agency/), [ASO tools compared](/blog/best-aso-tools-compared/) and our [top ASO agencies](/blog/top-aso-agencies/) list.",
       ]],
     ],
     steps: [
@@ -169,35 +169,35 @@ export const agencyGuides = [
     sections: [
       ["Gaming apps", [
         "Games compete on creative: the icon, the first screenshots and the video decide most installs. Look for an agency that runs structured creative tests and understands top charts in your target countries.",
-        "Proof to ask for: a game that reached the top of a chart. ASOWin’s work with Viker Games reached #1 in Top Free Games in Australia, with 500,000+ installs in one day.",
+        "Proof to ask for: a game that reached the top of a chart. ASOWin’s work with Viker Games reached #1 in Top Free Games in Australia, with 500,000+ installs in one day. See how we approach [ASO for mobile games](/industries/gaming-aso/).",
       ]],
       ["Fintech and trading apps", [
         "Finance users search with high intent and decide on trust. Metadata must be accurate and compliant with financial-services rules, and screenshots must explain security and fees clearly.",
-        "Proof to ask for: keyword growth in a competitive finance category. ASOWin moved 50+ previously unranked keywords into the Top 50 for Indiabulls Securities on both stores.",
+        "Proof to ask for: keyword growth in a competitive finance category. ASOWin moved 50+ previously unranked keywords into the Top 50 for Indiabulls Securities on both stores. Our [fintech ASO](/industries/fintech-aso/) page covers finance apps in detail.",
       ]],
       ["E-commerce and marketplace apps", [
         "Shopping apps live on ratings and seasonality. A low rating cuts conversion in search results, and sale seasons change what people search for.",
-        "Proof to ask for: rating improvement. Pepperfry’s app rating improved from about 3.9 to 4.4+, sustained month on month, through review replies and feedback-driven fixes.",
+        "Proof to ask for: rating improvement. Pepperfry’s app rating improved from about 3.9 to 4.4+, sustained month on month, through review replies and feedback-driven fixes ([read the Pepperfry case study](/success-stories/pepperfry/)).",
       ]],
       ["Utility and tool apps", [
         "Utilities often compete for one short, high-volume keyword such as “phone”, “scanner” or “VPN”, where small ranking moves matter a lot.",
-        "Proof to ask for: movement on a single competitive keyword. ASOWin moved LSM Apps’ Easy Phone from #10 to #2 for “Phone” on US Google Play.",
+        "Proof to ask for: movement on a single competitive keyword. ASOWin moved LSM Apps’ Easy Phone from #10 to #2 for “Phone” on US Google Play ([LSM Apps case study](/success-stories/lsm-apps/)).",
       ]],
       ["India", [
         "Google Play dominates in India, users search in English, Hindi and Hinglish, and many use low-storage devices, so app size and clear value matter. An agency should research Indian search terms, not translate a US keyword list.",
-        "Look for an agency with an Indian team and Indian case studies. ASOWin works from Mumbai and Noida, with case studies including Pepperfry and Indiabulls Securities.",
+        "Look for an agency with an Indian team and Indian case studies. ASOWin works from Mumbai and Noida, with case studies including Pepperfry and Indiabulls Securities. See our [ASO agency in India](/aso-agency-india/) page.",
       ]],
       ["United States", [
         "The US App Store is highly competitive and Apple Search Ads strongly shapes search results. Look for an agency that plans organic ASO and Apple Search Ads together.",
-        "Proof to ask for: a US ranking result, such as LSM Apps’ #2 for “Phone” on US Google Play.",
+        "Proof to ask for: a US ranking result, such as LSM Apps’ #2 for “Phone” on US Google Play. See our [ASO agency in the USA](/aso-agency-usa/) page.",
       ]],
       ["Southeast Asia and Indonesia", [
         "Indonesia and its neighbours need listings written in Bahasa Indonesia and other local languages, with local payment and data-cost concerns in mind.",
-        "Look for an agency with a local team. ASOWin has teams in Jakarta and Singapore and a Bahasa Indonesia service page.",
+        "Look for an agency with a local team. ASOWin has teams in Jakarta and Singapore and a [Bahasa Indonesia service page](/aso-agency-indonesia/).",
       ]],
       ["Spain and Latin America", [
         "Spanish-speaking markets share a language but not identical search terms. Research Spain and each Latin American market separately.",
-        "Proof to ask for: rankings across several Spanish-speaking countries. Bybit reached Top 3 rankings in Spain and Latin America through Spanish-language ASO with ASOWin.",
+        "Proof to ask for: rankings across several Spanish-speaking countries. Bybit reached Top 3 rankings in Spain and Latin America through Spanish-language ASO with ASOWin. See our [Spanish-language ASO page](/es/agencia-aso/) and [app store localization](/services/app-store-localization/) service.",
       ]],
     ],
     playbook: [

@@ -75,4 +75,41 @@ export const tables = {
     ],
     verdict: "Whichever type you choose, apply the same checklist: proof, process, policy, people, reporting and price.",
   },
+  "phiture-alternatives": {
+    title: "Phiture and alternatives at a glance",
+    headers: ["", "Based in", "What it offers", "Best for"],
+    rows: [
+      ["Phiture", "Berlin, with an office in New York", "Mobile growth consultancy: ASO, performance marketing, retention and CRM, subscription revenue", "Subscription and consumer apps wanting ASO inside a broader growth program"],
+      ["ASOWin", "Fremont (USA), Mumbai, Noida, Jakarta, Singapore", "ASO specialist: ASO, ratings, creative testing, localization, Apple Search Ads, AI Review Replies", "Fintech, e-commerce and gaming apps; India, Southeast Asia, US and Spanish-speaking markets"],
+      ["Moburst", "New York, with offices in London and Israel", "Full-service mobile agency: ASO, SEO, user acquisition, creative", "Brands wanting organic and paid growth from one larger agency"],
+      ["Yodel Mobile", "London", "App marketing agency: ASO 360, paid UA, CRM, creative, localisation", "UK and European apps"],
+      ["Gummicube", "California (part of Airship)", "DATACUBE ASO software plus managed ASO", "Teams wanting software and service from one provider"],
+      ["Studio Mosaic", "New Delhi", "App marketing and consulting, ASO and app audits", "Indian apps wanting an app marketing studio"],
+      ["Infidigit", "Mumbai", "SEO agency that also offers ASO", "Indian brands already using it for SEO"],
+    ],
+    verdict: "Shortlist by the job you need done and your markets, then judge every option, Phiture included, on published proof in your category.",
+  },
+  "splitmetrics-alternatives": {
+    title: "SplitMetrics alternatives by job",
+    headers: ["Job", "SplitMetrics option", "Alternatives", "Choose the alternative when"],
+    rows: [
+      ["App store A/B testing", "SplitMetrics Optimize", "Apple product page optimization and Google Play store listing experiments (free, native)", "You have enough traffic and someone to design tests"],
+      ["Apple Ads management", "SplitMetrics Acquire (formerly SearchAdsHQ)", "Apple Ads' own interface, or an agency that runs Apple Ads", "You run a manageable number of campaigns, or want a team to run them"],
+      ["Managed ASO and growth", "SplitMetrics growth services", "ASO agencies such as ASOWin, Phiture or Gummicube", "You want people with category proof to do the work"],
+      ["Keyword and competitor data", "Not the core offer", "ASO data tools such as AppTweak, App Radar or Sensor Tower", "You need keyword volumes and rank tracking"],
+    ],
+    verdict: "Replace the job, not the brand: native tools for testing, an agency for capacity, and a data tool for research cover most teams.",
+  },
+  "asowin-vs-phiture-vs-splitmetrics": {
+    title: "ASOWin vs Phiture vs SplitMetrics",
+    headers: ["", "ASOWin", "Phiture", "SplitMetrics"],
+    rows: [
+      ["Type of company", "ASO specialist agency", "Mobile growth consultancy", "Software company with growth services"],
+      ["Core offer", "ASO, ratings and reviews, creative A/B testing, localization, Apple Search Ads", "ASO, performance marketing, retention and CRM, subscription revenue, growth consulting", "SplitMetrics Optimize (A/B testing), SplitMetrics Acquire (Apple Ads), growth services"],
+      ["Own products", "AI Review Replies", "Mobile Growth Stack framework; ASO Conference", "Optimize and Acquire platforms; Apple Ads benchmarks"],
+      ["Typical pricing model", "Monthly retainer or project fee after a free audit", "Retainer or project fees", "Software subscription; services priced separately"],
+      ["Best for", "Fintech, e-commerce and gaming apps; India, SEA, US, Spanish-speaking markets", "Subscription and consumer apps wanting a growth program", "Teams with people to run testing or Apple Ads software"],
+    ],
+    verdict: "Pick ASOWin or Phiture when you need people to do the work, and SplitMetrics or native store tools when you need software for a team you already have.",
+  },
 };
