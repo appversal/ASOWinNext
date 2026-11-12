@@ -45,7 +45,6 @@ import { ops01 } from "./ops01";
 import { engage01 } from "./engage01";
 import { channels01 } from "./channels01";
 import { competitors01 } from "./competitors01";
-import { growth02 } from "./growth02";
 
 const deep = { ...deep01, ...deep02, ...deep03, ...deep04, ...deep05 };
 const extras = { ...extras01, ...extras02, ...extras03, ...extras04, ...extras05 };
@@ -63,7 +62,7 @@ export const libraryPosts = [
   ...platform01, ...platform02, ...platform03, ...stores01, ...marketing01, ...marketing02, ...retention01,
   ...retention02, ...paid01, ...paid02, ...games01, ...games02, ...verticals01, ...verticals02,
   ...verticals03, ...verticals04, ...markets01, ...markets02, ...advanced01, ...advanced02, ...advanced03,
-  ...monetize01, ...ops01, ...engage01, ...channels01, ...competitors01, ...growth02,
+  ...monetize01, ...ops01, ...engage01, ...channels01, ...competitors01,
 ].map((post) => {
   const topic = post.primaryKeyword.charAt(0).toUpperCase() + post.primaryKeyword.slice(1);
   const headingFor = (heading) =>
